@@ -1,0 +1,14 @@
+#!/bin/bash
+# Show the Jellyfin server URL for the current network
+IP=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null)
+if [ -z "$IP" ]; then
+    echo "Not connected to WiFi."
+    exit 1
+fi
+echo "Jellyfin is available at:"
+echo "  http://$IP:8096"
+echo ""
+echo "Or use Bonjour name:"
+echo "  http://$(hostname -s).local:8096"
+echo ""
+echo "Share this URL with anyone on the same WiFi to let them stream your movies."

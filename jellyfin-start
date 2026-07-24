@@ -1,0 +1,70 @@
+#!/bin/bash
+# Launch Jellyfin and trigger a library scan once drive + server are ready.
+# Resilient to: drive not plugged in, slow mount, server crash.
+
+DRIVE="/Volumes/Backup Plus"
+LOG="$HOME/.jellyfin-launcher.log"
+
+log() { echo "$(date '+%H:%M:%S') $1" >> "$LOG"; }
+
+# Keep only last 200 lines of log
+tail -200 "$LOG" > "$LOG.tmp" 2>/dev/null && mv "$LOG.tmp" "$LOG" 2>/dev/null
+
+log "=== Launcher started ==="
+
+# Start Jellyfin if not already running
+if ! pgrep -f "Jellyfin Server" > /dev/null 2>&1; then
+    open -a Jellyfin
+    log "Started Jellyfin app"
+else
+    log "Jellyfin already running"
+fi
+
+# Background: wait for drive + server, then scan
+(
+    # Wait up to 2 minutes for the server to respond
+    TRIES=0
+    until curl -s -o /dev/null http://localhost:8096/web/index.html 2>/dev/null; do
+        TRIES=$((TRIES + 1))
+        if [ $TRIES -ge 60 ]; then
+            log "ERROR: Jellyfin server not responding after 2 minutes"
+            exit 1
+        fi
+        sleep 2
+    done
+    log "Server is up"
+
+    # Give the drive a few seconds to mount (covers slow USB init), then move on
+    TRIES=0
+    while [ ! -d "$DRIVE/All Movies" ]; do
+        TRIES=$((TRIES + 1))
+        if [ $TRIES -ge 8 ]; then
+            log "Drive not found — skipping scan"
+            osascript -e 'display notification "Plug in the drive and run jfs in Terminal" with title "Jellyfin" subtitle "Hard drive not found"' 2>/dev/null
+            exit 0
+        fi
+        sleep 2
+    done
+    log "Drive mounted at $DRIVE"
+
+    # Check the drive path hasn't shifted (e.g. "Backup Plus 1")
+    if [ -d "/Volumes/Backup Plus 1" ]; then
+        log "WARNING: Drive mounted as 'Backup Plus 1' — possible duplicate mount"
+    fi
+
+    # Authenticate and scan
+    AUTH=$(curl -s -X POST http://localhost:8096/Users/AuthenticateByName \
+        -H "Content-Type: application/json" \
+        -H "X-Emby-Authorization: MediaBrowser Client=\"Setup\", Device=\"Mac\", DeviceId=\"setup1\", Version=\"1.0\"" \
+        -d '{"Username": "pjdruck", "Pw": "8544"}' 2>/dev/null)
+
+    TOKEN=$(echo "$AUTH" | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
+
+    if [ -z "$TOKEN" ]; then
+        log "ERROR: Could not authenticate with Jellyfin"
+        exit 1
+    fi
+
+    curl -s -X POST "http://localhost:8096/Library/Refresh" -H "X-Emby-Token: $TOKEN"
+    log "Library scan triggered"
+) &
