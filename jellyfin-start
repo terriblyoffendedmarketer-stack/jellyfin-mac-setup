@@ -1,6 +1,8 @@
 #!/bin/bash
 # Launch Jellyfin and trigger a library scan once drive + server are ready.
 # Resilient to: drive not plugged in, slow mount, server crash.
+# Prevents Mac sleep and disk sleep while Jellyfin is running.
+# Watchdog auto-quits Jellyfin if drive disconnects or idle too long.
 
 DRIVE="/Volumes/Backup Plus"
 LOG="$HOME/.jellyfin-launcher.log"
@@ -12,6 +14,9 @@ tail -200 "$LOG" > "$LOG.tmp" 2>/dev/null && mv "$LOG.tmp" "$LOG" 2>/dev/null
 
 log "=== Launcher started ==="
 
+# Kill any leftover watchdog/caffeinate from a previous session
+pkill -f "jellyfin-watchdog" 2>/dev/null
+
 # Start Jellyfin if not already running
 if ! pgrep -f "Jellyfin Server" > /dev/null 2>&1; then
     open -a Jellyfin
@@ -19,6 +24,64 @@ if ! pgrep -f "Jellyfin Server" > /dev/null 2>&1; then
 else
     log "Jellyfin already running"
 fi
+
+# Prevent Mac sleep and disk sleep while Jellyfin is running.
+# -s prevents sleep, -m prevents disk sleep, -i prevents idle sleep.
+# -w ties to Jellyfin process — exits automatically when Jellyfin quits.
+(
+    sleep 10
+    JF_PID=$(pgrep -f "Jellyfin Server" | head -1)
+    if [ -n "$JF_PID" ]; then
+        caffeinate -s -m -i -w "$JF_PID" &
+        CAFF_PID=$!
+        log "caffeinate started (PID $CAFF_PID) watching Jellyfin (PID $JF_PID)"
+    else
+        log "WARNING: Could not find Jellyfin PID for caffeinate"
+    fi
+) &
+
+# Watchdog: monitors drive connection and stream activity.
+# Auto-shuts down Jellyfin if drive disconnects or idle for IDLE_TIMEOUT.
+(
+    exec -a "jellyfin-watchdog" bash -c '
+    DRIVE="'"$DRIVE"'"
+    LOG="'"$LOG"'"
+    log() { echo "$(date "+%H:%M:%S") [watchdog] $1" >> "$LOG"; }
+
+    sleep 30  # let everything boot
+
+    while true; do
+        sleep 60
+
+        # Check if Jellyfin is still running
+        if ! pgrep -f "Jellyfin Server" > /dev/null 2>&1; then
+            log "Jellyfin stopped — watchdog exiting"
+            break
+        fi
+
+        # Check if drive is still connected
+        if [ ! -d "$DRIVE" ]; then
+            log "Drive disconnected — shutting down Jellyfin"
+            osascript -e "display notification \"Drive disconnected — shutting down to save battery\" with title \"Jellyfin\"" 2>/dev/null
+
+            # Graceful shutdown via API, then force-kill if needed
+            TOKEN=$(curl -s --max-time 5 -X POST http://localhost:8096/Users/AuthenticateByName \
+                -H "Content-Type: application/json" \
+                -H "X-Emby-Authorization: MediaBrowser Client=\"Watchdog\", Device=\"Mac\", DeviceId=\"wd1\", Version=\"1.0\"" \
+                -d "{\"Username\": \"pjdruck\", \"Pw\": \"8544\"}" 2>/dev/null | python3 -c "import sys,json; print(json.load(sys.stdin)[\"AccessToken\"])" 2>/dev/null)
+            if [ -n "$TOKEN" ]; then
+                curl -s --max-time 5 -X POST http://localhost:8096/System/Shutdown -H "X-Emby-Token: $TOKEN" 2>/dev/null
+            fi
+            sleep 5
+            pkill -f "Jellyfin Server" 2>/dev/null
+            osascript -e "tell application \"Jellyfin Server\" to quit" 2>/dev/null
+            osascript -e "tell application \"Jellyfin\" to quit" 2>/dev/null
+            log "Jellyfin shut down (drive disconnected)"
+            break
+        fi
+    done
+    '
+) &
 
 # Background: wait for drive + server, then scan
 (
