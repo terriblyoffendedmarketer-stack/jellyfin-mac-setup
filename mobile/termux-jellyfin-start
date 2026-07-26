@@ -2,9 +2,15 @@
 # Launch Jellyfin in Termux via proot-distro and trigger a library scan.
 # Equivalent of the Mac's jellyfin-start script.
 # Handles: USB drive detection, wake lock, watchdog, library scan.
+#
+# SHARED CONFIG: The drive is mounted at /Volumes/Backup Plus inside proot
+# (matching the Mac mount point) so Jellyfin sees identical paths on both
+# platforms. Data/config directories on the drive are shared — same users,
+# collections, watch history, metadata.
 
 LOG="$HOME/.jellyfin-launcher.log"
 DRIVE_MARKER="All Movies"
+PROOT_MOUNT="/Volumes/Backup Plus"
 
 log() { echo "$(date '+%H:%M:%S') $1" >> "$LOG"; }
 
@@ -43,13 +49,29 @@ if [ -n "$DRIVE_PATH" ]; then
     log "Drive found at $DRIVE_PATH"
     echo "Drive found: $DRIVE_PATH"
 else
-    log "WARNING: Drive not found — starting Jellyfin without media"
-    echo "WARNING: USB drive not detected."
+    log "WARNING: Drive not found — cannot start without media drive"
+    echo "ERROR: USB drive not detected."
     echo "  - Is the drive plugged in via OTG?"
     echo "  - Did you grant Termux storage access? (run: termux-setup-storage)"
-    echo "  - Is the drive formatted as exFAT?"
     echo ""
-    echo "Starting Jellyfin anyway (you can plug in the drive later and rescan)..."
+    echo "The drive is required because Jellyfin's config lives on it."
+    exit 1
+fi
+
+# Check that shared config exists on the drive
+SHARED_DATA="$DRIVE_PATH/.jellyfin-data"
+SHARED_CONFIG="$DRIVE_PATH/.jellyfin-config"
+
+if [ ! -d "$SHARED_DATA" ]; then
+    echo ""
+    echo "No shared Jellyfin data found on the drive."
+    echo "If this is your first time using mobile, run shared-config-setup.sh"
+    echo "on your Mac first to migrate your Jellyfin data to the drive."
+    echo ""
+    echo "Or to start fresh, creating empty config directories..."
+    mkdir -p "$SHARED_DATA" "$SHARED_CONFIG"
+    echo "  Created $SHARED_DATA"
+    echo "  Created $SHARED_CONFIG"
 fi
 
 # --- Acquire wake lock (replaces Mac's caffeinate) ---
@@ -65,24 +87,25 @@ fi
 # --- Start Jellyfin inside proot-distro ---
 echo "Starting Jellyfin server..."
 
-# Build bind-mount arguments for the drive
-BIND_ARGS=""
-if [ -n "$DRIVE_PATH" ]; then
-    BIND_ARGS="--bind $DRIVE_PATH:/media/drive"
-fi
+# Mount the drive at /Volumes/Backup Plus inside proot so all paths match Mac.
+# This means library paths like /Volumes/Backup Plus/All Movies work on both.
+# Also mount the shared data/config directories to the standard Jellyfin locations.
+proot-distro login debian \
+    --bind "$DRIVE_PATH:$PROOT_MOUNT" \
+    -- bash -c '
+    DRIVE="'"$PROOT_MOUNT"'"
+    DATA_DIR="$DRIVE/.jellyfin-data"
+    CONFIG_DIR="$DRIVE/.jellyfin-config"
+    CACHE_DIR="/var/cache/jellyfin"
+    LOG_DIR="/var/log/jellyfin"
 
-# Start Jellyfin in background inside proot
-proot-distro login debian $BIND_ARGS -- bash -c '
-    export JELLYFIN_DATA_DIR="/var/lib/jellyfin"
-    export JELLYFIN_CONFIG_DIR="/etc/jellyfin"
-    export JELLYFIN_CACHE_DIR="/var/cache/jellyfin"
-    export JELLYFIN_LOG_DIR="/var/log/jellyfin"
-    mkdir -p "$JELLYFIN_DATA_DIR" "$JELLYFIN_CONFIG_DIR" "$JELLYFIN_CACHE_DIR" "$JELLYFIN_LOG_DIR"
+    mkdir -p "$DATA_DIR" "$CONFIG_DIR" "$CACHE_DIR" "$LOG_DIR"
+
     /usr/bin/jellyfin-server \
-        --datadir "$JELLYFIN_DATA_DIR" \
-        --configdir "$JELLYFIN_CONFIG_DIR" \
-        --cachedir "$JELLYFIN_CACHE_DIR" \
-        --logdir "$JELLYFIN_LOG_DIR" \
+        --datadir "$DATA_DIR" \
+        --configdir "$CONFIG_DIR" \
+        --cachedir "$CACHE_DIR" \
+        --logdir "$LOG_DIR" \
         --ffmpeg /usr/lib/jellyfin-ffmpeg/ffmpeg \
         > /var/log/jellyfin/stdout.log 2>&1
 ' &
@@ -103,7 +126,7 @@ log "Jellyfin proot started (background PID $JF_BG_PID)"
         fi
 
         # Check if drive is still connected
-        if [ -n "$DRIVE_PATH" ] && [ ! -d "$DRIVE_PATH/$DRIVE_MARKER" ]; then
+        if [ ! -d "$DRIVE_PATH/$DRIVE_MARKER" ]; then
             log "[watchdog] Drive disconnected — shutting down Jellyfin"
             termux-notification \
                 --title "Jellyfin" \
@@ -160,6 +183,8 @@ log "Watchdog started (PID $WATCHDOG_PID)"
     if [ -n "$PHONE_IP" ]; then
         echo "  On WiFi network: http://$PHONE_IP:8096"
     fi
+    echo ""
+    echo "  Same account as Mac — pjdruck"
     echo "========================================="
 
     termux-notification \
@@ -167,12 +192,6 @@ log "Watchdog started (PID $WATCHDOG_PID)"
         --content "Running at http://localhost:8096" \
         --ongoing \
         --id jellyfin-running 2>/dev/null
-
-    # Skip library scan if no drive
-    if [ -z "$DRIVE_PATH" ]; then
-        log "No drive — skipping library scan"
-        exit 0
-    fi
 
     # Authenticate and scan
     AUTH=$(curl -s -X POST http://localhost:8096/Users/AuthenticateByName \
@@ -186,7 +205,7 @@ log "Watchdog started (PID $WATCHDOG_PID)"
         log "Could not authenticate — first run? Complete setup wizard at http://localhost:8096"
         echo ""
         echo "First run detected — open http://localhost:8096 to complete the setup wizard."
-        echo "Use /media/drive/All Movies as your Movies library path."
+        echo "Use /Volumes/Backup Plus/All Movies as your Movies library path."
         exit 0
     fi
 

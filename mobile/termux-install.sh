@@ -7,7 +7,7 @@
 #   - Termux:API (from F-Droid — for wake-lock and notifications)
 #   - Termux:Boot (from F-Droid — for auto-start on boot, optional)
 #   - USB OTG adapter (USB-C to USB-A)
-#   - Seagate Backup Plus formatted as exFAT (NOT HFS+/APFS — Android can't read Mac formats)
+#   - Seagate Backup Plus (must be readable by Android — exFAT, NTFS, ext4 all work)
 
 set -e
 
@@ -116,17 +116,18 @@ grep -q 'alias jfs=' "$HOME/.bashrc" 2>/dev/null || echo 'alias jfs="~/termux-je
 
 echo ""
 echo "Done! Next steps:"
+echo ""
+echo "  FIRST TIME — run this on your Mac (one-time):"
+echo "    cd jellyfin-mac-setup && bash shared-config-setup.sh"
+echo "    This moves your Jellyfin data onto the Seagate drive so both"
+echo "    Mac and Android share the same account, collections, and metadata."
+echo ""
+echo "  THEN on your phone:"
 echo "  1. Plug in your Seagate Backup Plus via USB OTG adapter"
-echo "  2. Make sure the drive is formatted as exFAT (not HFS+/APFS)"
-echo "  3. When Android asks, allow Termux to access the USB drive"
-echo "  4. Run: ~/termux-jellyfin-start"
-echo "  5. Open http://localhost:8096 in your phone's browser to complete setup"
-echo "  6. Add your movie folders as a Movies library (path: /media/drive/All Movies)"
-echo "  7. Paste branding.css into Dashboard → General → Custom CSS"
+echo "  2. When Android asks, allow Termux to access the USB drive"
+echo "  3. Run: ~/termux-jellyfin-start"
+echo "  4. Open http://localhost:8096 on any device on your WiFi"
+echo "  5. Log in as pjdruck — same account, same library, same collections"
 echo ""
 echo "Control menu: ~/termux-jellyfin-control"
 echo "Quick start:  jfs (after restarting Termux)"
-echo ""
-echo "IMPORTANT: Your drive must be exFAT. If it's HFS+ (Mac OS Extended),"
-echo "copy your movies to a computer, reformat the drive as exFAT, then copy back."
-echo "exFAT works on both Mac and Android."
