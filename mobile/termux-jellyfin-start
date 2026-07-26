@@ -1,0 +1,206 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Launch Jellyfin in Termux via proot-distro and trigger a library scan.
+# Equivalent of the Mac's jellyfin-start script.
+# Handles: USB drive detection, wake lock, watchdog, library scan.
+
+LOG="$HOME/.jellyfin-launcher.log"
+DRIVE_MARKER="All Movies"
+
+log() { echo "$(date '+%H:%M:%S') $1" >> "$LOG"; }
+
+# Keep only last 200 lines of log
+tail -200 "$LOG" > "$LOG.tmp" 2>/dev/null && mv "$LOG.tmp" "$LOG" 2>/dev/null
+
+log "=== Launcher started ==="
+
+# --- Detect USB drive ---
+# Android mounts USB OTG drives under /storage/ with a volume UUID (e.g. /storage/1234-5678)
+# or under Termux's storage symlinks at ~/storage/external-1, ~/storage/usb, etc.
+find_drive() {
+    # Check Termux storage symlinks first
+    for candidate in ~/storage/external-1 ~/storage/usb; do
+        if [ -d "$candidate/$DRIVE_MARKER" ]; then
+            echo "$candidate"
+            return
+        fi
+    done
+
+    # Scan /storage/ for any volume with our folder structure
+    for vol in /storage/*; do
+        [ "$vol" = "/storage/emulated" ] && continue
+        [ "$vol" = "/storage/self" ] && continue
+        if [ -d "$vol/$DRIVE_MARKER" ]; then
+            echo "$vol"
+            return
+        fi
+    done
+
+    return 1
+}
+
+DRIVE_PATH=$(find_drive)
+if [ -n "$DRIVE_PATH" ]; then
+    log "Drive found at $DRIVE_PATH"
+    echo "Drive found: $DRIVE_PATH"
+else
+    log "WARNING: Drive not found — starting Jellyfin without media"
+    echo "WARNING: USB drive not detected."
+    echo "  - Is the drive plugged in via OTG?"
+    echo "  - Did you grant Termux storage access? (run: termux-setup-storage)"
+    echo "  - Is the drive formatted as exFAT?"
+    echo ""
+    echo "Starting Jellyfin anyway (you can plug in the drive later and rescan)..."
+fi
+
+# --- Acquire wake lock (replaces Mac's caffeinate) ---
+termux-wake-lock 2>/dev/null && log "Wake lock acquired" || log "WARNING: Could not acquire wake lock (install Termux:API)"
+
+# --- Kill any previous Jellyfin session ---
+if proot-distro login debian -- pgrep -f "jellyfin-server" > /dev/null 2>&1; then
+    log "Stopping previous Jellyfin instance"
+    proot-distro login debian -- pkill -f "jellyfin-server" 2>/dev/null
+    sleep 2
+fi
+
+# --- Start Jellyfin inside proot-distro ---
+echo "Starting Jellyfin server..."
+
+# Build bind-mount arguments for the drive
+BIND_ARGS=""
+if [ -n "$DRIVE_PATH" ]; then
+    BIND_ARGS="--bind $DRIVE_PATH:/media/drive"
+fi
+
+# Start Jellyfin in background inside proot
+proot-distro login debian $BIND_ARGS -- bash -c '
+    export JELLYFIN_DATA_DIR="/var/lib/jellyfin"
+    export JELLYFIN_CONFIG_DIR="/etc/jellyfin"
+    export JELLYFIN_CACHE_DIR="/var/cache/jellyfin"
+    export JELLYFIN_LOG_DIR="/var/log/jellyfin"
+    mkdir -p "$JELLYFIN_DATA_DIR" "$JELLYFIN_CONFIG_DIR" "$JELLYFIN_CACHE_DIR" "$JELLYFIN_LOG_DIR"
+    /usr/bin/jellyfin-server \
+        --datadir "$JELLYFIN_DATA_DIR" \
+        --configdir "$JELLYFIN_CONFIG_DIR" \
+        --cachedir "$JELLYFIN_CACHE_DIR" \
+        --logdir "$JELLYFIN_LOG_DIR" \
+        --ffmpeg /usr/lib/jellyfin-ffmpeg/ffmpeg \
+        > /var/log/jellyfin/stdout.log 2>&1
+' &
+JF_BG_PID=$!
+log "Jellyfin proot started (background PID $JF_BG_PID)"
+
+# --- Watchdog: monitor drive connection ---
+(
+    sleep 30
+
+    while true; do
+        sleep 60
+
+        # Check if Jellyfin is still running
+        if ! kill -0 $JF_BG_PID 2>/dev/null; then
+            log "[watchdog] Jellyfin process gone — exiting"
+            break
+        fi
+
+        # Check if drive is still connected
+        if [ -n "$DRIVE_PATH" ] && [ ! -d "$DRIVE_PATH/$DRIVE_MARKER" ]; then
+            log "[watchdog] Drive disconnected — shutting down Jellyfin"
+            termux-notification \
+                --title "Jellyfin" \
+                --content "Drive disconnected — shutting down server" \
+                --id jellyfin-watchdog 2>/dev/null
+
+            # Graceful shutdown via API
+            TOKEN=$(curl -s --max-time 5 -X POST http://localhost:8096/Users/AuthenticateByName \
+                -H "Content-Type: application/json" \
+                -H "X-Emby-Authorization: MediaBrowser Client=\"Watchdog\", Device=\"Phone\", DeviceId=\"wd-mobile\", Version=\"1.0\"" \
+                -d '{"Username": "pjdruck", "Pw": "8544"}' 2>/dev/null | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
+
+            if [ -n "$TOKEN" ]; then
+                curl -s --max-time 5 -X POST http://localhost:8096/System/Shutdown \
+                    -H "X-Emby-Token: $TOKEN" 2>/dev/null
+            fi
+            sleep 3
+            kill $JF_BG_PID 2>/dev/null
+
+            termux-wake-unlock 2>/dev/null
+            log "[watchdog] Jellyfin shut down, wake lock released"
+            break
+        fi
+    done
+) &
+WATCHDOG_PID=$!
+log "Watchdog started (PID $WATCHDOG_PID)"
+
+# --- Wait for server to come up, then scan library ---
+(
+    TRIES=0
+    until curl -s -o /dev/null http://localhost:8096/web/index.html 2>/dev/null; do
+        TRIES=$((TRIES + 1))
+        if [ $TRIES -ge 90 ]; then
+            log "ERROR: Jellyfin server not responding after 3 minutes"
+            echo "ERROR: Jellyfin failed to start. Check: proot-distro login debian -- cat /var/log/jellyfin/stdout.log"
+            exit 1
+        fi
+        sleep 2
+    done
+    log "Server is up"
+
+    # Get phone's WiFi IP for display
+    PHONE_IP=$(ifconfig 2>/dev/null | grep -A1 wlan0 | grep 'inet ' | awk '{print $2}' | head -1)
+    if [ -z "$PHONE_IP" ]; then
+        PHONE_IP=$(ip addr show wlan0 2>/dev/null | grep 'inet ' | awk '{print $2}' | cut -d/ -f1 | head -1)
+    fi
+
+    echo ""
+    echo "========================================="
+    echo "  Jellyfin is running!"
+    echo ""
+    echo "  On this phone:  http://localhost:8096"
+    if [ -n "$PHONE_IP" ]; then
+        echo "  On WiFi network: http://$PHONE_IP:8096"
+    fi
+    echo "========================================="
+
+    termux-notification \
+        --title "Jellyfin Server" \
+        --content "Running at http://localhost:8096" \
+        --ongoing \
+        --id jellyfin-running 2>/dev/null
+
+    # Skip library scan if no drive
+    if [ -z "$DRIVE_PATH" ]; then
+        log "No drive — skipping library scan"
+        exit 0
+    fi
+
+    # Authenticate and scan
+    AUTH=$(curl -s -X POST http://localhost:8096/Users/AuthenticateByName \
+        -H "Content-Type: application/json" \
+        -H "X-Emby-Authorization: MediaBrowser Client=\"Setup\", Device=\"Phone\", DeviceId=\"setup-mobile\", Version=\"1.0\"" \
+        -d '{"Username": "pjdruck", "Pw": "8544"}' 2>/dev/null)
+
+    TOKEN=$(echo "$AUTH" | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
+
+    if [ -z "$TOKEN" ]; then
+        log "Could not authenticate — first run? Complete setup wizard at http://localhost:8096"
+        echo ""
+        echo "First run detected — open http://localhost:8096 to complete the setup wizard."
+        echo "Use /media/drive/All Movies as your Movies library path."
+        exit 0
+    fi
+
+    curl -s -X POST "http://localhost:8096/Library/Refresh" -H "X-Emby-Token: $TOKEN"
+    log "Library scan triggered"
+) &
+
+# Keep the script alive so Jellyfin keeps running
+echo "Jellyfin starting... (Ctrl+C to stop)"
+echo ""
+
+trap 'log "Ctrl+C — shutting down"; kill $JF_BG_PID $WATCHDOG_PID 2>/dev/null; termux-wake-unlock 2>/dev/null; termux-notification-remove jellyfin-running 2>/dev/null; log "Shut down complete"; exit 0' INT TERM
+
+wait $JF_BG_PID
+log "Jellyfin exited"
+termux-wake-unlock 2>/dev/null
+termux-notification-remove jellyfin-running 2>/dev/null
