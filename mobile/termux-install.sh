@@ -34,7 +34,8 @@ echo "[3/7] Installing Debian Bookworm in proot-distro..."
 
 # proot-distro install debian:bookworm registers under the alias "debian",
 # so we always login with "debian" regardless of which tag was used to install.
-if proot-distro list 2>/dev/null | grep -q "debian.*Installed"; then
+ROOTFS="$PREFIX/var/lib/proot-distro/installed-rootfs/debian"
+if [ -d "$ROOTFS" ]; then
     echo "  Debian already installed."
 else
     proot-distro install debian:bookworm

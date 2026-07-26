@@ -12,8 +12,8 @@ LOG="$HOME/.jellyfin-launcher.log"
 DRIVE_MARKER="All Movies"
 PROOT_MOUNT="/Volumes/Backup Plus"
 
-# proot-distro registers debian:bookworm under the alias "debian"
-if ! proot-distro list 2>/dev/null | grep -q "debian.*Installed"; then
+ROOTFS="$PREFIX/var/lib/proot-distro/installed-rootfs/debian"
+if [ ! -d "$ROOTFS" ]; then
     echo "ERROR: No Debian proot-distro found. Run the installer first."
     exit 1
 fi

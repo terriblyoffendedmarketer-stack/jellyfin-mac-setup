@@ -127,7 +127,22 @@ The rootfs lives at `$PREFIX/var/lib/proot-distro/installed-rootfs/debian/`.
 
 ---
 
-## 11. Run apt full-upgrade before the installer
+## 11. Don't use `proot-distro list | grep` for detection
+
+`proot-distro list` output format varies across versions — grepping for `debian.*Installed` is unreliable. Instead, check whether the rootfs directory exists:
+
+```bash
+ROOTFS="$PREFIX/var/lib/proot-distro/installed-rootfs/debian"
+if [ -d "$ROOTFS" ]; then
+    echo "Already installed"
+fi
+```
+
+This is always reliable regardless of proot-distro version.
+
+---
+
+## 12. Run apt full-upgrade before the installer
 
 On a fresh or stale Termux, `pkg update` can fail because curl's SSL dependency is broken (`libngtcp2_crypto_ossl.so` can't find `SSL_set_quic_tls_transport_params`). Fix:
 
