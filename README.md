@@ -1,9 +1,10 @@
-# Jellyfin Mac Setup
+# Jellyfin Setup
 
-Portable Jellyfin media server running on Mac with a Seagate Backup Plus external drive. Designed to be a personal home server — plug in the drive, double-click, and stream to any device on the same WiFi.
+Portable Jellyfin media server with a Seagate Backup Plus external drive. Designed to be a personal home server — plug in the drive, start the script, and stream to any device on the same WiFi. Works on both Mac and Android (via Termux).
 
 ## Quick Reference
 
+### Mac
 | | |
 |---|---|
 | **Server URL** | `http://192.168.1.51:8096` or `http://jf.local:8096` |
@@ -11,15 +12,34 @@ Portable Jellyfin media server running on Mac with a Seagate Backup Plus externa
 | **Drive** | Seagate Backup Plus → `/Volumes/Backup Plus` |
 | **Jellyfin Version** | 10.11.11 |
 
+### Mobile (Termux)
+| | |
+|---|---|
+| **Server URL** | `http://localhost:8096` or `http://<phone-wifi-ip>:8096` |
+| **Login** | `pjdruck` / `8544` (same account — shared via drive) |
+| **Drive** | Seagate Backup Plus via USB OTG → auto-detected under `/storage/` |
+| **Media Path** | `/Volumes/Backup Plus/All Movies` (inside proot — matches Mac path) |
+
 ## What's Included
 
-### Scripts
+### Mac Scripts
 
 | File | Purpose |
 |---|---|
 | `jellyfin-start` | Main launcher — starts Jellyfin, triggers library scan, starts caffeinate + watchdog |
 | `jellyfin-caffeinate.sh` | LaunchAgent script — auto-starts caffeinate whenever Jellyfin is running (regardless of how it was launched) |
 | `jellyfin-control.applescript` | Source for the Jellyfin Control.app — single GUI with Show URL, Scan Library, Stop Server, Troubleshoot |
+| `shared-config-setup.sh` | One-time migration — moves Jellyfin data onto the Seagate drive so Mac and Android share the same config |
+
+### Mobile Scripts (Termux)
+
+| File | Purpose |
+|---|---|
+| `mobile/termux-install.sh` | Main installer — sets up proot-distro (Debian), installs Jellyfin, copies scripts |
+| `mobile/termux-jellyfin-start` | Main launcher — starts Jellyfin in proot, detects USB drive, wake lock + watchdog |
+| `mobile/termux-jellyfin-wakelock.sh` | Background monitor — manages wake lock while Jellyfin is running |
+| `mobile/termux-jellyfin-control` | Terminal control menu — status, scan library, start/stop server, view logs |
+| `mobile/boot-jellyfin.sh` | Termux:Boot auto-start — runs Jellyfin when the phone boots |
 
 ### Web Customizations
 
@@ -43,24 +63,53 @@ Portable Jellyfin media server running on Mac with a Seagate Backup Plus externa
 
 ## Architecture
 
+### Shared Config
+Both Mac and Android use the same Jellyfin database stored on the Seagate drive. Plug the drive into either device — same account, same collections, same watch history, same metadata. The TV's Jellyfin app connects to whichever server is running on the network.
+
+```
+Seagate Backup Plus (the single source of truth)
+├── .jellyfin-data/     ← Jellyfin database, users, metadata (shared)
+├── .jellyfin-config/   ← Jellyfin settings (shared)
+├── All Movies/
+│   ├── Anime movies/
+│   ├── Asian Movies/
+│   ├── Hong Sang Soo Films/
+│   ├── Indian Films/
+│   ├── Movies in General/
+│   ├── Andrei Tarkovsky/
+│   ├── Tarantino/
+│   ├── The Apu Trilogy/
+│   ├── Wes Anderson/
+│   └── Unsorted Get srt files/
+└── TV/
+```
+
+### Mac
 ```
 Mac (always on / lid open)
 ├── Jellyfin.app (media server on port 8096)
+│   ├── ~/.local/share/jellyfin → symlink to drive's .jellyfin-data/
+│   └── ~/.config/jellyfin → symlink to drive's .jellyfin-config/
 ├── caffeinate (prevents sleep/disk sleep while Jellyfin runs)
 ├── jellyfin-watchdog (auto-shuts down if drive disconnects)
-└── Seagate Backup Plus (USB)
-    ├── All Movies/
-    │   ├── Anime movies/
-    │   ├── Asian Movies/
-    │   ├── Hong Sang Soo Films/
-    │   ├── Indian Films/
-    │   ├── Movies in General/
-    │   ├── Andrei Tarkovsky/
-    │   ├── Tarantino/
-    │   ├── The Apu Trilogy/
-    │   ├── Wes Anderson/
-    │   └── Unsorted Get srt files/
-    └── TV/
+└── Seagate Backup Plus (USB) → /Volumes/Backup Plus
+```
+
+### Mobile (Termux)
+```
+Phone (Android)
+├── Termux
+│   ├── termux-wake-lock (prevents phone sleep while Jellyfin runs)
+│   ├── proot-distro (Debian)
+│   │   ├── Jellyfin Server (media server on port 8096)
+│   │   │   ├── --datadir /Volumes/Backup Plus/.jellyfin-data (same DB)
+│   │   │   └── --configdir /Volumes/Backup Plus/.jellyfin-config
+│   │   ├── jellyfin-web/ (with custom-overlay.js + themed-browse.js)
+│   │   └── /Volumes/Backup Plus → bound to USB drive (matches Mac path)
+│   └── watchdog (auto-shuts down if drive disconnects)
+├── Termux:API (wake lock, notifications)
+├── Termux:Boot (auto-start on boot, optional)
+└── USB OTG → Seagate Backup Plus
 ```
 
 ## Features
@@ -116,6 +165,35 @@ Movies are multi-tagged across collections:
 | Wes Anderson | 5 | Director |
 | Bong Joon-ho | 4 | Director |
 
+### Mobile: Wake Lock (replaces caffeinate)
+- `termux-wake-lock` prevents Android from sleeping while Jellyfin runs
+- Acquired automatically when Jellyfin starts, released on shutdown
+- Background monitor (`termux-jellyfin-wakelock.sh`) checks every 30 seconds
+- Requires Termux:API from F-Droid
+
+### Mobile: USB Drive Auto-Detection
+- Scans `/storage/` and Termux storage symlinks for the "All Movies" folder
+- Bind-mounts the drive at `/Volumes/Backup Plus` inside proot (matching Mac path)
+- Jellyfin reads its database from `.jellyfin-data/` on the drive — same DB as Mac
+- Works with any USB volume UUID — no hardcoded Android paths
+
+### Shared Config (Mac + Android)
+- Jellyfin database, users, collections, watch history, and metadata live on the drive
+- `shared-config-setup.sh` migrates Mac's Jellyfin data to the drive (one-time)
+- Mac uses symlinks (`~/.local/share/jellyfin` → drive), Android points directly at the drive
+- Drive is mounted at `/Volumes/Backup Plus` on both platforms so library paths match
+- Only one device runs Jellyfin at a time (the drive can only be plugged into one)
+- The TV's Jellyfin app connects to whichever server IP is active on the network
+
+### Mobile: Terminal Control Menu
+Interactive terminal menu (`~/termux-jellyfin-control`) with:
+- **Show Status** — checks server, drive, wake lock, WiFi IP
+- **Show URL** — displays server URL for phone and LAN access
+- **Scan Library** — triggers library refresh via API
+- **Start/Stop Server** — manages Jellyfin lifecycle
+- **View Log** — shows recent launcher activity
+- **Open in Browser** — launches the Jellyfin web UI
+
 ### Static IP Setup
 - Mac Wi-Fi set to manual IPv4: `192.168.1.51`
 - Private Wi-Fi address set to Fixed (not Rotating) to keep consistent MAC address
@@ -130,6 +208,61 @@ Single AppleScript app (`~/Desktop/Jellyfin Control.app`) with Jellyfin icon:
 - **Troubleshoot** — checks: server running, responding, drive mounted, WiFi, caffeinate
 
 ## Installation
+
+### Mobile Setup (Termux on Android)
+
+#### Prerequisites
+- Android phone with USB OTG support
+- USB-C to USB-A OTG adapter (or USB-C hub)
+- Seagate drive must be readable by Android (exFAT, NTFS, ext4 all work)
+- Install from **F-Droid** (NOT Google Play):
+  - [Termux](https://f-droid.org/en/packages/com.termux/) — terminal emulator
+  - [Termux:API](https://f-droid.org/en/packages/com.termux.api/) — wake lock + notifications
+  - [Termux:Boot](https://f-droid.org/en/packages/com.termux.boot/) — auto-start on boot (optional)
+
+#### Install
+
+**Step 1 — On your Mac (one-time):** Migrate Jellyfin data to the drive
+```bash
+cd jellyfin-mac-setup
+bash shared-config-setup.sh
+```
+This moves your Jellyfin database, users, and collections onto the Seagate drive. Your Mac setup continues to work normally (via symlinks).
+
+**Step 2 — On your phone:** Install Termux and run the installer
+1. Open Termux and clone this repo:
+   ```bash
+   pkg install git
+   git clone https://github.com/terriblyoffendedmarketer-stack/jellyfin-mac-setup.git
+   cd jellyfin-mac-setup/mobile
+   bash termux-install.sh
+   ```
+2. Plug in the Seagate drive via USB OTG
+3. When Android prompts, allow Termux to access the USB drive
+4. Start Jellyfin:
+   ```bash
+   ~/termux-jellyfin-start
+   ```
+5. Open `http://localhost:8096` on any device on your WiFi — log in as pjdruck, same account, same everything
+
+#### Android Battery Settings
+Android aggressively kills background apps. To keep Jellyfin running:
+- Go to **Settings → Battery → Termux → Unrestricted** (exact path varies by phone)
+- Disable battery optimization for Termux
+- On Samsung: also disable "Put unused apps to sleep" for Termux
+- On Xiaomi: enable "Autostart" for Termux in Security app
+- Keep Termux's notification visible (it prevents Android from killing it)
+
+#### After Phone Reboot
+If Termux:Boot is installed, Jellyfin starts automatically. Otherwise:
+```bash
+~/termux-jellyfin-start
+```
+
+#### Power Notes
+- A portable HDD may draw too much power from some phones — if the drive keeps disconnecting, use a powered USB hub between the OTG adapter and the drive
+- Keep the phone plugged into power when running as a server
+- Transcoding is limited on phone hardware — direct play works best (most modern clients handle this)
 
 ### Fresh Mac Setup
 

@@ -1,0 +1,152 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Jellyfin Control — terminal menu for managing Jellyfin on Termux.
+# Equivalent of the Mac's Jellyfin Control.app (AppleScript GUI).
+
+SERVER="http://localhost:8096"
+USERNAME="pjdruck"
+PASSWORD="8544"
+
+get_token() {
+    curl -s --max-time 5 -X POST "$SERVER/Users/AuthenticateByName" \
+        -H "Content-Type: application/json" \
+        -H "X-Emby-Authorization: MediaBrowser Client=\"Control\", Device=\"Phone\", DeviceId=\"ctrl-mobile\", Version=\"1.0\"" \
+        -d "{\"Username\": \"$USERNAME\", \"Pw\": \"$PASSWORD\"}" 2>/dev/null \
+        | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null
+}
+
+show_status() {
+    echo ""
+    echo "=== Jellyfin Status ==="
+
+    # Server
+    if curl -s -o /dev/null --max-time 3 "$SERVER/web/index.html" 2>/dev/null; then
+        echo "  Server:    RUNNING"
+    else
+        echo "  Server:    STOPPED"
+    fi
+
+    # Drive
+    DRIVE_PATH=""
+    for candidate in ~/storage/external-1 ~/storage/usb; do
+        if [ -d "$candidate/All Movies" ]; then
+            DRIVE_PATH="$candidate"
+            break
+        fi
+    done
+    if [ -z "$DRIVE_PATH" ]; then
+        for vol in /storage/*; do
+            [ "$vol" = "/storage/emulated" ] && continue
+            [ "$vol" = "/storage/self" ] && continue
+            if [ -d "$vol/All Movies" ]; then
+                DRIVE_PATH="$vol"
+                break
+            fi
+        done
+    fi
+    if [ -n "$DRIVE_PATH" ]; then
+        echo "  Drive:     CONNECTED ($DRIVE_PATH)"
+    else
+        echo "  Drive:     NOT FOUND"
+    fi
+
+    # Wake lock
+    if cat /proc/wakelocks 2>/dev/null | grep -q "termux" 2>/dev/null; then
+        echo "  Wake lock: ACTIVE"
+    else
+        echo "  Wake lock: (check Termux notification)"
+    fi
+
+    # WiFi IP
+    PHONE_IP=$(ip addr show wlan0 2>/dev/null | grep 'inet ' | awk '{print $2}' | cut -d/ -f1 | head -1)
+    if [ -n "$PHONE_IP" ]; then
+        echo "  WiFi IP:   $PHONE_IP"
+        echo "  URL:       http://$PHONE_IP:8096"
+    else
+        echo "  WiFi:      NOT CONNECTED"
+    fi
+
+    echo ""
+}
+
+scan_library() {
+    echo ""
+    TOKEN=$(get_token)
+    if [ -z "$TOKEN" ]; then
+        echo "  Could not authenticate. Is the server running?"
+        return
+    fi
+    curl -s -X POST "$SERVER/Library/Refresh" -H "X-Emby-Token: $TOKEN"
+    echo "  Library scan triggered."
+    echo ""
+}
+
+stop_server() {
+    echo ""
+    TOKEN=$(get_token)
+    if [ -n "$TOKEN" ]; then
+        curl -s --max-time 5 -X POST "$SERVER/System/Shutdown" -H "X-Emby-Token: $TOKEN" 2>/dev/null
+        echo "  Shutdown signal sent."
+    fi
+    sleep 2
+
+    # Kill proot Jellyfin processes
+    pkill -f "proot.*debian.*jellyfin" 2>/dev/null
+    proot-distro login debian -- pkill -f "jellyfin-server" 2>/dev/null
+
+    # Release wake lock
+    termux-wake-unlock 2>/dev/null
+
+    # Remove notification
+    termux-notification-remove jellyfin-running 2>/dev/null
+
+    echo "  Jellyfin stopped. Wake lock released."
+    echo ""
+}
+
+show_url() {
+    echo ""
+    PHONE_IP=$(ip addr show wlan0 2>/dev/null | grep 'inet ' | awk '{print $2}' | cut -d/ -f1 | head -1)
+    echo "  On this phone:    http://localhost:8096"
+    if [ -n "$PHONE_IP" ]; then
+        echo "  On WiFi network:  http://$PHONE_IP:8096"
+    fi
+    echo ""
+    echo "  Open in browser:  termux-open-url http://localhost:8096"
+    echo ""
+}
+
+view_log() {
+    echo ""
+    echo "=== Last 30 lines of log ==="
+    tail -30 "$HOME/.jellyfin-launcher.log" 2>/dev/null || echo "  No log file found."
+    echo ""
+}
+
+while true; do
+    echo "┌──────────────────────────────┐"
+    echo "│     Jellyfin Control         │"
+    echo "├──────────────────────────────┤"
+    echo "│  1. Show Status              │"
+    echo "│  2. Show Server URL          │"
+    echo "│  3. Scan Library             │"
+    echo "│  4. Start Server             │"
+    echo "│  5. Stop Server              │"
+    echo "│  6. View Log                 │"
+    echo "│  7. Open in Browser          │"
+    echo "│  q. Quit                     │"
+    echo "└──────────────────────────────┘"
+    printf "  Choose: "
+    read -r choice
+
+    case "$choice" in
+        1) show_status ;;
+        2) show_url ;;
+        3) scan_library ;;
+        4) echo ""; ~/termux-jellyfin-start & echo "  Server starting in background..."; echo "" ;;
+        5) stop_server ;;
+        6) view_log ;;
+        7) termux-open-url "http://localhost:8096" 2>/dev/null || echo "  Open http://localhost:8096 in your browser" ;;
+        q|Q) echo ""; break ;;
+        *) echo "  Invalid choice." ;;
+    esac
+done
