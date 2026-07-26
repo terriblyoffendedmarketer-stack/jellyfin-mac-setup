@@ -32,24 +32,17 @@ sleep 2
 # Jellyfin packages need Bookworm (Debian 12) — Trixie (13) has incompatible libraries.
 echo "[3/7] Installing Debian Bookworm in proot-distro..."
 
-# Detect which alias is installed (could be "debian" or "debian:bookworm")
-DISTRO=""
-for alias in debian:bookworm debian; do
-    if proot-distro list 2>/dev/null | grep -q "${alias}.*Installed"; then
-        DISTRO="$alias"
-        echo "  Debian already installed as '$DISTRO'."
-        break
-    fi
-done
-
-if [ -z "$DISTRO" ]; then
+# proot-distro install debian:bookworm registers under the alias "debian",
+# so we always login with "debian" regardless of which tag was used to install.
+if proot-distro list 2>/dev/null | grep -q "debian.*Installed"; then
+    echo "  Debian already installed."
+else
     proot-distro install debian:bookworm
-    DISTRO="debian:bookworm"
 fi
 
 # 4. Install Jellyfin inside Debian
 echo "[4/7] Installing Jellyfin inside Debian Bookworm..."
-proot-distro login "$DISTRO" -- bash -c '
+proot-distro login debian -- bash -c '
 set -e
 
 # Install prerequisites
@@ -87,7 +80,7 @@ chmod +x ~/termux-jellyfin-start ~/termux-jellyfin-wakelock.sh ~/termux-jellyfin
 # 6. Install web customizations inside Debian
 echo "[6/7] Installing web customizations..."
 PARENT_DIR="$SCRIPT_DIR/.."
-proot-distro login "$DISTRO" -- bash -c '
+proot-distro login debian -- bash -c '
 WEB_DIR="/usr/share/jellyfin/jellyfin-web"
 if [ -d "$WEB_DIR" ]; then
     echo "  Web directory found at $WEB_DIR"
@@ -98,9 +91,7 @@ fi
 
 if [ -f "$PARENT_DIR/custom-overlay.js" ] && [ -f "$PARENT_DIR/themed-browse.js" ]; then
     # Copy JS files into the proot filesystem
-    # Rootfs directory name matches the distro alias with : replaced by _
-    DISTRO_DIR=$(echo "$DISTRO" | tr ':' '_')
-    PROOT_HOME="$PREFIX/var/lib/proot-distro/installed-rootfs/$DISTRO_DIR"
+    PROOT_HOME="$PREFIX/var/lib/proot-distro/installed-rootfs/debian"
     PROOT_WEB="$PROOT_HOME/usr/share/jellyfin/jellyfin-web"
     if [ -d "$PROOT_WEB" ]; then
         cp "$PARENT_DIR/custom-overlay.js" "$PROOT_WEB/"

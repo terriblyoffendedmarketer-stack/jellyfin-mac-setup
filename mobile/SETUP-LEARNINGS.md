@@ -91,7 +91,7 @@ This creates the `~/storage/` symlinks. Without it, Termux can't see the drive.
 **What worked:** Inside proot, the drive is bind-mounted at `/Volumes/Backup Plus` — the same path Mac uses. This means library paths like `/Volumes/Backup Plus/All Movies` work on both platforms without reconfiguring Jellyfin's library settings.
 
 ```bash
-proot-distro login debian:bookworm \
+proot-distro login debian \
     --bind "$DRIVE_PATH:/Volumes/Backup Plus" \
     -- bash -c '...'
 ```
@@ -119,13 +119,23 @@ The Google Play Store version of Termux is outdated and broken. Always install f
 
 ---
 
-## 10. proot rootfs directory naming
+## 10. proot-distro install vs login alias
 
-When using `debian:bookworm`, proot-distro stores the rootfs at:
+`proot-distro install debian:bookworm` registers the distro under the alias **`debian`** — the `:bookworm` is a tag that selects which version to install, not part of the login name. Always use `proot-distro login debian` for all subsequent commands. Using `debian:bookworm` as a login alias fails with "container name is not valid."
+
+The rootfs lives at `$PREFIX/var/lib/proot-distro/installed-rootfs/debian/`.
+
+---
+
+## 11. Run apt full-upgrade before the installer
+
+On a fresh or stale Termux, `pkg update` can fail because curl's SSL dependency is broken (`libngtcp2_crypto_ossl.so` can't find `SSL_set_quic_tls_transport_params`). Fix:
+
+```bash
+apt update && apt full-upgrade -y
 ```
-$PREFIX/var/lib/proot-distro/installed-rootfs/debian_bookworm/
-```
-(colon replaced with underscore). The installer accounts for this when copying web customization files.
+
+Then re-run the installer. When prompted about config files (openssl.cnf, sources.list), press **Y** to take the maintainer's version.
 
 ---
 
@@ -133,7 +143,8 @@ $PREFIX/var/lib/proot-distro/installed-rootfs/debian_bookworm/
 
 ```bash
 # In Termux on Android:
-pkg update -y && pkg install -y wget unzip
+apt update && apt full-upgrade -y
+pkg install -y wget unzip
 
 wget https://github.com/terriblyoffendedmarketer-stack/jellyfin-mac-setup/archive/refs/heads/master.zip -O jf.zip
 unzip jf.zip
