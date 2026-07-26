@@ -12,6 +12,19 @@ LOG="$HOME/.jellyfin-launcher.log"
 DRIVE_MARKER="All Movies"
 PROOT_MOUNT="/Volumes/Backup Plus"
 
+# Detect which Debian alias is installed (debian:bookworm or debian)
+DISTRO=""
+for alias in debian:bookworm debian; do
+    if proot-distro list 2>/dev/null | grep -q "${alias}.*Installed"; then
+        DISTRO="$alias"
+        break
+    fi
+done
+if [ -z "$DISTRO" ]; then
+    echo "ERROR: No Debian proot-distro found. Run the installer first."
+    exit 1
+fi
+
 log() { echo "$(date '+%H:%M:%S') $1" >> "$LOG"; }
 
 # Keep only last 200 lines of log
@@ -78,9 +91,9 @@ fi
 termux-wake-lock 2>/dev/null && log "Wake lock acquired" || log "WARNING: Could not acquire wake lock (install Termux:API)"
 
 # --- Kill any previous Jellyfin session ---
-if proot-distro login debian -- pgrep -f "jellyfin-server" > /dev/null 2>&1; then
+if proot-distro login "$DISTRO" -- pgrep -f "jellyfin-server" > /dev/null 2>&1; then
     log "Stopping previous Jellyfin instance"
-    proot-distro login debian -- pkill -f "jellyfin-server" 2>/dev/null
+    proot-distro login "$DISTRO" -- pkill -f "jellyfin-server" 2>/dev/null
     sleep 2
 fi
 
@@ -90,7 +103,7 @@ echo "Starting Jellyfin server..."
 # Mount the drive at /Volumes/Backup Plus inside proot so all paths match Mac.
 # This means library paths like /Volumes/Backup Plus/All Movies work on both.
 # Also mount the shared data/config directories to the standard Jellyfin locations.
-proot-distro login debian \
+proot-distro login "$DISTRO" \
     --bind "$DRIVE_PATH:$PROOT_MOUNT" \
     -- bash -c '
     DRIVE="'"$PROOT_MOUNT"'"
@@ -162,7 +175,7 @@ log "Watchdog started (PID $WATCHDOG_PID)"
         TRIES=$((TRIES + 1))
         if [ $TRIES -ge 90 ]; then
             log "ERROR: Jellyfin server not responding after 3 minutes"
-            echo "ERROR: Jellyfin failed to start. Check: proot-distro login debian -- cat /var/log/jellyfin/stdout.log"
+            echo "ERROR: Jellyfin failed to start. Check: proot-distro login $DISTRO -- cat /var/log/jellyfin/stdout.log"
             exit 1
         fi
         sleep 2
