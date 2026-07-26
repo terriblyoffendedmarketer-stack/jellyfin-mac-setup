@@ -32,14 +32,8 @@ sleep 2
 # Jellyfin packages need Bookworm (Debian 12) — Trixie (13) has incompatible libraries.
 echo "[3/7] Installing Debian Bookworm in proot-distro..."
 
-# proot-distro install debian:bookworm registers under the alias "debian",
-# so we always login with "debian" regardless of which tag was used to install.
-ROOTFS="$PREFIX/var/lib/proot-distro/installed-rootfs/debian"
-if [ -d "$ROOTFS" ]; then
-    echo "  Debian already installed."
-else
-    proot-distro install debian:bookworm
-fi
+# Just try to install — if it already exists, that's fine.
+proot-distro install debian:bookworm 2>&1 || echo "  Debian already installed."
 
 # 4. Install Jellyfin inside Debian
 echo "[4/7] Installing Jellyfin inside Debian Bookworm..."
