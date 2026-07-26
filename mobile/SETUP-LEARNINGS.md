@@ -127,18 +127,15 @@ The rootfs lives at `$PREFIX/var/lib/proot-distro/installed-rootfs/debian/`.
 
 ---
 
-## 11. Don't use `proot-distro list | grep` for detection
+## 11. Don't try to detect if Debian is installed — just try installing
 
-`proot-distro list` output format varies across versions — grepping for `debian.*Installed` is unreliable. Instead, check whether the rootfs directory exists:
+Both `proot-distro list | grep` and `$PREFIX` rootfs directory checks are fragile (`$PREFIX` may be unset, list output format varies). The bulletproof approach: just try to install and let the error pass:
 
 ```bash
-ROOTFS="$PREFIX/var/lib/proot-distro/installed-rootfs/debian"
-if [ -d "$ROOTFS" ]; then
-    echo "Already installed"
-fi
+proot-distro install debian:bookworm 2>&1 || echo "  Already installed."
 ```
 
-This is always reliable regardless of proot-distro version.
+The `|| echo` prevents `set -e` from killing the script when the install fails because the container already exists.
 
 ---
 

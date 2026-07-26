@@ -12,8 +12,7 @@ LOG="$HOME/.jellyfin-launcher.log"
 DRIVE_MARKER="All Movies"
 PROOT_MOUNT="/Volumes/Backup Plus"
 
-ROOTFS="$PREFIX/var/lib/proot-distro/installed-rootfs/debian"
-if [ ! -d "$ROOTFS" ]; then
+if ! proot-distro login debian -- true 2>/dev/null; then
     echo "ERROR: No Debian proot-distro found. Run the installer first."
     exit 1
 fi
