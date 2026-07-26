@@ -6,15 +6,6 @@ SERVER="http://localhost:8096"
 USERNAME="pjdruck"
 PASSWORD="8544"
 
-# Detect which Debian alias is installed
-DISTRO=""
-for alias in debian:bookworm debian; do
-    if proot-distro list 2>/dev/null | grep -q "${alias}.*Installed"; then
-        DISTRO="$alias"
-        break
-    fi
-done
-DISTRO="${DISTRO:-debian}"
 
 get_token() {
     curl -s --max-time 5 -X POST "$SERVER/Users/AuthenticateByName" \
@@ -101,7 +92,7 @@ stop_server() {
 
     # Kill proot Jellyfin processes
     pkill -f "proot.*debian.*jellyfin" 2>/dev/null
-    proot-distro login "$DISTRO" -- pkill -f "jellyfin-server" 2>/dev/null
+    proot-distro login debian -- pkill -f "jellyfin-server" 2>/dev/null
 
     # Release wake lock
     termux-wake-unlock 2>/dev/null
