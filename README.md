@@ -88,8 +88,8 @@ Seagate Backup Plus (the single source of truth)
 ```
 Mac (always on / lid open)
 ├── Jellyfin.app (media server on port 8096)
-│   ├── ~/.local/share/jellyfin → symlink to drive's .jellyfin-data/
-│   └── ~/.config/jellyfin → symlink to drive's .jellyfin-config/
+│   ├── ~/Library/Application Support/jellyfin/data → symlink to drive's .jellyfin-data/
+│   └── ~/Library/Application Support/jellyfin/config → symlink to drive's .jellyfin-config/
 ├── caffeinate (prevents sleep/disk sleep while Jellyfin runs)
 ├── jellyfin-watchdog (auto-shuts down if drive disconnects)
 └── Seagate Backup Plus (USB) → /Volumes/Backup Plus
@@ -180,7 +180,7 @@ Movies are multi-tagged across collections:
 ### Shared Config (Mac + Android)
 - Jellyfin database, users, collections, watch history, and metadata live on the drive
 - `shared-config-setup.sh` migrates Mac's Jellyfin data to the drive (one-time)
-- Mac uses symlinks (`~/.local/share/jellyfin` → drive), Android points directly at the drive
+- Mac uses symlinks (`~/Library/Application Support/jellyfin/data` and `config` → drive), Android points directly at the drive
 - Drive is mounted at `/Volumes/Backup Plus` on both platforms so library paths match
 - Only one device runs Jellyfin at a time (the drive can only be plugged into one)
 - The TV's Jellyfin app connects to whichever server IP is active on the network

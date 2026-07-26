@@ -79,7 +79,7 @@ This creates the `~/storage/` symlinks. Without it, Termux can't see the drive.
 
 **What worked:** Storing Jellyfin's database on the drive itself (`.jellyfin-data/`, `.jellyfin-config/`) so both Mac and Android use the same users, collections, watch history, and metadata.
 
-- Mac: symlinks `~/.local/share/jellyfin` → `/Volumes/Backup Plus/.jellyfin-data`
+- Mac: symlinks `~/Library/Application Support/jellyfin/data` → `/Volumes/Backup Plus/.jellyfin-data`
 - Android: proot bind-mounts the drive at `/Volumes/Backup Plus` so Jellyfin sees the same absolute paths
 
 **Important:** Run `shared-config-setup.sh` on Mac first (one time) to migrate existing data to the drive. Without this, Mac and Android would have separate databases.
