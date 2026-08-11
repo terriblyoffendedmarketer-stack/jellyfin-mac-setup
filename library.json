@@ -1,0 +1,6271 @@
+{
+  "synced_at": "2026-08-11T17:21:30Z",
+  "total_count": 509,
+  "items": [
+    {
+      "name": "(500) Days of Summer",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.301,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/500 Days of Summer (HD)/(500) Days Of Summer.mp4",
+      "jellyfin_id": "f037fe5e8b62456279b5a60ca0147104"
+    },
+    {
+      "name": "5 Centimeters per Second",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Romance",
+        "Drama"
+      ],
+      "rating": 7.29,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Byousoku 5 Centimeter (Dub)/Byousoku 5 Centimeter (Dub).mp4",
+      "jellyfin_id": "7a4a51208a52c804807b72db6be6003a"
+    },
+    {
+      "name": "12 Angry Men",
+      "year": 1957,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.561,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/12 Angry Men (1957)/12.Angry.Men.1957.720p.BRrip.x264.YIFY.mp4",
+      "jellyfin_id": "e6a0c41455541f2b76f3d5b831e7561a"
+    },
+    {
+      "name": "12 Years a Slave",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History"
+      ],
+      "rating": 7.931,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/12 Years a Slave/12 Years a Slave.mp4",
+      "jellyfin_id": "6f2c00a7799b47a858ae747a21166149"
+    },
+    {
+      "name": "Aamis",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.7,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Aamis (2019)/Aamis (2019) Assamese.mkv",
+      "jellyfin_id": "3ba06a9fa2cc6cd261928cb0e2111c5a"
+    },
+    {
+      "name": "Action Drama Cut (Kannada)",
+      "year": 20200804,
+      "type": "Movie",
+      "genres": [
+        "Film & Animation"
+      ],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Action Drama Cut (Kannada)/PSBT India - Action... Drama... Cut...mkv",
+      "jellyfin_id": "9f9cb82b500ecc5891945552c792ac1e"
+    },
+    {
+      "name": "Adaptation.",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.334,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Adaptation (2002) 1080p/Adaptation.2002.1080p.BluRay.H264.AAC-RARBG.mp4",
+      "jellyfin_id": "cd4026fd0ca7f629354d91ca212d6e8e"
+    },
+    {
+      "name": "The Adjustment Bureau",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Adjustment Bureau (2011)/The.Adjustment.Bureau.2011.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "70109e232f2ef22ca9fa360f482a3f87"
+    },
+    {
+      "name": "Airplane!",
+      "year": 1980,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 7.308,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Airplane/Airplane.avi",
+      "jellyfin_id": "d9845d50b46d68c2c3f5349046605406"
+    },
+    {
+      "name": "All About My Wife",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "rating": 6.6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/All About My Wife/All About My Wife.mp4",
+      "jellyfin_id": "10d55030f72e48c1c13fbd3f35a82578"
+    },
+    {
+      "name": "Amagi Brillant Park",
+      "year": null,
+      "type": "Series",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/TV/Amagi Brillant Park",
+      "jellyfin_id": "b724b361550f5316bd6ef2f095430c66"
+    },
+    {
+      "name": "American History X",
+      "year": 1998,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.327,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/American History X/American History X.mp4",
+      "jellyfin_id": "61aa375785c82ac87efa6e22b53e7ec5"
+    },
+    {
+      "name": "Anand",
+      "year": 1971,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.928,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Anand (1971)/Anand (1971).mp4",
+      "jellyfin_id": "71e2abdfa32614b3cc79744b8448f35e"
+    },
+    {
+      "name": "Andrei Rublev",
+      "year": 1966,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History"
+      ],
+      "rating": 8,
+      "path": "/Volumes/Backup Plus/All Movies/Andrei Tarkovsky/Andrei Rublev (1966)/Andrei.Rublev.1966.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "d234e916b975f8c085497fb875b19090"
+    },
+    {
+      "name": "Antarctica: A Year on Ice",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Documentary",
+        "Drama"
+      ],
+      "rating": 7.3,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Antarctica A Year on Ice (2013)/Antarctica.A.Year.on.Ice.2013.1080p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "90afdb60c6121a7f9468093402d70876"
+    },
+    {
+      "name": "Apocalypse Now",
+      "year": 1979,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "War"
+      ],
+      "rating": 8.268,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Apocalypse Now (1979)/Apocalypse.Now (1979).mp4",
+      "jellyfin_id": "37d0c1a77dab3cdef62f303782264b08"
+    },
+    {
+      "name": "Apollo 18",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 5.316,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Apollo 18 (2011)/Apollo 18 (2011)  m-HD  720p  Hindi  Eng  BHATTI87.mkv",
+      "jellyfin_id": "57f6566804020ac8e9bd52d87227a036"
+    },
+    {
+      "name": "Argo",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.287,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Argo (2012)/Argo.2012.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "9ae53042fe2ac267ecdb9b6efea2b5cf"
+    },
+    {
+      "name": "Attack On Titan S2",
+      "year": null,
+      "type": "Series",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/TV/Attack On Titan S2-S4",
+      "jellyfin_id": "7f91d5b7c63e5ea84e8f2388e2bcb008"
+    },
+    {
+      "name": "Baraka",
+      "year": 1992,
+      "type": "Movie",
+      "genres": [
+        "Documentary"
+      ],
+      "rating": 8.229,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Baraka (1992) [BluRay] [1080p] [YTS.AM]/Baraka.1992.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "cdf2ecf8b3c4c88c5cd3fc6779703ba7"
+    },
+    {
+      "name": "Barking Dogs Never Bite",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 6.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Barking Dogs Never Bite (2000)/Barking.Dogs.Never.Bite.2000.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "d6390e922868d1b739ffadec7437620a"
+    },
+    {
+      "name": "Be with You",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 8.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Be With You (2018)/Be.With.You.2018.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "e65b29034ecbf9066260dce46d1fc77a"
+    },
+    {
+      "name": "The Bear",
+      "year": 2022,
+      "type": "Series",
+      "genres": [
+        "Drama",
+        "Comedy"
+      ],
+      "rating": 8.14,
+      "path": "/Volumes/Backup Plus/TV/The Bear",
+      "jellyfin_id": "0ec909f4b51a670b83fdb3f647edd40d"
+    },
+    {
+      "name": "Beasts Clinging to the Straw",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 7.066,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Beasts That Cling To The Straw (2020)/Beasts.That.Cling.To.The.Straw.2020.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "5afeabc228aed68ab2c8fde51a7022ad"
+    },
+    {
+      "name": "Beauty Inside",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.652,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Beauty Inside/Beauty Inside.mp4",
+      "jellyfin_id": "0fd1ee52b036832bdb15cd05164af1f7"
+    },
+    {
+      "name": "Before Midnight",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.497,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Before Midnight (2013)/Before.Midnight.2013.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "04f68c9272e6812d2a1e23599cabac53"
+    },
+    {
+      "name": "Before Sunrise",
+      "year": 1995,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.974,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Before Sunrise (1995)/Before.Sunrise.1995.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "2a9113752fc137472566f694ca4082e6"
+    },
+    {
+      "name": "Before Sunset",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.809,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Before Sunset (2004)/Before.Sunset.2004.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "008fbacf266e1c83d8c2eea89d2a516a"
+    },
+    {
+      "name": "Begin Again",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Music",
+        "Romance"
+      ],
+      "rating": 7.233,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Begin Again (2013)/Begin.Again.2013.HDRip.XviD.AC3-EVO.avi",
+      "jellyfin_id": "a0da43c8274f5679f0b7809cdf9897b2"
+    },
+    {
+      "name": "Being John Malkovich",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.422,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Being John Malkovich (1999)/Being John Malkovich 1999 Criterion 1080p BluRay DD5.1 HEVC x265-RMTeam.mkv",
+      "jellyfin_id": "27346771ea168bbdda468154723c8dca"
+    },
+    {
+      "name": "Bhoothakaalam",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Thriller",
+        "Mystery",
+        "Horror"
+      ],
+      "rating": 6.9,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Bhoothakaalam (2022)/Bhoothakaalam.mp4",
+      "jellyfin_id": "ab780e03fddd34b6e064be8535fd8928"
+    },
+    {
+      "name": "Big Fish",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.757,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Big Fish (2003)/Big Fish (2003).720p.700mb.mkv",
+      "jellyfin_id": "ac4dc39584ff7b73052683b8a54aa362"
+    },
+    {
+      "name": "Billy Elliot",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Music"
+      ],
+      "rating": 7.6,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Billy Elliot (2000)/Billy Elliot (2000) [720p] [Deklok].mp4",
+      "jellyfin_id": "2e4d94e5d460a8c14142ef8f72e94974"
+    },
+    {
+      "name": "Birdman or (The Unexpected Virtue of Ignorance)",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.441,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Birdman or (The Unexpected Virtue of Ignorance)/Birdman or (The Unexpected Virtue of Ignorance).mp4",
+      "jellyfin_id": "9e3fc691e8986d5ba531e11ee570221d"
+    },
+    {
+      "name": "A Bittersweet Life",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.436,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Bittersweet Life (2005)/A.Bittersweet.Life.2005.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "77a1567cd1cedc55131a26de02d4fff6"
+    },
+    {
+      "name": "Black",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "History",
+        "War"
+      ],
+      "rating": 7.393,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Black (2005)/Black.2005.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "5e9bac104d51e5b04100aaf93532e478"
+    },
+    {
+      "name": "BlacKkKlansman",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime",
+        "Drama",
+        "History"
+      ],
+      "rating": 7.491,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/BlacKkKlansman (2018)/BlacKkKlansman.2018.720p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "65cd37a7888aa575e2202fe233f0d784"
+    },
+    {
+      "name": "Blade of the Immortal",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 6.691,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Blade Of The Immortal (2017)/Blade.Of.The.Immortal (2017).mp4",
+      "jellyfin_id": "1c326223983d6dd8485a987d57194475"
+    },
+    {
+      "name": "Blade Runner 2049",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Science Fiction"
+      ],
+      "rating": 7.594,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Blade Runner 2049 (2017)/Blade.Runner.2049.2017.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "1583c3363ce3aa1f43ac5ee6562e3db4"
+    },
+    {
+      "name": "Blue Is the Warmest Colour",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.071,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Blue Is the Warmest Colour (2013)/Blue.Is.the.Warmest.Color.2013.SUBBED.WORKPRiNT.X264.AC3-PLAYNOW.mkv",
+      "jellyfin_id": "b725b27de0ae80d5ecb3bf28f6963d22"
+    },
+    {
+      "name": "Bob Biswas",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 6.524,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Bob Biswas (2021)/Bob Biswas (2021.mkv",
+      "jellyfin_id": "17178171a7b10ca14337ae4491796e6a"
+    },
+    {
+      "name": "Boiling Point",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.2,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Boiling.Point.2021.1080p/Boiling.Point.2021.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv",
+      "jellyfin_id": "954c6161fbd0aff47e7b1a4cc21afffa"
+    },
+    {
+      "name": "Bonnie and Clyde",
+      "year": 1967,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.494,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Bonnie And Clyde (1967) 1080p/Bonnie.And.Clyde.1967.1080p.BluRay.H264.AAC-RARBG.mp4",
+      "jellyfin_id": "ec9cd37d82439012df8f29b3e171eab5"
+    },
+    {
+      "name": "Bonus Malus",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Memories.[1995]-Magnetic.Rose+Stink.Bomb+Cannon.Fodder-.x264.DVDrip.(Anime)/BONUS/+Memories of Memories+ (making-of featurette).mp4",
+      "jellyfin_id": "707cb7436d9949a8fdc845cdc773add6"
+    },
+    {
+      "name": "The Boondock Saints",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.252,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Boondock Saints (1999)/The.Boondock.Saints.1999.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "29d801ed651efa83a7b976e80e351f70"
+    },
+    {
+      "name": "Boyhood",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.493,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Boyhood (2014)/Boyhood.mp4",
+      "jellyfin_id": "05bdab6f2c44cff7287a84939d35fcb8"
+    },
+    {
+      "name": "A Brand New Life",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.281,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Brand New Life (2009)/A.Brand.New.Life.2009.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "fed04a8d96dac5015545e139190d8035"
+    },
+    {
+      "name": "The Breakfast Club",
+      "year": 1985,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.719,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Breakfast Club (1985)/The Breakfast Club 1985 Criterion 1080p BluRay HEVC x265 BONE.mkv",
+      "jellyfin_id": "b909a145aebfb1b8285a85b4e2eef5a2"
+    },
+    {
+      "name": "Breathless",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.1,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Breathless (2008)/Breathless (2008).mp4",
+      "jellyfin_id": "addbda3baa11294d6e93c560773b4534"
+    },
+    {
+      "name": "Broker",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.158,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Broker (2022)/Broker (2022).mp4",
+      "jellyfin_id": "1859c74a93bce7434f2a63fb4100bbec"
+    },
+    {
+      "name": "Burning",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 7.375,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Burning (2018)/Burning.2018.720p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "bb3659d64b301e3feaf05ea95ffdc349"
+    },
+    {
+      "name": "Call Me by Your Name",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 8.086,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Call Me By Your Name (2017)/Call.Me.By.Your.Name.2017.720p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "d6f5612515efe56a4d93b3c69c251dae"
+    },
+    {
+      "name": "Canola",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.895,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Canola (2016)/Canola (2016).mkv",
+      "jellyfin_id": "9de273e2086167dd7dbeb040cc394768"
+    },
+    {
+      "name": "Cast Away",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Drama"
+      ],
+      "rating": 7.665,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Castaway (2000)/Cast.Away.2000.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "e610a76372cf5dc65b05cdc010d4ce75"
+    },
+    {
+      "name": "Castaway on the Moon",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.905,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Castaway On The Moon (2009)/Castaway.On.The.Moon.2009.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "c5d69b8eeb566681e8b775542f465298"
+    },
+    {
+      "name": "The Chaser",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.767,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Chaser (2008)/The.Chaser.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "257eafbc8647efdb19443f4d5e23c041"
+    },
+    {
+      "name": "Cheer Up, Mr. Lee",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Family"
+      ],
+      "rating": 8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Cheer up Mr. Lee (2019) Lee Gae-byok/Cheer up Mr. Lee (2019) Lee Gae-byok.mp4",
+      "jellyfin_id": "f7477de5e5a86277c6247d575ceea6d4"
+    },
+    {
+      "name": "Chihayafuru",
+      "year": 2011,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Drama"
+      ],
+      "rating": 7.597,
+      "path": "/Volumes/Backup Plus/TV/Chihayafuru",
+      "jellyfin_id": "6a522e2e388cc226de7ef98ab4b012ba"
+    },
+    {
+      "name": "Children of Men",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Science Fiction",
+        "Thriller",
+        "Action"
+      ],
+      "rating": 7.611,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Children of Men/Children of Men {2006}.mp4",
+      "jellyfin_id": "6a65dc18a035874ccbec4aff5eb131c5"
+    },
+    {
+      "name": "Chintu Ka Birthday",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.913,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Chintu Ka Birthday (2020)/Chintu.Ka.Birthday.2020.1080p.Zee5.WEB-DL.AAC.x264.Esub-BonsaiHD.mkv",
+      "jellyfin_id": "3e90a010c5e2c240858c68aa1b9789e8"
+    },
+    {
+      "name": "Chungking Express",
+      "year": 1994,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.967,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Chungking Express (1994)/Chungking.Express.1994.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "165ab32cb9bed779cd5a87da23b6ff01"
+    },
+    {
+      "name": "Citizen X",
+      "year": 1995,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.192,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Citizen X [1995] HBO Film About Soviet Serial Killer/Citizen X [2005].mkv",
+      "jellyfin_id": "15961af7855b124780adda1bdc0b8f25"
+    },
+    {
+      "name": "City Lights",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Thriller",
+        "Drama"
+      ],
+      "rating": 7.029,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/CityLights (2014)/CityLights.2014.720p.DVDRiP.999MB.ShAaNiG.com.mkv",
+      "jellyfin_id": "9962eb9e3cd12d4adf4b38894f246e59"
+    },
+    {
+      "name": "City of God",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 8.429,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/City of God (2002)/City of God[2002]DvDrip[Port]-FXG.avi",
+      "jellyfin_id": "a544cd1c26ac6730427a955f1ee9ab4a"
+    },
+    {
+      "name": "Claire's Camera",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 6.28,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Claire's Camera (2017)/Claire's Camera (2017).mp4",
+      "jellyfin_id": "ba21219c5756e51b8004f49bcbf87277"
+    },
+    {
+      "name": "The Classic",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Music"
+      ],
+      "rating": 7.61,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Classic (2002)/The Classic.mp4",
+      "jellyfin_id": "d112f5f6816ed15af7376564a8de892a"
+    },
+    {
+      "name": "A Clockwork Orange",
+      "year": 1971,
+      "type": "Movie",
+      "genres": [
+        "Science Fiction",
+        "Crime"
+      ],
+      "rating": 8.175,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/A Clockwork Orange/A Clockwork Orange.mp4",
+      "jellyfin_id": "b8739c53fa0ad5a29efd579af540cf98"
+    },
+    {
+      "name": "Close Encounters of the Third Kind",
+      "year": 1977,
+      "type": "Movie",
+      "genres": [
+        "Science Fiction",
+        "Drama"
+      ],
+      "rating": 7.359,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Close Encounters of the Third Kind (1977)/Close.Encounters.of.the.Third.Kind.720p.BrRip.YIFY.mp4",
+      "jellyfin_id": "4c75a59b0e6e99c2acb0a2dd1de6117a"
+    },
+    {
+      "name": "Cloud Atlas",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Science Fiction"
+      ],
+      "rating": 6.896,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Cloud Atlas (2012)/Cloud.Atlas.2012.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "df4db60f28fdf1eaaf4c1de9cedbbc50"
+    },
+    {
+      "name": "Cloverfield",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Science Fiction"
+      ],
+      "rating": 6.72,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Cloverfield (2008) [1080p]/Cloverfield.2008.1080p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "b9e231ffd4ffdb6d9f3da555251ad52a"
+    },
+    {
+      "name": "Coherence",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Thriller",
+        "Science Fiction"
+      ],
+      "rating": 7.209,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Coherence (2013) [1080p]/Coherence.2013.1080p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "72799bd06a1d00fea9a97cfc76f08c8f"
+    },
+    {
+      "name": "Cold Fish",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Crime",
+        "Horror"
+      ],
+      "rating": 6.905,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Cold Fish (2010) [1080p] [BluRay] [5.1] [YTS.MX]/Cold.Fish.2010.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "bad77d9f400fb3df8be08637fdeed18f"
+    },
+    {
+      "name": "Coming Home",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.274,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Gui lai. Coming Home (2014)/Coming Home - Gui Lai (2014).mp4",
+      "jellyfin_id": "d8404c3ee59917656b26baadfe133185"
+    },
+    {
+      "name": "Coming Out",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Horror"
+      ],
+      "rating": 5.864,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Coming Out (2000)/Coming Out (2001).mp4",
+      "jellyfin_id": "ff9968cc5406e316d91eb2f852a7bd60"
+    },
+    {
+      "name": "Coming Soon",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Thriller"
+      ],
+      "rating": 6.324,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Coming Soon (2008)/Coming.Soon.2008.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "6bc36c134e45cd8ab20dc2b00255c5b8"
+    },
+    {
+      "name": "Confessions",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 7.581,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Confessions (2010)/Confessions.2010.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "5547cffc3103cf0dd0aa57e6659b6595"
+    },
+    {
+      "name": "Coraline",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Family",
+        "Fantasy"
+      ],
+      "rating": 7.924,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Coraline (2009)/Coraline.2009.BluRay.720p.x264.YIFY.mp4",
+      "jellyfin_id": "b2a630bd8f7a90c03e5fcb576fa4ccfb"
+    },
+    {
+      "name": "Court",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.93,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Court (2014)/Court.2014.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "04479db149ff77b795350b792dfd9d7b"
+    },
+    {
+      "name": "Cowboy Bebop",
+      "year": 1998,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Action & Adventure",
+        "Sci-Fi & Fantasy",
+        "Western"
+      ],
+      "rating": 8.499,
+      "path": "/Volumes/Backup Plus/TV/Cowboy Bebop",
+      "jellyfin_id": "80192378883976bea7b30482b06a5737"
+    },
+    {
+      "name": "Crazy Romance",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "rating": 6.802,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Crazy Romance (2019)/Crazy Romance.mp4",
+      "jellyfin_id": "157436b6e66cb18d82b75d5efdd57092"
+    },
+    {
+      "name": "Crouching Tiger, Hidden Dragon",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Action",
+        "Romance"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Crouching Tiger Hidden Dragon (2000)/Crouching Tiger Hidden Dragon (2000) 720p BRRiP x264 AAC [Team Nanban].mp4",
+      "jellyfin_id": "200ea46947e5c2650673c8bb976b303f"
+    },
+    {
+      "name": "Cure",
+      "year": 1997,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Horror",
+        "Mystery"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Cure (1997)/Cure.1997.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "a209fda9673617a689e8e8d7566ef1e2"
+    },
+    {
+      "name": "Daisy Part 1 of 2",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Daisy (2009)/Daisy Part 1 of 2.mp4",
+      "jellyfin_id": "625509b2aedf0ab9fc15de2a0c9b58d7"
+    },
+    {
+      "name": "Daisy Part 2 of 2",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Daisy (2009)/Daisy Part 2 of 2.mp4",
+      "jellyfin_id": "829f1742e5f7893dde9dd78bc8c2711a"
+    },
+    {
+      "name": "The Darjeeling Limited",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Comedy"
+      ],
+      "rating": 7.1,
+      "path": "/Volumes/Backup Plus/All Movies/Wes Anderson/The Darjeeling Limited (2007)/The.Darjeeling.Limited.2007.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "6c96a0f400b2c5864ec560db270c1c8e"
+    },
+    {
+      "name": "Dark Figure of Crime",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 6.611,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Dark Figure Of Crime (2018)/Dark.Figure.Of.Crime.2018.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "7c9c906d2d50378f4b7b741a09bb0dee"
+    },
+    {
+      "name": "The Day I Died: Unclosed Case",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Day I Died Unclosed Case/The Day I Died Unclosed Case.mkv",
+      "jellyfin_id": "7b16dd4b08b52eb4a1a0d5e6dc9dffa1"
+    },
+    {
+      "name": "Days of Being Wild",
+      "year": 1990,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.276,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Days Of Being Wild (1990)/Days.Of.Being.Wild.1990.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "ab63f5f8f7c8ee54489d3c531c4ec73c"
+    },
+    {
+      "name": "Dead Poets Society",
+      "year": 1989,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.299,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Dead Poets Society (1989)/Dead.Poets.Society.1989.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "efd1e290febbcfedad69c662e3685f99"
+    },
+    {
+      "name": "Dear John",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance",
+        "War"
+      ],
+      "rating": 6.835,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Dear John (2010)/Dear.John.2010.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "03cc66f16dc65068469d1f300ee74c9c"
+    },
+    {
+      "name": "Decision to Leave",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Mystery",
+        "Romance",
+        "Thriller"
+      ],
+      "rating": 7.325,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Decision To Leave (2022)/Decision.To.Leave.2022.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "6442c962715f1a2b594c4b6283285e3e"
+    },
+    {
+      "name": "Delhi Belly",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "rating": 7.078,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Delhi Belly 2011/Delhi Belly 2011 720p DvDRip [Dual Audio] English-Hindi CharmeLeon Silver RG.mkv",
+      "jellyfin_id": "582c967b5394722212bda2e2dd5dbb58"
+    },
+    {
+      "name": "Detachment",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.628,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Detachment (2011)/Detachment.2011.720p.BluRay.X264.YIFY.mp4",
+      "jellyfin_id": "cac9638963fddbad8d6e245070fac03e"
+    },
+    {
+      "name": "Dev.D",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.023,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Dev D (2009)/Dev.D.2009.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "fcd03f46a214f40f56b10b865ea7e3f7"
+    },
+    {
+      "name": "Diaries, Notes, and Sketches",
+      "year": 1968,
+      "type": "Movie",
+      "genres": [
+        "Documentary"
+      ],
+      "rating": 7.226,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Walden (1968) Jonas Mekas/Walden.mp4",
+      "jellyfin_id": "0b18d5bfa304484ddbf2b1796827efce"
+    },
+    {
+      "name": "Die Hard",
+      "year": 1988,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Thriller"
+      ],
+      "rating": 7.814,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Die Hard (1988)/Die.Hard.BluRay.1080p.x264.5.1.Judas.mp4",
+      "jellyfin_id": "865118a356d78f66a06c8d21a8549b8e"
+    },
+    {
+      "name": "Die Hard 2",
+      "year": 1990,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Thriller"
+      ],
+      "rating": 6.97,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Die Hard 2 Die Harder (1990)/02 Die Hard 2 Die Harder - Bruce Willis Action 1990 Eng Subs 1080p [H264-mp4].mp4",
+      "jellyfin_id": "8064b5989ca1da9f03e503476a028696"
+    },
+    {
+      "name": "Die Hard: With a Vengeance",
+      "year": 1995,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Thriller"
+      ],
+      "rating": 7.283,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Die Hard 3 Die Hard With A Vengeance (1995)/03 Die Hard 3 Die Hard With A Vengeance - Bruce Willis Action 1995 1080p [H264-mp4] English.mp4",
+      "jellyfin_id": "9cc582f77630ec20f2467e4f16c25e7e"
+    },
+    {
+      "name": "Dinner for Schmucks",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 5.722,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Dinner for Schmucks (2010)/Dinner For Schmucks.2010.mkv",
+      "jellyfin_id": "0606562c9638225682cd3a3d486aa74a"
+    },
+    {
+      "name": "A Dirty Carnival",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.025,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Dirty Carnival (2006)/A.Dirty.Carnival.2006.720p.mp4",
+      "jellyfin_id": "6e1f7bdea4caff4be96d186c8cbaa573"
+    },
+    {
+      "name": "The Disappearance of Haruhi Suzumiya",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Comedy",
+        "Drama",
+        "Mystery",
+        "Science Fiction"
+      ],
+      "rating": 7.836,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/The Disappearance Of Haruhi Suzumiya/The Disappearance Of Haruhi Suzumiya.mkv",
+      "jellyfin_id": "c6d80820f14e4a9aaf715bb423d48cb5"
+    },
+    {
+      "name": "Ditto",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Romance",
+        "Science Fiction"
+      ],
+      "rating": 6.887,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ditto(2000)/Ditto(2000).mp4",
+      "jellyfin_id": "d54b43ac8ca948c43bed80fb2ef81f80"
+    },
+    {
+      "name": "Django Unchained",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Western"
+      ],
+      "rating": 8.2,
+      "path": "/Volumes/Backup Plus/All Movies/Tarantino/Django Unchained (2012)/Django.Unchained.2012.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "cf7f8dcf291498ef3012f17e69f779fa"
+    },
+    {
+      "name": "Domestic Girlfriend",
+      "year": 2019,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Drama"
+      ],
+      "rating": 8.141,
+      "path": "/Volumes/Backup Plus/TV/Domestic Girlfriend",
+      "jellyfin_id": "78d50d02fa0b0e29f6c9f6cddb879b2c"
+    },
+    {
+      "name": "Donnie Darko",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Mystery"
+      ],
+      "rating": 7.763,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Donnie Darko (2001)/Donnie.Darko.DIRECTORS.CUT.2001.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "c46470dd6ae8b00c1bac861987da74b9"
+    },
+    {
+      "name": "Dr. Strangelove",
+      "year": 1964,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "War"
+      ],
+      "rating": 8.119,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Dr. Strangelove or How I Learned to Stop Worrying and Love the Bomb/Dr. Strangelove or How I Learned to Stop Worrying and Love the Bomb.mkv",
+      "jellyfin_id": "10e4d448c9929ca1fea05e1316a1f470"
+    },
+    {
+      "name": "Dragon",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 6.894,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Dragon (2011)/Dragon.2011.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "6a5cdbc9772b073a44fd48ac3aeeade0"
+    },
+    {
+      "name": "Dream House",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 6.202,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Dream House[2011]/Dream House[2011]BRRip XviD-ExtraTorrentRG.avi",
+      "jellyfin_id": "f53f0933b3c407e4d71ef61d7e02184c"
+    },
+    {
+      "name": "The Dreamers",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.177,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Dreamers (2003)/The Dreamers.2003.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "45b2acf9c501f12307acf3b20ecbf073"
+    },
+    {
+      "name": "Drive My Car",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.44,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Drive My Car(2021)/Drive.My.Car.2021.JAPANESE.720p.WEBRip.900MB.x264-GalaxyRG.mkv",
+      "jellyfin_id": "fe79b1f69ab23b7d3c373c9171ccc8ec"
+    },
+    {
+      "name": "The Dude in Me",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ],
+      "rating": 7.788,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Dude In Me (2019)/The.Dude.In.Me.2019.1080p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "1dc275b5d6bcfac184fcbaf14e19bca4"
+    },
+    {
+      "name": "Dune",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Science Fiction"
+      ],
+      "rating": 7.781,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Dune (2021)/Dune (2021).mp4",
+      "jellyfin_id": "1e3d7b9edd5454342b2580d98df4088c"
+    },
+    {
+      "name": "Dunkirk",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "War",
+        "Action",
+        "Drama"
+      ],
+      "rating": 7.45,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Dunkirk (2017) 1080p/Dunkirk.2017.1080p.10bit.BluRay.6CH.x265.HEVC-PSA.mkv",
+      "jellyfin_id": "f386383bf4f395b3b5ca22a24029ed97"
+    },
+    {
+      "name": "E.T. the Extra-Terrestrial",
+      "year": 1982,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Science Fiction",
+        "Family"
+      ],
+      "rating": 7.518,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/E.T. the Extra-Terrestrial (1982)/E.T. the Extra-Terrestrial (1982) BluRay 720p 750MB Ganool.mkv",
+      "jellyfin_id": "6c0b13c17f4c46a27c33e780be616a5b"
+    },
+    {
+      "name": "Ek Doctor Ki Maut",
+      "year": 1990,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 5.9,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Ek Doctor Ki Maut (1990)/Ek Doctor Ki Maut (1990).mp4",
+      "jellyfin_id": "574fb0941154e444e976ac030751c939"
+    },
+    {
+      "name": "Eko",
+      "year": 2025,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 7.333,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Eko (2025)/Eko - Malayalam film.mp4",
+      "jellyfin_id": "00741406d6e971db39ec1ddab4bd70ea"
+    },
+    {
+      "name": "Emergency Declaration",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Emergency Declaration (2021)/Emergency.Declaration.2021.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "b297e0d6657b94971842733c45faaca5"
+    },
+    {
+      "name": "End of Watch",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.358,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/End of Watch (2012)/End of Watch (2012).mp4",
+      "jellyfin_id": "a3c53763bca0304258e924d461f18c19"
+    },
+    {
+      "name": "The Endless",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 6.306,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Endless (2017)/The.Endless.2017.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "c0ba4d34dbc4ff82712182a598d44df7"
+    },
+    {
+      "name": "Enemy",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 6.846,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Enemy (2013)/Enemy.2013.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "e047569145bf64fa0f83b23b154f4ec4"
+    },
+    {
+      "name": "Epitaph",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror"
+      ],
+      "rating": 6.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Epitaph 기담 (2007)/Epitaph 기담 2007 [1-2].mp4",
+      "jellyfin_id": "67a61223a8650294114f7bd6e2e5c854"
+    },
+    {
+      "name": "Epitaph",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror"
+      ],
+      "rating": 6.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Epitaph 기담 (2007)/Epitaph 기담 2007 [2-2].mp4",
+      "jellyfin_id": "c0a10c8ede5116517b8e5727bfcf9a29"
+    },
+    {
+      "name": "Eraserhead",
+      "year": 1977,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Science Fiction"
+      ],
+      "rating": 7.334,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Eraserhead (1977)/Eraserhead.1977.720p.BluRay.X264.YIFY.mp4",
+      "jellyfin_id": "cf0144474f8e52782ea92b718b4bcd88"
+    },
+    {
+      "name": "Escape from Mogadishu",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "History",
+        "Thriller",
+        "War"
+      ],
+      "rating": 7.113,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Escape From Mogadishu (2021)/Escape.From.Mogadishu.2021.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "b792c6ce03a6578bc1b7a9683ef64d31"
+    },
+    {
+      "name": "Eternal Sunshine of the Spotless Mind",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Science Fiction"
+      ],
+      "rating": 8.1,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Eternal Sunshine of the Spotless Mind (2004)/Eternal.Sunshine.of.the.Spotless.Mind.2004.720p.BrRip.x264.BOKUTOX.YIFY.mp4",
+      "jellyfin_id": "cd7fe01fc2df04a71123b23a958549f3"
+    },
+    {
+      "name": "Everything Everywhere All at Once",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Science Fiction"
+      ],
+      "rating": 7.72,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Everything Everywhere All At Once (2022)/Everything.Everywhere.All.At.Once.2022.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "c4b7dc798c9c231a638309c668655a08"
+    },
+    {
+      "name": "Exhuma",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 7.535,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Exhuma/Exhuma.mp4",
+      "jellyfin_id": "2a82fed2604763a4f4f683cb184a5ca9"
+    },
+    {
+      "name": "Extreme Job",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Crime"
+      ],
+      "rating": 7.193,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Extreme Job (2019)/Extreme.Job.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "5d4e1d3befcb23194c561fb1e82e91ea"
+    },
+    {
+      "name": "The Eye",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Horror"
+      ],
+      "rating": 6.561,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Eye (Chinese)/The Eye (Chinese).mp4",
+      "jellyfin_id": "61c65ed5e53f74ead745f5d9ab778159"
+    },
+    {
+      "name": "Face/Off",
+      "year": 1997,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Science Fiction"
+      ],
+      "rating": 7.06,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Face Off (1997)/Face.Off.1997.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "5d2e77c7bd3e8f2251c90bc58a83e465"
+    },
+    {
+      "name": "Fallen Angels",
+      "year": 1995,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Romance",
+        "Crime"
+      ],
+      "rating": 7.69,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Fallen Angels (1995)/Fallen.Angels.1995.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "6e4ee0c984e5a764b596f6c1d3b1663d"
+    },
+    {
+      "name": "Fantasy of the Girls",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 5.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Fantasy Of The Girls (2016)/Fantasy.Of.The.Girls.2016.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "38ab4907192661792ce7b514e1035ba9"
+    },
+    {
+      "name": "The Farewell",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.417,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Farewell (2019)/The.Farewell.2019.720p.WEBRip.x264-[YTS.LT].mp4",
+      "jellyfin_id": "2ee788ea4978372487bae5366f3a9856"
+    },
+    {
+      "name": "Farewell My Concubine",
+      "year": 1993,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.915,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Farewell My Concubine (1993)/Farewell.My.Concubine.1993.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "9c8a2e1698ba516d9e969ee2721e8b61"
+    },
+    {
+      "name": "Fearless",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Action"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Fearless (2006)/Fearless.2006.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "0c93ff2d2a0551965714f5848d9981a8"
+    },
+    {
+      "name": "Ferris Bueller's Day Off",
+      "year": 1986,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 7.566,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Ferris Bueller's Day Off/Ferris Bueller's Day Off.mp4",
+      "jellyfin_id": "3cdbe3773c7314917a82680f3264fe2f"
+    },
+    {
+      "name": "Fight Back to School",
+      "year": 1991,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Crime",
+        "Mystery"
+      ],
+      "rating": 7.024,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Fight Back To School 1 (1991)/Fight Back To School 1 (1991).mp4",
+      "jellyfin_id": "192cb7d6d240a451fd186113aee199fc"
+    },
+    {
+      "name": "Fight Back to School 2",
+      "year": 1992,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Crime"
+      ],
+      "rating": 6.858,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Fight Back To School 2 (1992)/Fight Back To School 2 (1992).mp4",
+      "jellyfin_id": "c451d0a84b42d9180d7acee86b0b8056"
+    },
+    {
+      "name": "Fight Club",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 8.438,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Fight Club (1999) [1080p]/Fight.Club.10th.Anniversary.Edition.1999.1080p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "ef77806a441af359370cce45673723a5"
+    },
+    {
+      "name": "Finding Mr. Destiny",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Finding Mr Destiny(2010)/Finding Mr Destiny(2010).mp4",
+      "jellyfin_id": "90e9736f35ff167a51f7a0b6f37cfd9f"
+    },
+    {
+      "name": "Flow",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Family",
+        "Fantasy"
+      ],
+      "rating": 8.075,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Flow (2024) 2160p 4K/Flow.2024.2160p.4K.WEB.x265.10bit.AAC5.1-WORLD.mkv",
+      "jellyfin_id": "a4ccab3755ded10aaf9769034a218ea5"
+    },
+    {
+      "name": "Fool's Love",
+      "year": 2015,
+      "type": "Series",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.2,
+      "path": "/Volumes/Backup Plus/TV/Hogu's Love",
+      "jellyfin_id": "24c2df5372a0edbd07049e8912a4f412"
+    },
+    {
+      "name": "Forget Me Not",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 6.3,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Forget Me Not (2015)/Forget me not (2015).mp4",
+      "jellyfin_id": "5477cf8b37c15693d62043cca366de1d"
+    },
+    {
+      "name": "Frances Ha",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.332,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Frances Ha (2012)/Frances.Ha.2012.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "baaf5b53cf20cff96171821263852ab1"
+    },
+    {
+      "name": "The French Dispatch",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.014,
+      "path": "/Volumes/Backup Plus/All Movies/Wes Anderson/The French Dispatch (2021)/The French Dispatch (2021).mp4",
+      "jellyfin_id": "a160c5e7b9a582130af0d45370e1b540"
+    },
+    {
+      "name": "Frequency",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Science Fiction",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.268,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Frequency (2000)/Frequency.2000.720p.HDTV.x264.YIFY.mkv",
+      "jellyfin_id": "1c070a6ba445acafc4b32bfdcf2a3b65"
+    },
+    {
+      "name": "From the New World",
+      "year": 2012,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Sci-Fi & Fantasy"
+      ],
+      "rating": 7.702,
+      "path": "/Volumes/Backup Plus/TV/Shinsekai yori",
+      "jellyfin_id": "09e75b487d0e45a47d7dee019f4c8dda"
+    },
+    {
+      "name": "The Front Line",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "War"
+      ],
+      "rating": 7.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Front Line (2011)/The.Front.Line.2011.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "bd1c984bbd959d5567e80eb81016df60"
+    },
+    {
+      "name": "Fukuoka",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.9,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Fukuoka (2020)/Fukuoka (2020).mp4",
+      "jellyfin_id": "bbf727390aac01db372969ac6fcb8295"
+    },
+    {
+      "name": "Fury",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "War",
+        "Drama",
+        "Action"
+      ],
+      "rating": 7.546,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Fury/Fury.mkv",
+      "jellyfin_id": "83405ddd44d42bec3da34294f17bb5ab"
+    },
+    {
+      "name": "G.I. Joe: Retaliation",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Science Fiction",
+        "Adventure",
+        "Thriller"
+      ],
+      "rating": 5.663,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/G.I. Joe Retaliation (2013)/G.I..Joe_.Retaliation.2013.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "b3e22f199f626dbbfd7729fd16059584"
+    },
+    {
+      "name": "Gandhi",
+      "year": 1982,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History"
+      ],
+      "rating": 7.563,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Gandhi (1982)/Gandhi 1982 720p BrRip x264 [Dual-Audio] English - Hindi NimitMak SilverRG.mkv",
+      "jellyfin_id": "6a96239d04b648730aa2e8338f0e49d0"
+    },
+    {
+      "name": "The Gangster, the Cop, the Devil",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.884,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Gangster, The Cop and The Devil/The Gangster, The Cop and The Devil.mp4",
+      "jellyfin_id": "eef50dd46e569ac679ed3cad40690d2c"
+    },
+    {
+      "name": "The Garden of Words",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.588,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Kotonoha no Niwa Garden of Words/Kotonoha no Niwa Garden of Words.mp4",
+      "jellyfin_id": "5f8a40a129d4cdfd41737776431439d5"
+    },
+    {
+      "name": "Garden State",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.079,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Garden State (2004)/Garden.State.720pHDTV.x264.YIFY.mkv",
+      "jellyfin_id": "e4173b7dfb4117ff0bd6bd1359b61856"
+    },
+    {
+      "name": "Geek Out (Short Film))",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Geek Out (Short Film))/Geek Out Official  Movie - Directed by Vasan Bala.mp4",
+      "jellyfin_id": "88ba880a96de2cf006dd80a9c218334a"
+    },
+    {
+      "name": "A Gentle Breeze in the Village",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Gentle Breeze In The Village/A Gentle Breeze In The Village (2007).mp4",
+      "jellyfin_id": "e52e8637ca6d3a6fe63e82220651d2a9"
+    },
+    {
+      "name": "The Gentlemen",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Crime"
+      ],
+      "rating": 7.7,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Gentlemen (2019)/The.Gentlemen.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "bf46e6c94eb6182403f90bc03ad413fd"
+    },
+    {
+      "name": "Get Out",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Mystery",
+        "Thriller",
+        "Horror"
+      ],
+      "rating": 7.624,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Get Out (2017)/Get.Out.2017.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "d31b696603bc0b38899a9e349f9a8fe3"
+    },
+    {
+      "name": "Ghost in the Shell: Stand Alone Complex",
+      "year": 2002,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Action & Adventure",
+        "Sci-Fi & Fantasy",
+        "Crime"
+      ],
+      "rating": 8.219,
+      "path": "/Volumes/Backup Plus/TV/Ghost in the Shell - Stand Alone Complex",
+      "jellyfin_id": "1188da4f0542e329861d5f541ae7af5d"
+    },
+    {
+      "name": "Gi-juk",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.417,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Gi-Juk (2021)/Gi-Juk.2021.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "7f4480dd15255165521b28ee318ba35a"
+    },
+    {
+      "name": "The Girl Who Leapt Through Time",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Fantasy",
+        "Animation",
+        "Drama",
+        "Science Fiction"
+      ],
+      "rating": 7.773,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Toki wo Kakeru Shoujo (Dub)/Toki wo Kakeru Shoujo (Dub).mp4",
+      "jellyfin_id": "57a82710bd7d8d5e40478f6494db3b0c"
+    },
+    {
+      "name": "Glory",
+      "year": 1989,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History",
+        "War"
+      ],
+      "rating": 7.478,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Glory (1989)/Glory 1989.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "af632b742cff1ffacba3d892502ce7a9"
+    },
+    {
+      "name": "The God of Cookery",
+      "year": 1996,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The God of Cookery/The God of Cookery.mp4",
+      "jellyfin_id": "b89c5cfe005393705af889af72b2c4d8"
+    },
+    {
+      "name": "Godzilla",
+      "year": 1954,
+      "type": "Movie",
+      "genres": [
+        "Thriller",
+        "Horror",
+        "Science Fiction"
+      ],
+      "rating": 7.6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Godzilla (1954)/Godzilla.1954.1080p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "5c7f5b4fd17f5a927f80e00f93d8b311"
+    },
+    {
+      "name": "The Good, the Bad, the Weird",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Western"
+      ],
+      "rating": 7.165,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Good The Bad The Weird (2008)/The.Good.The.Bad.The.Weird.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "1f88f10a3b55e61192f9433b570fe0c9"
+    },
+    {
+      "name": "Good Boys",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 6.833,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Good Boys (2019)/Good.Boys.2019.720p.WEBRip.x264-[YTS.LT].mp4",
+      "jellyfin_id": "862d44d75f327100eca64d2434a810f6"
+    },
+    {
+      "name": "The Grandmaster",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "History"
+      ],
+      "rating": 6.613,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Grandmaster (2013)/The Grandmaster (2013) YTS.mp4",
+      "jellyfin_id": "7a8435ef817e65de4521ce632ea04d5c"
+    },
+    {
+      "name": "Grass",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.6,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Grass (2018)/Grass.2018.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "2d2a75c7448ee5dca59573d8b337ebec"
+    },
+    {
+      "name": "Gravity",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Science Fiction",
+        "Thriller",
+        "Drama"
+      ],
+      "rating": 7.172,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Gravity/Gravity.mp4",
+      "jellyfin_id": "bc4ea377adf53b6599ffff69cc82a838"
+    },
+    {
+      "name": "Gravity Falls",
+      "year": 2012,
+      "type": "Series",
+      "genres": [
+        "Action & Adventure",
+        "Animation",
+        "Comedy",
+        "Family",
+        "Mystery",
+        "Sci-Fi & Fantasy"
+      ],
+      "rating": 8.619,
+      "path": "/Volumes/Backup Plus/TV/Gravity Falls 2012  Season 2 Complete + EXTRAS 720p BluRay x264 [i_c]",
+      "jellyfin_id": "5d0991444c05e3f24f11167267f5e218"
+    },
+    {
+      "name": "The Great Dictator",
+      "year": 1940,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "War"
+      ],
+      "rating": 8.28,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Charlie Chaplin - The Great Dictator (1940)/The.Great.Dictator.1940.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "e75963f3de4c21828e147310d9df7e8f"
+    },
+    {
+      "name": "Green Day: Bullet in a Bible",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Documentary",
+        "Music"
+      ],
+      "rating": 8,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Green Day Bullet in a Bible/Green.Day-Bullet.In.A.Bible[2005]DvDrip[Eng]-aXXo.avi",
+      "jellyfin_id": "37e663585cd12c2c263fa83455ca9060"
+    },
+    {
+      "name": "The Green Mile",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 8.507,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Green Mile (1999)/The.Green.Mile.1999.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "937e42f387a0d70b28054eb3a4192192"
+    },
+    {
+      "name": "Guilty of Romance",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Romance"
+      ],
+      "rating": 6.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Guilty Of Romance (2011) [1080p] [BluRay] [YTS.MX]/Guilty.Of.Romance.2011.1080p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "41ec36847f488e0667a29c659f9d09cd"
+    },
+    {
+      "name": "Guzaarish",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.323,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Guzaarish (2010)/Guzaarish.2010.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "75ce83df99194edbf4b654d9a78e6811"
+    },
+    {
+      "name": "Ha Ha Ha",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.3,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Hahaha (2010)/Hahaha.2010.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "611a383456de1ca38412bd5a3469a5ee"
+    },
+    {
+      "name": "Han Gong-ju",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Han Gong ju (2014)/Han Gong ju (2014).mp4",
+      "jellyfin_id": "6fcdbe5c405fdb77cac9a6ef406c7b5e"
+    },
+    {
+      "name": "The Handmaiden",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Thriller"
+      ],
+      "rating": 8.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Handmaiden (2016)/The Handmaiden (2016) BluRay 720p x264 875MB (nItRo)-XpoZ.mkv",
+      "jellyfin_id": "953806c1c1a0d85a361b5dbb02f7faf6"
+    },
+    {
+      "name": "Happy Death Day",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Horror",
+        "Mystery"
+      ],
+      "rating": 6.66,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Happy Death Day (2017)/Happy.Death.Day.2017.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "f378aa457ab980d6c901325477288c57"
+    },
+    {
+      "name": "Happy Together",
+      "year": 1997,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.576,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Happy Together (1997)/Happy.Together.1997.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "824c57242bc5a9244b1db312c8ceb51e"
+    },
+    {
+      "name": "Hard Boiled",
+      "year": 1992,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Crime"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Hard Boiled (1992)/Hard Boiled (1992).mp4",
+      "jellyfin_id": "38689b35d4e4a610ad1867d1f458eef9"
+    },
+    {
+      "name": "A Hard Day",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 7.071,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Hard Day (2014)/A.Hard.Day.2014.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "23d3657f7e7eb727ee0059622b7434b2"
+    },
+    {
+      "name": "Harry Potter and the Chamber of Secrets",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.706,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Harry Potter Series/2.Harry Potter and the Chamber of Secrets (2002)720p.mkv",
+      "jellyfin_id": "d237fb4408665b352d83762c69c93ef5"
+    },
+    {
+      "name": "Harry Potter and the Deathly Hallows: Part 1",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.735,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Harry Potter Series/Harry Potter and the Deathly Hallows - Part I/Harry Potter and the Deathly Hallows - Part I.avi",
+      "jellyfin_id": "427328e89fb17bd6231359f56fe2c049"
+    },
+    {
+      "name": "Harry Potter and the Deathly Hallows: Part 1",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.735,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Harry Potter Series/Harry Potter and the Deathly Hallows Part 2 (2011) 1080p.BRrip.scOrp.sujaidr (pimprg)/Harry Potter and the Deathly Hallows Part 2 (2011) 1080p.BRrip.scOrp.sujaidr (pimprg).mkv",
+      "jellyfin_id": "a0c41f69a7444907b5cf8504649e6620"
+    },
+    {
+      "name": "Harry Potter and the Goblet of Fire",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.802,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Harry Potter Series/4.Harry Potter and the Goblet of Fire (2005)720p.mkv",
+      "jellyfin_id": "78002aab4d8e78e5da4403b9dce667f6"
+    },
+    {
+      "name": "Harry Potter and the Half-Blood Prince",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.681,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Harry Potter Series/6.Harry Potter and the Half Blood Prince (2009)720p.mkv",
+      "jellyfin_id": "edbc192e81c668aa0e6e35c919f3891f"
+    },
+    {
+      "name": "Harry Potter and the Order of the Phoenix",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.673,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Harry Potter Series/5.Harry Potter and the Order of the Phoenix (2007)720p.mkv",
+      "jellyfin_id": "c0140ea37567666aa564f99af918fcbe"
+    },
+    {
+      "name": "Harry Potter and the Philosopher's Stone",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.901,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Harry Potter Series/1. Harry Potter and the Sorcerer's Stone (2001)720p.mkv",
+      "jellyfin_id": "34383849b39d552cabdad27c52951f84"
+    },
+    {
+      "name": "Harry Potter and the Prisoner of Azkaban",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 8.01,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Harry Potter Series/3.Harry Potter and the Prisoner of Azkaban (2004)720p.mkv",
+      "jellyfin_id": "f265232e6acff40498f4144b8cb64a0e"
+    },
+    {
+      "name": "The Hateful Eight",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Western"
+      ],
+      "rating": 7.757,
+      "path": "/Volumes/Backup Plus/All Movies/Tarantino/The Hateful Eight (2015)/The.Hateful.Eight.2015.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "67b087bb7b7c7a1259254557e80bbd77"
+    },
+    {
+      "name": "Hearts of Darkness: A Filmmaker's Apocalypse",
+      "year": 1991,
+      "type": "Movie",
+      "genres": [
+        "Documentary"
+      ],
+      "rating": 7.9,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Heart of Darkness - A Filmmakers Apocalypse (1991)/Heart of Darkness - A Filmmakers Apocalypse (1991).mp4",
+      "jellyfin_id": "142c49a36c9aceecabeac04ebe85612e"
+    },
+    {
+      "name": "Heat",
+      "year": 1995,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Action"
+      ],
+      "rating": 7.941,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Heat (1995) [1080p]/Heat.1995.1080p.BRrip.x264.YIFY.mp4",
+      "jellyfin_id": "859749d40bf74dfdf7fda3356c736e26"
+    },
+    {
+      "name": "Hello Ghost",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Family",
+        "Romance"
+      ],
+      "rating": 7.6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Hello Ghost/Hello Ghost.mp4",
+      "jellyfin_id": "fd96c6ac36fc47fe8f38ae1b20a51062"
+    },
+    {
+      "name": "Her",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Science Fiction"
+      ],
+      "rating": 7.838,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Her/Her.mp4",
+      "jellyfin_id": "8ec4c75ff4d707d9e1a13dfb3571fd9b"
+    },
+    {
+      "name": "Her Love Boils Bathwater",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.403,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Her Love Boils Bathwater (2016)/Her Love Boils Bathwater (2016).mp4",
+      "jellyfin_id": "bdd5a7c601aa45b9454ee020ee28c22f"
+    },
+    {
+      "name": "Hero",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "History"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Hero (2002)/Hero (2002).mkv",
+      "jellyfin_id": "1f8ed2a2dc314ff61a8454b39a0aef5f"
+    },
+    {
+      "name": "Himizu",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.037,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Himizu (2011) - Sion sono/Himizu (2011).mp4",
+      "jellyfin_id": "5a5fbfb809f97ac3591e48498b92e7a4"
+    },
+    {
+      "name": "Hitman: Agent Jun",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "rating": 7.1,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Hitman Agent Jun/Hitman Agent Jun (2020).mp4",
+      "jellyfin_id": "69f7947288a2cdcb1ab30777049c2f89"
+    },
+    {
+      "name": "Honeysweet (2023)",
+      "year": 2023,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "rating": 5.789,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Honeysweet (2023)/Honeysweet (2023).mp4",
+      "jellyfin_id": "138e3f63d8e1d01a94a0820da2818561"
+    },
+    {
+      "name": "Hope",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.398,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Hope (2013)/Hope.2013.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "7ef144e009dff43f0a632638d7f30396"
+    },
+    {
+      "name": "The Host",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Science Fiction"
+      ],
+      "rating": 6.974,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Host (2006)/The.Host.2006.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "9db659e65c39c0e52df6d23262ab54c5"
+    },
+    {
+      "name": "Hotel by the River",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.431,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Hotel By The River (2018)/Hotel.By.The.River.2018.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "f17d28d813e70427185d88f272b91ded"
+    },
+    {
+      "name": "Hotel Chevalier",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.896,
+      "path": "/Volumes/Backup Plus/All Movies/Wes Anderson/Hotel Chevalier (2007)/Hotel.Chevalier.2007.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "efb15df6782d6a6bfc2286c9cb1a6435"
+    },
+    {
+      "name": "House of Flying Daggers",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "rating": 7.265,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/House Of Flying Daggers (2004)/House.Of.Flying.Daggers.2004.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "8981fc9a0063e6f0f105d6ec366929d0"
+    },
+    {
+      "name": "House of Hummingbird",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/House of Hummingbird (2018)/House of Hummingbird (2018).mp4",
+      "jellyfin_id": "fd5b8346505c2eedf85afa44bb7b5a3d"
+    },
+    {
+      "name": "Howl's Moving Castle",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Fantasy"
+      ],
+      "rating": 8.388,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Howl's Moving Castle/Howl's Moving Castle.mp4",
+      "jellyfin_id": "a2494c93e5051f9aa933069ae7749e48"
+    },
+    {
+      "name": "Hridayam",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.1,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Hridayam (2022)/Hridayam (2022).mkv",
+      "jellyfin_id": "3991b8303b46b343f243dcb0be9ebc6a"
+    },
+    {
+      "name": "Hwayi: A Monster Boy",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Hwayi A Monster Boy (2013)/Hwayi.A.Monster.Boy.2013.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "1967db2658b4c4842807004a86227c03"
+    },
+    {
+      "name": "I Am Heath Ledger",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Documentary"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/I Am Heath Ledger (2017)/I.Am.Heath.Ledger.2017.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "b408a1e2d5b5ef6cf3c5187acad9259a"
+    },
+    {
+      "name": "I Can Speak",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.9,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/I Can Speak (2017)/I.Can.Speak.2017.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "842ecd8ab809c3ee7ad9e5d4d0e6655e"
+    },
+    {
+      "name": "I Saw the Devil",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Thriller"
+      ],
+      "rating": 7.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/I Saw the Devil (2010)/I Saw the Devil.mkv",
+      "jellyfin_id": "721e6029a6d5cca76932546ec2f4539b"
+    },
+    {
+      "name": "I Want to Eat Your Pancreas",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 8.2,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/I Want To Eat Your Pancreas (2018)/I.Want.To.Eat.Your.Pancreas.2018.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "8f8ca39dfc6206be1dcb6434901b41aa"
+    },
+    {
+      "name": "Il Mare",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.3,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Il Mare (2000)/Il.Mare.2000.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "33f6d38884b76151e3cdf267ff75e566"
+    },
+    {
+      "name": "I'm a Cyborg, But That's OK",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.029,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/I'm A Cyborg, But That's OK (2006)/I'm.A.Cyborg,.But.That's.OK.2006.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "5700eb64e3b21d541d55270c9c7ec0b0"
+    },
+    {
+      "name": "In Bruges",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Crime"
+      ],
+      "rating": 7.499,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/In Bruges (2008)/In.Bruges.2008.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "7bd185e10518f29e063c2acce91c498c"
+    },
+    {
+      "name": "In the Fade",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 6.904,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/In The Fade (2017)/In.The.Fade.2017.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "6e65380415aa5ae794aa3a41a5dcd80e"
+    },
+    {
+      "name": "In Front of Your Face",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.776,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/In Front Of Your Face (2021)/In.Front.Of.Your.Face.2021.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "3a5332f310684c8686dd4aeb14798413"
+    },
+    {
+      "name": "In the Loop",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 7.025,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/In the Loop (2009)/In.the.Loop.2009.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "d8b6b2dc218f8dd78bc14f514227eaf6"
+    },
+    {
+      "name": "In the Mood for Love",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 8.1,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/In The Mood For Love (2000)/In the Mood for Love (2000).mp4",
+      "jellyfin_id": "e69ce9b8b1db8e5ea2065273b8f591c6"
+    },
+    {
+      "name": "Incendies",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "War"
+      ],
+      "rating": 8.107,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Incendies 2010 1080p BluRay x264 AAC - Ozlem/Incendies 2010 1080p BluRay x264 AAC - Ozlem.mp4",
+      "jellyfin_id": "b4e7ada825f590c1a305f3d765cc712d"
+    },
+    {
+      "name": "Inception",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Science Fiction",
+        "Adventure"
+      ],
+      "rating": 8.372,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Inception (2010)/Inception.2010.720p.x264.mkv",
+      "jellyfin_id": "0afc2e429466c940d2aaed377fbcf291"
+    },
+    {
+      "name": "Infernal Affairs",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Action",
+        "Thriller",
+        "Crime",
+        "Mystery"
+      ],
+      "rating": 7.808,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Infernal Affairs (2002)/Infernal.Affairs.2002.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "c2705c2a89b95cfad93eb8c94e7f6d0b"
+    },
+    {
+      "name": "Ing",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/ing (2003)/ing (2003).mp4",
+      "jellyfin_id": "d260e79356615c8d8aa16d7f056e3781"
+    },
+    {
+      "name": "Innocent Witness",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Innocent Witness (2019)/Innocent Witness.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "d458475132b28833f4279691ab5a29cc"
+    },
+    {
+      "name": "Inside Llewyn Davis",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Music"
+      ],
+      "rating": 7.181,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Inside Llewyn Davis (2013)/Inside.Llewyn.Davis.2013.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "000ad025b332fd41d5f0e40f005f571a"
+    },
+    {
+      "name": "Inside Men",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Inside Men (2015)/Inside.Men.2015.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "4d06c51f85b8bbdf3608077a15194a4f"
+    },
+    {
+      "name": "Intimate Strangers",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Comedy"
+      ],
+      "rating": 7.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Initimate Strangers/Initimate Strangers.mp4",
+      "jellyfin_id": "1d810358e8abfd8a26e9fb3ee87dc26d"
+    },
+    {
+      "name": "Into the Wild",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Drama"
+      ],
+      "rating": 7.796,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Into The Wild (2007)/Into.The.Wild.2007.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "195bb6294dc628a8a75b23a20e4766c9"
+    },
+    {
+      "name": "The Invisible Man",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Thriller",
+        "Science Fiction",
+        "Horror"
+      ],
+      "rating": 7.09,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Invisible Man (2020)/The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "13bec4f14c08b44768dd8e9a6a773422"
+    },
+    {
+      "name": "Ip Man",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Action",
+        "History"
+      ],
+      "rating": 7.763,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/IP Man (2008)/Ip Man 2008.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "4da3e71fb319f7139429d7a1054ba60a"
+    },
+    {
+      "name": "Ip Man 2",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "History",
+        "Drama"
+      ],
+      "rating": 7.461,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ip Man 2 (2010)/Ip Man 2.2010.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "041f49b49de3c8a96ade0abe19ccece8"
+    },
+    {
+      "name": "Ip Man 3",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "History"
+      ],
+      "rating": 7.037,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ip Man 3 (2015)/Ip.Man.3.2015.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "9209eea6c6b12afd660b81544a3456f4"
+    },
+    {
+      "name": "Ip Man 4: The Finale",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "History"
+      ],
+      "rating": 7.267,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ip Man 4 The Finale (2019)/Ip.Man.4.The.Finale.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "1a24cf396e75ca2802a834e15e6d999a"
+    },
+    {
+      "name": "The Irishman",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "History"
+      ],
+      "rating": 7.576,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Irishman (2019)/The.Irishman.2019.720p.WEBRip.x264-[YTS.LT].mp4",
+      "jellyfin_id": "60480dd2ea32dbc1da2f775bc7e30165"
+    },
+    {
+      "name": "The Iron Giant",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Family",
+        "Science Fiction"
+      ],
+      "rating": 7.962,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Iron Giant (1999)/The.Iron.Giant.1999.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "22cabb04f45916ab54e4a96e417ccd5f"
+    },
+    {
+      "name": "It",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Thriller",
+        "Drama"
+      ],
+      "rating": 7.241,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/It (2017)/It.2017.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "1f9314756f10fb55b9d50bae047e7f21"
+    },
+    {
+      "name": "Jagga Jasoos",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Mystery",
+        "Romance"
+      ],
+      "rating": 6.151,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Jagga Jasoos (2017)/Jagga.Jasoos.2017.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "1579d9843e41fd3b7dd16ad5b9ac4f49"
+    },
+    {
+      "name": "Jersey",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.048,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Jersey (2019)/Jersey 2019 720p Telugu  WEB-DL AVC AAC 1GB ESub [MB].mkv",
+      "jellyfin_id": "b0cd6a21ca32f42fc864b3436e681c9c"
+    },
+    {
+      "name": "Joint Security Area",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Joint Security Area (2000)/Joint.Security.Area.2000.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "f4fac427c2a0cc8118bd40088dc5091c"
+    },
+    {
+      "name": "Josee",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 8.27,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Josee (2020) Korean/Josee (2020) Korean.mp4",
+      "jellyfin_id": "1f458d8f69d57bb6c078e57346f8ee09"
+    },
+    {
+      "name": "Josee, the Tiger and the Fish",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.955,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Josee the Tiger and the Fish (2003) - Japanese/Josee the Tiger and the Fish (2003) - Japanese.mp4",
+      "jellyfin_id": "a52b983e178dcbd7ad5d48eaaacae73b"
+    },
+    {
+      "name": "Josee, the Tiger and the Fish",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.219,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Josee to Sakana-tachi (2020)/Josee to Sakana-tachi (2020).mkv",
+      "jellyfin_id": "f257878374c4cb7be9f4c11b56b4a36d"
+    },
+    {
+      "name": "Journals of Musan",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Journals of Musan (2010)/Journals of Musan (2010).mp4",
+      "jellyfin_id": "1cb8c65620405138b59e01884a5ae4d8"
+    },
+    {
+      "name": "The Judge",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.332,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Judge (2014)/The.Judge.2014.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "34a1b2b5bf36e9c5a31fefafc3304a3b"
+    },
+    {
+      "name": "Ju-on: The Curse",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Mystery"
+      ],
+      "rating": 6.784,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ju-on The Curse (2000)/Ju-on.The.Curse.2000.1080p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "4d5de5b89da28fe9bd1aef27d81e0f60"
+    },
+    {
+      "name": "Ju-On: The Grudge",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Horror"
+      ],
+      "rating": 6.758,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ju-On the Grudge/Ju-On The Grudge 2002 (DUAL) Remastered 1080p BluRay HEVC x265 5.1 BONE.mkv",
+      "jellyfin_id": "7598a67c7cbb9ca3fbd2cc9a51b25e23"
+    },
+    {
+      "name": "Kaante",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Action"
+      ],
+      "rating": 5.442,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Kaante (2002)/Kaante (2002).mp4",
+      "jellyfin_id": "7beac7b34f1797a61cc6e7603253b8ba"
+    },
+    {
+      "name": "Kang Deok-sun's Love History",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 3,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Kang Deoksun's Love History/Kang Deoksun's Love History _ 강덕순 애정 변천사.mp4",
+      "jellyfin_id": "ae7928d2853ae1ba4b28facd93d4ab32"
+    },
+    {
+      "name": "Keys to the Heart",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 8.042,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Keys To The Heart (2018)/Keys To The Heart (2018).mp4",
+      "jellyfin_id": "61d7855e90ab9e01fa8b2b02de5292b6"
+    },
+    {
+      "name": "Khosla Ka Ghosla!",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 7.307,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Khosla Ka Ghosla (2006)/Khosla.Ka.Ghosla.2006.720p.BluRay.nHD.x264-NhaNc3.mkv",
+      "jellyfin_id": "e19270c23fbe501a0ab73e8a32be2bdd"
+    },
+    {
+      "name": "Kill Bill: Volume 2",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.9,
+      "path": "/Volumes/Backup Plus/All Movies/Tarantino/Kill Bill Vol 2 (2004)/Kill.Bill.Vol.2.2004.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "cc10533b9c6221e987ebfa3001f1dfe9"
+    },
+    {
+      "name": "Kim Ji-young: Born 1982",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Kim Ji Young Born 1982 (2019)/Kim Ji Young Born 1982 (2019).mp4",
+      "jellyfin_id": "944cd5e78a972d948d2a762298737315"
+    },
+    {
+      "name": "The King and the Clown",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History",
+        "Thriller"
+      ],
+      "rating": 6.965,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The King And The Clown (2005)/The.King.And.The.Clown.2005.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "eff3a57edc6ce6949a2ba6f9b1918580"
+    },
+    {
+      "name": "King of Comedy",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/King of Comedy (1999)/King of Comedy (1999).mp4",
+      "jellyfin_id": "e2008a3caa3c4b84f847d04907e064eb"
+    },
+    {
+      "name": "Koe no Katachi (Sub)",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Koe no Katachi/Koe no Katachi (Sub).mp4",
+      "jellyfin_id": "518792acec4ce5f23d71fb3f0943b1b3"
+    },
+    {
+      "name": "Koyaanisqatsi",
+      "year": 1983,
+      "type": "Movie",
+      "genres": [
+        "Documentary",
+        "Music"
+      ],
+      "rating": 7.9,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Koyaanisqatsi (1982) REMASTERED 1080p/Koyaanisqatsi.1982.REMASTERED.1080p.BluRay.H264.AAC-LAMA.mp4",
+      "jellyfin_id": "f7d2e084af62c3de34c101c71562847e"
+    },
+    {
+      "name": "Lady Bird",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.3,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Lady Bird (2017)/Lady.Bird.2017.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "fae1fdd64470529f97b501bc4eaadc58"
+    },
+    {
+      "name": "Lady Snowblood",
+      "year": 1973,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.52,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Lady Snowblood (1973)/Lady.Snowblood.1973.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "bfe71dc03109b1f23bdc77827c4ec57a"
+    },
+    {
+      "name": "Lady Vengeance",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.532,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Lady Vengeance (2005)/Lady.Vengeance.2005.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "2ca584d1c5152d8c1142a5687b55134a"
+    },
+    {
+      "name": "Last Life in the Universe",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Action",
+        "Thriller"
+      ],
+      "rating": 7.12,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Last Life In the Universe (2003)/Last Life In the Universe.2003.DVDRip.AC3.x264-ENGAM.mkv",
+      "jellyfin_id": "9ae38093e38e38fe7e87a35168a0c732"
+    },
+    {
+      "name": "Last Night in Soho",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Mystery"
+      ],
+      "rating": 7.268,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Last Night In Soho (2021)/Last.Night.In.Soho.2021.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "1c210b06e3119a9e7223e07c0aaad98d"
+    },
+    {
+      "name": "Late Spring",
+      "year": 1949,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Late Spring (1949)/Late.Spring.1949.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "f964b9a0d5a6f5aecbcccc6710eeeac7"
+    },
+    {
+      "name": "The Leftovers",
+      "year": 2014,
+      "type": "Series",
+      "genres": [
+        "Sci-Fi & Fantasy",
+        "Drama"
+      ],
+      "rating": 7.666,
+      "path": "/Volumes/Backup Plus/TV/The Leftovers S01",
+      "jellyfin_id": "c48d874afb785de4e21671a5e604c25d"
+    },
+    {
+      "name": "Legend of the Galactic Heroes",
+      "year": 1988,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Sci-Fi & Fantasy",
+        "War & Politics"
+      ],
+      "rating": 8.674,
+      "path": "/Volumes/Backup Plus/TV/Legend of the Galactic Heroes",
+      "jellyfin_id": "d81048daebfc06023d214f32ffb3a07b"
+    },
+    {
+      "name": "Leon: The Professional",
+      "year": 1994,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 8.295,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Leon The Professional Extended (1994)/Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "1da08d2de4f6081525f88b84ba63f6d5"
+    },
+    {
+      "name": "Life in a Metro",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.391,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Life In A Metro (2007)/Life In A Metro 2007 Hindi 720p DvDRip CharmeLeon SilverRG.mkv",
+      "jellyfin_id": "29c1c1802291245f477f8f0cfb14b318"
+    },
+    {
+      "name": "The Lighthouse",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ],
+      "rating": 7.472,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Lighthouse (2019)/The.Lighthouse.2019.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "8fea82f15eb3412db9fbd53846d155ae"
+    },
+    {
+      "name": "Like Father, Like Son",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.701,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Like Father Like Son (2013)/Like Father, Like Son (2013).mkv",
+      "jellyfin_id": "3bef0cec99993ce9255bf0e195ec3c6e"
+    },
+    {
+      "name": "Linda Linda Linda",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Music"
+      ],
+      "rating": 7.571,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Linda Linda Linda (2005)/Linda Linda Linda.mp4",
+      "jellyfin_id": "1a636434252fff0c6463a52e24a6a4d9"
+    },
+    {
+      "name": "LINK CLICK",
+      "year": 2021,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Sci-Fi & Fantasy",
+        "Mystery",
+        "Drama"
+      ],
+      "rating": 8.218,
+      "path": "/Volumes/Backup Plus/TV/Link Click",
+      "jellyfin_id": "712650b326a4f1ad15b47e5101100b31"
+    },
+    {
+      "name": "Little Forest",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.613,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Little Forest (2018)/Little.Forest.2018.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "8de10c8e5594e25d87db7c30e3708520"
+    },
+    {
+      "name": "Little Miss Sunshine",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.693,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Little Miss Sunshine (2006)/Little.Miss.Sunshine.2006.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "8105352b41885c81602bcf7a9bcd5100"
+    },
+    {
+      "name": "Little Women",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.855,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Little Women (2019)/Little.Women.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "4ec49a63b5407afcec60d7d43d2f1d1d"
+    },
+    {
+      "name": "Little Women",
+      "year": 1994,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.275,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Little Women (1994)/Little.Women.1994.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "4fd4675ffdcc8ee24f72c840b26ab60c"
+    },
+    {
+      "name": "Logan",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Science Fiction"
+      ],
+      "rating": 7.821,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Logan (2017) [1080p] [YTS.AG]/Logan.2017.1080p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "900989a6a6952f82db1614daf8d6de25"
+    },
+    {
+      "name": "Look Who's Back",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 6.8,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Look Who's Back (2015)/Look.Who's.Back.2015.mp4",
+      "jellyfin_id": "4a0398f220e13f81a8c4263e2cf7bc89"
+    },
+    {
+      "name": "Lootera",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.9,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Lootera (2013)/Lootera (2013).mkv",
+      "jellyfin_id": "a788f64a7044722918a712fdbfcd9747"
+    },
+    {
+      "name": "LOST (2004-2010) Complete Box Set BRRip 720p x264 + ENG Sub",
+      "year": 2010,
+      "type": "Series",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/TV/LOST (2004-2010) Complete Box Set BRRip 720p x264 + ENG Sub",
+      "jellyfin_id": "70c04b85e04c8c4f122822f1d380e507"
+    },
+    {
+      "name": "Love Exposure",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.922,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008) [720p] [BluRay] [YTS.MX]/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "e82055be16640a80bcaec0227892955b"
+    },
+    {
+      "name": "Lust, Caution",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Romance",
+        "Thriller"
+      ],
+      "rating": 7.272,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Lust, Caution (2007)/Lust,.Caution.2007.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "d000c71622533ca9d024efce3838eea8"
+    },
+    {
+      "name": "Luxurious Bone",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 5.125,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Luxurious Bone (2001)/Luxurious Bone (2001).mp4",
+      "jellyfin_id": "859b3f32333d86ea77a564d81bbc2af0"
+    },
+    {
+      "name": "Madaari",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.355,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Madaari (2016)/Madaari 2016 Hindi 720p - HDRip - x264 - AAC - Zi$t-WWRG.mp4",
+      "jellyfin_id": "514ef6c1175414743199907d18d8a5d7"
+    },
+    {
+      "name": "Make the Last Wish",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 6.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Make the Last Wish (2009)/Make the Last Wish (2009).mp4",
+      "jellyfin_id": "80474e046dadc2afabc77191107511f4"
+    },
+    {
+      "name": "Mal-Mo-E: The Secret Mission",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "History"
+      ],
+      "rating": 7.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Mal Mo E The Secret Mission (2019)/Mal Mo E The Secret Mission (2019).mp4",
+      "jellyfin_id": "75f7ed5af773417cff145999e131a94c"
+    },
+    {
+      "name": "The Man from Earth",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Science Fiction"
+      ],
+      "rating": 7.623,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Man From the Earth (2007)/The.Man.From.Earth.2007.720p.x264.YIFY.mp4",
+      "jellyfin_id": "9c74c055a29a77becdae203a815ddfcf"
+    },
+    {
+      "name": "The Man from Nowhere",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.687,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Man From Nowhere (2010)/The.Man.From.Nowhere.2010.REPACK.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "6e1b2fe505a98b48bf16124c77e70de1"
+    },
+    {
+      "name": "The Man Standing Next",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.111,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Man Standing Next (2020)/The.Man.Standing.Next.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "d281d28f27799358f3f90a7ab5bcf401"
+    },
+    {
+      "name": "The Man Who Knew Infinity",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History"
+      ],
+      "rating": 7.161,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Man Who Knew Infinity (2015)/The Man Who Knew Infinity (2015).mp4",
+      "jellyfin_id": "60c9dd0812eea9c53472af3ed088aa3c"
+    },
+    {
+      "name": "A Man Who Was Superman",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.343,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Man Who Was Superman (2008)/A.Man.Who.Was.Superman.2008.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "87394caddb6672c1e1b44e962455cb93"
+    },
+    {
+      "name": "Manchester by the Sea",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.553,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Manchester By The Sea (2016)/Manchester.By.The.Sea.2016.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "1f1bb2410519a4c90ced556b1ea35926"
+    },
+    {
+      "name": "Mandy",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Horror"
+      ],
+      "rating": 6.208,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Mandy (2018)/Mandy.2018.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "ddb240a5302d581730d24e2e8856ed27"
+    },
+    {
+      "name": "Manmarziyaan",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.792,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Manmarziyaan (2018)/Manmarziyaan 2018 Hindi Movie 720p WEB-DL x264 [MoviesEv.com].mp4",
+      "jellyfin_id": "64173cf252636a882ab90c15e7e2a7a6"
+    },
+    {
+      "name": "The Mars Canon",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 4.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Mars Canon (2002)/The Mars Canon (2002).mp4",
+      "jellyfin_id": "6f688b3aaa2586a1d2e00cbb93f8f7cf"
+    },
+    {
+      "name": "The Martian",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Science Fiction"
+      ],
+      "rating": 7.7,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Martian (2015)/The.Martian.2015.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "b83baf905261825e34be14657cfc5bd3"
+    },
+    {
+      "name": "Masaan",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.103,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Masaan (2015)/Masaan.2015.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "ea8336ef12da378909c02f065c43dbae"
+    },
+    {
+      "name": "Megalo Box (Season 1)",
+      "year": null,
+      "type": "Series",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/TV/Megalo Box (Season 1)",
+      "jellyfin_id": "d538b49520e00268fa654e46c874d489"
+    },
+    {
+      "name": "Memoirs of a Geisha",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History",
+        "Romance"
+      ],
+      "rating": 7.639,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Memoirs of a Geisha (2005)/Memoirs.of.a.Geisha.2005.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "b3c742b5ee5aebd8e32df956274f3c07"
+    },
+    {
+      "name": "Memories",
+      "year": 1995,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Fantasy",
+        "Science Fiction"
+      ],
+      "rating": 7.466,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Memories.[1995]-Magnetic.Rose+Stink.Bomb+Cannon.Fodder-.x264.DVDrip.(Anime)/Memories.[1995]-Magnetic.Rose+Stink.Bomb+Cannon.Fodder-.x264.DVDrip.(Anime).mp4",
+      "jellyfin_id": "2272551aa3e07c2e0bc04569c7932461"
+    },
+    {
+      "name": "Memories of Murder",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 8.058,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Memories of Murder (2003)/Memories of Murder (2003) 1080p BluRay 5.1Ch x265 HEVC SUJAIDR.mkv",
+      "jellyfin_id": "67df02c4e9eb521602c3a1225905e601"
+    },
+    {
+      "name": "The Men Who Stare at Goats",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "War"
+      ],
+      "rating": 5.969,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Men Who Stare at Goats (2009)/The Men Who Stare at Goats(2009).mp4",
+      "jellyfin_id": "931d72a2c7bc7002d191bd5855fe3ed2"
+    },
+    {
+      "name": "Microhabitat",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.556,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Microhabitat/Microhabitat.mp4",
+      "jellyfin_id": "289cb8a9e71d126f6270e4a054f8f1e6"
+    },
+    {
+      "name": "Millennium Actress",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.848,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Millennium Actress (2001)/Millennium.Actress.2001.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "afcf831cd27b9e669e387ed0c8349c46"
+    },
+    {
+      "name": "Minari",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.3,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Minari (2020)/Minari.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "f811278cc6d8303798a13777a8f5df82"
+    },
+    {
+      "name": "Miracle in Cell No. 7",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.251,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Miracle in cell No 7/Miracle in cell No 7.mp4",
+      "jellyfin_id": "ac37a1a455d51fc05398c776af205f4e"
+    },
+    {
+      "name": "Mom",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 4,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Mom (2017)/Mom 2017 Hindi 720p HDTvRip x264 - LOKI - M2Tv.mkv",
+      "jellyfin_id": "95c9beb4ce6161035293732af2d488c5"
+    },
+    {
+      "name": "A Moment to Remember",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.778,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Moment To Remember (2004)/A.Moment.To.Remember.2004.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "f426063804fa43f4cb0ffc9dfc9356ef"
+    },
+    {
+      "name": "Monga",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Thriller"
+      ],
+      "rating": 6.646,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Monga (2010)/Monga aka Bang kah (2010) 720p.BRrip.Sujaidr.mkv",
+      "jellyfin_id": "c2ffc6636e8c84c0ccb7a7bf3cee18f9"
+    },
+    {
+      "name": "Monkey Man",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Thriller"
+      ],
+      "rating": 6.864,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Monkey Man (2024) [1080p]/Monkey.Man.2024.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "9fdc31cf7cfd96e5255872594692685e"
+    },
+    {
+      "name": "Monogatari Series: Off & Monster Season",
+      "year": 2024,
+      "type": "Series",
+      "genres": [
+        "Comedy",
+        "Mystery"
+      ],
+      "rating": 1,
+      "path": "/Volumes/Backup Plus/TV/Monogatari Series",
+      "jellyfin_id": "b82154edbfe4390732c9127b5b3599a9"
+    },
+    {
+      "name": "Monster",
+      "year": 2004,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Mystery",
+        "Crime"
+      ],
+      "rating": 8.5,
+      "path": "/Volumes/Backup Plus/TV/Monster",
+      "jellyfin_id": "a58fca1560388849b20b76b144c5345a"
+    },
+    {
+      "name": "Moon",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Science Fiction"
+      ],
+      "rating": 7.565,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Moon (2009)/Moon.2009 720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "cc2ec4eb7431914f141a42bd058c4f26"
+    },
+    {
+      "name": "Moon Young",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Moon-young (2015)/Moon-young (2015).mp4",
+      "jellyfin_id": "5c89ef97d36c9e62c46e0bd32a62c9c5"
+    },
+    {
+      "name": "Moonlight",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.358,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Moonlight (2016)/Moonlight.2016.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "abf2cd370120a6cdc2c5719df14caa71"
+    },
+    {
+      "name": "More Than Family",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 6.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/More Than Family (2020)/More.Than.Family.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "f7cf3423554b6c2e89b0c8dab0ac291a"
+    },
+    {
+      "name": "Mother",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 7.699,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Mother (2009)/Mother.2009.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "9a4a1088c6771bb3397b6dbb3d6151e8"
+    },
+    {
+      "name": "Mulan",
+      "year": 1998,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Family"
+      ],
+      "rating": 7.902,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Mulan (1998)/Mulan.1998.720p.BRrip.x264.GAZ.YIFY.mp4",
+      "jellyfin_id": "a74acccc8669d49bf00f8e59e27be882"
+    },
+    {
+      "name": "My Brilliant Life",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/My Brilliant Life (2014)/My.Brilliant.Life.2014.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "912c8632f0017a5533ff53f77c1eb788"
+    },
+    {
+      "name": "My Dream Class",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/My Dream Class (2018)/[Movie]'별리섬' (My Dream Class)_HD.mp4",
+      "jellyfin_id": "7de0832bc0fffaf2c4169ba8dc464370"
+    },
+    {
+      "name": "My First Client",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.602,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/My First Client (2019)/My.First.Client.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "04167bb776940ccb9841f5ce1e28af84"
+    },
+    {
+      "name": "My Girlfriend Is a Serial Killer",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Crime",
+        "Romance",
+        "Thriller"
+      ],
+      "rating": 6.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/My Girlfirend is a Serial Killer(2019)/Love.And.Murder.Of.Sheep.And.Wolf.2019.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "d99e3854ee390c3dc13698ad3950f68d"
+    },
+    {
+      "name": "My Little Bride",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "rating": 7.119,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/My Little Bride (2004)/My Little Bride.avi",
+      "jellyfin_id": "8c5e96159525a645bddec68cf40ab9aa"
+    },
+    {
+      "name": "My Missing Valentine",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Mystery",
+        "Romance"
+      ],
+      "rating": 6.9,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/My Missing Valentine (2020)/My Missing Valentine (2020).mp4",
+      "jellyfin_id": "6b24e4ee1996384cdf67d2c7d965bd68"
+    },
+    {
+      "name": "My Way",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "History",
+        "War"
+      ],
+      "rating": 7.921,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/My Way (2011)/My.Way.2011.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "b55c71a6a46d9aa0909cd6724c9d13c2"
+    },
+    {
+      "name": "Nameless Gangster: Rules of the Time",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 6.914,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Nameless Gangster Rules Of The Time (2012)/Nameless.Gangster.Rules.Of.The.Time.2012.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "cdb19ff7bd6befed5b454fe4e31b57d9"
+    },
+    {
+      "name": "The Net",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.364,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Net (2016)/The.Net.2016.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "888a596b071f111512e725bf3ff2fa3f"
+    },
+    {
+      "name": "New World",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.422,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/New World (2013)/New.World.2013.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "0d3aafa19de35aa554cfb5ea8d0116a8"
+    },
+    {
+      "name": "Night and Day",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Night and Day (2008)/Night and Day (2008).mp4",
+      "jellyfin_id": "7a20d27d718eff5a2bc3fb0a9d1036ee"
+    },
+    {
+      "name": "Night Is Short, Walk on Girl",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance",
+        "Animation",
+        "Fantasy"
+      ],
+      "rating": 7.443,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Life is Short Walk on Girl/Life is Short Walk on Girl.mp4",
+      "jellyfin_id": "ba80a844e32c2b9459b31fc112761d39"
+    },
+    {
+      "name": "Nna Thaan Case Kodu",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.371,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Nna Than Case Kodu (2022)/Nna Than Case Kodu (2022).mkv",
+      "jellyfin_id": "710bd51c8a288e2d7c3ac3b0f894615b"
+    },
+    {
+      "name": "No Country for Old Men",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Western"
+      ],
+      "rating": 7.951,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/No Country For Old Men (2007)/No Country For Old Men.mp4",
+      "jellyfin_id": "1f7e37f38110a5971bfcdc7c085dc7ca"
+    },
+    {
+      "name": "Nobody Knows",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.996,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Nobody Knows (2004) Japanese/Nobody Knows (2004).mp4",
+      "jellyfin_id": "c7f2a7c9d006c51840b1c3dc35193ec1"
+    },
+    {
+      "name": "Nobody's Daughter Haewon",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.5,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Nobodys Daughter Haewon (2013)/Nobodys Daughter Haewon.mp4",
+      "jellyfin_id": "3f1e6e97dc6e47255cafb4d25068958a"
+    },
+    {
+      "name": "Nomadland",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.174,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Nomadland (2020)/Chloe Zhao - Nomadland.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "d9fcc50d8921048865b879a7c32648d5"
+    },
+    {
+      "name": "Nope",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Science Fiction"
+      ],
+      "rating": 6.825,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Nope (2022)/Nope.2022.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "dd5a69493bccdd07c02d5f3bf8bec72e"
+    },
+    {
+      "name": "Noriko's Dinner Table",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Horror"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Noriko’s Dinner Table (2005) - Sion Sono/Noriko’s Dinner Table (2005).mp4",
+      "jellyfin_id": "ccf17c360e6a5169961cf58a7623f7e4"
+    },
+    {
+      "name": "Noroi: The Curse",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 6.9,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Noroi (2005)/Noroi (2005).mp4",
+      "jellyfin_id": "4f6ca21d5880f896ef13c40c3b6dfac3"
+    },
+    {
+      "name": "The Northman",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.033,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Northman (2022)/The Northman (2022).mp4",
+      "jellyfin_id": "a3057b0b9b0f86157db0379d6ebe0d1f"
+    },
+    {
+      "name": "Oasis",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Oasis (2002)/Oasis.2002.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "5af2528ad955894d7c69f58e96d18541"
+    },
+    {
+      "name": "ODDTAXI",
+      "year": 2021,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Comedy",
+        "Mystery",
+        "Crime"
+      ],
+      "rating": 8.277,
+      "path": "/Volumes/Backup Plus/TV/Odd Taxi S01",
+      "jellyfin_id": "1b6698001fb1d0e5c331e980df45c64a"
+    },
+    {
+      "name": "Ode to the Goose",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ode to Goose/Ode to Goose.mp4",
+      "jellyfin_id": "430bcc803e42e6bdc87255e830dcd890"
+    },
+    {
+      "name": "Ode to My Father",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ode To My Father (2014)/Ode.To.My.Father.2014.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "507697842ec3ac1273747ba11eed461a"
+    },
+    {
+      "name": "Okay! Madam",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "rating": 7.054,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Okay! Madam/Okay! Madam.mp4",
+      "jellyfin_id": "639a0d18c176527503ba1d83cc9acaa8"
+    },
+    {
+      "name": "Old Days",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Documentary"
+      ],
+      "rating": 6.6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Old Days (2016)/Old.Days.2016.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "f6c8276ff698fd9679e9eb05caa397d4"
+    },
+    {
+      "name": "Oldboy",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 8.238,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Oldboy (2003)/Oldboy.2003.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "a724e82a88974553b99ea1ebf17374b0"
+    },
+    {
+      "name": "Om Dar-B-Dar",
+      "year": 1988,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 6.958,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Om-Dar-B-Dar (1988)/Om Dar-B-Dar (1988) _ Full Movie HD (1080p).mp4",
+      "jellyfin_id": "1e560ce8e1a678a26c91067560a826a3"
+    },
+    {
+      "name": "On the Beach at Night Alone",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.6,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/On The Beach At Night Alone (2017)/On.The.Beach.At.Night.Alone.2017.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "b6c17633e0ed38ae3ef652bd1cdb8139"
+    },
+    {
+      "name": "On Your Wedding Day",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.524,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/On Your Wedding Day (2018)/On.Your.Wedding.Day.2018.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "542629399db68d4c511d99e53814d485"
+    },
+    {
+      "name": "One Night in Miami",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/One Night in Miami (2021)/One.Night.in.Miami.2021.720p.WEBRip.800MB.x264-GalaxyRG.mkv",
+      "jellyfin_id": "be8569c3fb9a9e6cf30a6fc21fd5a5a8"
+    },
+    {
+      "name": "Our Sunhi",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.604,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Our Sunhi (2013)/Our.Sunhi.2013.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "1817ab7ae97eec3e754ca08ff37a72d8"
+    },
+    {
+      "name": "The Outlaws",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.652,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Outlaws (2017)/The Outlaws.mp4",
+      "jellyfin_id": "60e7749b77c2070634d3f96f356c226b"
+    },
+    {
+      "name": "Oye Lucky! Lucky Oye!",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "rating": 7.022,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Oye Lucky! Lucky Oye! (2009)/Oye Lucky! Lucky Oye! 2009 Hindi 720p BRRip CharmeLeon SilverRG.mkv",
+      "jellyfin_id": "cb359654ade9aa901975e60bba073482"
+    },
+    {
+      "name": "Paan Singh Tomar",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.391,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Paan Singh Tomar/Paan Singh Tomar.mp4",
+      "jellyfin_id": "97c39ab131bf3dbadaa9acf2b8ba176c"
+    },
+    {
+      "name": "Paprika",
+      "year": 2006,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 7.813,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Paprika (2006)/Paprika.2006.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "312f649a04d6a38a797dea1ec792b783"
+    },
+    {
+      "name": "Park Hwa-young",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 4.6,
+      "path": "/Volumes/Backup Plus/All Movies/Unsorted Get srt files/Park Hwa-young (2018)/Park Hwa-young (2018).mp4",
+      "jellyfin_id": "6fbbf13d7d0b10b227cca5efccdc23e4"
+    },
+    {
+      "name": "Pawn",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Family"
+      ],
+      "rating": 8.329,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Pawn (2020)/Pawn.mp4",
+      "jellyfin_id": "bf71b74e9b4afa7e9d87670a14d0a9f7"
+    },
+    {
+      "name": "Peppermint Candy",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Peppermint Candy (1999)/Peppermint.Candy.1999.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "8a0db52881c9fd9bcb2e97a3171a7352"
+    },
+    {
+      "name": "Perfect Blue",
+      "year": 1997,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Thriller"
+      ],
+      "rating": 8.302,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Perfect Blue (1997)/Perfect.Blue.1997.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "b9360a05db2f0c8c10b1b4e96106a1ee"
+    },
+    {
+      "name": "Perfect Strangers",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.854,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Perfect Strangers (2017)/Perfect.Strangers.2017.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "7b9d613e88f552b15a7068d2715e15ec"
+    },
+    {
+      "name": "Pi",
+      "year": 1998,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 7.111,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Pi (1998)/Pi.mp4",
+      "jellyfin_id": "9f6747150de41d5347fe41a477b7254d"
+    },
+    {
+      "name": "The Pianist",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "War"
+      ],
+      "rating": 8.375,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Pianist (2002)/The.Pianist.720p.BrRip.x264.YIFY.mkv",
+      "jellyfin_id": "08e6976af677fa6068924972881816cc"
+    },
+    {
+      "name": "Please Don't Save Me",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Please Don't Save Me (2020)/Please Don't Save me (2020).mp4",
+      "jellyfin_id": "d4cf36e2af106e59a3a78d13b04186a8"
+    },
+    {
+      "name": "Poetry",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Poetry (2010)/Poetry.2010.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "41487052c29768e3bc08a389b84d3616"
+    },
+    {
+      "name": "Ponyo",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Family",
+        "Fantasy"
+      ],
+      "rating": 7.8,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Ponyo/Ponyo 2008.mp4",
+      "jellyfin_id": "b476aafc6ef0424d87c3d1692edf7d79"
+    },
+    {
+      "name": "Pretty in Pink",
+      "year": 1986,
+      "type": "Movie",
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
+      "rating": 6.686,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Pretty In Pink (1986) [WEBRip] [1080p] [YTS.AM]/Pretty.In.Pink.1986.1080p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "78a1f2aebd73ea6d3076ad9ca3fa294e"
+    },
+    {
+      "name": "Pride & Prejudice",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 8.1,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Pride and Prejudice (2005)/pride.and.prejudice.2005.720p.bluray.x264-nezu.mkv",
+      "jellyfin_id": "4b63e0f504f921d0884f5cdbe3d345b1"
+    },
+    {
+      "name": "Primer",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 6.755,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Primer (2004)/Primer.2004.720p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "99b254c46cac35ea39dac5987258b55d"
+    },
+    {
+      "name": "The Princess Bride",
+      "year": 1987,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Family",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.698,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Princess Bride (1987)/The Princess Bride .1987.720p.BRRip.x264.YIFY.mp4",
+      "jellyfin_id": "c0daf1f9121baec9d65d999fb2136a1b"
+    },
+    {
+      "name": "Princess Mononoke",
+      "year": 1997,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Fantasy"
+      ],
+      "rating": 8.322,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Mononoke hime - Princess Mononoke/Mononoke hime - Princess Mononoke.mkv",
+      "jellyfin_id": "31fd9d8d36250fb3ea3f3799362dfe9f"
+    },
+    {
+      "name": "The Promise",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History",
+        "Romance"
+      ],
+      "rating": 6.852,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Promise (2017)/The Promise.mp4",
+      "jellyfin_id": "863039cd03ca7efcb3d0e0771df24ead"
+    },
+    {
+      "name": "Prospect",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Science Fiction"
+      ],
+      "rating": 6.219,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Prospect (2018)/Prospect.2018.720p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "380df64f59dbef25fec3d050133d0e7e"
+    },
+    {
+      "name": "Pulp Fiction",
+      "year": 1994,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 8.484,
+      "path": "/Volumes/Backup Plus/All Movies/Tarantino/Pulp Fiction (1994)/Pulp.Fiction.1994.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "d6480a04305a9ffad11be1b3eb29e4ba"
+    },
+    {
+      "name": "Pulse",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 6.701,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Pulse/Pulse (Kairo) 2001 BD 720p (x265).mkv",
+      "jellyfin_id": "cce7a5da7982c794398361159b757869"
+    },
+    {
+      "name": "Punch",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ],
+      "rating": 6.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Punch (2011)/Punch.mp4",
+      "jellyfin_id": "7281a20a87edec723614914e93351e10"
+    },
+    {
+      "name": "Pyaasa",
+      "year": 1957,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.226,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Pyaasa (1957)/Pyaasa (1957).mp4",
+      "jellyfin_id": "70d04f04dd7139faa2b161fe1f9e9269"
+    },
+    {
+      "name": "A Quiet Dream",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Quiet Dream (2016)/A Quiet Dream (2016).mp4",
+      "jellyfin_id": "8c945fa054078bd936354ddd67aa33dd"
+    },
+    {
+      "name": "A Quiet Place",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Science Fiction"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/A Quiet Place (2018)/A.Quiet.Place.2018.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "59dbcb0c81bbedb92d74367ff3eb3aa6"
+    },
+    {
+      "name": "Rain Man",
+      "year": 1988,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.752,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Rain Man (1988)/Rain.Man.Br.YIFY.mkv",
+      "jellyfin_id": "0b561c3f35e4b27e0885d4b2bce13982"
+    },
+    {
+      "name": "Raise the Red Lantern",
+      "year": 1991,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.919,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Raise The Red Lantern (1991)/Raise.The.Red.Lantern.1991.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "d3d3dd05af1c7fd095bbaab3b82215ad"
+    },
+    {
+      "name": "Rangi Taranga",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 6.813,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Rangi Taranga (2019)/Rangi Taranga (2019) Hindi dub.mp4",
+      "jellyfin_id": "b50d0bbf661b963fb00c58e09786bdc4"
+    },
+    {
+      "name": "Rashomon",
+      "year": 1950,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 8.037,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Rashomon (1950)/Rashomon.1950.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "dc038c36a5f3b65e3e8c3539fe15af1a"
+    },
+    {
+      "name": "Red Post on Escher Street",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Red Post on Escher Street (2020) Sion Sono/Red Post on Escher Street (2020) Sion Sono.mp4",
+      "jellyfin_id": "60e5803d0cca5ef3bb7e8589057718a9"
+    },
+    {
+      "name": "The Red Turtle",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Family",
+        "Fantasy"
+      ],
+      "rating": 7.442,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/The Red Turtle (2016)/The.Red.Turtle.2016.720p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "0c78a69bd1c9b0e62155ab93f4f96ad0"
+    },
+    {
+      "name": "Redline",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Animation",
+        "Science Fiction"
+      ],
+      "rating": 7.507,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Redline (2009)/Redline 2009.1080p.BluRay.x264 . NVEE.mp4",
+      "jellyfin_id": "fecaf2d1eff970c473fe009ad9f596ad"
+    },
+    {
+      "name": "Reservoir Dogs",
+      "year": 1992,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 8.115,
+      "path": "/Volumes/Backup Plus/All Movies/Tarantino/Reservoir Dogs (1992)/Reservoir Dogs.1992.BluRay.720p.x264.YIFY.mp4",
+      "jellyfin_id": "cc62ed4e4ff0f87252e6ed50b49d4ed4"
+    },
+    {
+      "name": "Review Notebook of My Embarrassing Days",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Review Notebook of My Embarrassing Days/Review Notebook of My Embarrassing Days.mp4",
+      "jellyfin_id": "02b4e1d0027e2d13021efaa2019e0c21"
+    },
+    {
+      "name": "Right Now, Wrong Then",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Right Then, Wrong Now (2015)/Right Now, Wrong Then.mp4",
+      "jellyfin_id": "c5afa82e0e734c420b59c5f6d2e69d8f"
+    },
+    {
+      "name": "Ringu",
+      "year": 1998,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Thriller"
+      ],
+      "rating": 7.082,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Ring [Ringu].1998.DVDRip.XviD-VLiS/Ring [Ringu].1998.DVDRip.XviD-VLiS.avi",
+      "jellyfin_id": "8fbe9f2afbffe5eae214a91491b55a6e"
+    },
+    {
+      "name": "The Road Home",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Road Home (1999)/The.Road.Home.1999.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "1dab947e216026cdd6f64d52859ebe4c"
+    },
+    {
+      "name": "Rocket Boys",
+      "year": 2022,
+      "type": "Series",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.362,
+      "path": "/Volumes/Backup Plus/TV/Rocket Boys S01",
+      "jellyfin_id": "dba1fa03a6f8c88d53ec8ff915b34f0a"
+    },
+    {
+      "name": "Roma",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.622,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Roma (2018)/Roma.2018.1080p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "33f8f10361bdaf0014aa3ad4abd24baf"
+    },
+    {
+      "name": "The Roundup",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": 7.337,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Roundup (2022)/The.Roundup.2022.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "6cf8e5ebef8277823fbd26dc36393d51"
+    },
+    {
+      "name": "The Royal Tenenbaums",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.456,
+      "path": "/Volumes/Backup Plus/All Movies/Wes Anderson/The Royal Tenenbaums (2001)/The.Royal.Tenenbaums.2001.1080p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "a9a488ebacb3718cc35986e0f75dd8d4"
+    },
+    {
+      "name": "Ruby Sparks",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.121,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Ruby Sparks (2012)/Ruby.Sparks.2012.720p.BRrip.x264.YIFY.mp4",
+      "jellyfin_id": "b809de1930463faad1c48144e52c6579"
+    },
+    {
+      "name": "Rurouni Kenshin Part I: Origins",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "History",
+        "War"
+      ],
+      "rating": 7.5,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Rurouni Kenshin Part I Origins (2012)/Rurouni.Kenshin.Part.I.Origins.2012.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "1db6ecab0b8205ee9bd86016d1af3469"
+    },
+    {
+      "name": "Rurouni Kenshin Part II: Kyoto Inferno",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.568,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Rurouni Kenshin Part II Kyoto Inferno (2014)/Rurouni.Kenshin.Part.II.Kyoto.Inferno.2014.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "6a0b572f3c26573cc7776fe1c50621ff"
+    },
+    {
+      "name": "Rurouni Kenshin Part III: The Legend Ends",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "rating": 7.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Rurouni Kenshin Part III The Legend Ends (2014)/Rurouni.Kenshin.Part.III.The.Legend.Ends.2014.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "f56a2c9bb87d7a11aa9bb22dee0d0bd0"
+    },
+    {
+      "name": "Rushmore",
+      "year": 1998,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Wes Anderson/Rushmore (1998)/Rushmore.1998.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "f043ee6cf97c02805234674ffe674684"
+    },
+    {
+      "name": "RX 100",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 5.6,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/RX 100 (2018)/RX 100 (2018) Hindi 1080p WEB-DL x264 AAC [Team DRSD].mkv",
+      "jellyfin_id": "473468d16e8521dc7d20d777183c97d7"
+    },
+    {
+      "name": "Sad Movie",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Sad Movie (2005)/Sad.Movie.2005.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "6c59ea1080f8f0eff26943c8a0042bf2"
+    },
+    {
+      "name": "Safety Not Guaranteed",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance",
+        "Science Fiction"
+      ],
+      "rating": 6.776,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Safety Not Guaranteed (2012)/Safety.Not.Guaranteed.2012.720p.BRrip.x264.YIFY.mp4",
+      "jellyfin_id": "d4a270ba40bae9bc94edabc455eecc83"
+    },
+    {
+      "name": "Sairat",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.6,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Sairat (2016)/Sairat 2016.mp4",
+      "jellyfin_id": "c07537e204ff92882566b578e1cfd9ea"
+    },
+    {
+      "name": "Samsara",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Documentary"
+      ],
+      "rating": 8.061,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Samsara (2011) [BluRay] [1080p] [YTS.AM]/Samsara.2011.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "f550c8e7f4a46ea086a2e07b77424b00"
+    },
+    {
+      "name": "Samurai Champloo",
+      "year": 2004,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Action & Adventure",
+        "Comedy"
+      ],
+      "rating": 8.3,
+      "path": "/Volumes/Backup Plus/TV/Samurai Champloo",
+      "jellyfin_id": "56c9327e62eca5b6c9cb70cfa29cb5c8"
+    },
+    {
+      "name": "Schindler's List",
+      "year": 1993,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History",
+        "War"
+      ],
+      "rating": 8.6,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Schindlers List (1993)/Schindlers.List.1993.720p.BrRip.x264.BOKUTOX.YIFY.mp4",
+      "jellyfin_id": "2aa58477a055493d6465ae2c40c8ab77"
+    },
+    {
+      "name": "Scum's Wish",
+      "year": 2017,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Drama"
+      ],
+      "rating": 6.423,
+      "path": "/Volumes/Backup Plus/TV/Scum's Wish",
+      "jellyfin_id": "04f556bd72b0a8f0135180873ef268f1"
+    },
+    {
+      "name": "Sea Fog",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 6.857,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Sea Fog (2014)/Sea.Fog.2014.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "10b7f75581ae3625e7b9a199b46b48c6"
+    },
+    {
+      "name": "Searching",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "TV Movie"
+      ],
+      "rating": 6.561,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Searching (2018)/Searching.2018.720p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "7f6af6995996aaba16b69c49540f05f9"
+    },
+    {
+      "name": "The Secret Life of Walter Mitty",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.224,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Secret Life of Walter Mitty (2013)/The Secret Life of Walter Mitty.mp4",
+      "jellyfin_id": "a8b4d1ff331ad4962601bcaaa7c49aa7"
+    },
+    {
+      "name": "The Secret World of Arrietty",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Family",
+        "Fantasy"
+      ],
+      "rating": 7.668,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/The Secret World of Arrietty/The Secret World of Arrietty.mp4",
+      "jellyfin_id": "e363ce304517233ddec0416d2fbccb8f"
+    },
+    {
+      "name": "Sense and Sensibility",
+      "year": 1995,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.421,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Sense And Sensibility (1995)/Sense.And.Sensibility.1995.720p.BluRay.x264-[YTS.LT].mp4",
+      "jellyfin_id": "226dc37b9067b54be462a70f06704bf6"
+    },
+    {
+      "name": "Serial Experiments Lain",
+      "year": 1998,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Sci-Fi & Fantasy",
+        "Mystery"
+      ],
+      "rating": 8.222,
+      "path": "/Volumes/Backup Plus/TV/Serial Experiments Lain (1998)",
+      "jellyfin_id": "234cebfa4fb7fe17861024d9c8fe84d0"
+    },
+    {
+      "name": "Seven Samurai",
+      "year": 1954,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "rating": 8.451,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Seven Samurai (1954)/Seven.Samurai.1954.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "037dc06a7c55960aa6f92e90e87cfd87"
+    },
+    {
+      "name": "Severance",
+      "year": 2022,
+      "type": "Series",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Sci-Fi & Fantasy"
+      ],
+      "rating": 8.389,
+      "path": "/Volumes/Backup Plus/TV/Severance S01",
+      "jellyfin_id": "24952880f8426a5ec89e0ac2349d3d0a"
+    },
+    {
+      "name": "Shahid",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 5.2,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Shahid/Shahid.mkv",
+      "jellyfin_id": "14f71e6457ef92d1b5d0fa3935c3d1ef"
+    },
+    {
+      "name": "The Shape of Water",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.237,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Shape Of Water (2017)/The.Shape.Of.Water.2017.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "5e803fbaba261461a96c19605f9e7440"
+    },
+    {
+      "name": "Shin Godzilla",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Horror",
+        "Science Fiction"
+      ],
+      "rating": 7.228,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Shin Godzilla (2016)/Shin.Godzilla.2016.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "10659d7411a7453105a7faebaff66b8d"
+    },
+    {
+      "name": "Ship of Theseus",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.923,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Ship Of Theseus (2012)/Ship.Of.Theseus.2012.720p.BluRay.x264.[YTS.AG].mp4",
+      "jellyfin_id": "61ec9fbf2ef0819cb78cce1af72f17a5"
+    },
+    {
+      "name": "Shōgun",
+      "year": 2024,
+      "type": "Series",
+      "genres": [
+        "Drama",
+        "War & Politics"
+      ],
+      "rating": 8.419,
+      "path": "/Volumes/Backup Plus/TV/Shogun S01",
+      "jellyfin_id": "7676e761ada84c123c553ee8d94c429b"
+    },
+    {
+      "name": "Shoplifters",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Shoplifters (2018)/Shoplifters (2018) ‧ Drama Crime.mkv",
+      "jellyfin_id": "bc2288447fde7b476b307fa8600094df"
+    },
+    {
+      "name": "Shutter",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 8.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Shutter/Shutter.avi",
+      "jellyfin_id": "a8ef93de6b0cf3f1de94ba5b83e95f7b"
+    },
+    {
+      "name": "Silenced",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.158,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Silenced (2011)/Silenced 2011 1080p BluRay x264 Korean AAC - Ozlem.mp4",
+      "jellyfin_id": "268fc1d0e2670766c3553c9d6919bdc9"
+    },
+    {
+      "name": "A Silent Voice (Koe no Katachi) (Dub) ",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Koe no Katachi/A Silent Voice (Koe no Katachi) (Dub) .mp4",
+      "jellyfin_id": "969235a520598608246f4bdeb3562b52"
+    },
+    {
+      "name": "Sinners",
+      "year": 2025,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Horror",
+        "Thriller"
+      ],
+      "rating": 7.493,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Sinners (2025)/Sinners.2025.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "91f4f920c62c49b7840c5f28e8d5415f"
+    },
+    {
+      "name": "The Skeleton Twins",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Skeleton Twins (2014)/The.Skeleton.Twins.2014.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "f9996d1966a0e72c3ea672d7616d05d9"
+    },
+    {
+      "name": "Sleepless in Seattle",
+      "year": 1993,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Sleepless in Seattle (1993)/Sleepless in Seattle 1993 REMASTERED 1080p BluRay HEVC x265 5.1 BONE.mkv",
+      "jellyfin_id": "7a00756ea284aed5e1ef85250548d75e"
+    },
+    {
+      "name": "Solanin",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Music",
+        "Romance"
+      ],
+      "rating": 6.9,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Solanin (2010)/Solanin (2010).mp4",
+      "jellyfin_id": "494a4d8446864662b21795ab341f9b35"
+    },
+    {
+      "name": "Solar Opposites",
+      "year": 2020,
+      "type": "Series",
+      "genres": [
+        "Comedy",
+        "Animation",
+        "Sci-Fi & Fantasy"
+      ],
+      "rating": 7.802,
+      "path": "/Volumes/Backup Plus/TV/Solar Opposites",
+      "jellyfin_id": "ef41d21c15e3fa989061f95ad10313a1"
+    },
+    {
+      "name": "Spellbound",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Comedy",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.462,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Spellbound (2011)/Spellbound(2011).mp4",
+      "jellyfin_id": "d72f0e0559c7f1acc7369ecf43515f8d"
+    },
+    {
+      "name": "Spellbound",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Comedy",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.462,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Spellbound (2011)/Spellbound (2011).mp4",
+      "jellyfin_id": "e7d29c211530e252d3ed854c962b7a80"
+    },
+    {
+      "name": "Spirited Away",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Family",
+        "Fantasy"
+      ],
+      "rating": 8.535,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Spirited Away/Spirited Away (2001).mkv",
+      "jellyfin_id": "bcb74f215b7626f9f5cdb7f240429f86"
+    },
+    {
+      "name": "Split",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Thriller"
+      ],
+      "rating": 7.341,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Split (2016)/Split.2016.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "143108ca3ffb3739feb84fa98d9d4e6e"
+    },
+    {
+      "name": "Spring Breakers",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 5.257,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Spring Breakers (2012)/Spring.Breakers.2012.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "e0492c8923f5005262a0bdaa6dc89384"
+    },
+    {
+      "name": "Spring, Summer, Fall, Winter... and Spring",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.794,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Spring Summer Fall Winter And Spring (2003)/Spring,.Summer,.Fall,.Winter....And.Spring (2003).mp4",
+      "jellyfin_id": "bf1bc51127ab45349df6711623034fc1"
+    },
+    {
+      "name": "The Spy Gone North",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "History",
+        "Thriller"
+      ],
+      "rating": 7.374,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Spy Gone North (2018)/The.Spy.Gone.North.2018.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "329436ba1af4c1cfe24d5abf113d4076"
+    },
+    {
+      "name": "The Squid and the Whale",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 6.954,
+      "path": "/Volumes/Backup Plus/All Movies/Wes Anderson/The Squid And The Whale (2005)/The.Squid.And.The.Whale.2005.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "0cac1944bedb89d3d9d808a527421311"
+    },
+    {
+      "name": "Steins;Gate Live Stage Adptation ",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Steins;Gate Live Stage Adptation /Steins;Gate Live Stage Adaptation – LIVING ADV SG Route.mp4",
+      "jellyfin_id": "6f61a8497406a0b95fe5d1a3c8799262"
+    },
+    {
+      "name": "Stone Skipping",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Stone Skipping (2020)/Stone Skipping (2020).mp4",
+      "jellyfin_id": "628781fae1272ac39f1b117622de7aa1"
+    },
+    {
+      "name": "Suicide Club",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Thriller"
+      ],
+      "rating": 6.46,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Suicide Club 2001 DVDRip Xvid LKRG/Suicide Club 2001 DVDRip Xvid LKRG.avi",
+      "jellyfin_id": "9d11ecc2f311ef13f93f4c11fbaf53c6"
+    },
+    {
+      "name": "Summer Ghost",
+      "year": 2021,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Fantasy",
+        "Mystery"
+      ],
+      "rating": 7.247,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Summer Ghost (2021) [Movie] [V2] [BD 1080p HEVC OPUS] [Dual-Audio]/Summer Ghost (2021).mkv",
+      "jellyfin_id": "d58f09750fc5c6013a248f435e45d712"
+    },
+    {
+      "name": "Sunny",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Sunny (2011)/Sunny.mp4",
+      "jellyfin_id": "a5fd9b490f43b384863e8b9852f6a306"
+    },
+    {
+      "name": "Sunshine",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 6.967,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Sunshine (2007)/Sunshine.2007.1080p.BrRip.x264.BOKUTOX.YIFY.mp4",
+      "jellyfin_id": "4f8b41d5323143140e734e51c7348d70"
+    },
+    {
+      "name": "Swing Kids",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "War"
+      ],
+      "rating": 8.131,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Swing Kids (2018)/Swing.Kids.2018.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "00d930f8ed0a3be0c8660f4112bf8643"
+    },
+    {
+      "name": "Swiss Army Man",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 6.925,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Swiss Army Man/Swiss.Army.Man.2016.1080p.BluRay.6CH.ShAaNiG.mkv",
+      "jellyfin_id": "34bac81192ed95fc41e9449fcdaa6dd5"
+    },
+    {
+      "name": "Sympathy for Mr. Vengeance",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.464,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Sympathy For Mr. Vengeance (2002)/Sympathy.For.Mr..Vengeance.2002.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "3d29506192073f91f28e57287d6fd6f9"
+    },
+    {
+      "name": "Tae Guk Gi: The Brotherhood of War",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "History",
+        "War"
+      ],
+      "rating": 7.998,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Tae Guk Gi The Brotherhood Of War (2004)/Tae.Guk.Gi.The.Brotherhood.Of.War.2004.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "c7ca1987317c4b7543d9df8ba7806fcb"
+    },
+    {
+      "name": "Takopi's Original Sin",
+      "year": 2025,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Sci-Fi & Fantasy"
+      ],
+      "rating": 8.772,
+      "path": "/Volumes/Backup Plus/TV/Takopii no Genzai S01 1080p WEBRip DD+ x265-EMBER",
+      "jellyfin_id": "78527d38ac7378f97f83de4defcc78b0"
+    },
+    {
+      "name": "Tale of Cinema",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.8,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Tale Of Cinema (2005)/Tale.Of.Cinema.2005.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "159b698e0eae98b410081a06a0501d59"
+    },
+    {
+      "name": "A Tale of Two Sisters",
+      "year": 2003,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Mystery"
+      ],
+      "rating": 7.094,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Tale Of Two Sisters (2003)/A.Tale.Of.Two.Sisters.2003.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "cb58fe19e918dc5013b694ea94e496e4"
+    },
+    {
+      "name": "A Taxi Driver",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "History"
+      ],
+      "rating": 8.039,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Taxi Driver/A Taxi Driver.mp4",
+      "jellyfin_id": "dd12b8473fff03affdd57b45af97b38e"
+    },
+    {
+      "name": "Teenage Hooker Became Killing Machine",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Science Fiction"
+      ],
+      "rating": 4.75,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Teenage Hooker Became Killing Machine (2000)/Teenage Hooker Became Killing Machine (2000).mp4",
+      "jellyfin_id": "9533c136ec588c50d83e5aa391bab81d"
+    },
+    {
+      "name": "The Terror Live",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.167,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Terror Live (2013)/The Terror Live 720p.mp4",
+      "jellyfin_id": "b172e25cae4d802ea2920aea4fcd936a"
+    },
+    {
+      "name": "They Live",
+      "year": 1988,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 7.297,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/They Live (1988) [1080p]/They.Live.1988.1080p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "512a1d1b0831d464289cbdcd988f017c"
+    },
+    {
+      "name": "The Thieves",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime"
+      ],
+      "rating": 6.711,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Thieves (2012)/The.Thieves.2012.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "15a3f7d3e9d250af89accaa80504747e"
+    },
+    {
+      "name": "Thirst",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Thriller"
+      ],
+      "rating": 7.1,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Thirst (2009)/Thirst (2009).mp4",
+      "jellyfin_id": "9185f2d5436b349dd5e7ce2066ed43a3"
+    },
+    {
+      "name": "Three Billboards Outside Ebbing, Missouri",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 8.056,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Three Billboards Outside Ebbing, Missouri (2017)/Three.Billboards.Outside.Ebbing,.Missouri.2017.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "50cf552be88ec5c501df440b73f62026"
+    },
+    {
+      "name": "Thunderbolts*",
+      "year": 2025,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Science Fiction"
+      ],
+      "rating": 7.291,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Thunderbolts (2025)/Thunderbolts.2025.REPACK.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "2ef34763eb58631ca4eb4b44e3e9d45a"
+    },
+    {
+      "name": "TO JENNY I 투 제니- Ep.1",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/To Jenny (2018)/TO JENNY I 투 제니- Ep.1.mp4",
+      "jellyfin_id": "98afb95aaf2f90e2ebc595681823180e"
+    },
+    {
+      "name": "TO JENNY I 투 제니- Ep.2",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/To Jenny (2018)/TO JENNY I 투 제니- Ep.2.mp4",
+      "jellyfin_id": "c0e833ae33c23756b128241587ff2595"
+    },
+    {
+      "name": "To Live",
+      "year": 1994,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance",
+        "War"
+      ],
+      "rating": 8.1,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/To Live (1994)/To.Live.1994.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "b8e13d2973476e10864b3f6c2df95f2e"
+    },
+    {
+      "name": "Tokyo.sora",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Tokyo.sora (2002)/Tokyo.sora (2002).mp4",
+      "jellyfin_id": "9b5b4e3b13c7e261ae75321ec901dfa0"
+    },
+    {
+      "name": "Tokyo Story",
+      "year": 1953,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 8.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Tokyo Story (1953)/Tokyo.Story.1953.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "2c313eb724622c8782ecd7d7d0682817"
+    },
+    {
+      "name": "Tokyo Tribe",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Music",
+        "Science Fiction",
+        "Action",
+        "Drama",
+        "Crime"
+      ],
+      "rating": 6.528,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Tokyo Tribe (2014) Sion Sono/Tokyo Tribe (2014) Sion Sono.mp4",
+      "jellyfin_id": "15420651e3f40a8fb3db1486cc91519d"
+    },
+    {
+      "name": "Tokyo Vice",
+      "year": 2022,
+      "type": "Series",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.861,
+      "path": "/Volumes/Backup Plus/TV/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)",
+      "jellyfin_id": "86c9eb0c63c432aea5e8e2ac67c6578a"
+    },
+    {
+      "name": "Top Gun",
+      "year": 1986,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.067,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Top Gun (1986)/Top Gun (1986) 720p BrRip x264 YIFY.mp4",
+      "jellyfin_id": "f3efac5158228c2b8aff07b6beb15951"
+    },
+    {
+      "name": "Trainspotting",
+      "year": 1996,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 8,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Trainspotting (1996) [1080p]/Trainspotting.1996.1080p.BrRip.x264.BOKUTOX.YIFY.mp4",
+      "jellyfin_id": "e6a24e5a90459612e2478b974e25b2bb"
+    },
+    {
+      "name": "Trumbo",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.168,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Trumbo (2015)/Trumbo.2015.720p.BluRay.x264-[YTS.AG].mp4",
+      "jellyfin_id": "1cad622e193cc7aef6114431a4464898"
+    },
+    {
+      "name": "Tunnel",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.287,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Tunnel (2016)/Tunnel (2016).mp4",
+      "jellyfin_id": "7d5f23764ba9e14b4fa01225934ec87f"
+    },
+    {
+      "name": "Twelve Monkeys",
+      "year": 1995,
+      "type": "Movie",
+      "genres": [
+        "Mystery",
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 7.607,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/12 Monkeys (1995)/12.Monkeys.1995.BluRay.x264.720p .YIFY.mp4",
+      "jellyfin_id": "1ea4b9a7ec5b7bd5b3e6b021c9133794"
+    },
+    {
+      "name": "Twenty",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Documentary"
+      ],
+      "rating": 7.113,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Twenty (2015)/Twenty.2014.720p.WEB-DL.H264.AAC-QUiCKY.mp4",
+      "jellyfin_id": "1d261508c79d1a28b3cd3bfae2cc34e2"
+    },
+    {
+      "name": "Ugly",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 7.9,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Ugly (2013)/Ugly.2013.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "f8a921ad80963ddbd65a94da321de75c"
+    },
+    {
+      "name": "Unbreakable",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "rating": 7.143,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Unbreakable (2000)/Unbreakable.2000.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "7ce15cfaf4c5397723e600ce55345fcc"
+    },
+    {
+      "name": "Uncle Vanya",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Uncle Vanya (2020)/Uncle.Vanya.2020.HDRip.XviD.AC3-EVO.avi",
+      "jellyfin_id": "73972254fffa72e58d40e005251e9464"
+    },
+    {
+      "name": "Under the Silver Lake",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 6.4,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Under The Silver Lake (2018)/Under.The.Silver.Lake.2018.1080p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "07134c2e69d50feab6e04648adebd2e6"
+    },
+    {
+      "name": "Us",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Mystery"
+      ],
+      "rating": 6.947,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Us (2019)/Us.2019.720p.WEBRip.x264-[YTS.AM].mp4",
+      "jellyfin_id": "9a69aa15df8e18cbce7eee9a0b1a3d02"
+    },
+    {
+      "name": "Vanishing Time: A Boy Who Returned",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Vanishing Time A Boy Who Returned (2016)/Vanishing.Time.A.Boy.Who.Returned.2016.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "b49596b91a841e92d717451fc98bcf4c"
+    },
+    {
+      "name": "Very Ordinary Couple",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "rating": 6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Very Ordinary Couple (2013)/Very Ordinary Couple (2013).mp4",
+      "jellyfin_id": "3e219a136786deba1b16242a4dd516ae"
+    },
+    {
+      "name": "Voice of Silence",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.441,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Voice of Silence (2020)/Voice of Silence.mp4",
+      "jellyfin_id": "a01f2eb7258d9741b40e9b20abaa82f6"
+    },
+    {
+      "name": "The Wailing",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Mystery"
+      ],
+      "rating": 7.378,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Wailing/The.Wailing.2016.1080p.BluRay.10bit.HEVC.6CH-MkvCage.ws.mkv",
+      "jellyfin_id": "49e3fb15e79708949aedfbda0d78536a"
+    },
+    {
+      "name": "Waking Life",
+      "year": 2001,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.48,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Waking Life (2001)/Waking.Life.2001.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "61ba08a1a6ff11b340a6ed855e951e34"
+    },
+    {
+      "name": "The Walk",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "History"
+      ],
+      "rating": 6.989,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Walk (2015)/The.Walk.2015.1080p.BluRay.x264.[YTS.AG].mp4",
+      "jellyfin_id": "5cff5bf262caf3a8b11cde6b989b1a0c"
+    },
+    {
+      "name": "Walk the Line",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Music",
+        "Romance"
+      ],
+      "rating": 7.498,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Walk the Line (2005)/Walk.the.Line.EXTENDED.2005.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "e236da5bfe35f2d7a5cc0e62aa099f49"
+    },
+    {
+      "name": "Walking with the Light",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Bokura wa aruku, tada soredake (2009)/Bokura wa aruku, tada soredake (2009).mp4",
+      "jellyfin_id": "3b209ae57cfad5ef67aad6f1c5492b90"
+    },
+    {
+      "name": "WandaVision",
+      "year": 2021,
+      "type": "Series",
+      "genres": [
+        "Sci-Fi & Fantasy",
+        "Mystery",
+        "Drama"
+      ],
+      "rating": 8.186,
+      "path": "/Volumes/Backup Plus/TV/WandaVision S1",
+      "jellyfin_id": "be287e4778070b4a8c20f51031cd46b4"
+    },
+    {
+      "name": "Way Back Home",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.6,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Way Back Home (2013)/Way.Back.Home.2013.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "440b9e6ded4f53d32a799db8c08124c1"
+    },
+    {
+      "name": "The Way Home",
+      "year": 2002,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Family"
+      ],
+      "rating": 7.992,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Way Home (2002)/The.Way.Home.2002.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "5f729029678821e4ca62774b227bf20f"
+    },
+    {
+      "name": "The Way Way Back",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 7.138,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Way Way Back (2013)/The.Way.Way.Back.2013.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "ed62ca61f13061a9700527fd5c653f27"
+    },
+    {
+      "name": "Weathering with You",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.978,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Weathering With You (Tenki no Ko)/Weathering With You (Tenki no Ko).mkv",
+      "jellyfin_id": "b5ecc41be0c2d4f864348b19f700b52f"
+    },
+    {
+      "name": "Welcome to Dongmakgol",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "War"
+      ],
+      "rating": 7.455,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Welcome To Dongmakgol (2005)/Welcome To Dongmakgol (2005) 720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "e25e154ade02af031f2e08700769259d"
+    },
+    {
+      "name": "A Werewolf Boy",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "rating": 7.653,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/A Werewolf Boy (2012)/A.Werewolf.Boy.2012.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "05ac196c86a2ef343ca53713a6c0f3a8"
+    },
+    {
+      "name": "What Happened to Our Nest Egg",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Family"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/What Happened to Our Nest Egg (2022)/What Happened to Our Nest Egg (2022).mp4",
+      "jellyfin_id": "e5e8e59b59dd30bae189ec4ef5178b53"
+    },
+    {
+      "name": "What a Man Wants",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 6.7,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/What a Man Wants/What a Man Wants.mp4",
+      "jellyfin_id": "494769a19ec1c775b1ac964b1a221ac0"
+    },
+    {
+      "name": "Where the Wild Things Are",
+      "year": 2009,
+      "type": "Movie",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Family",
+        "Fantasy"
+      ],
+      "rating": 6.5,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Where the Wild Things Are UNRATED (2009) [1080p]/Where.the.Wild.Things.Are.UNRATED.2009.1080p.BrRip.x264.BOKUTOX.YIFY.mp4",
+      "jellyfin_id": "a9ea9fa2750f45c039e9011a4b9ce07c"
+    },
+    {
+      "name": "Why Don't You Play in Hell?",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Action",
+        "Comedy"
+      ],
+      "rating": 7.4,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Why Don't You Play In Hell  (2013) [1080p] [BluRay] [5.1] [YTS.MX]/Why.Don't.You.Play.In.Hell..2013.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "1619c9b3743152132c182f0e36049d1a"
+    },
+    {
+      "name": "Will You Be There?",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.2,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Will You Be There(2016)/Will You Be There(2016).mp4",
+      "jellyfin_id": "2201c9cbf1c70cac47ea2f78b65a87de"
+    },
+    {
+      "name": "The Witch: Part 2. The Other One",
+      "year": 2022,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Mystery",
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 7.397,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Witch Part 2. The Other One (2022)/The.Witch.Part.2..The.Other.One.2022.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "e5a43bbdfeca0f28f3df2f53c30a7e1d"
+    },
+    {
+      "name": "Wolf Children",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Family",
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 8.2,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Ookami Kodomo no Ame to Yuki (Dub)/Ookami Kodomo no Ame to Yuki (Dub).mp4",
+      "jellyfin_id": "1df7f94b3ae12d9fcd4546ebe75f37ff"
+    },
+    {
+      "name": "The Woman Who Ran",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.615,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/The Woman Who Ran (2020)/The.Woman.Who.Ran.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "e9970da4a33a8efd8ee66f743aa83e9a"
+    },
+    {
+      "name": "The Wrestler",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7.536,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Wrestler (2008)/400MB the wrestler - BRRIP.mp4",
+      "jellyfin_id": "8d4afb1efea9de1837162adf95f42611"
+    },
+    {
+      "name": "X: Past Is Present",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 5.4,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/X Past is Present/X.Past.is.Present.2015.Hindi.720p.HDRiP.900MB.ShAaNiG.mkv",
+      "jellyfin_id": "4c3a8b0268b2f07d5ae957cdeae69072"
+    },
+    {
+      "name": "The Yellow Sea",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.357,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Yellow Sea (2010)/TheYellowSea.brrip.720p.2010.mp4",
+      "jellyfin_id": "8db51c292bd9fcc31f23e07124215d16"
+    },
+    {
+      "name": "Yesterday",
+      "year": 2019,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Music",
+        "Romance"
+      ],
+      "rating": 6.686,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Yesterday(2019)/Yesterday.2019.720p.WEBRip.800MB.x264-GalaxyRG.mkv",
+      "jellyfin_id": "290a96c205610b0f56b64e120b97f8e7"
+    },
+    {
+      "name": "Yi Yi",
+      "year": 2000,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.9,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Yi Yi (2000)/Yi.Yi.2000.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "198a8143fc0a236d815fdea8d69cdda9"
+    },
+    {
+      "name": "You Were Never Really Here",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 6.549,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/You Were Never Really Here (2017)/You.Were.Never.Really.Here.2017.720p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "d65b54d6e95e15efd0a44882c0de6ebd"
+    },
+    {
+      "name": "Young Adult Matters",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.8,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Young Adult Matters (2020)/Young.Adult.Matters.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
+      "jellyfin_id": "3d459638788d0302d084011ee13c6065"
+    },
+    {
+      "name": "Your Eyes Tell",
+      "year": 2020,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 8.527,
+      "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Your Eyes Tell (2020)/Your Eyes Tell (Kimi no Me ga Toikaketeiru) (2020).mkv",
+      "jellyfin_id": "302087e45fe9269f7413686ea2e9b29f"
+    },
+    {
+      "name": "Yourself and Yours",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "rating": 6.298,
+      "path": "/Volumes/Backup Plus/All Movies/Hong Sang Soo Films/Yourself and Yours (2016)/Yourself and Yours.mp4",
+      "jellyfin_id": "08b7dcdfbba0146a99e7b36661e4f1f1"
+    },
+    {
+      "name": "You've Got Mail",
+      "year": 1998,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "rating": 6.706,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Youve Got Mail (1998)/Youve.Got.Mail.1998.720p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "0f0eace6c212ea26b2d09b066943937a"
+    }
+  ]
+}
