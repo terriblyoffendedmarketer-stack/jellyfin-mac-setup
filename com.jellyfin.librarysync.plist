@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.jellyfin.librarysync</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>-c</string>
+        <string>pgrep -f "Jellyfin Server" > /dev/null 2>&amp;1 &amp;&amp; /Users/apple/jellyfin-mac-setup/sync-library.sh --push</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>1800</integer>
+    <key>RunAtLoad</key>
+    <false/>
+    <key>StandardOutPath</key>
+    <string>/tmp/jellyfin-sync.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/jellyfin-sync.log</string>
+</dict>
+</plist>

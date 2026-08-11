@@ -87,7 +87,12 @@ PLIST
 # 8. Add as login item
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"'$HOME'/Applications/Jellyfin Launcher.app", hidden:true}' 2>/dev/null
 
-# 9. Add shell aliases if not already present
+# 9. Install library sync LaunchAgent (syncs every 30 min while Jellyfin runs)
+echo "Installing library sync LaunchAgent..."
+cp "$SCRIPT_DIR/com.jellyfin.librarysync.plist" ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.jellyfin.librarysync.plist 2>/dev/null || true
+
+# 10. Add shell aliases if not already present
 SHELL_RC=~/.zshrc
 [ -f ~/.bashrc ] && ! [ -f ~/.zshrc ] && SHELL_RC=~/.bashrc
 grep -q 'alias jfs=' "$SHELL_RC" 2>/dev/null || echo 'alias jfs="~/jellyfin-start"' >> "$SHELL_RC"
