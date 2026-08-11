@@ -3,8 +3,10 @@
 # Run on whichever device has Jellyfin active (Mac or phone)
 # Usage: ./sync-library.sh [--push]
 #   --push: commit and push to GitHub after syncing
+# Silently exits if Jellyfin is not running (safe for cron/LaunchAgent)
 
-set -euo pipefail
+# Ensure tools are on PATH (LaunchAgents run with a bare environment)
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
 JELLYFIN_URL="${JELLYFIN_URL:-http://localhost:8096}"
 JELLYFIN_USER="${JELLYFIN_USER:-pjdruck}"
@@ -21,46 +23,51 @@ for arg in "$@"; do
     esac
 done
 
-check_jellyfin() {
-    if ! curl -sf "$JELLYFIN_URL/System/Ping" > /dev/null 2>&1; then
-        echo "Error: Jellyfin not reachable at $JELLYFIN_URL"
-        echo "Make sure Jellyfin is running and the drive is connected."
-        exit 1
-    fi
-}
+log() { echo "$(date '+%Y-%m-%d %H:%M:%S') $1"; }
 
-authenticate() {
-    local response
-    response=$(curl -sf "$JELLYFIN_URL/Users/authenticatebyname" \
-        -H "Content-Type: application/json" \
-        -H "X-Emby-Authorization: MediaBrowser Client=\"SyncScript\", Device=\"CLI\", DeviceId=\"sync-script\", Version=\"1.0\"" \
-        -d "{\"Username\":\"$JELLYFIN_USER\",\"Pw\":\"$JELLYFIN_PASS\"}" 2>/dev/null) || {
-        echo "Error: Failed to authenticate with Jellyfin"
-        exit 1
-    }
+# If Jellyfin isn't running, exit silently (not an error)
+if ! curl -sf "$JELLYFIN_URL/System/Ping" > /dev/null 2>&1; then
+    log "Jellyfin not running — skipping sync"
+    exit 0
+fi
 
-    USER_ID=$(echo "$response" | python3 -c "import sys,json; print(json.load(sys.stdin)['User']['Id'])" 2>/dev/null)
-    ACCESS_TOKEN=$(echo "$response" | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
+log "=== Jellyfin Library Sync ==="
 
-    if [ -z "$USER_ID" ] || [ -z "$ACCESS_TOKEN" ]; then
-        echo "Error: Could not parse authentication response"
-        exit 1
-    fi
-}
+# Authenticate
+log "Authenticating..."
+AUTH_RESPONSE=$(curl -sf "$JELLYFIN_URL/Users/authenticatebyname" \
+    -H "Content-Type: application/json" \
+    -H "X-Emby-Authorization: MediaBrowser Client=\"SyncScript\", Device=\"CLI\", DeviceId=\"sync-script\", Version=\"1.0\"" \
+    -d "{\"Username\":\"$JELLYFIN_USER\",\"Pw\":\"$JELLYFIN_PASS\"}" 2>/dev/null)
 
-fetch_library() {
-    local items
-    items=$(curl -sf "$JELLYFIN_URL/Users/$USER_ID/Items?Recursive=true&IncludeItemTypes=Movie,Series&Fields=Path,Genres,CommunityRating,ProductionYear,Overview&SortBy=SortName&SortOrder=Ascending&Limit=10000" \
-        -H "X-Emby-Token: $ACCESS_TOKEN" 2>/dev/null) || {
-        echo "Error: Failed to fetch library items"
-        exit 1
-    }
-    echo "$items"
-}
+if [ -z "$AUTH_RESPONSE" ]; then
+    log "Error: Failed to authenticate with Jellyfin"
+    exit 1
+fi
 
-build_library_json() {
-    local raw_items="$1"
-    python3 << 'PYEOF' - "$raw_items" "$LIBRARY_JSON"
+USER_ID=$(echo "$AUTH_RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['User']['Id'])" 2>/dev/null)
+ACCESS_TOKEN=$(echo "$AUTH_RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
+
+if [ -z "$USER_ID" ] || [ -z "$ACCESS_TOKEN" ]; then
+    log "Error: Could not parse authentication response"
+    exit 1
+fi
+log "Authenticated as $JELLYFIN_USER"
+
+# Fetch library
+log "Fetching library..."
+RAW_ITEMS=$(curl -sf "$JELLYFIN_URL/Users/$USER_ID/Items?Recursive=true&IncludeItemTypes=Movie,Series&Fields=Path,Genres,CommunityRating,ProductionYear,Overview&SortBy=SortName&SortOrder=Ascending&Limit=10000" \
+    -H "X-Emby-Token: $ACCESS_TOKEN" 2>/dev/null)
+
+if [ -z "$RAW_ITEMS" ]; then
+    log "Error: Failed to fetch library items"
+    exit 1
+fi
+log "Library fetched"
+
+# Build library.json
+log "Building library.json..."
+python3 << 'PYEOF' - "$RAW_ITEMS" "$LIBRARY_JSON"
 import json, sys
 
 raw = json.loads(sys.argv[1])
@@ -90,10 +97,10 @@ with open(output_path, "w") as f:
 
 print(f"Wrote {len(items)} items to {output_path}")
 PYEOF
-}
 
-generate_html() {
-    python3 << 'PYEOF' - "$LIBRARY_JSON" "$COMMENTS_JSON" "$HTML_FILE"
+# Generate HTML
+log "Generating HTML..."
+python3 << 'PYEOF' - "$LIBRARY_JSON" "$COMMENTS_JSON" "$HTML_FILE"
 import json, sys, html
 from pathlib import Path
 
@@ -109,18 +116,14 @@ if Path(comments_path).exists():
     with open(comments_path) as f:
         comments = json.load(f)
 
-# Build a lookup: normalized title -> comment
 comment_lookup = {}
 for category, films in comments.items():
     for title, comment in films.items():
-        # Strip common file artifacts from title for matching
         clean = title.split("[")[0].split("(")[0].strip()
         comment_lookup[clean.lower()] = comment
         comment_lookup[title.lower()] = comment
 
-# Categorize items from Jellyfin using genres and path
-# Also try to match against existing film_comments.json categories
-category_map = {}  # category -> list of items
+category_map = {}
 comments_categories = list(comments.keys())
 
 for item in library["items"]:
@@ -134,7 +137,6 @@ for item in library["items"]:
     name_lower = name.lower()
     display_lower = display.lower()
 
-    # Try to find which film_comments category this belongs to
     for cat, films in comments.items():
         for title in films:
             title_clean = title.split("[")[0].split("(")[0].strip().lower()
@@ -145,7 +147,6 @@ for item in library["items"]:
             break
 
     if not matched_category:
-        # Fall back to genre-based categorization
         if any(g in ["Animation", "Anime"] for g in genres):
             matched_category = "Anime movies"
         elif any(g in genres for g in ["Bollywood", "Indian"]):
@@ -156,7 +157,6 @@ for item in library["items"]:
     if matched_category not in category_map:
         category_map[matched_category] = []
 
-    # Try to find comment
     comment = comment_lookup.get(name_lower, "")
     if not comment:
         comment = comment_lookup.get(display_lower, "")
@@ -167,11 +167,9 @@ for item in library["items"]:
         "type": item.get("type", "Movie"),
     })
 
-# Sort categories and films
 for cat in category_map:
     category_map[cat].sort(key=lambda x: x["display"].lower())
 
-# Preserve category order from film_comments.json, then add new ones
 ordered_cats = []
 for cat in comments_categories:
     if cat in category_map:
@@ -183,7 +181,6 @@ for cat in sorted(category_map.keys()):
 synced_at = library.get("synced_at", "unknown")
 total = library.get("total_count", sum(len(v) for v in category_map.values()))
 
-# Generate HTML
 sections = []
 for i, cat in enumerate(ordered_cats):
     films = category_map[cat]
@@ -210,7 +207,6 @@ for i, cat in enumerate(ordered_cats):
 
 sections_html = "\n\n".join(sections)
 
-# Build category options for dropdown
 options = ['            <option value="all">All Categories</option>']
 for cat in ordered_cats:
     count = len(category_map[cat])
@@ -569,42 +565,19 @@ with open(html_path, "w") as f:
 
 print(f"Generated {html_path} with {total} films in {len(ordered_cats)} categories")
 PYEOF
-}
-
-push_to_github() {
-    cd "$SCRIPT_DIR"
-    git add library.json film-library.html
-    git commit -m "Update film library ($(date +%Y-%m-%d))" || {
-        echo "No changes to commit"
-        return 0
-    }
-    git push
-}
-
-echo "=== Jellyfin Library Sync ==="
-echo "Connecting to $JELLYFIN_URL..."
-
-check_jellyfin
-echo "Jellyfin is running."
-
-echo "Authenticating..."
-authenticate
-echo "Authenticated as $JELLYFIN_USER."
-
-echo "Fetching library..."
-RAW_ITEMS=$(fetch_library)
-echo "Library fetched."
-
-echo "Building library.json..."
-build_library_json "$RAW_ITEMS"
-
-echo "Generating HTML..."
-generate_html
 
 if $PUSH; then
-    echo "Pushing to GitHub..."
-    push_to_github
-    echo "Done. Library synced and pushed."
+    log "Pushing to GitHub..."
+    cd "$SCRIPT_DIR"
+    git pull --rebase origin master 2>/dev/null || true
+    git add library.json film-library.html
+    if git diff --cached --quiet; then
+        log "No changes to push"
+    else
+        git commit -m "Update film library ($(date +%Y-%m-%d))"
+        git push origin master 2>&1 || log "Warning: git push failed — check credentials"
+    fi
+    log "Done. Library synced and pushed."
 else
-    echo "Done. Run with --push to commit and push to GitHub."
+    log "Done. Run with --push to commit and push to GitHub."
 fi
