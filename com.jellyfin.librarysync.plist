@@ -7,16 +7,25 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>-c</string>
-        <string>pgrep -f "Jellyfin Server" > /dev/null 2>&amp;1 &amp;&amp; /Users/apple/jellyfin-mac-setup/sync-library.sh --push</string>
+        <string>/Users/apple/jellyfin-mac-setup/sync-library.sh</string>
+        <string>--push</string>
     </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/apple/jellyfin-mac-setup</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>HOME</key>
+        <string>/Users/apple</string>
+    </dict>
     <key>StartInterval</key>
     <integer>1800</integer>
     <key>RunAtLoad</key>
     <false/>
     <key>StandardOutPath</key>
-    <string>/tmp/jellyfin-sync.log</string>
+    <string>/Users/apple/.jellyfin-sync.log</string>
     <key>StandardErrorPath</key>
-    <string>/tmp/jellyfin-sync.log</string>
+    <string>/Users/apple/.jellyfin-sync.log</string>
 </dict>
 </plist>

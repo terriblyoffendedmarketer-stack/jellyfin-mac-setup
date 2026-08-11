@@ -68,8 +68,23 @@ When making changes: commit, push, create PR (NOT draft), squash merge it immedi
   - Run manually: `./sync-library.sh --push`
   - Auto-runs after library scan in both `jellyfin-start` (Mac) and `termux-jellyfin-start` (phone)
   - Mac LaunchAgent (`com.jellyfin.librarysync.plist`) syncs every 30 min while Jellyfin is running
+  - Script silently exits (exit 0) if Jellyfin is not running — safe for background/cron use
+  - Script exports PATH at top to ensure git/python3 are found in LaunchAgent context
+  - Does `git pull --rebase` before push to avoid conflicts from other devices
 - View the film list anytime at `film-library.html` in the repo (GitHub), no drive/server needed
 - When Jellyfin scans new content, the sync script updates the HTML and pushes to GitHub
+- LaunchAgent plist includes WorkingDirectory, PATH, and HOME environment variables (required because LaunchAgents run with a bare environment that can't find git/python3 or access keychain)
+
+### After Pulling Changes on Mac
+After pulling this repo on the Mac, reload the LaunchAgent:
+```bash
+cd ~/jellyfin-mac-setup && git pull
+launchctl unload ~/Library/LaunchAgents/com.jellyfin.librarysync.plist
+cp com.jellyfin.librarysync.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.jellyfin.librarysync.plist
+```
+Verify it's loaded: `launchctl list | grep jellyfin` — exit code should be `0` (not `1`).
+If git push from the LaunchAgent fails, the Mac keychain may need to have the git credential stored. Open Terminal and run `git push` manually once to trigger the keychain prompt — after that, background pushes will work.
 
 ### Architecture
 - One Seagate drive = one Jellyfin setup
