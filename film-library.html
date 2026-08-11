@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curated Film Library (471 Films)</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --badge-bg: #334155;
+            --border-color: #334155;
+            --hover-bg: #2563eb;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent: #0284c7;
+            --accent-gradient: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+            --badge-bg: #e2e8f0;
+            --border-color: #cbd5e1;
+            --hover-bg: #2563eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            padding: 1rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 3rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            background: var(--card-bg);
+            padding: 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .theme-toggle {
+            background: var(--badge-bg);
+            border: none;
+            color: var(--text-primary);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+
+        .search-filter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 600px) {
+            .search-filter-container {
+                flex-direction: row;
+            }
+        }
+
+        .search-box {
+            flex: 1;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .category-filter {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .category-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .category-header {
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: var(--card-bg);
+            user-select: none;
+        }
+
+        .category-header:hover {
+            background-color: rgba(100, 116, 139, 0.05);
+        }
+
+        .category-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .category-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .category-count {
+            background-color: var(--badge-bg);
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .toggle-icon {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            transition: transform 0.2s ease;
+        }
+
+        .category-section.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .film-list {
+            display: none;
+            padding: 0 1.25rem 1.25rem 1.25rem;
+            list-style: none;
+            border-top: 1px solid var(--border-color);
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        .category-section.open .film-list {
+            display: block;
+        }
+
+        .film-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .film-item:last-child {
+            border-bottom: none;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="container">
+    <header>
+        <div>
+            <h1>Curated Film Library</h1>
+            <div class="subtitle">471 films across 10 categories</div>
+        </div>
+        <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()">☀️ Light</button>
+    </header>
+
+    <div class="search-filter-container">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search films..." oninput="filterFilms()">
+        </div>
+        <select class="category-filter" id="categoryFilter" onchange="filterByCategory()">
+            <option value="all">All Categories</option>
+            <option value="Andrei Tarkovsky">Andrei Tarkovsky (5)</option>
+            <option value="Anime movies">Anime movies (23)</option>
+            <option value="Asian Movies">Asian Movies (223)</option>
+            <option value="Hong Sang Soo Films">Hong Sang Soo Films (13)</option>
+            <option value="Indian Films">Indian Films (36)</option>
+            <option value="Movies in General">Movies in General (156)</option>
+            <option value="Tarantino">Tarantino (5)</option>
+            <option value="The Apu Trilogy">The Apu Trilogy (3)</option>
+            <option value="Unsorted">Unsorted (1)</option>
+            <option value="Wes Anderson">Wes Anderson (6)</option>
+        </select>
+    </div>
+
+    <div id="filmContainer">
+        <!-- Andrei Tarkovsky -->
+        <div class="category-section open" data-category="Andrei Tarkovsky">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Andrei Tarkovsky</span>
+                    <span class="category-count">5</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">Andrei Rublev (1966)</li>
+                <li class="film-item">Ivan's Childhood (1962)</li>
+                <li class="film-item">Solaris (1971)</li>
+                <li class="film-item">Stalker (1979)</li>
+                <li class="film-item">The Mirror (1974)</li>
+            </ul>
+        </div>
+
+        <!-- Anime movies -->
+        <div class="category-section" data-category="Anime movies">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Anime movies</span>
+                    <span class="category-count">23</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">Byousoku 5 Centimeter (Dub)</li>
+                <li class="film-item">Howl's Moving Castle</li>
+                <li class="film-item">I Want To Eat Your Pancreas (2018)</li>
+                <li class="film-item">Josee to Sakana-tachi (2020)</li>
+                <li class="film-item">Koe no Katachi</li>
+                <li class="film-item">Kotonoha no Niwa Garden of Words</li>
+                <li class="film-item">Life is Short Walk on Girl</li>
+                <li class="film-item">Memories (1995) - Magnetic Rose + Stink Bomb + Cannon Fodder</li>
+                <li class="film-item">Millennium Actress (2001)</li>
+                <li class="film-item">Mononoke hime - Princess Mononoke</li>
+                <li class="film-item">Mulan (1998)</li>
+                <li class="film-item">Ookami Kodomo no Ame to Yuki (Dub)</li>
+                <li class="film-item">Paprika (2006)</li>
+                <li class="film-item">Perfect Blue (1997)</li>
+                <li class="film-item">Ponyo</li>
+                <li class="film-item">Redline (2009)</li>
+                <li class="film-item">Spirited Away</li>
+                <li class="film-item">Summer Ghost (2021)</li>
+                <li class="film-item">The Disappearance Of Haruhi Suzumiya</li>
+                <li class="film-item">The Red Turtle (2016)</li>
+                <li class="film-item">The Secret World of Arrietty</li>
+                <li class="film-item">Toki wo Kakeru Shoujo (Dub)</li>
+                <li class="film-item">Weathering With You (Tenki no Ko)</li>
+            </ul>
+        </div>
+
+        <!-- Asian Movies -->
+        <div class="category-section" data-category="Asian Movies">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Asian Movies</span>
+                    <span class="category-count">223</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">1987 When The Day Comes (2017)</li>
+                <li class="film-item">2046 (2004)</li>
+                <li class="film-item">3-Iron (2004)</li>
+                <li class="film-item">71 Into the Fire (2010)</li>
+                <li class="film-item">A Bittersweet Life (2005)</li>
+                <li class="film-item">A Brand New Life (2009)</li>
+                <li class="film-item">A Dirty Carnival (2006)</li>
+                <li class="film-item">A Gentle Breeze In The Village</li>
+                <li class="film-item">A Hard Day (2014)</li>
+                <li class="film-item">A Man Who Was Superman (2008)</li>
+                <li class="film-item">A Moment To Remember (2004)</li>
+                <li class="film-item">A Quiet Dream (2016)</li>
+                <li class="film-item">A Tale Of Two Sisters (2003)</li>
+                <li class="film-item">A Taxi Driver</li>
+                <li class="film-item">A Werewolf Boy (2012)</li>
+                <li class="film-item">Air Doll (2009)</li>
+                <li class="film-item">All About My Wife</li>
+                <li class="film-item">Always (2011)</li>
+                <li class="film-item">Architecture 101 (2012)</li>
+                <li class="film-item">Ashes Of Time (1994)</li>
+                <li class="film-item">Barking Dogs Never Bite (2000)</li>
+                <li class="film-item">Be With You (2018)</li>
+                <li class="film-item">Beasts That Cling To The Straw (2020)</li>
+                <li class="film-item">Beauty Inside</li>
+                <li class="film-item">Blade Of The Immortal (2017)</li>
+                <li class="film-item">Bokura wa aruku, tada soredake (2009)</li>
+                <li class="film-item">Breathless (2008)</li>
+                <li class="film-item">Broker (2022)</li>
+                <li class="film-item">Burning (2018)</li>
+                <li class="film-item">Canola (2016)</li>
+                <li class="film-item">Castaway On The Moon (2009)</li>
+                <li class="film-item">Cheer up Mr. Lee (2019)</li>
+                <li class="film-item">Chungking Express (1994)</li>
+                <li class="film-item">Cold Fish (2010)</li>
+                <li class="film-item">Coming Out (2000)</li>
+                <li class="film-item">Coming Soon (2008)</li>
+                <li class="film-item">Confessions (2010)</li>
+                <li class="film-item">Crazy Romance (2019)</li>
+                <li class="film-item">Crouching Tiger Hidden Dragon (2000)</li>
+                <li class="film-item">Cure (1997)</li>
+                <li class="film-item">Daisy (2009)</li>
+                <li class="film-item">Dark Figure Of Crime (2018)</li>
+                <li class="film-item">Days Of Being Wild (1990)</li>
+                <li class="film-item">Decision To Leave (2022)</li>
+                <li class="film-item">Ditto (2000)</li>
+                <li class="film-item">Dragon (2011)</li>
+                <li class="film-item">Drive My Car (2021)</li>
+                <li class="film-item">Emergency Declaration (2021)</li>
+                <li class="film-item">Epitaph (2007)</li>
+                <li class="film-item">Escape From Mogadishu (2021)</li>
+                <li class="film-item">Exhuma</li>
+                <li class="film-item">Extreme Job (2019)</li>
+                <li class="film-item">Fallen Angels (1995)</li>
+                <li class="film-item">Fantasy Of The Girls (2016)</li>
+                <li class="film-item">Farewell My Concubine (1993)</li>
+                <li class="film-item">Fearless (2006)</li>
+                <li class="film-item">Fight Back To School 1 (1991)</li>
+                <li class="film-item">Fight Back To School 2 (1992)</li>
+                <li class="film-item">Finding Mr Destiny (2010)</li>
+                <li class="film-item">Forget Me Not (2015)</li>
+                <li class="film-item">Fukuoka (2020)</li>
+                <li class="film-item">Gi-Juk (2021)</li>
+                <li class="film-item">Godzilla (1954)</li>
+                <li class="film-item">Gui lai / Coming Home (2014)</li>
+                <li class="film-item">Guilty Of Romance (2011)</li>
+                <li class="film-item">Han Gong ju (2014)</li>
+                <li class="film-item">Happy Together (1997)</li>
+                <li class="film-item">Hard Boiled (1992)</li>
+                <li class="film-item">Hello Ghost</li>
+                <li class="film-item">Her Love Boils Bathwater (2016)</li>
+                <li class="film-item">Hero (2002)</li>
+                <li class="film-item">Himizu (2011)</li>
+                <li class="film-item">Hitman Agent Jun</li>
+                <li class="film-item">Hope (2013)</li>
+                <li class="film-item">House Of Flying Daggers (2004)</li>
+                <li class="film-item">House of Hummingbird (2018)</li>
+                <li class="film-item">Hwayi A Monster Boy (2013)</li>
+                <li class="film-item">I Can Speak (2017)</li>
+                <li class="film-item">I Saw the Devil (2010)</li>
+                <li class="film-item">I'm A Cyborg, But That's OK (2006)</li>
+                <li class="film-item">IP Man (2008)</li>
+                <li class="film-item">Il Mare (2000)</li>
+                <li class="film-item">In The Mood For Love (2000)</li>
+                <li class="film-item">Infernal Affairs (2002)</li>
+                <li class="film-item">Intimate Strangers</li>
+                <li class="film-item">Innocent Witness (2019)</li>
+                <li class="film-item">Inside Men (2015)</li>
+                <li class="film-item">Ip Man 2 (2010)</li>
+                <li class="film-item">Ip Man 3 (2015)</li>
+                <li class="film-item">Ip Man 4 The Finale (2019)</li>
+                <li class="film-item">Joint Security Area (2000)</li>
+                <li class="film-item">Josee (2020) Korean</li>
+                <li class="film-item">Josee the Tiger and the Fish (2003)</li>
+                <li class="film-item">Journals of Musan (2010)</li>
+                <li class="film-item">Ju-On the Grudge</li>
+                <li class="film-item">Ju-on The Curse (2000)</li>
+                <li class="film-item">Kang Deoksun's Love History</li>
+                <li class="film-item">Keys To The Heart (2018)</li>
+                <li class="film-item">Kim Ji Young Born 1982 (2019)</li>
+                <li class="film-item">King of Comedy (1999)</li>
+                <li class="film-item">Lady Snowblood (1973)</li>
+                <li class="film-item">Lady Vengeance (2005)</li>
+                <li class="film-item">Last Life In the Universe (2003)</li>
+                <li class="film-item">Late Spring (1949)</li>
+                <li class="film-item">Like Father Like Son (2013)</li>
+                <li class="film-item">Linda Linda Linda (2005)</li>
+                <li class="film-item">Little Forest (2018)</li>
+                <li class="film-item">Love Exposure (2008)</li>
+                <li class="film-item">Lust, Caution (2007)</li>
+                <li class="film-item">Luxurious Bone (2001)</li>
+                <li class="film-item">Make the Last Wish (2009)</li>
+                <li class="film-item">Mal Mo E The Secret Mission (2019)</li>
+                <li class="film-item">Memoirs of a Geisha (2005)</li>
+                <li class="film-item">Memories of Murder (2003)</li>
+                <li class="film-item">Microhabitat</li>
+                <li class="film-item">Minari (2020)</li>
+                <li class="film-item">Miracle in cell No 7</li>
+                <li class="film-item">Monga (2010)</li>
+                <li class="film-item">Moon-young (2015)</li>
+                <li class="film-item">More Than Family (2020)</li>
+                <li class="film-item">Mother (2009)</li>
+                <li class="film-item">My Brilliant Life (2014)</li>
+                <li class="film-item">My Dream Class (2018)</li>
+                <li class="film-item">My First Client (2019)</li>
+                <li class="film-item">My Girlfriend is a Serial Killer (2019)</li>
+                <li class="film-item">My Little Bride (2004)</li>
+                <li class="film-item">My Missing Valentine (2020)</li>
+                <li class="film-item">My Way (2011)</li>
+                <li class="film-item">Nameless Gangster Rules Of The Time (2012)</li>
+                <li class="film-item">New World (2013)</li>
+                <li class="film-item">Nobody Knows (2004)</li>
+                <li class="film-item">Noriko's Dinner Table (2005)</li>
+                <li class="film-item">Noroi (2005)</li>
+                <li class="film-item">Oasis (2002)</li>
+                <li class="film-item">Ode To My Father (2014)</li>
+                <li class="film-item">Ode to Goose</li>
+                <li class="film-item">Okay! Madam</li>
+                <li class="film-item">Old Days (2016)</li>
+                <li class="film-item">Oldboy (2003)</li>
+                <li class="film-item">On Your Wedding Day (2018)</li>
+                <li class="film-item">Pawn (2020)</li>
+                <li class="film-item">Peppermint Candy (1999)</li>
+                <li class="film-item">Please Don't Save Me (2020)</li>
+                <li class="film-item">Poetry (2010)</li>
+                <li class="film-item">Pulse</li>
+                <li class="film-item">Punch (2011)</li>
+                <li class="film-item">Raise The Red Lantern (1991)</li>
+                <li class="film-item">Rashomon (1950)</li>
+                <li class="film-item">Red Post on Escher Street (2020)</li>
+                <li class="film-item">Review Notebook of My Embarrassing Days</li>
+                <li class="film-item">Ringu (1998)</li>
+                <li class="film-item">Rurouni Kenshin Part I Origins (2012)</li>
+                <li class="film-item">Rurouni Kenshin Part II Kyoto Inferno (2014)</li>
+                <li class="film-item">Rurouni Kenshin Part III The Legend Ends (2014)</li>
+                <li class="film-item">Sad Movie (2005)</li>
+                <li class="film-item">Sea Fog (2014)</li>
+                <li class="film-item">Searching (2018)</li>
+                <li class="film-item">Seven Samurai (1954)</li>
+                <li class="film-item">Shin Godzilla (2016)</li>
+                <li class="film-item">Shoplifters (2018)</li>
+                <li class="film-item">Shutter</li>
+                <li class="film-item">Silenced (2011)</li>
+                <li class="film-item">Solanin (2010)</li>
+                <li class="film-item">Spellbound (2011)</li>
+                <li class="film-item">Spring Summer Fall Winter And Spring (2003)</li>
+                <li class="film-item">Steins;Gate Live Stage Adaptation</li>
+                <li class="film-item">Stone Skipping (2020)</li>
+                <li class="film-item">Suicide Club (2001)</li>
+                <li class="film-item">Sunny (2011)</li>
+                <li class="film-item">Swing Kids (2018)</li>
+                <li class="film-item">Sympathy For Mr. Vengeance (2002)</li>
+                <li class="film-item">Tae Guk Gi The Brotherhood Of War (2004)</li>
+                <li class="film-item">Teenage Hooker Became Killing Machine (2000)</li>
+                <li class="film-item">The Chaser (2008)</li>
+                <li class="film-item">The Classic (2002)</li>
+                <li class="film-item">The Day I Died Unclosed Case</li>
+                <li class="film-item">The Dude In Me (2019)</li>
+                <li class="film-item">The Eye (Chinese)</li>
+                <li class="film-item">The Farewell (2019)</li>
+                <li class="film-item">The Front Line (2011)</li>
+                <li class="film-item">The Gangster, The Cop and The Devil</li>
+                <li class="film-item">The God of Cookery</li>
+                <li class="film-item">The Good The Bad The Weird (2008)</li>
+                <li class="film-item">The Grandmaster (2013)</li>
+                <li class="film-item">The Handmaiden (2016)</li>
+                <li class="film-item">The Host (2006)</li>
+                <li class="film-item">The King And The Clown (2005)</li>
+                <li class="film-item">The Man From Nowhere (2010)</li>
+                <li class="film-item">The Man Standing Next (2020)</li>
+                <li class="film-item">The Mars Canon (2002)</li>
+                <li class="film-item">The Net (2016)</li>
+                <li class="film-item">The Outlaws (2017)</li>
+                <li class="film-item">The Promise (2017)</li>
+                <li class="film-item">The Road Home (1999)</li>
+                <li class="film-item">The Roundup (2022)</li>
+                <li class="film-item">The Spy Gone North (2018)</li>
+                <li class="film-item">The Terror Live (2013)</li>
+                <li class="film-item">The Thieves (2012)</li>
+                <li class="film-item">The Wailing</li>
+                <li class="film-item">The Way Home (2002)</li>
+                <li class="film-item">The Witch Part 2. The Other One (2022)</li>
+                <li class="film-item">The Yellow Sea (2010)</li>
+                <li class="film-item">Thirst (2009)</li>
+                <li class="film-item">To Jenny (2018)</li>
+                <li class="film-item">To Live (1994)</li>
+                <li class="film-item">Tokyo Tribe (2014)</li>
+                <li class="film-item">Tokyo Story (1953)</li>
+                <li class="film-item">Tokyo.sora (2002)</li>
+                <li class="film-item">Tunnel (2016)</li>
+                <li class="film-item">Twenty (2015)</li>
+                <li class="film-item">Vanishing Time A Boy Who Returned (2016)</li>
+                <li class="film-item">Very Ordinary Couple (2013)</li>
+                <li class="film-item">Voice of Silence (2020)</li>
+                <li class="film-item">Way Back Home (2013)</li>
+                <li class="film-item">Welcome To Dongmakgol (2005)</li>
+                <li class="film-item">What Happened to Our Nest Egg (2022)</li>
+                <li class="film-item">What a Man Wants</li>
+                <li class="film-item">Why Don't You Play In Hell (2013)</li>
+                <li class="film-item">Will You Be There (2016)</li>
+                <li class="film-item">Yi Yi (2000)</li>
+                <li class="film-item">Young Adult Matters (2020)</li>
+                <li class="film-item">Your Eyes Tell (2020)</li>
+                <li class="film-item">ing (2003)</li>
+            </ul>
+        </div>
+
+        <!-- Hong Sang Soo Films -->
+        <div class="category-section" data-category="Hong Sang Soo Films">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Hong Sang Soo Films</span>
+                    <span class="category-count">13</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">Claire's Camera (2017)</li>
+                <li class="film-item">Grass (2018)</li>
+                <li class="film-item">Hahaha (2010)</li>
+                <li class="film-item">Hotel By The River (2018)</li>
+                <li class="film-item">In Front Of Your Face (2021)</li>
+                <li class="film-item">Night and Day (2008)</li>
+                <li class="film-item">Nobody's Daughter Haewon (2013)</li>
+                <li class="film-item">On The Beach At Night Alone (2017)</li>
+                <li class="film-item">Our Sunhi (2013)</li>
+                <li class="film-item">Right Then, Wrong Now (2015)</li>
+                <li class="film-item">Tale Of Cinema (2005)</li>
+                <li class="film-item">The Woman Who Ran (2020)</li>
+                <li class="film-item">Yourself and Yours (2016)</li>
+            </ul>
+        </div>
+
+        <!-- Indian Films -->
+        <div class="category-section" data-category="Indian Films">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Indian Films</span>
+                    <span class="category-count">36</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">Aamis (2019)</li>
+                <li class="film-item">Anand (1971)</li>
+                <li class="film-item">Bhoothakaalam (2022)</li>
+                <li class="film-item">Black (2005)</li>
+                <li class="film-item">Bob Biswas (2021)</li>
+                <li class="film-item">Chintu Ka Birthday (2020)</li>
+                <li class="film-item">CityLights (2014)</li>
+                <li class="film-item">Court (2014)</li>
+                <li class="film-item">Delhi Belly (2011)</li>
+                <li class="film-item">Dev D (2009)</li>
+                <li class="film-item">Ek Doctor Ki Maut (1990)</li>
+                <li class="film-item">Eko (2025)</li>
+                <li class="film-item">Geek Out (Short Film)</li>
+                <li class="film-item">Guzaarish (2010)</li>
+                <li class="film-item">Hridayam (2022)</li>
+                <li class="film-item">Jagga Jasoos (2017)</li>
+                <li class="film-item">Jersey (2019)</li>
+                <li class="film-item">Kaante (2002)</li>
+                <li class="film-item">Khosla Ka Ghosla (2006)</li>
+                <li class="film-item">Life In A Metro (2007)</li>
+                <li class="film-item">Lootera (2013)</li>
+                <li class="film-item">Madaari (2016)</li>
+                <li class="film-item">Manmarziyaan (2018)</li>
+                <li class="film-item">Masaan (2015)</li>
+                <li class="film-item">Mom (2017)</li>
+                <li class="film-item">Nna Than Case Kodu (2022)</li>
+                <li class="film-item">Om-Dar-B-Dar (1988)</li>
+                <li class="film-item">Oye Lucky! Lucky Oye! (2009)</li>
+                <li class="film-item">Paan Singh Tomar</li>
+                <li class="film-item">Pyaasa (1957)</li>
+                <li class="film-item">RX 100 (2018)</li>
+                <li class="film-item">Rangi Taranga (2019)</li>
+                <li class="film-item">Sairat (2016)</li>
+                <li class="film-item">Shahid</li>
+                <li class="film-item">Ship Of Theseus (2012)</li>
+                <li class="film-item">X Past is Present</li>
+            </ul>
+        </div>
+
+        <!-- Movies in General -->
+        <div class="category-section" data-category="Movies in General">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Movies in General</span>
+                    <span class="category-count">156</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">12 Angry Men (1957)</li>
+                <li class="film-item">12 Monkeys (1995)</li>
+                <li class="film-item">12 Years a Slave</li>
+                <li class="film-item">500 Days of Summer</li>
+                <li class="film-item">A Clockwork Orange</li>
+                <li class="film-item">A Quiet Place (2018)</li>
+                <li class="film-item">Adaptation (2002)</li>
+                <li class="film-item">Airplane</li>
+                <li class="film-item">American History X</li>
+                <li class="film-item">Antarctica A Year on Ice (2013)</li>
+                <li class="film-item">Apocalypse Now (1979)</li>
+                <li class="film-item">Apollo 18 (2011)</li>
+                <li class="film-item">Argo (2012)</li>
+                <li class="film-item">Baraka (1992)</li>
+                <li class="film-item">Before Midnight (2013)</li>
+                <li class="film-item">Before Sunrise (1995)</li>
+                <li class="film-item">Before Sunset (2004)</li>
+                <li class="film-item">Begin Again (2013)</li>
+                <li class="film-item">Being John Malkovich (1999)</li>
+                <li class="film-item">Big Fish (2003)</li>
+                <li class="film-item">Billy Elliot (2000)</li>
+                <li class="film-item">Birdman (2014)</li>
+                <li class="film-item">BlacKkKlansman (2018)</li>
+                <li class="film-item">Blade Runner 2049 (2017)</li>
+                <li class="film-item">Blue Is the Warmest Colour (2013)</li>
+                <li class="film-item">Boiling Point (2021)</li>
+                <li class="film-item">Bonnie And Clyde (1967)</li>
+                <li class="film-item">Boyhood (2014)</li>
+                <li class="film-item">Call Me By Your Name (2017)</li>
+                <li class="film-item">Castaway (2000)</li>
+                <li class="film-item">Charlie Chaplin - The Great Dictator (1940)</li>
+                <li class="film-item">Children of Men</li>
+                <li class="film-item">Citizen X (1995)</li>
+                <li class="film-item">City of God (2002)</li>
+                <li class="film-item">Close Encounters of the Third Kind (1977)</li>
+                <li class="film-item">Cloud Atlas (2012)</li>
+                <li class="film-item">Cloverfield (2008)</li>
+                <li class="film-item">Coherence (2013)</li>
+                <li class="film-item">Coraline (2009)</li>
+                <li class="film-item">Dead Poets Society (1989)</li>
+                <li class="film-item">Dear John (2010)</li>
+                <li class="film-item">Detachment (2011)</li>
+                <li class="film-item">Dinner for Schmucks (2010)</li>
+                <li class="film-item">Donnie Darko (2001)</li>
+                <li class="film-item">Dr. Strangelove</li>
+                <li class="film-item">Dream House (2011)</li>
+                <li class="film-item">Dune (2021)</li>
+                <li class="film-item">Dunkirk (2017)</li>
+                <li class="film-item">E.T. the Extra-Terrestrial (1982)</li>
+                <li class="film-item">End of Watch (2012)</li>
+                <li class="film-item">Enemy (2013)</li>
+                <li class="film-item">Eraserhead (1977)</li>
+                <li class="film-item">Eternal Sunshine of the Spotless Mind (2004)</li>
+                <li class="film-item">Everything Everywhere All At Once (2022)</li>
+                <li class="film-item">Face Off (1997)</li>
+                <li class="film-item">Ferris Bueller's Day Off</li>
+                <li class="film-item">Fight Club (1999)</li>
+                <li class="film-item">Flow (2024)</li>
+                <li class="film-item">Frances Ha (2012)</li>
+                <li class="film-item">Frequency (2000)</li>
+                <li class="film-item">Fury</li>
+                <li class="film-item">G.I. Joe Retaliation (2013)</li>
+                <li class="film-item">Gandhi (1982)</li>
+                <li class="film-item">Garden State (2004)</li>
+                <li class="film-item">Get Out (2017)</li>
+                <li class="film-item">Glory (1989)</li>
+                <li class="film-item">Good Boys (2019)</li>
+                <li class="film-item">Gravity</li>
+                <li class="film-item">Green Day Bullet in a Bible</li>
+                <li class="film-item">Happy Death Day (2017)</li>
+                <li class="film-item">Harry Potter Series</li>
+                <li class="film-item">Heart of Darkness - A Filmmaker's Apocalypse (1991)</li>
+                <li class="film-item">Her</li>
+                <li class="film-item">I Am Heath Ledger (2017)</li>
+                <li class="film-item">In Bruges (2008)</li>
+                <li class="film-item">In The Fade (2017)</li>
+                <li class="film-item">In the Loop (2009)</li>
+                <li class="film-item">Incendies (2010)</li>
+                <li class="film-item">Inception (2010)</li>
+                <li class="film-item">Inside Llewyn Davis (2013)</li>
+                <li class="film-item">Into The Wild (2007)</li>
+                <li class="film-item">It (2017)</li>
+                <li class="film-item">Koyaanisqatsi (1982)</li>
+                <li class="film-item">Lady Bird (2017)</li>
+                <li class="film-item">Last Night In Soho (2021)</li>
+                <li class="film-item">Leon The Professional (1994)</li>
+                <li class="film-item">Little Miss Sunshine (2006)</li>
+                <li class="film-item">Little Women (1994)</li>
+                <li class="film-item">Little Women (2019)</li>
+                <li class="film-item">Look Who's Back (2015)</li>
+                <li class="film-item">Manchester By The Sea (2016)</li>
+                <li class="film-item">Mandy (2018)</li>
+                <li class="film-item">Monkey Man (2024)</li>
+                <li class="film-item">Moon (2009)</li>
+                <li class="film-item">Moonlight (2016)</li>
+                <li class="film-item">No Country For Old Men (2007)</li>
+                <li class="film-item">Nomadland (2020)</li>
+                <li class="film-item">Nope (2022)</li>
+                <li class="film-item">One Night in Miami (2021)</li>
+                <li class="film-item">Perfect Strangers (2017)</li>
+                <li class="film-item">Pi (1998)</li>
+                <li class="film-item">Pride and Prejudice (2005)</li>
+                <li class="film-item">Primer (2004)</li>
+                <li class="film-item">Prospect (2018)</li>
+                <li class="film-item">Rain Man (1988)</li>
+                <li class="film-item">Roma (2018)</li>
+                <li class="film-item">Ruby Sparks (2012)</li>
+                <li class="film-item">Safety Not Guaranteed (2012)</li>
+                <li class="film-item">Samsara (2011)</li>
+                <li class="film-item">Schindler's List (1993)</li>
+                <li class="film-item">Sense And Sensibility (1995)</li>
+                <li class="film-item">Sinners (2025)</li>
+                <li class="film-item">Split (2016)</li>
+                <li class="film-item">Spring Breakers (2012)</li>
+                <li class="film-item">Sunshine (2007)</li>
+                <li class="film-item">Swiss Army Man</li>
+                <li class="film-item">The Boondock Saints (1999)</li>
+                <li class="film-item">The Dreamers (2003)</li>
+                <li class="film-item">The Endless (2017)</li>
+                <li class="film-item">The Gentlemen (2019)</li>
+                <li class="film-item">The Green Mile (1999)</li>
+                <li class="film-item">The Invisible Man (2020)</li>
+                <li class="film-item">The Irishman (2019)</li>
+                <li class="film-item">The Iron Giant (1999)</li>
+                <li class="film-item">The Judge (2014)</li>
+                <li class="film-item">The Lighthouse (2019)</li>
+                <li class="film-item">The Man From the Earth (2007)</li>
+                <li class="film-item">The Man Who Knew Infinity (2015)</li>
+                <li class="film-item">The Martian (2015)</li>
+                <li class="film-item">The Men Who Stare at Goats (2009)</li>
+                <li class="film-item">The Northman (2022)</li>
+                <li class="film-item">The Pianist (2002)</li>
+                <li class="film-item">The Princess Bride (1987)</li>
+                <li class="film-item">The Secret Life of Walter Mitty (2013)</li>
+                <li class="film-item">The Shape Of Water (2017)</li>
+                <li class="film-item">The Skeleton Twins (2014)</li>
+                <li class="film-item">The Walk (2015)</li>
+                <li class="film-item">The Way Way Back (2013)</li>
+                <li class="film-item">The Wrestler (2008)</li>
+                <li class="film-item">They Live (1988)</li>
+                <li class="film-item">Three Billboards Outside Ebbing, Missouri (2017)</li>
+                <li class="film-item">Thunderbolts (2025)</li>
+                <li class="film-item">Top Gun (1986)</li>
+                <li class="film-item">Trainspotting (1996)</li>
+                <li class="film-item">Trumbo (2015)</li>
+                <li class="film-item">Unbreakable (2000)</li>
+                <li class="film-item">Uncle Vanya (2020)</li>
+                <li class="film-item">Under The Silver Lake (2018)</li>
+                <li class="film-item">Us (2019)</li>
+                <li class="film-item">Waking Life (2001)</li>
+                <li class="film-item">Walden (1968)</li>
+                <li class="film-item">Walk the Line (2005)</li>
+                <li class="film-item">Where the Wild Things Are (2009)</li>
+                <li class="film-item">Yesterday (2019)</li>
+                <li class="film-item">You Were Never Really Here (2017)</li>
+                <li class="film-item">You've Got Mail (1998)</li>
+            </ul>
+        </div>
+
+        <!-- Tarantino -->
+        <div class="category-section" data-category="Tarantino">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Tarantino</span>
+                    <span class="category-count">5</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">Django Unchained (2012)</li>
+                <li class="film-item">Kill Bill Vol 2 (2004)</li>
+                <li class="film-item">Pulp Fiction (1994)</li>
+                <li class="film-item">Reservoir Dogs (1992)</li>
+                <li class="film-item">The Hateful Eight (2015)</li>
+            </ul>
+        </div>
+
+        <!-- The Apu Trilogy -->
+        <div class="category-section" data-category="The Apu Trilogy">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">The Apu Trilogy</span>
+                    <span class="category-count">3</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">Aparajito (1956)</li>
+                <li class="film-item">Pather Panchali (1955)</li>
+                <li class="film-item">The World Of Apu (1959)</li>
+            </ul>
+        </div>
+
+        <!-- Unsorted -->
+        <div class="category-section" data-category="Unsorted">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Unsorted</span>
+                    <span class="category-count">1</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">Park Hwa-young (2018)</li>
+            </ul>
+        </div>
+
+        <!-- Wes Anderson -->
+        <div class="category-section" data-category="Wes Anderson">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">Wes Anderson</span>
+                    <span class="category-count">6</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">Hotel Chevalier (2007)</li>
+                <li class="film-item">Rushmore (1998)</li>
+                <li class="film-item">The Darjeeling Limited (2007)</li>
+                <li class="film-item">The French Dispatch (2021)</li>
+                <li class="film-item">The Royal Tenenbaums (2001)</li>
+                <li class="film-item">The Squid And The Whale (2005)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="noResults" class="no-results">No films found matching your search.</div>
+</div>
+
+<script>
+    function toggleSection(header) {
+        const section = header.parentElement;
+        section.classList.toggle('open');
+    }
+
+    function toggleTheme() {
+        const body = document.body;
+        const btn = document.getElementById('themeToggleBtn');
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.setAttribute('data-theme', 'light');
+            btn.textContent = '🌙 Dark';
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            btn.textContent = '☀️ Light';
+        }
+    }
+
+    function filterFilms() {
+        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        const selectedCategory = document.getElementById('categoryFilter').value;
+        const sections = document.querySelectorAll('.category-section');
+        let totalVisibleFilms = 0;
+
+        sections.forEach(section => {
+            const categoryName = section.getAttribute('data-category');
+            const matchCategory = (selectedCategory === 'all' || categoryName === selectedCategory);
+            
+            if (!matchCategory) {
+                section.style.display = 'none';
+                return;
+            }
+
+            section.style.display = 'block';
+            const items = section.querySelectorAll('.film-item');
+            let sectionHasMatch = false;
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex';
+                    sectionHasMatch = true;
+                    totalVisibleFilms++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            if (sectionHasMatch) {
+                section.style.display = 'block';
+                if (query.length > 0) {
+                    section.classList.add('open');
+                }
+            } else {
+                section.style.display = 'none';
+            }
+        });
+
+        const noResults = document.getElementById('noResults');
+        if (totalVisibleFilms === 0) {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+        }
+    }
+
+    function filterByCategory() {
+        filterFilms();
+    }
+</script>
+
+</body>
+</html>
