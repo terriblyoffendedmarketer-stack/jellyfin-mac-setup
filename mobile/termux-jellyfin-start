@@ -216,6 +216,16 @@ log "Watchdog started (PID $WATCHDOG_PID)"
 
     curl -s -X POST "http://localhost:8096/Library/Refresh" -H "X-Emby-Token: $TOKEN"
     log "Library scan triggered"
+
+    # Wait for scan to finish, then sync library to GitHub
+    sleep 60
+    REPO_DIR="$HOME/jellyfin-mac-setup"
+    if [ -d "$REPO_DIR" ] && [ -x "$REPO_DIR/sync-library.sh" ]; then
+        log "Running library sync..."
+        "$REPO_DIR/sync-library.sh" --push >> "$LOG" 2>&1 && \
+            log "Library synced to GitHub" || \
+            log "WARNING: Library sync failed"
+    fi
 ) &
 
 # Keep the script alive so Jellyfin keeps running

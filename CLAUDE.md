@@ -10,7 +10,7 @@ When making changes: commit, push, create PR (NOT draft), squash merge it immedi
 4. Squash merge it right away
 5. Done
 
-## Current State (July 2026)
+## Current State (August 2026)
 
 ### Mac Setup — DONE
 - Jellyfin installed via Homebrew on Mac (hostname: `jf`, user: `apple`)
@@ -60,6 +60,16 @@ When making changes: commit, push, create PR (NOT draft), squash merge it immedi
 ### ADB Setup on Mac
 - User has enabled Developer Options on phone but hasn't set up ADB yet
 - Need to: install ADB on Mac (`brew install android-platform-tools`), enable USB debugging on phone, authorize the Mac when prompted on phone
+
+### Library Sync — DONE
+- `film-library.html`: browsable/searchable HTML page with all films, works offline on any device
+- `film_comments.json`: curated comments for each film (471 films, 10 categories)
+- `sync-library.sh`: queries Jellyfin API, exports to `library.json`, regenerates HTML
+  - Run manually: `./sync-library.sh --push`
+  - Auto-runs after library scan in both `jellyfin-start` (Mac) and `termux-jellyfin-start` (phone)
+  - Mac LaunchAgent (`com.jellyfin.librarysync.plist`) syncs every 30 min while Jellyfin is running
+- View the film list anytime at `film-library.html` in the repo (GitHub), no drive/server needed
+- When Jellyfin scans new content, the sync script updates the HTML and pushes to GitHub
 
 ### Architecture
 - One Seagate drive = one Jellyfin setup
