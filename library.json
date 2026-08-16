@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-08-11T17:21:30Z",
-  "total_count": 509,
+  "synced_at": "2026-08-16T04:06:38Z",
+  "total_count": 514,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -50,6 +50,18 @@
       "rating": 7.931,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/12 Years a Slave/12 Years a Slave.mp4",
       "jellyfin_id": "6f2c00a7799b47a858ae747a21166149"
+    },
+    {
+      "name": "The 40 Year Old Virgin",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "rating": 6.427,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Erin Brockavich (2000)/Erin.Brockovich.2000.BRRip.YIFY.mkv",
+      "jellyfin_id": "685793a3ca197602e625328cb238c583"
     },
     {
       "name": "Aamis",
@@ -432,11 +444,9 @@
       "year": 2005,
       "type": "Movie",
       "genres": [
-        "Action",
-        "History",
-        "War"
+        "Drama"
       ],
-      "rating": 7.393,
+      "rating": 8.1,
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Black (2005)/Black.2005.720p.BluRay.x264.AAC-[YTS.MX].mp4",
       "jellyfin_id": "5e9bac104d51e5b04100aaf93532e478"
     },
@@ -527,17 +537,6 @@
       "rating": 7.494,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Bonnie And Clyde (1967) 1080p/Bonnie.And.Clyde.1967.1080p.BluRay.H264.AAC-RARBG.mp4",
       "jellyfin_id": "ec9cd37d82439012df8f29b3e171eab5"
-    },
-    {
-      "name": "Bonus Malus",
-      "year": 2024,
-      "type": "Movie",
-      "genres": [
-        "Drama"
-      ],
-      "rating": 7,
-      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Memories.[1995]-Magnetic.Rose+Stink.Bomb+Cannon.Fodder-.x264.DVDrip.(Anime)/BONUS/+Memories of Memories+ (making-of featurette).mp4",
-      "jellyfin_id": "707cb7436d9949a8fdc845cdc773add6"
     },
     {
       "name": "The Boondock Saints",
@@ -977,6 +976,15 @@
       "rating": 6.802,
       "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Crazy Romance (2019)/Crazy Romance.mp4",
       "jellyfin_id": "157436b6e66cb18d82b75d5efdd57092"
+    },
+    {
+      "name": "Creed.2015.720p.BRRip.x264.AAC-ETRG",
+      "year": 2015,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Creed.2015.720p.BRRip.x264.AAC-ETRG/Creed.2015.720p.BRRip.x264.AAC-ETRG.mp4",
+      "jellyfin_id": "08d1461b8ffddd5d3d998f726ca58d66"
     },
     {
       "name": "Crouching Tiger, Hidden Dragon",
@@ -1760,6 +1768,19 @@
       "jellyfin_id": "5477cf8b37c15693d62043cca366de1d"
     },
     {
+      "name": "Four Weddings and a Funeral",
+      "year": 1994,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.772,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Four Weddings and a Funeral (1994)/Four Weddings and a Funeral 1994 720p BRrip_sujaidr.mkv",
+      "jellyfin_id": "9fdf51a39b7738850b19e4fd6b07cc70"
+    },
+    {
       "name": "Frances Ha",
       "year": 2012,
       "type": "Movie",
@@ -2422,8 +2443,8 @@
         "Science Fiction"
       ],
       "rating": 7.838,
-      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Her/Her.mp4",
-      "jellyfin_id": "8ec4c75ff4d707d9e1a13dfb3571fd9b"
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Her (2012)/Her.mp4",
+      "jellyfin_id": "6b46ffba293dc7bea304e937b669cb78"
     },
     {
       "name": "Her Love Boils Bathwater",
@@ -3163,15 +3184,6 @@
       "rating": 7.4,
       "path": "/Volumes/Backup Plus/All Movies/Asian Movies/King of Comedy (1999)/King of Comedy (1999).mp4",
       "jellyfin_id": "e2008a3caa3c4b84f847d04907e064eb"
-    },
-    {
-      "name": "Koe no Katachi (Sub)",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Koe no Katachi/Koe no Katachi (Sub).mp4",
-      "jellyfin_id": "518792acec4ce5f23d71fb3f0943b1b3"
     },
     {
       "name": "Koyaanisqatsi",
@@ -4173,6 +4185,18 @@
       "jellyfin_id": "a3057b0b9b0f86157db0379d6ebe0d1f"
     },
     {
+      "name": "Notting Hill",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Romance",
+        "Comedy"
+      ],
+      "rating": 7.265,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Notting Hill (1999)/Notting.Hill.1999.720p.BrRip.x264.BOKUTOX.YIFY.mp4",
+      "jellyfin_id": "655f058416bd6d682430f594076b20c0"
+    },
+    {
       "name": "Oasis",
       "year": 2002,
       "type": "Movie",
@@ -4497,6 +4521,18 @@
       "jellyfin_id": "78a1f2aebd73ea6d3076ad9ca3fa294e"
     },
     {
+      "name": "Pretty Woman",
+      "year": 1990,
+      "type": "Movie",
+      "genres": [
+        "Romance",
+        "Comedy"
+      ],
+      "rating": 7.443,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Pretty Woman (1990)/Pretty.Woman.1990.720p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "c8cfaa70631314617348e5ff1df48eb1"
+    },
+    {
       "name": "Pride & Prejudice",
       "year": 2005,
       "type": "Movie",
@@ -4804,6 +4840,15 @@
       "jellyfin_id": "dba1fa03a6f8c88d53ec8ff915b34f0a"
     },
     {
+      "name": "Rocky II (1979) [1080p]",
+      "year": 1979,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Rocky II (1979) [1080p]/Rocky.II.1979.1080p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "2be01ec0eeef9136f2c55f306444d074"
+    },
+    {
       "name": "Roma",
       "year": 2018,
       "type": "Movie",
@@ -4966,9 +5011,9 @@
       "genres": [
         "Documentary"
       ],
-      "rating": 8.061,
-      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Samsara (2011) [BluRay] [1080p] [YTS.AM]/Samsara.2011.1080p.BluRay.x264-[YTS.AM].mp4",
-      "jellyfin_id": "f550c8e7f4a46ea086a2e07b77424b00"
+      "rating": 8.06,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Samsara (2011) 1080p/Samsara.2011.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "a781769e3aadcad31bc3c89df06b3f5b"
     },
     {
       "name": "Samurai Champloo",
@@ -5208,11 +5253,28 @@
       "jellyfin_id": "268fc1d0e2670766c3553c9d6919bdc9"
     },
     {
-      "name": "A Silent Voice (Koe no Katachi) (Dub) ",
-      "year": 2019,
+      "name": "A Silent Voice: The Movie",
+      "year": 2016,
       "type": "Movie",
-      "genres": [],
-      "rating": null,
+      "genres": [
+        "Animation",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 8.394,
+      "path": "/Volumes/Backup Plus/All Movies/Anime movies/Koe no Katachi/Koe no Katachi (Sub).mp4",
+      "jellyfin_id": "518792acec4ce5f23d71fb3f0943b1b3"
+    },
+    {
+      "name": "A Silent Voice: The Movie",
+      "year": 2016,
+      "type": "Movie",
+      "genres": [
+        "Animation",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 8.394,
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Koe no Katachi/A Silent Voice (Koe no Katachi) (Dub) .mp4",
       "jellyfin_id": "969235a520598608246f4bdeb3562b52"
     },
