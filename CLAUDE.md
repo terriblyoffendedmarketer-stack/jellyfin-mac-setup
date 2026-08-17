@@ -86,17 +86,28 @@ launchctl load ~/Library/LaunchAgents/com.jellyfin.librarysync.plist
 Verify it's loaded: `launchctl list | grep jellyfin` — exit code should be `0` (not `1`).
 If git push from the LaunchAgent fails, the Mac keychain may need to have the git credential stored. Open Terminal and run `git push` manually once to trigger the keychain prompt — after that, background pushes will work.
 
+### Travel Library — DONE (2026-08-17)
+- "Travel" library (movies type) scans `~/Movies` for local content without the hard drive
+- Drop movies/shows into `~/Movies/` — Jellyfin auto-detects and scans
+- Works when hard drive is disconnected (hard-drive libraries show as unavailable, Travel works)
+- TV episodes in `~/Movies/` get misidentified as movies but are still playable
+- For proper TV metadata: structure as `~/Movies/Show Name/Season 01/S01E01.mkv`
+- Duplicates: if same movie exists on drive and in `~/Movies`, Jellyfin shows two entries — use "Merge Versions" in the UI, or just ignore (only the available one plays)
+- Setup script: `add-travel-library.sh` (already run, idempotent)
+
 ### Architecture
 - One Seagate drive = one Jellyfin setup
 - Plug into Mac or phone, start Jellyfin, stream to TV or any WiFi device
 - Same account (pjdruck), same collections, same watch history
 - Drive has: `.jellyfin-data/`, `.jellyfin-config/`, `All Movies/`, `TV/`
 - Only one device runs Jellyfin at a time (drive can only be plugged into one)
+- Travel mode: `~/Movies` scans locally even without the drive connected
 
 ### Key Paths
 - Mac Jellyfin data: `~/Library/Application Support/jellyfin/` (symlinked to drive)
 - Drive data: `/Volumes/Backup Plus/.jellyfin-data` (Mac mount point)
 - Drive data: `/mnt/media_rw/6100-18DF/.jellyfin-data` (Android raw mount)
 - Proot mount target: `/Volumes/Backup Plus` (inside Debian, matches Mac path)
+- Travel media: `~/Movies` (local Mac storage, no drive needed)
 - Server URL: `http://localhost:8096` or `http://192.168.1.51:8096` (Mac static IP)
 - Login: pjdruck / 8544
