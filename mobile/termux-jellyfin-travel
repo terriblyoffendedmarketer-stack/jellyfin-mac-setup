@@ -1,0 +1,189 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# termux-jellyfin-travel — Start Jellyfin on the phone WITHOUT the hard drive
+# Usage: bash ~/termux-jellyfin-travel
+# Requires: proot-distro with Debian, Jellyfin installed, termux-setup-storage done
+#
+# Scans ~/storage/shared/Movies (= /storage/emulated/0/Movies on Android)
+# Uses a LOCAL config/data directory (~/.jellyfin-travel/) so it doesn't need the drive.
+#
+# First run: completes Jellyfin setup wizard automatically and creates the Travel library.
+# Subsequent runs: just starts the server.
+#
+# Gotchas:
+# - This is a SEPARATE Jellyfin instance from the hard-drive one — different config, different DB.
+#   Watch history and metadata don't sync between drive mode and travel mode.
+# - The Movies folder must exist on internal storage before starting.
+#   If it doesn't exist, this script creates it.
+# - .NET in proot needs memory limits or it crashes with GC heap error.
+
+LOG="$HOME/.jellyfin-travel.log"
+LOCAL_DATA="$HOME/.jellyfin-travel/data"
+LOCAL_CONFIG="$HOME/.jellyfin-travel/config"
+MOVIES_PATH="$HOME/storage/shared/Movies"
+PROOT_MOVIES="/media/travel"
+
+log() { echo "$(date '+%H:%M:%S') $1" >> "$LOG"; }
+tail -200 "$LOG" > "$LOG.tmp" 2>/dev/null && mv "$LOG.tmp" "$LOG" 2>/dev/null
+log "=== Travel launcher started ==="
+
+# Check proot
+if ! proot-distro login debian -- true 2>/dev/null; then
+    echo "ERROR: No Debian proot-distro found."
+    exit 1
+fi
+
+# Ensure storage access and Movies folder exist
+if [ ! -d "$HOME/storage/shared" ]; then
+    echo "Setting up Termux storage access..."
+    termux-setup-storage
+    sleep 2
+fi
+
+if [ ! -d "$MOVIES_PATH" ]; then
+    mkdir -p "$MOVIES_PATH"
+    echo "Created Movies folder at internal storage."
+fi
+
+# Create local config dirs
+mkdir -p "$LOCAL_DATA" "$LOCAL_CONFIG"
+
+# Acquire wake lock
+termux-wake-lock 2>/dev/null && log "Wake lock acquired"
+
+# Kill any previous instance
+if proot-distro login debian -- pgrep -f "jellyfin-server" > /dev/null 2>&1; then
+    log "Stopping previous Jellyfin instance"
+    proot-distro login debian -- pkill -f "jellyfin-server" 2>/dev/null
+    sleep 2
+fi
+
+echo "Starting Jellyfin in travel mode..."
+
+# Start Jellyfin with local config and Movies bind mount
+proot-distro login debian \
+    --bind "$MOVIES_PATH:$PROOT_MOVIES" \
+    --bind "$LOCAL_DATA:/var/lib/jellyfin/data" \
+    --bind "$LOCAL_CONFIG:/var/lib/jellyfin/config" \
+    -- bash -c '
+    DATA_DIR="/var/lib/jellyfin/data"
+    CONFIG_DIR="/var/lib/jellyfin/config"
+    CACHE_DIR="/var/cache/jellyfin"
+    LOG_DIR="/var/log/jellyfin"
+
+    mkdir -p "$DATA_DIR" "$CONFIG_DIR" "$CACHE_DIR" "$LOG_DIR"
+
+    export DOTNET_GCHeapHardLimit=1C0000000
+    export COMPlus_EnableDiagnostics=0
+    export DOTNET_GCServer=0
+
+    /usr/bin/jellyfin-server \
+        --datadir "$DATA_DIR" \
+        --configdir "$CONFIG_DIR" \
+        --cachedir "$CACHE_DIR" \
+        --logdir "$LOG_DIR" \
+        --ffmpeg /usr/lib/jellyfin-ffmpeg/ffmpeg \
+        > /var/log/jellyfin/stdout.log 2>&1
+' &
+JF_PID=$!
+log "Jellyfin proot started (PID $JF_PID)"
+
+# Wait for server, then set up if first run
+(
+    TRIES=0
+    until curl -s -o /dev/null http://localhost:8096/web/index.html 2>/dev/null; do
+        TRIES=$((TRIES + 1))
+        if [ $TRIES -ge 90 ]; then
+            log "ERROR: Server not responding after 3 minutes"
+            echo "ERROR: Jellyfin failed to start."
+            exit 1
+        fi
+        sleep 2
+    done
+    log "Server is up"
+
+    PHONE_IP=$(ifconfig 2>/dev/null | grep -A1 wlan0 | grep 'inet ' | awk '{print $2}' | head -1)
+    [ -z "$PHONE_IP" ] && PHONE_IP=$(ip addr show wlan0 2>/dev/null | grep 'inet ' | awk '{print $2}' | cut -d/ -f1 | head -1)
+
+    # Check if setup wizard is needed (first run)
+    PUBLIC=$(curl -s http://localhost:8096/System/Info/Public 2>/dev/null)
+    WIZARD=$(echo "$PUBLIC" | python3 -c "import sys,json; print(json.load(sys.stdin).get('StartupWizardCompleted', False))" 2>/dev/null)
+
+    if [ "$WIZARD" != "True" ]; then
+        echo "First run — completing setup wizard..."
+        AUTH_HEADER='X-Emby-Authorization: MediaBrowser Client="TravelSetup", Device="Phone", DeviceId="travel-phone", Version="1.0"'
+
+        curl -s -X POST "http://localhost:8096/Startup/Configuration" \
+            -H "Content-Type: application/json" -H "$AUTH_HEADER" \
+            -d '{"UICulture":"en-US","MetadataCountryCode":"US","PreferredMetadataLanguage":"en"}'
+
+        curl -s -X POST "http://localhost:8096/Startup/User" \
+            -H "Content-Type: application/json" -H "$AUTH_HEADER" \
+            -d '{"Name":"pjdruck","Password":"8544"}'
+
+        curl -s -X POST "http://localhost:8096/Startup/RemoteAccess" \
+            -H "Content-Type: application/json" -H "$AUTH_HEADER" \
+            -d '{"EnableRemoteAccess":true,"EnableAutomaticPortMapping":false}'
+
+        curl -s -X POST "http://localhost:8096/Startup/Complete" -H "$AUTH_HEADER"
+        log "Setup wizard completed"
+
+        sleep 2
+    fi
+
+    # Authenticate
+    TOKEN=$(curl -s -X POST http://localhost:8096/Users/AuthenticateByName \
+        -H "Content-Type: application/json" \
+        -H 'X-Emby-Authorization: MediaBrowser Client="TravelSetup", Device="Phone", DeviceId="travel-phone", Version="1.0"' \
+        -d '{"Username":"pjdruck","Pw":"8544"}' 2>/dev/null | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
+
+    if [ -z "$TOKEN" ]; then
+        log "Auth failed"
+        echo "Could not authenticate — open http://localhost:8096 to set up manually."
+    else
+        AUTH="MediaBrowser Client=\"TravelSetup\", Device=\"Phone\", DeviceId=\"travel-phone\", Version=\"1.0\", Token=\"$TOKEN\""
+
+        # Check if Travel library exists
+        HAS_TRAVEL=$(curl -s "http://localhost:8096/Library/VirtualFolders" \
+            -H "X-Emby-Authorization: $AUTH" | python3 -c "import sys,json; print(any(l['Name']=='Travel' for l in json.load(sys.stdin)))" 2>/dev/null)
+
+        if [ "$HAS_TRAVEL" != "True" ]; then
+            echo "Adding Travel library..."
+            curl -s -X POST "http://localhost:8096/Library/VirtualFolders?name=Travel&collectionType=movies&refreshLibrary=true" \
+                -H "Content-Type: application/json" \
+                -H "X-Emby-Authorization: $AUTH" \
+                -d "{\"LibraryOptions\":{\"Enabled\":true,\"EnableRealtimeMonitor\":true,\"PathInfos\":[{\"Path\":\"$PROOT_MOVIES\"}],\"SaveLocalMetadata\":true,\"TypeOptions\":[{\"Type\":\"Movie\",\"MetadataFetchers\":[\"TheMovieDb\",\"The Open Movie Database\"],\"ImageFetchers\":[\"TheMovieDb\",\"The Open Movie Database\",\"Embedded Image Extractor\",\"Screen Grabber\"]}]}}"
+            log "Travel library added"
+        fi
+
+        curl -s -X POST "http://localhost:8096/Library/Refresh" -H "X-Emby-Token: $TOKEN"
+        log "Library scan triggered"
+    fi
+
+    echo ""
+    echo "========================================="
+    echo "  Jellyfin TRAVEL mode running!"
+    echo ""
+    echo "  On this phone:  http://localhost:8096"
+    [ -n "$PHONE_IP" ] && echo "  On WiFi network: http://$PHONE_IP:8096"
+    echo ""
+    echo "  Login: pjdruck / 8544"
+    echo "  Movies folder: internal storage > Movies"
+    echo "========================================="
+
+    termux-notification \
+        --title "Jellyfin Travel" \
+        --content "Running — local movies only (no drive)" \
+        --ongoing \
+        --id jellyfin-running 2>/dev/null
+
+) &
+
+echo "Jellyfin starting in travel mode... (Ctrl+C to stop)"
+echo ""
+
+trap 'log "Shutting down"; kill $JF_PID 2>/dev/null; termux-wake-unlock 2>/dev/null; termux-notification-remove jellyfin-running 2>/dev/null; log "Shut down"; exit 0' INT TERM
+
+wait $JF_PID
+log "Jellyfin exited"
+termux-wake-unlock 2>/dev/null
+termux-notification-remove jellyfin-running 2>/dev/null

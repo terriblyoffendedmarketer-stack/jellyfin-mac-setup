@@ -87,13 +87,19 @@ Verify it's loaded: `launchctl list | grep jellyfin` — exit code should be `0`
 If git push from the LaunchAgent fails, the Mac keychain may need to have the git credential stored. Open Terminal and run `git push` manually once to trigger the keychain prompt — after that, background pushes will work.
 
 ### Travel Library — DONE (2026-08-17)
-- "Travel" library (movies type) scans `~/Movies` for local content without the hard drive
-- Drop movies/shows into `~/Movies/` — Jellyfin auto-detects and scans
-- Works when hard drive is disconnected (hard-drive libraries show as unavailable, Travel works)
-- TV episodes in `~/Movies/` get misidentified as movies but are still playable
-- For proper TV metadata: structure as `~/Movies/Show Name/Season 01/S01E01.mkv`
-- Duplicates: if same movie exists on drive and in `~/Movies`, Jellyfin shows two entries — use "Merge Versions" in the UI, or just ignore (only the available one plays)
-- Setup script: `add-travel-library.sh` (already run, idempotent)
+- **Mac:** "Travel" library (movies type) scans `~/Movies` for local content without the hard drive
+  - Drop movies/shows into `~/Movies/` — Jellyfin auto-detects and scans
+  - Works when hard drive is disconnected (hard-drive libraries show as unavailable, Travel works)
+  - TV episodes get misidentified as movies but are still playable
+  - For proper TV metadata: structure as `~/Movies/Show Name/Season 01/S01E01.mkv`
+  - Duplicates: if same movie on drive + `~/Movies`, shows two entries — use "Merge Versions" or ignore
+  - Setup script: `add-travel-library.sh` (already run, idempotent)
+- **Phone (Nothing CMF 2 Pro):** separate travel script `mobile/termux-jellyfin-travel`
+  - Uses local config at `~/.jellyfin-travel/` (NOT the hard drive config)
+  - Scans `~/storage/shared/Movies` (= Android internal storage > Movies, sibling of Downloads)
+  - Separate Jellyfin instance — watch history doesn't sync with drive mode
+  - Auto-completes setup wizard on first run, same login: pjdruck / 8544
+  - Run: `bash ~/termux-jellyfin-travel` (copy script to phone first)
 
 ### Architecture
 - One Seagate drive = one Jellyfin setup
