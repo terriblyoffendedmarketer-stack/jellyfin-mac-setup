@@ -15,6 +15,13 @@
 # - The Movies folder must exist on internal storage before starting.
 #   If it doesn't exist, this script creates it.
 # - .NET in proot needs memory limits or it crashes with GC heap error.
+# - Binary is /usr/bin/jellyfin (NOT jellyfin-server) — it's a symlink to /usr/lib/jellyfin/bin/jellyfin.
+# - jellyfin-web package must be installed separately: proot-distro login debian -- apt install -y jellyfin-web
+#   Without it, server exits with "content directory is either invalid or empty" error.
+#   Web files go to /usr/share/jellyfin/web/ — pass via --webdir flag.
+# - pkill -f "jellyfin" in proot kills the OUTER script too (proot shares host PID namespace).
+#   Use a specific pattern like "/usr/bin/jellyfin" to avoid self-kill.
+# - Google Drive strips extensionless filenames — upload as .bin, download with .bin extension.
 
 LOG="$HOME/.jellyfin-travel.log"
 LOCAL_DATA="$HOME/.jellyfin-travel/data"
@@ -51,10 +58,10 @@ mkdir -p "$LOCAL_DATA" "$LOCAL_CONFIG"
 # Acquire wake lock
 termux-wake-lock 2>/dev/null && log "Wake lock acquired"
 
-# Kill any previous instance
-if proot-distro login debian -- pgrep -f "jellyfin-server" > /dev/null 2>&1; then
+# Kill any previous instance (use specific pattern to avoid killing this script)
+if proot-distro login debian -- pgrep -f "/usr/bin/jellyfin" > /dev/null 2>&1; then
     log "Stopping previous Jellyfin instance"
-    proot-distro login debian -- pkill -f "jellyfin-server" 2>/dev/null
+    proot-distro login debian -- pkill -f "/usr/bin/jellyfin" 2>/dev/null
     sleep 2
 fi
 
@@ -73,15 +80,19 @@ proot-distro login debian \
 
     mkdir -p "$DATA_DIR" "$CONFIG_DIR" "$CACHE_DIR" "$LOG_DIR"
 
-    export DOTNET_GCHeapHardLimit=1C0000000
+    export DOTNET_GCHeapHardLimit=30000000
     export COMPlus_EnableDiagnostics=0
     export DOTNET_GCServer=0
 
-    /usr/bin/jellyfin-server \
+    WEBDIR="/usr/share/jellyfin/web"
+    [ ! -d "$WEBDIR" ] && WEBDIR="/usr/lib/jellyfin/bin/jellyfin-web"
+
+    /usr/bin/jellyfin \
         --datadir "$DATA_DIR" \
         --configdir "$CONFIG_DIR" \
         --cachedir "$CACHE_DIR" \
         --logdir "$LOG_DIR" \
+        --webdir "$WEBDIR" \
         --ffmpeg /usr/lib/jellyfin-ffmpeg/ffmpeg \
         > /var/log/jellyfin/stdout.log 2>&1
 ' &
@@ -97,6 +108,18 @@ log "Jellyfin proot started (PID $JF_PID)"
             log "ERROR: Server not responding after 3 minutes"
             echo "ERROR: Jellyfin failed to start."
             exit 1
+        fi
+        sleep 2
+    done
+    log "Web UI responding"
+
+    # Wait for API to be fully ready (web UI responds before API stops returning 503)
+    TRIES=0
+    until curl -s http://localhost:8096/System/Info/Public 2>/dev/null | python3 -c "import sys,json; json.load(sys.stdin)" 2>/dev/null; do
+        TRIES=$((TRIES + 1))
+        if [ $TRIES -ge 30 ]; then
+            log "WARNING: API not ready after 60s, proceeding anyway"
+            break
         fi
         sleep 2
     done
