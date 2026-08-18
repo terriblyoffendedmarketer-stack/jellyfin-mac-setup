@@ -3,7 +3,7 @@
 # Usage: bash ~/termux-jellyfin-travel
 # Requires: proot-distro with Debian, Jellyfin installed, termux-setup-storage done
 #
-# Scans ~/storage/shared/Movies (= /storage/emulated/0/Movies on Android)
+# Scans ~/storage/movies (= /storage/emulated/0/Movies on Android)
 # Uses a LOCAL config/data directory (~/.jellyfin-travel/) so it doesn't need the drive.
 #
 # First run: completes Jellyfin setup wizard automatically and creates the Travel library.
@@ -19,7 +19,7 @@
 LOG="$HOME/.jellyfin-travel.log"
 LOCAL_DATA="$HOME/.jellyfin-travel/data"
 LOCAL_CONFIG="$HOME/.jellyfin-travel/config"
-MOVIES_PATH="$HOME/storage/shared/Movies"
+MOVIES_PATH="$HOME/storage/movies"
 PROOT_MOVIES="/media/travel"
 
 log() { echo "$(date '+%H:%M:%S') $1" >> "$LOG"; }
@@ -32,16 +32,17 @@ if ! proot-distro login debian -- true 2>/dev/null; then
     exit 1
 fi
 
-# Ensure storage access and Movies folder exist
-if [ ! -d "$HOME/storage/shared" ]; then
+# Ensure storage access exists
+if [ ! -d "$HOME/storage" ]; then
     echo "Setting up Termux storage access..."
     termux-setup-storage
     sleep 2
 fi
 
-if [ ! -d "$MOVIES_PATH" ]; then
-    mkdir -p "$MOVIES_PATH"
-    echo "Created Movies folder at internal storage."
+if [ ! -L "$HOME/storage/movies" ] && [ ! -d "$HOME/storage/movies" ]; then
+    echo "ERROR: ~/storage/movies symlink not found."
+    echo "Run 'termux-setup-storage' and try again."
+    exit 1
 fi
 
 # Create local config dirs
