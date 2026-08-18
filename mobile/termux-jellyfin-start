@@ -83,9 +83,9 @@ fi
 termux-wake-lock 2>/dev/null && log "Wake lock acquired" || log "WARNING: Could not acquire wake lock (install Termux:API)"
 
 # --- Kill any previous Jellyfin session ---
-if proot-distro login debian -- pgrep -f "jellyfin-server" > /dev/null 2>&1; then
+if proot-distro login debian -- pgrep -f "/usr/bin/jellyfin" > /dev/null 2>&1; then
     log "Stopping previous Jellyfin instance"
-    proot-distro login debian -- pkill -f "jellyfin-server" 2>/dev/null
+    proot-distro login debian -- pkill -f "/usr/bin/jellyfin" 2>/dev/null
     sleep 2
 fi
 
@@ -106,11 +106,19 @@ proot-distro login debian \
 
     mkdir -p "$DATA_DIR" "$CONFIG_DIR" "$CACHE_DIR" "$LOG_DIR"
 
-    /usr/bin/jellyfin-server \
+    export DOTNET_GCHeapHardLimit=30000000
+    export COMPlus_EnableDiagnostics=0
+    export DOTNET_GCServer=0
+
+    WEBDIR="/usr/share/jellyfin/web"
+    [ ! -d "$WEBDIR" ] && WEBDIR="/usr/lib/jellyfin/bin/jellyfin-web"
+
+    /usr/bin/jellyfin \
         --datadir "$DATA_DIR" \
         --configdir "$CONFIG_DIR" \
         --cachedir "$CACHE_DIR" \
         --logdir "$LOG_DIR" \
+        --webdir "$WEBDIR" \
         --ffmpeg /usr/lib/jellyfin-ffmpeg/ffmpeg \
         > /var/log/jellyfin/stdout.log 2>&1
 ' &
