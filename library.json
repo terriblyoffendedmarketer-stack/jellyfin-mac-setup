@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-08-22T17:53:55Z",
-  "total_count": 548,
+  "synced_at": "2026-08-22T18:09:57Z",
+  "total_count": 537,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -74,17 +74,6 @@
       "rating": 7.7,
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Aamis (2019)/Aamis (2019) Assamese.mkv",
       "jellyfin_id": "3ba06a9fa2cc6cd261928cb0e2111c5a"
-    },
-    {
-      "name": "Action Drama Cut (Kannada)",
-      "year": 20200804,
-      "type": "Movie",
-      "genres": [
-        "Film & Animation"
-      ],
-      "rating": null,
-      "path": "/Users/apple/Movies/Action Drama Cut (Kannada)/PSBT India - Action... Drama... Cut...mkv",
-      "jellyfin_id": "181097e8c089ec3178ee97b860a93921"
     },
     {
       "name": "Action Drama Cut (Kannada)",
@@ -5849,96 +5838,6 @@
       "rating": 7.167,
       "path": "/Volumes/Backup Plus/All Movies/Asian Movies/The Terror Live (2013)/The Terror Live 720p.mp4",
       "jellyfin_id": "b172e25cae4d802ea2920aea4fcd936a"
-    },
-    {
-      "name": "The.Leftovers.S01E01",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E01.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "7a2c0dfd2921038c2152a72d9c95e40d"
-    },
-    {
-      "name": "The.Leftovers.S01E02",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E02.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "6e7cbc6baad99d683e548763789361c0"
-    },
-    {
-      "name": "The.Leftovers.S01E03",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E03.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "ef2f8629fa534b4a5581f725bedd3ed2"
-    },
-    {
-      "name": "The.Leftovers.S01E04",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E04.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "d1b18114640850483b3cf5be0f36e44c"
-    },
-    {
-      "name": "The.Leftovers.S01E05",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E05.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "16290969fecf24fb5213319686c435de"
-    },
-    {
-      "name": "The.Leftovers.S01E06",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E06.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "a074cf7b2607a8e8f66b0344cde1cfc3"
-    },
-    {
-      "name": "The.Leftovers.S01E07",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E07.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "0ffef5c5ca64e7fd872eda9582ca80e7"
-    },
-    {
-      "name": "The.Leftovers.S01E08",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E08.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "f01e4baec77bfca455e72a2ac48fca62"
-    },
-    {
-      "name": "The.Leftovers.S01E09",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E09.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "0f4e5f5cf011b930fd12bd83b0bea5c3"
-    },
-    {
-      "name": "The.Leftovers.S01E10",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E10.720p.BRRiP.x264.ShAaNiG.mkv",
-      "jellyfin_id": "652c6f807334b2aeaef6918437713fbb"
     },
     {
       "name": "They Live",
