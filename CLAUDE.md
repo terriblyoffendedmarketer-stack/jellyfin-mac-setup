@@ -67,7 +67,7 @@ When making changes: commit, push, create PR (NOT draft), squash merge it immedi
 - `sync-library.sh`: queries Jellyfin API, exports to `library.json`, regenerates HTML
   - Run manually: `./sync-library.sh --push`
   - Auto-runs after library scan in both `jellyfin-start` (Mac) and `termux-jellyfin-start` (phone)
-  - Mac LaunchAgent (`com.jellyfin.librarysync.plist`) syncs every 30 min while Jellyfin is running
+  - Mac LaunchAgent (`com.jellyfin.librarysync.plist`) syncs every 5 min while Jellyfin is running
   - Script silently exits (exit 0) if Jellyfin is not running — safe for background/cron use
   - Script exports PATH at top to ensure git/python3 are found in LaunchAgent context
   - Does `git pull --rebase` before push to avoid conflicts from other devices

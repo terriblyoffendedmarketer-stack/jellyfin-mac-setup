@@ -20,7 +20,7 @@
         <string>/Users/apple</string>
     </dict>
     <key>StartInterval</key>
-    <integer>1800</integer>
+    <integer>300</integer>
     <key>RunAtLoad</key>
     <false/>
     <key>StandardOutPath</key>
