@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-08-16T04:06:38Z",
-  "total_count": 514,
+  "synced_at": "2026-08-22T17:48:09Z",
+  "total_count": 548,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -74,6 +74,17 @@
       "rating": 7.7,
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Aamis (2019)/Aamis (2019) Assamese.mkv",
       "jellyfin_id": "3ba06a9fa2cc6cd261928cb0e2111c5a"
+    },
+    {
+      "name": "Action Drama Cut (Kannada)",
+      "year": 20200804,
+      "type": "Movie",
+      "genres": [
+        "Film & Animation"
+      ],
+      "rating": null,
+      "path": "/Users/apple/Movies/Action Drama Cut (Kannada)/PSBT India - Action... Drama... Cut...mkv",
+      "jellyfin_id": "181097e8c089ec3178ee97b860a93921"
     },
     {
       "name": "Action Drama Cut (Kannada)",
@@ -978,11 +989,13 @@
       "jellyfin_id": "157436b6e66cb18d82b75d5efdd57092"
     },
     {
-      "name": "Creed.2015.720p.BRRip.x264.AAC-ETRG",
+      "name": "Creed",
       "year": 2015,
       "type": "Movie",
-      "genres": [],
-      "rating": null,
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.408,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Creed.2015.720p.BRRip.x264.AAC-ETRG/Creed.2015.720p.BRRip.x264.AAC-ETRG.mp4",
       "jellyfin_id": "08d1461b8ffddd5d3d998f726ca58d66"
     },
@@ -1729,6 +1742,19 @@
       "jellyfin_id": "90e9736f35ff167a51f7a0b6f37cfd9f"
     },
     {
+      "name": "First Blood",
+      "year": 1982,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Drama"
+      ],
+      "rating": 7.514,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/First Blood (1982) [BluRay] [1080p] [YTS.AM]/First.Blood.1982.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "61e555b2dc9f5d9f386966b9536e4dc9"
+    },
+    {
       "name": "Flow",
       "year": 2024,
       "type": "Movie",
@@ -1741,6 +1767,18 @@
       "rating": 8.075,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Flow (2024) 2160p 4K/Flow.2024.2160p.4K.WEB.x265.10bit.AAC5.1-WORLD.mkv",
       "jellyfin_id": "a4ccab3755ded10aaf9769034a218ea5"
+    },
+    {
+      "name": "The Fly",
+      "year": 1986,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Science Fiction"
+      ],
+      "rating": 7.443,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Fly (1986) [1080p]/The.Fly.1986.1080p.BluRay.x264.YIFY.mp4",
+      "jellyfin_id": "861d8a258b08b860a39065d336f98242"
     },
     {
       "name": "Fool's Love",
@@ -3782,6 +3820,19 @@
       "jellyfin_id": "ac37a1a455d51fc05398c776af205f4e"
     },
     {
+      "name": "The Mist",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Horror",
+        "Science Fiction",
+        "Thriller"
+      ],
+      "rating": 6.952,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Mist (2007)/The.Mist.2007.720p.Bluray.x264.YIFY.mkv",
+      "jellyfin_id": "454d5c1322210c1c9b1045b548063dd1"
+    },
+    {
       "name": "Mom",
       "year": 2017,
       "type": "Movie",
@@ -4318,6 +4369,19 @@
       "jellyfin_id": "542629399db68d4c511d99e53814d485"
     },
     {
+      "name": "One Cut of the Dead",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Horror",
+        "Drama"
+      ],
+      "rating": 7.629,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/One Cut of the Dead (2017)/One.Cut.of.the.Dead.2017.BluRay.720p.Ganool.mkv",
+      "jellyfin_id": "19d484bc5584710389c35c9ec066c206"
+    },
+    {
       "name": "One Night in Miami",
       "year": 2020,
       "type": "Movie",
@@ -4525,8 +4589,8 @@
       "year": 1990,
       "type": "Movie",
       "genres": [
-        "Romance",
-        "Comedy"
+        "Comedy",
+        "Romance"
       ],
       "rating": 7.443,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Pretty Woman (1990)/Pretty.Woman.1990.720p.BluRay.x264.YIFY.mp4",
@@ -4840,11 +4904,24 @@
       "jellyfin_id": "dba1fa03a6f8c88d53ec8ff915b34f0a"
     },
     {
-      "name": "Rocky II (1979) [1080p]",
+      "name": "Rocky",
+      "year": 1976,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.801,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/Rocky (1976) [1080p]/Rocky.1976.1080p.BrRip.x264.YIFY.mp4",
+      "jellyfin_id": "8cea82d7ff6eedc208904a486a1775c9"
+    },
+    {
+      "name": "Rocky II",
       "year": 1979,
       "type": "Movie",
-      "genres": [],
-      "rating": null,
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.303,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Rocky II (1979) [1080p]/Rocky.II.1979.1080p.BrRip.x264.YIFY.mp4",
       "jellyfin_id": "2be01ec0eeef9136f2c55f306444d074"
     },
@@ -5214,6 +5291,136 @@
       "rating": 8.419,
       "path": "/Volumes/Backup Plus/TV/Shogun S01",
       "jellyfin_id": "7676e761ada84c123c553ee8d94c429b"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E06.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "38ccf53c01ee0a3d594a512a2fb7855f"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E10.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "5bde26e1ab108fc60877393af3dc8e8b"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E05.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "87085677918058f838679efeda51d90d"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E01.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "9d3f74d7053c1c539d5e0542bf0ab467"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E09.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "a6429e0286118e8aeaff4ae29da4578b"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E08.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "d295e4e2c6284e86ba368c297f162e31"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E07.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "d3dc83469f7a3ab4683c73d4bc331c36"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E04.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "e174c9d090053fec4f95dc852540adaa"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E03.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "e210d5b52a8e66d72a639cd61018b9c1"
+    },
+    {
+      "name": "Shogun's Samurai",
+      "year": 1978,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
+      "rating": 7.033,
+      "path": "/Users/apple/Movies/Shogun S01/Shogun.2024.S01E02.1080p.x265-AMBER[EZTVx.to].mkv",
+      "jellyfin_id": "e2cd8bf9d71fc66f55bd46283ba7d6fc"
     },
     {
       "name": "Shoplifters",
@@ -5644,6 +5851,96 @@
       "jellyfin_id": "b172e25cae4d802ea2920aea4fcd936a"
     },
     {
+      "name": "The.Leftovers.S01E01",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E01.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "7a2c0dfd2921038c2152a72d9c95e40d"
+    },
+    {
+      "name": "The.Leftovers.S01E02",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E02.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "6e7cbc6baad99d683e548763789361c0"
+    },
+    {
+      "name": "The.Leftovers.S01E03",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E03.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "ef2f8629fa534b4a5581f725bedd3ed2"
+    },
+    {
+      "name": "The.Leftovers.S01E04",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E04.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "d1b18114640850483b3cf5be0f36e44c"
+    },
+    {
+      "name": "The.Leftovers.S01E05",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E05.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "16290969fecf24fb5213319686c435de"
+    },
+    {
+      "name": "The.Leftovers.S01E06",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E06.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "a074cf7b2607a8e8f66b0344cde1cfc3"
+    },
+    {
+      "name": "The.Leftovers.S01E07",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E07.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "0ffef5c5ca64e7fd872eda9582ca80e7"
+    },
+    {
+      "name": "The.Leftovers.S01E08",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E08.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "f01e4baec77bfca455e72a2ac48fca62"
+    },
+    {
+      "name": "The.Leftovers.S01E09",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E09.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "0f4e5f5cf011b930fd12bd83b0bea5c3"
+    },
+    {
+      "name": "The.Leftovers.S01E10",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/The Leftovers S01/The.Leftovers.S01E10.720p.BRRiP.x264.ShAaNiG.mkv",
+      "jellyfin_id": "652c6f807334b2aeaef6918437713fbb"
+    },
+    {
       "name": "They Live",
       "year": 1988,
       "type": "Movie",
@@ -5785,6 +6082,78 @@
       "rating": 7.861,
       "path": "/Volumes/Backup Plus/TV/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)",
       "jellyfin_id": "86c9eb0c63c432aea5e8e2ac67c6578a"
+    },
+    {
+      "name": "Tokyo.Vice.S01E01.The.Test",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)/Tokyo.Vice.S01E01.The.Test.1080p.10bit.BluRay.AAC5.1.HEVC-Vyndros.mkv",
+      "jellyfin_id": "7a3de6ce13000c0db40f6659df27cf25"
+    },
+    {
+      "name": "Tokyo.Vice.S01E02.Kishi.Kaisei",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)/Tokyo.Vice.S01E02.Kishi.Kaisei.1080p.10bit.BluRay.AAC5.1.HEVC-Vyndros.mkv",
+      "jellyfin_id": "66d806eecd53bda4379dbc35ba78e300"
+    },
+    {
+      "name": "Tokyo.Vice.S01E03.Read.the.Air",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)/Tokyo.Vice.S01E03.Read.the.Air.1080p.10bit.BluRay.AAC5.1.HEVC-Vyndros.mkv",
+      "jellyfin_id": "ba45149ba81ba935469c89a46f1c8be6"
+    },
+    {
+      "name": "Tokyo.Vice.S01E04.I.Want.It.That.Way",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)/Tokyo.Vice.S01E04.I.Want.It.That.Way.1080p.10bit.BluRay.AAC5.1.HEVC-Vyndros.mkv",
+      "jellyfin_id": "15aae5bfacc79a13f40beab8db0b3e4e"
+    },
+    {
+      "name": "Tokyo.Vice.S01E05.Everybody.Pays",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)/Tokyo.Vice.S01E05.Everybody.Pays.1080p.10bit.BluRay.AAC5.1.HEVC-Vyndros.mkv",
+      "jellyfin_id": "4ac864e6a175c5ae23211426a4d320ed"
+    },
+    {
+      "name": "Tokyo.Vice.S01E06.The.Information.Business",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)/Tokyo.Vice.S01E06.The.Information.Business.1080p.10bit.BluRay.AAC5.1.HEVC-Vyndros.mkv",
+      "jellyfin_id": "3627f54b08cae4aca16be818b42e357a"
+    },
+    {
+      "name": "Tokyo.Vice.S01E07.Sometimes.They.Disappear",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)/Tokyo.Vice.S01E07.Sometimes.They.Disappear.1080p.10bit.BluRay.AAC5.1.HEVC-Vyndros.mkv",
+      "jellyfin_id": "de9f833fd1ee8cd7aafd6858c5151efd"
+    },
+    {
+      "name": "Tokyo.Vice.S01E08.Yoshino",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Tokyo Vice (2022) Season 1 S01 (1080p BluRay x265 HEVC 10bit AAC5.1 Vyndros)/Tokyo.Vice.S01E08.Yoshino.1080p.10bit.BluRay.AAC5.1.HEVC-Vyndros.mkv",
+      "jellyfin_id": "14c12dd107e5ccaa49974f198ae9ca0c"
     },
     {
       "name": "Top Gun",
