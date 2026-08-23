@@ -1,0 +1,358 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Jellyfin Film Themes//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Movies
+X-WR-TIMEZONE:Asia/Kolkata
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260906
+SUMMARY:Ari Aster & The New Horror
+DESCRIPTION:Horror that crawls under your skin. The genre's modern reinvention — where dread replaces jump scares and family is the real monster. Hereditary leads the way.\\n\\nSuggested films:\\nHereditary\, Midsommar\, Get Out\, Nope\, The Witch\, It Follows
+UID:880cd600fd04a0857c749b65e78a64ce@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260906
+DTEND;VALUE=DATE:20260920
+SUMMARY:Hong Sang-soo: Conversations Over Soju
+DESCRIPTION:Korea's most prolific auteur makes films about filmmakers\, writers\, and the things people say when they've had too much to drink. Quiet\, funny\, surprisingly deep. Start anywhere.\\n\\nSuggested films:\\nHotel by the River\, Claire's Camera\, The Day After\, On the Beach at Night Alone\, Right Now Wrong Then\, In Another Country
+UID:0af6a0f73a06e3a813553158d8671c38@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20261004
+SUMMARY:The 2000s Golden Run
+DESCRIPTION:The decade that gave us some of the greatest films ever made — from prestige thrillers to animated masterpieces. Your library has 131 films from this era alone.\\n\\nSuggested films:\\nNo Country for Old Men\, There Will Be Blood\, City of God\, Oldboy\, In the Mood for Love\, Spirited Away
+UID:c1a23675eb97a60f6a1b31c38aca7db3@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261018
+SUMMARY:Anime Beyond the Surface
+DESCRIPTION:Not kids' stuff. These are films and series that use animation to tell stories live action can't — about loneliness\, growing up\, loss\, and worlds that feel more real than reality.\\n\\nSuggested films:\\n5 Centimeters per Second\, Paprika\, Perfect Blue\, Ghost in the Shell\, Your Name\, A Silent Voice
+UID:8b1cc68beaae21d4f7d57f3e182dc5f8@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261101
+SUMMARY:Korean Cinema's Revenge
+DESCRIPTION:Nobody does revenge\, moral ambiguity\, and gut-punch twists like Korean cinema. A decade-long wave that changed world cinema forever.\\n\\nSuggested films:\\nOldboy\, Parasite\, Memories of Murder\, I Saw the Devil\, The Handmaiden\, A Bittersweet Life
+UID:9c93dc7aa523c0772188491c8445de7b@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261115
+SUMMARY:Films That End Differently Than They Start
+DESCRIPTION:You sit down thinking it's one kind of movie. By the end\, it's something completely different. The genre shifts\, the tone pivots\, the rug gets pulled.\\n\\nSuggested films:\\nParasite\, From Dusk Till Dawn\, Audition\, The Cabin in the Woods\, Sorry to Bother You\, Adaptation
+UID:1c369996470a3f2b50844da7b2e5b884@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261129
+SUMMARY:Wes Anderson's Universe
+DESCRIPTION:Symmetrical frames\, pastel palettes\, deadpan dialogue\, and an aching tenderness underneath the quirk. Every film is a dollhouse with real feelings inside.\\n\\nSuggested films:\\nThe Grand Budapest Hotel\, Moonrise Kingdom\, The Royal Tenenbaums\, Fantastic Mr. Fox\, The Life Aquatic\, Isle of Dogs
+UID:d0860280f9159554b0b5d03deeb47dbc@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261213
+SUMMARY:Indian Cinema You Haven't Seen
+DESCRIPTION:Beyond Bollywood. Regional cinema\, indie films\, and stories that mainstream doesn't tell. Tamil\, Malayalam\, Kannada\, Bengali — each industry is its own world.\\n\\nSuggested films:\\nTumbbad\, Super Deluxe\, Drishyam\, Rangi Taranga\, Pather Panchali\, Aparajito
+UID:36afbf8f7b8e5e4e88be1ff32a9ae1b4@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261227
+SUMMARY:The Lonely Character Study
+DESCRIPTION:One person\, their world\, their isolation. Films where the camera stays close and the silence says everything. Best watched alone\, ironically.\\n\\nSuggested films:\\nLost in Translation\, Her\, Cast Away\, Into the Wild\, The Assassin\, Stalker
+UID:3e11c57df755a33e6a60b16b1ac0cd82@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20270110
+SUMMARY:Tarantino: Dialogue as Action
+DESCRIPTION:Nobody writes conversations like this. The tension isn't in the gunfights — it's in what people say to each other before the gunfights.\\n\\nSuggested films:\\nPulp Fiction\, Inglourious Basterds\, Kill Bill\, Reservoir Dogs\, Django Unchained
+UID:7ea5fdd501fbb71068d3fcb107363f60@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270110
+DTEND;VALUE=DATE:20270124
+SUMMARY:The Art of the Heist
+DESCRIPTION:Planning\, assembling the crew\, the one thing that goes wrong. Heist films are really about competence and the beauty of a perfect plan falling apart.\\n\\nSuggested films:\\nOcean's Eleven\, The Italian Job\, Infernal Affairs\, Inside Man\, Heat\, A Hard Day
+UID:f33b61a94e6c08984cc1b420de7e3351@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270207
+SUMMARY:Sci-Fi That Asks Questions
+DESCRIPTION:Not space battles — ideas. What makes us human\, what happens when technology outpaces ethics\, what if the future is already here.\\n\\nSuggested films:\\nBlade Runner 2049\, Arrival\, Ex Machina\, Interstellar\, Her\, Stalker
+UID:d6253492eefa369ee74ec16cccd209f6@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270221
+SUMMARY:Romance Without the Formula
+DESCRIPTION:Love stories that don't follow the Hallmark script. Messy\, complicated\, sometimes they don't even end well — which is exactly why they feel real.\\n\\nSuggested films:\\nBefore Sunrise\, In the Mood for Love\, Eternal Sunshine\, (500) Days of Summer\, The Dreamers\, Lost in Translation
+UID:c3c2c40342ebe2b4d3098e4e3cfd2abb@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270221
+DTEND;VALUE=DATE:20270307
+SUMMARY:1970s & 80s: When Cinema Was Dangerous
+DESCRIPTION:The era of New Hollywood and its aftershocks. Directors had freedom\, studios took risks\, and films felt like they could go anywhere.\\n\\nSuggested films:\\nTaxi Driver\, Apocalypse Now\, The Shining\, Blade Runner\, Alien\, Stalker
+UID:9e6ae95a840b5be7d8ae807ee6d88f7c@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270307
+DTEND;VALUE=DATE:20270321
+SUMMARY:Tarkovsky: Sculpting in Time
+DESCRIPTION:The Russian master who filmed rain\, fire\, and memory like nobody else. His films aren't watched — they're experienced. Slow down. Let them wash over you.\\n\\nSuggested films:\\nStalker\, Mirror\, Solaris\, Nostalgia\, The Sacrifice
+UID:bde9cac1dacf0793baad9ce28cab4e46@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270321
+DTEND;VALUE=DATE:20270404
+SUMMARY:Action Cinema at Its Peak
+DESCRIPTION:Pure adrenaline. No subtext needed — just perfectly choreographed chaos. The films that made you grip your armrest.\\n\\nSuggested films:\\nMad Max: Fury Road\, John Wick\, The Raid\, Ip Man\, First Blood\, The Good the Bad the Weird
+UID:5ed61aa0b1e4a80d023ed340756b0754@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270404
+DTEND;VALUE=DATE:20270418
+SUMMARY:Japanese Cinema's Quiet Power
+DESCRIPTION:From Kurosawa's epics to intimate family dramas. Japan's live-action cinema is as rich as its animation — just slower\, and devastating in different ways.\\n\\nSuggested films:\\nRashomon\, Shoplifters\, Drive My Car\, Departures\, Like Father Like Son\, Still Walking
+UID:44592f91178b070e60f5259353010bd5@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270502
+SUMMARY:Comedy That Actually Holds Up
+DESCRIPTION:Not the ones you outgrow. These are comedies where the writing is so sharp it works on the third rewatch\, and the jokes land harder because you know the characters.\\n\\nSuggested films:\\nIn Bruges\, The Grand Budapest Hotel\, The Princess Bride\, Airplane!\, The Big Lebowski\, Superbad
+UID:aa792e8ff13b09a664c1b0bbe54e2c35@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270502
+DTEND;VALUE=DATE:20270516
+SUMMARY:The Apu Trilogy & Satyajit Ray
+DESCRIPTION:Three films that follow one boy from a Bengali village to Calcutta. Considered one of the greatest achievements in cinema. If you watch nothing else from this calendar\, watch these.\\n\\nSuggested films:\\nPather Panchali\, Aparajito\, Apur Sansar
+UID:000353751b5f7a6c58d62e427ab6f510@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270516
+DTEND;VALUE=DATE:20270530
+SUMMARY:War Films Without Glory
+DESCRIPTION:No patriotic scores\, no easy heroes. These films show war as it is — chaotic\, pointless\, and deeply human. The kind that stay with you.\\n\\nSuggested films:\\nApocalypse Now\, Come and See\, Dunkirk\, Grave of the Fireflies\, 1917\, Glory
+UID:de13982aca8256bf2c38cca1bbb8f015@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270530
+DTEND;VALUE=DATE:20270613
+SUMMARY:Mind-Bending Cinema
+DESCRIPTION:Films that mess with your sense of reality. Timelines fold\, perceptions shift\, and the ending makes you rethink everything you just watched.\\n\\nSuggested films:\\nInception\, Mulholland Drive\, Memento\, Paprika\, Predestination\, Shutter Island
+UID:a0535574fdf16b67d6afe9d901c3b63d@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270613
+DTEND;VALUE=DATE:20270627
+SUMMARY:Asian Romance: Love as Poetry
+DESCRIPTION:Love told through gestures\, silences\, and rain. Asian romance films replace declarations with atmosphere — the unsaid matters more than the said.\\n\\nSuggested films:\\nIn the Mood for Love\, 5 Centimeters per Second\, Your Name\, My Sassy Girl\, Miracle in Cell No. 7\, Be With You
+UID:e9ee84927bd3dd3bb1d2cb3215473b27@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270627
+DTEND;VALUE=DATE:20270711
+SUMMARY:The Documentary Lens
+DESCRIPTION:Real stories\, real people. The films that prove reality is stranger\, funnier\, and more moving than anything a screenwriter could invent.\\n\\nSuggested films:\\nJiro Dreams of Sushi\, Free Solo\, Won't You Be My Neighbor\, Samsara\, Old Days
+UID:988ab4b30f910058af44d7ab14a258f0@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270711
+DTEND;VALUE=DATE:20270725
+SUMMARY:Thrillers That Don't Let Go
+DESCRIPTION:From the opening frame\, you're locked in. These films build tension like a pressure cooker — you know something's coming\, you just don't know when.\\n\\nSuggested films:\\nNo Country for Old Men\, Zodiac\, Gone Girl\, Prisoners\, Nightcrawler\, Memories of Murder
+UID:45bd200583f7c0f2f6071b3b8d38868b@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270725
+DTEND;VALUE=DATE:20270808
+SUMMARY:Coming of Age\, Losing Innocence
+DESCRIPTION:The moment childhood ends and the world gets complicated. Films about growing up too fast\, or not fast enough\, or in exactly the wrong way.\\n\\nSuggested films:\\nMoonrise Kingdom\, Stand By Me\, Boyhood\, A Silent Voice\, The Perks of Being a Wallflower\, Lady Bird
+UID:820c644c52547fb48126beba7e64ccc8@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270808
+DTEND;VALUE=DATE:20270822
+SUMMARY:Films You Can Rewatch Forever
+DESCRIPTION:The comfort picks. The ones you've seen before but they hit different every time. Zero decision paralysis here — you already know these are great.\\n\\nSuggested films:\\nThe Shawshank Redemption\, The Princess Bride\, Spirited Away\, Back to the Future\, Forrest Gump\, Groundhog Day
+UID:d5337094d24a4ff586965d18044540c6@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270822
+DTEND;VALUE=DATE:20270905
+SUMMARY:Crime & Consequence
+DESCRIPTION:The plan\, the execution\, the fallout. Crime films where the real tension isn't the crime itself but what happens to everyone involved after.\\n\\nSuggested films:\\nA Prophet\, Infernal Affairs\, City of God\, The Departed\, A Hard Day\, Oldboy
+UID:5c6964e52626406e90ff1d371b4c6f80@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270905
+DTEND;VALUE=DATE:20270919
+SUMMARY:Horror That's Actually About Something
+DESCRIPTION:Grief\, identity\, motherhood\, capitalism — horror films that use the genre as a lens on real fears. The monster is always a metaphor.\\n\\nSuggested films:\\nHereditary\, The Babadook\, Get Out\, It Follows\, Midsommar\, A Tale of Two Sisters
+UID:beb4321616d1199dd7b20c8177896e30@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270919
+DTEND;VALUE=DATE:20271003
+SUMMARY:Slow Cinema: The Long Take
+DESCRIPTION:Films that breathe. Where the camera holds steady and time moves at the speed of life. Not for every mood — but when they click\, nothing else compares.\\n\\nSuggested films:\\nStalker\, Mirror\, Jeanne Dielman\, In the Mood for Love\, The Assassin\, Grass
+UID:784c90f56481e7f5ef7b95964d8ee036@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271003
+DTEND;VALUE=DATE:20271017
+SUMMARY:Unexpected Gems
+DESCRIPTION:The films in your library you haven't heard of yet. Scroll through your collection — pick one you can't remember adding. That's your film for tonight.\\n\\nSuggested films:\\nBrowse your library for titles you don't recognize — the surprise IS the theme
+UID:a3f90305944c099a98d383a1a98ce551@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271017
+DTEND;VALUE=DATE:20271031
+SUMMARY:Fantasy Worlds Done Right
+DESCRIPTION:World-building that makes you want to live inside the screen. Not just spectacle — these films create places with their own logic\, history\, and soul.\\n\\nSuggested films:\\nSpirited Away\, Pan's Labyrinth\, Princess Mononoke\, The Lord of the Rings\, Howl's Moving Castle
+UID:c210851bd2e19cb2cd6318a375a5584b@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271031
+DTEND;VALUE=DATE:20271114
+SUMMARY:Films Under 100 Minutes
+DESCRIPTION:No excuses tonight. These are tight\, lean films that respect your time — perfect when you 'don't have time for a movie.' You do. It's 90 minutes.\\n\\nSuggested films:\\nBefore Sunrise\, 12 Angry Men\, Rope\, My Neighbor Totoro\, Stand By Me\, Akira
+UID:1767ffce92213aa086dfa0fb84efe4f5@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271114
+DTEND;VALUE=DATE:20271128
+SUMMARY:The Female Gaze
+DESCRIPTION:Stories told from perspectives cinema historically ignored. Women directing\, women leading\, women existing beyond someone else's narrative.\\n\\nSuggested films:\\nLady Bird\, Portrait of a Lady on Fire\, The Handmaiden\, Little Women\, Persepolis\, A Girl Walks Home Alone at Night
+UID:004491ebe925f8be7a9bcaf14d05851f@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271128
+DTEND;VALUE=DATE:20271212
+SUMMARY:Music & Cinema
+DESCRIPTION:Films where the soundtrack isn't background — it's a character. Where the music tells you what the dialogue won't.\\n\\nSuggested films:\\nWhiplash\, Baby Driver\, Drive\, Amelie\, Once\, La La Land
+UID:78740ce255d93ad68b546b4f7c89f794@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271212
+DTEND;VALUE=DATE:20271226
+SUMMARY:The Final Stretch: Your Top Shelf
+DESCRIPTION:The last two weeks. By now you've watched dozens of films from this calendar. What hit hardest? Revisit one. Or watch the one you kept skipping. This is your victory lap.\\n\\nSuggested films:\\nYour choice — revisit a favorite or finally watch the one you've been avoiding
+UID:55ba4e6d53adaa73ac809b54897c72b0@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271226
+DTEND;VALUE=DATE:20280109
+SUMMARY:Southeast Asian Stories
+DESCRIPTION:Thai\, Vietnamese\, Filipino\, Indonesian cinema — vibrant\, underrepresented\, and full of surprises. Films that feel nothing like what you're used to.\\n\\nSuggested films:\\nUncle Boonmee Who Can Recall His Past Lives\, The Raid\, Ong-Bak\, Last Life in the Universe
+UID:1777839b5f411841b121d7a52e2a85e1@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20280109
+DTEND;VALUE=DATE:20280123
+SUMMARY:Animations for Adults
+DESCRIPTION:Not Pixar. These animated films deal with war\, sexuality\, identity\, and existential dread — using the freedom of the medium to go where live action can't.\\n\\nSuggested films:\\nPerfect Blue\, Grave of the Fireflies\, Akira\, Paprika\, Waltz with Bashir\, The Wind Rises
+UID:1c809f45b473067209aff50418020dbc@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20280123
+DTEND;VALUE=DATE:20280206
+SUMMARY:Films About Filmmaking
+DESCRIPTION:Cinema reflecting on itself. Directors\, actors\, the creative process\, the madness of making art. Meta without being pretentious (mostly).\\n\\nSuggested films:\\n8½\, Adaptation\, Ed Wood\, The Disaster Artist\, Day for Night\, On the Beach at Night Alone
+UID:dcc5d4f4e145185efe56523123909cf4@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20280206
+DTEND;VALUE=DATE:20280220
+SUMMARY:The Feel-Good Reset
+DESCRIPTION:Mid-calendar palate cleanser. Pure warmth. Films that leave you smiling — not because they're simple\, but because they believe in something good.\\n\\nSuggested films:\\nChef\, The Secret Life of Walter Mitty\, Amelie\, My Neighbor Totoro\, Paddington 2\, The Intern
+UID:22bf47d73a462800e278812b7d9660e1@jellyfin-themes
+DTSTAMP:20260823T075256Z
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
