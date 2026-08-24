@@ -101,6 +101,13 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
   - Auto-completes setup wizard on first run, same login: pjdruck / 8544
   - Run: `bash ~/termux-jellyfin-travel` (copy script to phone first)
 
+### Calendar Auto-Swap — NEEDS SETUP
+- When new films are added to Jellyfin, sync-library.sh detects them and calls a Google Apps Script webhook
+- The Apps Script swaps new films into upcoming calendar slots (1-2 this week, rest peppered over next 2-3 weeks)
+- Displaced films get moved to the end of the calendar
+- Setup: paste `calendar-swap.gs` into script.google.com, deploy as web app, save URL to `.calendar-swap-url`
+- `.library-prev.json` tracks the previous library state for diff detection (seeded, gitignored)
+
 ### Architecture
 - One Seagate drive = one Jellyfin setup
 - Plug into Mac or phone, start Jellyfin, stream to TV or any WiFi device

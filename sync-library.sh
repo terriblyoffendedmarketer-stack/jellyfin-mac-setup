@@ -13,8 +13,10 @@ JELLYFIN_USER="${JELLYFIN_USER:-pjdruck}"
 JELLYFIN_PASS="${JELLYFIN_PASS:-8544}"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LIBRARY_JSON="$SCRIPT_DIR/library.json"
+LIBRARY_PREV="$SCRIPT_DIR/.library-prev.json"
 COMMENTS_JSON="$SCRIPT_DIR/film_comments.json"
 HTML_FILE="$SCRIPT_DIR/film-library.html"
+SWAP_URL_FILE="$SCRIPT_DIR/.calendar-swap-url"
 PUSH=false
 
 for arg in "$@"; do
@@ -574,6 +576,56 @@ with open(html_path, "w") as f:
 
 print(f"Generated {html_path} with {total} films in {len(ordered_cats)} categories")
 PYEOF
+
+# Detect new films and trigger calendar swap
+if [ -f "$SWAP_URL_FILE" ] && [ -f "$LIBRARY_PREV" ]; then
+    log "Checking for new films..."
+    NEW_FILMS=$(python3 << 'PYEOF' - "$LIBRARY_PREV" "$LIBRARY_JSON"
+import json, sys
+
+prev_path = sys.argv[1]
+curr_path = sys.argv[2]
+
+with open(prev_path) as f:
+    prev = {item["name"].lower() for item in json.load(f).get("items", [])}
+
+with open(curr_path) as f:
+    curr_items = json.load(f).get("items", [])
+
+new_films = []
+for item in curr_items:
+    if item["name"].lower() not in prev:
+        genres = ", ".join(item.get("genres", []))
+        rating = item.get("rating")
+        desc_parts = []
+        if genres:
+            desc_parts.append(f"Genre: {genres}")
+        if rating:
+            desc_parts.append(f"Rating: {rating}/10")
+        title = item["name"]
+        if item.get("year"):
+            title = f"{item['name']} ({item['year']})"
+        new_films.append({"title": title, "description": "\n".join(desc_parts)})
+
+print(json.dumps(new_films))
+PYEOF
+    )
+
+    FILM_COUNT=$(echo "$NEW_FILMS" | python3 -c "import sys,json; print(len(json.load(sys.stdin)))")
+
+    if [ "$FILM_COUNT" -gt 0 ]; then
+        SWAP_URL=$(cat "$SWAP_URL_FILE")
+        log "Found $FILM_COUNT new films — calling calendar swap..."
+        SWAP_RESULT=$(curl -sL \
+            -H "Content-Type: application/json" \
+            -d "{\"films\": $NEW_FILMS}" \
+            "$SWAP_URL" 2>/dev/null)
+        log "Calendar swap result: $SWAP_RESULT"
+    else
+        log "No new films detected"
+    fi
+fi
+cp "$LIBRARY_JSON" "$LIBRARY_PREV"
 
 if $PUSH; then
     log "Pushing to GitHub..."

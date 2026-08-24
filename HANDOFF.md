@@ -1,51 +1,29 @@
 # Movie Calendar Handoff
 
 ## What This Is
-Bulk calendar operations for the "Movie Plans" Google Calendar — deleting wrongly-imported events from the primary calendar and creating 538 daily film events on the correct calendar.
+Bulk calendar operations for the "Movie Plans" Google Calendar — all tasks complete.
 
 ## Calendar IDs
-- **Primary (pjdruck@gmail.com):** `pjdruck@gmail.com` — movie events here need DELETING
-- **Movie Plans:** `269d7d84e2049883815c6937f5a138583f3584e2063caaa933ec7a2a2399e636@group.calendar.google.com` — events go HERE
+- **Primary (pjdruck@gmail.com):** `pjdruck@gmail.com`
+- **Movie Plans:** `269d7d84e2049883815c6937f5a138583f3584e2063caaa933ec7a2a2399e636@group.calendar.google.com`
 
 ## Status
 
-### 1. Delete movie events from primary calendar
-- **Total:** 200 events to delete
-- **Done:** 45 deleted
-- **Remaining:** 155 — IDs in `remaining_event_ids.json`
-- Use Google Calendar API `delete_event` with `calendarId=pjdruck@gmail.com` and `notificationLevel=NONE`
+### 1. Delete movie events from primary calendar — DONE
+- All 154 wrongly-imported movie events deleted from primary calendar
 
-### 2. Create 538 daily film events on Movie Plans
-- **NOT STARTED**
-- All 538 events pre-built in `calendar_events.json`
-- Each entry has: day number, date, film name, vibe classification, description (with curated comments)
-- Date range: 2026-08-23 to 2028-02-11
-- Create as **all-day events**, marked as **free** (not busy)
-- Timezone: Asia/Kolkata
-- Use `create_event` with:
-  - `calendarId`: the Movie Plans ID above
-  - `title`: the `name` field
-  - `description`: the `description` field
-  - `start`/`end`: the `date` field (all-day)
-  - `availability`: FREE
-  - `timeZone`: Asia/Kolkata
+### 2. Create 549 daily film events on Movie Plans — DONE
+- 549 all-day events created (280 via API, 269 via ICS import)
+- Date range: 2026-08-23 to 2028-02-22
+- All marked as free (not busy), timezone Asia/Kolkata
 
-### 3. Design biweekly theme events
-- **NOT STARTED**
-- Create exciting biweekly theme events on Movie Plans calendar
-- Themes should be fun/exciting, NOT "film school homework"
-- Lead with excitement, not study — user enjoys art/indie films but wants joy
+### 3. Create 39 biweekly theme events on Movie Plans — DONE
+- 39 theme events created via API
+- Themes are fun/exciting, not film-school homework
 
-## Film Sequencing Algorithm
-- Films classified into light/medium/heavy vibes
-- Interleaved with pattern: L, H, L, M, L, H, L, M, H, L (repeating)
-- Max consecutive heavy films: 1
-- Joy peppered throughout — no clusters of back-to-back heavy/art films
-- Script: `build_sequence.py` (can re-run to regenerate if needed)
-
-## User Preferences
-- Enjoys indie, art, and parallel cinema — don't remove them
-- Wants more joy/fun peppered in, not clustered heavy watching
-- Don't overcorrect by replacing art films with mainstream blockbusters
-- Login: pjdruck / 8544
-- Timezone: Asia/Kolkata
+### 4. Calendar auto-swap for new films — DONE
+- Google Apps Script webhook deployed (`calendar-swap.gs`)
+- `sync-library.sh` detects new films added to Jellyfin and calls the webhook
+- New films get swapped into upcoming calendar slots (1-2 this week, rest peppered over next 2-3 weeks)
+- Displaced films moved to end of calendar
+- Fully hands-off — runs automatically via existing LaunchAgent every 5 min
