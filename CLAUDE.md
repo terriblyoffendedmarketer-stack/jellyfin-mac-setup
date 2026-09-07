@@ -120,6 +120,10 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
   - Run per movie: `python3 scripts/loudnorm-sidecar.py "/Volumes/Backup Plus/All Movies/Movies in General/MovieName"`
   - Run all: `python3 scripts/loudnorm-sidecar.py "/Volumes/Backup Plus/All Movies" --workers 4`
 - **Sidecar naming:** `Movie.Normalized Stereo.en.aac` (compressor), `Movie.ldnrm Stereo.en.aac` (loudnorm)
+- **Auto-process new movies:** `scripts/auto-normalize-new.sh` (also on drive at `.jellyfin-scripts/`)
+  - Run: `bash "/Volumes/Backup Plus/.jellyfin-scripts/auto-normalize-new.sh"`
+  - Add `--with-loudnorm` to also create ldnrm sidecars
+- **Scripts on drive:** All key scripts copied to `/Volumes/Backup Plus/.jellyfin-scripts/` for portability
 - **Gotchas:** Use `filter_complex` not `-af`; ExFAT creates `._*` forks (ignore them); loudnorm is 2-pass (slow on HDD)
 
 ### Architecture
