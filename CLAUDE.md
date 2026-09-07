@@ -108,6 +108,20 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
 - Setup: paste `calendar-swap.gs` into script.google.com, deploy as web app, save URL to `.calendar-swap-url`
 - `.library-prev.json` tracks the previous library state for diff detection (seeded, gitignored)
 
+### Audio Normalization — DONE (2026-09-07)
+- **Problem:** surround audio (5.1/7.1) has huge dynamic range — dialogue whispered, explosions deafening
+- **Solution:** Sidecar `.aac` files next to each movie. Jellyfin auto-detects them as extra audio tracks.
+- **Layer 1 (compressor) — DONE:** 506 `.Normalized Stereo.{lang}.aac` sidecars across all folders
+  - `scripts/normalize-sidecar.py` — main script, supports `--all-tracks`, `--compressor-only`, `--skip-stereo`
+  - Run: `python3 scripts/normalize-sidecar.py "/Volumes/Backup Plus/All Movies" --compressor-only`
+  - 9 dual-audio movies have sidecars in both languages (en+ja, en+hi, en+zh, en+ml)
+- **Layer 2 (loudnorm) — ON DEMAND:** `.ldnrm Stereo.{lang}.aac` sidecars for consistent volume
+  - `scripts/loudnorm-sidecar.py` — reads compressor sidecars, creates separate ldnrm files
+  - Run per movie: `python3 scripts/loudnorm-sidecar.py "/Volumes/Backup Plus/All Movies/Movies in General/MovieName"`
+  - Run all: `python3 scripts/loudnorm-sidecar.py "/Volumes/Backup Plus/All Movies" --workers 4`
+- **Sidecar naming:** `Movie.Normalized Stereo.en.aac` (compressor), `Movie.ldnrm Stereo.en.aac` (loudnorm)
+- **Gotchas:** Use `filter_complex` not `-af`; ExFAT creates `._*` forks (ignore them); loudnorm is 2-pass (slow on HDD)
+
 ### Architecture
 - One Seagate drive = one Jellyfin setup
 - Plug into Mac or phone, start Jellyfin, stream to TV or any WiFi device
