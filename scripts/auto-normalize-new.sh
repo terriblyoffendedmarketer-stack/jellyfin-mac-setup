@@ -8,12 +8,13 @@
 #   bash scripts/auto-normalize-new.sh --dry-run    # preview only
 #   bash scripts/auto-normalize-new.sh --with-loudnorm  # also create ldnrm sidecars
 #
-# Requires: python3, ffmpeg
+# Requires: python3, ffmpeg, subliminal (auto-installed in venv by fetch-subtitles.sh)
 
 DRIVE="/Volumes/Backup Plus/All Movies"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 NORMALIZE="$SCRIPT_DIR/normalize-sidecar.py"
 LOUDNORM="$SCRIPT_DIR/loudnorm-sidecar.py"
+FETCH_SUBS="$SCRIPT_DIR/fetch-subtitles.sh"
 
 if [ ! -d "$DRIVE" ]; then
     echo "Drive not mounted at $DRIVE — exiting."
@@ -45,15 +46,25 @@ if [ "$WITH_LOUDNORM" = true ]; then
         --workers 4 $DRY_RUN
 fi
 
+# Fetch subtitles for movies missing them (never fails the pipeline)
+echo ""
+echo "=== Fetching subtitles ==="
+bash "$FETCH_SUBS" "$DRIVE" $DRY_RUN || true
+
 # Trigger Jellyfin library scan if not dry run
 if [ -z "$DRY_RUN" ]; then
     echo ""
     echo "=== Triggering Jellyfin library scan ==="
-    curl -s -X POST "http://localhost:8096/Library/Refresh" \
-        -H "X-Emby-Token: $(curl -s -X POST 'http://localhost:8096/Users/AuthenticateByName' \
-            -H 'Content-Type: application/json' \
-            -d '{"Username":"pjdruck","Pw":"8544"}' | python3 -c 'import sys,json; print(json.load(sys.stdin).get("AccessToken",""))')" \
-        && echo "Library scan triggered" || echo "Jellyfin not running or scan failed (not critical)"
+    TOKEN=$(curl -s -X POST 'http://localhost:8096/Users/AuthenticateByName' \
+        -H 'Content-Type: application/json' \
+        -H 'X-Emby-Authorization: MediaBrowser Client="Claude", Device="Mac", DeviceId="claude-code", Version="1.0"' \
+        -d '{"Username":"pjdruck","Pw":"8544"}' | python3 -c 'import sys,json; print(json.load(sys.stdin).get("AccessToken",""))' 2>/dev/null)
+    if [ -n "$TOKEN" ]; then
+        curl -s -X POST "http://localhost:8096/Library/Refresh" \
+            -H "X-Emby-Token: $TOKEN" && echo "Library scan triggered" || echo "Scan failed"
+    else
+        echo "Jellyfin not running or auth failed (not critical)"
+    fi
 fi
 
 echo ""
