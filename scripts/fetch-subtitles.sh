@@ -9,16 +9,19 @@
 #   bash scripts/fetch-subtitles.sh "/path/to/movie.mkv"      # single file
 #   bash scripts/fetch-subtitles.sh "/path/to/movies" --dry-run
 #
-# Requires: ffprobe, python3 (subliminal installed automatically in venv)
+# Requires: ffprobe, python3, ffsubsync (~/.local/bin/ffsubsync)
+#   subliminal installed automatically in venv
 #
 # Gotchas:
 # - subliminal needs a venv on macOS (PEP 668 blocks pip install --user)
 # - Hash-based matching gives best sync; name-matching is fallback and less reliable
+# - ffsubsync auto-corrects offset by matching speech in the audio track (~20s per movie)
 # - Sync check compares last subtitle timestamp to movie duration — flags obvious mismatches
 # - Never fails the caller — all errors are warnings only
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SUBLIMINAL_VENV="$SCRIPT_DIR/../.venv-subliminal"
+FFSUBSYNC="${FFSUBSYNC:-$HOME/.local/bin/ffsubsync}"
 MEDIA_EXTENSIONS="mkv mp4 avi m4v mov ts wmv"
 
 DRY_RUN=false
@@ -38,6 +41,45 @@ ensure_subliminal() {
         echo "  WARNING: Could not set up subliminal"
         return 1
     fi
+}
+
+auto_sync_subtitle() {
+    local srt_file="$1"
+    local video_file="$2"
+
+    if [ ! -x "$FFSUBSYNC" ] && ! command -v ffsubsync &>/dev/null; then
+        echo "    ffsubsync not found, skipping auto-sync"
+        return 0
+    fi
+    local cmd="${FFSUBSYNC}"
+    command -v ffsubsync &>/dev/null && cmd="ffsubsync"
+
+    local synced_file="${srt_file%.srt}.synced.srt"
+    local output
+    output=$("$cmd" "$video_file" -i "$srt_file" -o "$synced_file" 2>&1)
+    local offset
+    offset=$(echo "$output" | grep -o 'offset seconds: [0-9.-]*' | grep -o '[0-9.-]*')
+
+    if [ -f "$synced_file" ] && [ -s "$synced_file" ]; then
+        if [ -n "$offset" ]; then
+            # Check if offset is significant (> 0.5s)
+            local abs_offset
+            abs_offset=$(echo "$offset" | tr -d '-')
+            local significant
+            significant=$(echo "$abs_offset > 0.5" | bc 2>/dev/null || echo "1")
+            if [ "$significant" = "1" ]; then
+                mv "$synced_file" "$srt_file"
+                echo "    Auto-synced (offset: ${offset}s)"
+                return 0
+            fi
+        fi
+        rm -f "$synced_file"
+        echo "    Already in sync (offset: ${offset:-0}s)"
+    else
+        rm -f "$synced_file"
+        echo "    ffsubsync failed, keeping original"
+    fi
+    return 0
 }
 
 check_subtitle_sync() {
@@ -109,6 +151,7 @@ fetch_for_file() {
         srt_file=$(ls "$filedir/${stem}"*.srt 2>/dev/null | head -1)
         if [ -n "$srt_file" ]; then
             echo "    Downloaded: $(basename "$srt_file")"
+            auto_sync_subtitle "$srt_file" "$filepath"
             if ! check_subtitle_sync "$srt_file" "$filepath"; then
                 echo "    Keeping anyway — verify during playback"
             fi
