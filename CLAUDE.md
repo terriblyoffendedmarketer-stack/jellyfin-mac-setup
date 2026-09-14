@@ -125,6 +125,10 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
   - Add `--drive` to move to hard drive instead of ~/Movies
   - Add `--dry-run` to preview without processing
   - Subtitles: reports missing subs, does NOT auto-download (automated sync is unreliable across releases)
+- **Find subtitles:** `scripts/find-subtitles.sh` — searches OpenSubtitles + SubDL APIs by file hash and release markers
+  - Run: `bash scripts/find-subtitles.sh "Movie.2020.1080p.BluRay.x264-YTS.MX.mp4"`
+  - Setup: `bash scripts/find-subtitles.sh --setup` (one-time, saves API keys to `.subtitle-api-keys`)
+  - Finds matching subs, prints download links — you pick and download manually
 - **Auto-process on drive:** `scripts/auto-normalize-new.sh` (also on drive at `.jellyfin-scripts/`)
   - Run: `bash "/Volumes/Backup Plus/.jellyfin-scripts/auto-normalize-new.sh"`
   - Add `--with-loudnorm` to also create ldnrm sidecars
