@@ -9,19 +9,21 @@
 #   bash scripts/fetch-subtitles.sh "/path/to/movie.mkv"      # single file
 #   bash scripts/fetch-subtitles.sh "/path/to/movies" --dry-run
 #
-# Requires: ffprobe, python3, ffsubsync (~/.local/bin/ffsubsync)
+# Requires: ffprobe, python3, alass-cli (brew install alass)
 #   subliminal installed automatically in venv
 #
 # Gotchas:
 # - subliminal needs a venv on macOS (PEP 668 blocks pip install --user)
 # - Hash-based matching gives best sync; name-matching is fallback and less reliable
-# - ffsubsync auto-corrects offset by matching speech in the audio track (~20s per movie)
+# - alass does dynamic subtitle sync — handles framerate mismatch (PAL 25fps vs NTSC 23.976fps)
+#   and non-linear drift, unlike ffsubsync which only does constant offset
+# - sync_subs.py wraps alass + applies technical fixes (gaps, reading speed, max duration)
 # - Sync check compares last subtitle timestamp to movie duration — flags obvious mismatches
 # - Never fails the caller — all errors are warnings only
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SUBLIMINAL_VENV="$SCRIPT_DIR/../.venv-subliminal"
-FFSUBSYNC="${FFSUBSYNC:-$HOME/.local/bin/ffsubsync}"
+SYNC_SUBS="$SCRIPT_DIR/sync_subs.py"
 MEDIA_EXTENSIONS="mkv mp4 avi m4v mov ts wmv"
 
 DRY_RUN=false
@@ -47,37 +49,26 @@ auto_sync_subtitle() {
     local srt_file="$1"
     local video_file="$2"
 
-    if [ ! -x "$FFSUBSYNC" ] && ! command -v ffsubsync &>/dev/null; then
-        echo "    ffsubsync not found, skipping auto-sync"
+    if [ ! -f "$SYNC_SUBS" ]; then
+        echo "    sync_subs.py not found at $SYNC_SUBS, skipping auto-sync"
         return 0
     fi
-    local cmd="${FFSUBSYNC}"
-    command -v ffsubsync &>/dev/null && cmd="ffsubsync"
+    if ! command -v alass-cli &>/dev/null && [ ! -x /opt/homebrew/bin/alass-cli ]; then
+        echo "    alass-cli not found, skipping auto-sync (brew install alass)"
+        return 0
+    fi
 
     local synced_file="${srt_file%.srt}.synced.srt"
     local output
-    output=$("$cmd" "$video_file" -i "$srt_file" -o "$synced_file" 2>&1)
-    local offset
-    offset=$(echo "$output" | grep -o 'offset seconds: [0-9.-]*' | grep -o '[0-9.-]*')
+    output=$(python3 "$SYNC_SUBS" "$video_file" "$srt_file" "$synced_file" 2>&1)
 
     if [ -f "$synced_file" ] && [ -s "$synced_file" ]; then
-        if [ -n "$offset" ]; then
-            # Check if offset is significant (> 0.5s)
-            local abs_offset
-            abs_offset=$(echo "$offset" | tr -d '-')
-            local significant
-            significant=$(echo "$abs_offset > 0.5" | bc 2>/dev/null || echo "1")
-            if [ "$significant" = "1" ]; then
-                mv "$synced_file" "$srt_file"
-                echo "    Auto-synced (offset: ${offset}s)"
-                return 0
-            fi
-        fi
-        rm -f "$synced_file"
-        echo "    Already in sync (offset: ${offset:-0}s)"
+        mv "$synced_file" "$srt_file"
+        echo "    Auto-synced with alass (dynamic sync + technical fixes)"
+        return 0
     else
         rm -f "$synced_file"
-        echo "    ffsubsync failed, keeping original"
+        echo "    alass sync failed, keeping original"
     fi
     return 0
 }

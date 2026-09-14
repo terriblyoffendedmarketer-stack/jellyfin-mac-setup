@@ -120,10 +120,14 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
   - Run per movie: `python3 scripts/loudnorm-sidecar.py "/Volumes/Backup Plus/All Movies/Movies in General/MovieName"`
   - Run all: `python3 scripts/loudnorm-sidecar.py "/Volumes/Backup Plus/All Movies" --workers 4`
 - **Sidecar naming:** `Movie.Normalized Stereo.en.aac` (compressor), `Movie.ldnrm Stereo.en.aac` (loudnorm)
-- **Process downloads → local:** `scripts/process-downloads.sh` — creates both sidecars, moves to `~/Movies`
+- **Process downloads → local:** `scripts/process-downloads.sh` — creates both sidecars, downloads + syncs subtitles, moves to `~/Movies` in a "Movie Name (Year)" folder
   - Run: `bash scripts/process-downloads.sh "Movie File.mkv"` or `--all` for everything in Downloads
   - Add `--drive` to move to hard drive instead of ~/Movies
   - Add `--dry-run` to preview without processing
+- **Subtitle sync:** `scripts/sync_subs.py` — wraps alass-cli for dynamic subtitle alignment + technical fixes
+  - Handles PAL→NTSC framerate mismatch (25fps subs on 23.976fps video), non-linear drift
+  - Called automatically by `fetch-subtitles.sh` after downloading subtitles
+  - Requires: `brew install alass`
 - **Auto-process on drive:** `scripts/auto-normalize-new.sh` (also on drive at `.jellyfin-scripts/`)
   - Run: `bash "/Volumes/Backup Plus/.jellyfin-scripts/auto-normalize-new.sh"`
   - Add `--with-loudnorm` to also create ldnrm sidecars

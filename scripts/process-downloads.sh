@@ -227,6 +227,22 @@ for s in data.get('streams', []):
     fetch_subtitles_for_file "$filepath" || true
 }
 
+guess_movie_folder_name() {
+    local filename="$1"
+    local stem="${filename%.*}"
+    # Try to extract "Movie Name (Year)" from common naming patterns
+    # Pattern: Movie.Name.2020.1080p... or Movie.Name.2020.BluRay...
+    local name_year
+    name_year=$(echo "$stem" | sed -E 's/[._]/ /g' | sed -E 's/ (19|20)([0-9]{2}) .*//' | sed -E 's/^ +| +$//')
+    local year
+    year=$(echo "$stem" | grep -oE '(19|20)[0-9]{2}' | head -1)
+    if [ -n "$name_year" ] && [ -n "$year" ]; then
+        echo "${name_year} (${year})"
+    else
+        echo "$stem"
+    fi
+}
+
 move_to_target() {
     local filepath="$1"
     local filename
@@ -234,11 +250,6 @@ move_to_target() {
     local stem="${filename%.*}"
     local filedir
     filedir=$(dirname "$filepath")
-
-    if [ "$DRY_RUN" = true ]; then
-        echo "  [DRY RUN] Would move $filename + sidecars to $DEST/"
-        return
-    fi
 
     # Check if file is inside a subfolder of Downloads (like Tenet's folder)
     local parent
@@ -248,24 +259,45 @@ move_to_target() {
         is_subfolder=true
     fi
 
+    # Determine the target folder name — always "Movie Name (Year)" format
+    local folder_name
     if [ "$is_subfolder" = true ]; then
-        # Move entire folder
-        local dest_folder="$DEST/$parent"
-        if [ -d "$dest_folder" ]; then
-            echo "  Folder already exists at target, merging..."
+        # Already in a folder — check if it looks like "Name (Year)"
+        if echo "$parent" | grep -qE '\([0-9]{4}\)'; then
+            folder_name="$parent"
+        else
+            folder_name=$(guess_movie_folder_name "$filename")
         fi
-        echo "  Moving folder: $parent/ → $DEST/"
-        mv "$filedir" "$DEST/" 2>/dev/null || cp -R "$filedir" "$DEST/" && rm -rf "$filedir"
     else
-        # Move individual files (movie + sidecars)
-        echo "  Moving: $filename + sidecars → $DEST/"
-        mv "$filedir/$filename" "$DEST/" 2>/dev/null || true
+        folder_name=$(guess_movie_folder_name "$filename")
+    fi
+
+    local dest_folder="$DEST/$folder_name"
+
+    if [ "$DRY_RUN" = true ]; then
+        echo "  [DRY RUN] Would move $filename + sidecars to $dest_folder/"
+        return
+    fi
+
+    mkdir -p "$dest_folder"
+
+    if [ "$is_subfolder" = true ]; then
+        # Move all files from source folder into the target folder
+        echo "  Moving contents: $parent/ → $folder_name/"
+        for f in "$filedir"/*; do
+            [ -e "$f" ] && mv "$f" "$dest_folder/" 2>/dev/null || true
+        done
+        rmdir "$filedir" 2>/dev/null || true
+    else
+        # Move individual files (movie + sidecars + subtitles)
+        echo "  Moving: $filename + sidecars → $folder_name/"
+        mv "$filedir/$filename" "$dest_folder/" 2>/dev/null || true
         for sidecar in "$filedir/${stem}".*.aac "$filedir/${stem}".*.srt; do
-            [ -f "$sidecar" ] && mv "$sidecar" "$DEST/" 2>/dev/null || true
+            [ -f "$sidecar" ] && mv "$sidecar" "$dest_folder/" 2>/dev/null || true
         done
     fi
 
-    echo "  Moved to $DEST/"
+    echo "  Moved to $dest_folder/"
 }
 
 # Collect files to process
@@ -322,6 +354,7 @@ if [ "$DRY_RUN" != true ]; then
     echo "=== Triggering Jellyfin library scan ==="
     TOKEN=$(curl -s -X POST 'http://localhost:8096/Users/AuthenticateByName' \
         -H 'Content-Type: application/json' \
+        -H 'X-Emby-Authorization: MediaBrowser Client="Claude", Device="Mac", DeviceId="claude-code", Version="1.0"' \
         -d '{"Username":"pjdruck","Pw":"8544"}' 2>/dev/null | python3 -c 'import sys,json; print(json.load(sys.stdin).get("AccessToken",""))' 2>/dev/null)
     if [ -n "$TOKEN" ]; then
         curl -s -X POST "http://localhost:8096/Library/Refresh" \
