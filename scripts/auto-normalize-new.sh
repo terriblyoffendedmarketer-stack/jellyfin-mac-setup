@@ -8,13 +8,12 @@
 #   bash scripts/auto-normalize-new.sh --dry-run    # preview only
 #   bash scripts/auto-normalize-new.sh --with-loudnorm  # also create ldnrm sidecars
 #
-# Requires: python3, ffmpeg, subliminal (auto-installed in venv by fetch-subtitles.sh)
+# Requires: python3, ffmpeg, ffprobe
 
 DRIVE="/Volumes/Backup Plus/All Movies"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 NORMALIZE="$SCRIPT_DIR/normalize-sidecar.py"
 LOUDNORM="$SCRIPT_DIR/loudnorm-sidecar.py"
-FETCH_SUBS="$SCRIPT_DIR/fetch-subtitles.sh"
 
 if [ ! -d "$DRIVE" ]; then
     echo "Drive not mounted at $DRIVE — exiting."
@@ -46,10 +45,31 @@ if [ "$WITH_LOUDNORM" = true ]; then
         --workers 4 $DRY_RUN
 fi
 
-# Fetch subtitles for movies missing them (never fails the pipeline)
+# Check for movies missing subtitles — report only, don't auto-download
 echo ""
-echo "=== Fetching subtitles ==="
-bash "$FETCH_SUBS" "$DRIVE" $DRY_RUN || true
+echo "=== Checking for missing subtitles ==="
+MISSING_SUBS=()
+MEDIA_EXTENSIONS="mkv mp4 avi m4v mov"
+for ext in $MEDIA_EXTENSIONS; do
+    while IFS= read -r f; do
+        stem=$(basename "${f%.*}")
+        fdir=$(dirname "$f")
+        # Skip if .srt exists
+        ls "$fdir/${stem}"*.srt &>/dev/null 2>&1 && continue
+        # Check for embedded subs
+        embedded=$(ffprobe -v error -show_entries stream=codec_type -of csv=p=0 "$f" 2>/dev/null | grep -c subtitle || true)
+        [ "$embedded" -gt 0 ] && continue
+        MISSING_SUBS+=("$(basename "$fdir")/$stem")
+    done < <(find "$DRIVE" -name "*.$ext" -not -name "._*" 2>/dev/null)
+done
+if [ ${#MISSING_SUBS[@]} -gt 0 ]; then
+    echo "  *** ${#MISSING_SUBS[@]} movie(s) missing subtitles: ***"
+    for m in "${MISSING_SUBS[@]}"; do
+        echo "    - $m"
+    done
+else
+    echo "  All movies have subtitles"
+fi
 
 # Trigger Jellyfin library scan if not dry run
 if [ -z "$DRY_RUN" ]; then

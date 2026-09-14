@@ -11,14 +11,14 @@
 #   bash scripts/process-downloads.sh --all                      # process all video files in ~/Downloads
 #   bash scripts/process-downloads.sh --dry-run "Movie File.mkv" # preview only
 #
-# Requires: ffmpeg, ffprobe (brew install ffmpeg), subliminal (in venv)
+# Requires: ffmpeg, ffprobe (brew install ffmpeg)
 #
 # Gotchas:
 # - Use filter_complex with [0:a:N]...[norm] -map [norm], NOT -af (fails on surround)
 # - mp4 files still downloading have no moov atom — ffprobe returns error, script skips them
 # - Tenet-style folders with brackets in names need quoting — script handles this
 # - ExFAT drive creates ._* resource forks — ignored during scan
-# - subliminal needs a venv on macOS (PEP 668 blocks --user installs)
+# - Subtitles: flags missing subs, does NOT auto-download (unreliable sync)
 
 set -euo pipefail
 
@@ -89,11 +89,29 @@ get_lang_code() {
     esac
 }
 
-fetch_subtitles_for_file() {
+check_subtitles() {
     local filepath="$1"
-    local dry_flag=""
-    [ "$DRY_RUN" = true ] && dry_flag="--dry-run"
-    bash "$SCRIPT_DIR/fetch-subtitles.sh" "$filepath" $dry_flag
+    local filename
+    filename=$(basename "$filepath")
+    local stem="${filename%.*}"
+    local filedir
+    filedir=$(dirname "$filepath")
+
+    # Check for external .srt
+    if ls "$filedir/${stem}"*.srt &>/dev/null 2>&1; then
+        return 0
+    fi
+
+    # Check for embedded subtitles
+    local embedded
+    embedded=$(ffprobe -v error -show_entries stream=codec_type -of csv=p=0 "$filepath" 2>/dev/null | grep -c subtitle || true)
+    if [ "$embedded" -gt 0 ]; then
+        echo "  Subtitles: $embedded embedded track(s)"
+        return 0
+    fi
+
+    echo "  *** NO SUBTITLES — download manually ***"
+    return 1
 }
 
 process_file() {
@@ -223,8 +241,8 @@ for s in data.get('streams', []):
         fi
     fi
 
-    # Download subtitles (isolated — never affects sidecar success)
-    fetch_subtitles_for_file "$filepath" || true
+    # Check for subtitles — flag if missing, don't auto-download
+    check_subtitles "$filepath" || true
 }
 
 guess_movie_folder_name() {
