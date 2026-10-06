@@ -149,5 +149,30 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
 - Drive data: `/mnt/media_rw/6100-18DF/.jellyfin-data` (Android raw mount)
 - Proot mount target: `/Volumes/Backup Plus` (inside Debian, matches Mac path)
 - Travel media: `~/Movies` (local Mac storage, no drive needed)
-- Server URL: `http://localhost:8096` or `http://192.168.1.51:8096` (Mac static IP)
+- Server URL: `http://localhost:8096` or `http://192.168.1.55:8096` (Mac LAN IP)
 - Login: pjdruck / 8544
+- Server ID: stored in `/Volumes/Backup Plus/.jellyfin-data/device.txt`
+- Current server ID: `52780cf3771445f48fb55101114f3663`
+
+### TV Shows on Drive (Oct 2026)
+- **ReLIFE:** 17 episodes (S01E01-13, S02E01-04) with normalized audio sidecars. At `/Volumes/Backup Plus/TV/ReLIFE/`
+- **Monogatari Series:** 100 TV episodes + 3 Kizumonogatari movies. At `/Volumes/Backup Plus/TV/Monogatari Series/`
+  - Organized to match TMDB ID 46195: S01 Bakemonogatari(12), S02 Nisemonogatari(11), S03 Second Season(23), S04 Owarimonogatari(13), Specials(41)
+  - Kizumonogatari (3 movies) in subfolder with `.ignore` — separate movies on TMDB
+  - Original BD download preserved at `/Volumes/Backup Plus/TV/Monogatari Series [BD]/` with `.ignore`
+  - Organization script: `scripts/organize-monogatari.sh` (run with `--dry-run` to preview)
+
+### TV Connection Troubleshooting
+- **Home:** Sony Bravia (10+ years old), Jellyfin Android TV app from Play Store
+- **Bangalore:** Fire Stick (not currently in use)
+- When server ID changes (after restart/migration), TV app shows "Unable to connect":
+  1. TV Settings → Apps → Jellyfin → **Clear Data**
+  2. **Force-stop the app 4+ times** (Clear Data alone doesn't flush in-memory state on old Android TV)
+  3. Reopen app, enter `http://192.168.1.55:8096`
+- Mac browser "Server Mismatch": hard refresh (`Cmd+Shift+R`)
+- NEVER suggest using the TV's web browser — too painful to type URLs on a remote
+
+### CRITICAL SAFETY RULES
+- **NEVER use DELETE /Items/{id}** — it deletes physical files from disk. Use POST /Items/{id}/Refresh instead.
+- **NEVER delete files** without explicit user instruction
+- Always launch Jellyfin via `open /Applications/Jellyfin.app`, not the binary directly
