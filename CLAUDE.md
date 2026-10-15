@@ -135,6 +135,35 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
 - **Scripts on drive:** All key scripts copied to `/Volumes/Backup Plus/.jellyfin-scripts/` for portability
 - **Gotchas:** Use `filter_complex` not `-af`; ExFAT creates `._*` forks (ignore them); loudnorm is 2-pass (slow on HDD)
 
+### Movies library went missing + film list stale — FIXED (2026-10-15)
+- **Symptom:** new films (Dark City, the Satyajit Ray/Indian films) never appeared; film-library.html showed ~37 items.
+- **Cause 1:** the "Movies" library (one library = `/Volumes/Backup Plus/All Movies`, all category folders inside) was gone.
+  Library definitions live LOCALLY at `~/Library/Application Support/jellyfin/root/default/` (not on the drive), and it
+  vanished around the Oct 6 travel-config work. The drive DB still had 537 old movie items + watch data.
+  Fix: re-added via API: `POST /Library/VirtualFolders?name=Movies&collectionType=movies&paths=/Volumes/Backup%20Plus/All%20Movies`.
+  Check with `GET /Library/VirtualFolders`: Movies, TV Shows, Travel, MasterClass, Collections should all be there.
+- **Cause 2:** `~/jellyfin-mac-setup` push was rejected since Oct 7 (remote had newer commits; 1,416 auto-commits piled up
+  locally). Fixed by resetting the clone to origin/master (old snapshots on branch `backup/pre-reset-2026-10-15`).
+- **Cause 2b:** the Movies library must have ONE LOCATION PER CATEGORY FOLDER (11 today), not `All Movies` itself:
+  items are linked to their category folder (TopParentId). Pointing it at `All Movies` hid ~460 films; re-adding the
+  category folders + `scripts/fix-movie-parents.py` (63 items re-linked, DB backup `jellyfin.db.pre-fix-20261015-194419`).
+- **Cause 3:** sync-library.sh rebuilt the list from whatever Jellyfin returned, so travel mode wiped the drive films.
+  Now it keeps the last-known drive films when the drive is unplugged or Jellyfin returns none, and merges
+  laptop+drive duplicates (`locations`, `paths`, `drive_online` in library.json).
+
+### Drive / travel modes — AUTOMATIC (2026-10-15)
+- `jellyfin-mode [auto|drive|travel|status]` swaps three matched sets together (Jellyfin stopped first):
+  data (DB), config, root (= which libraries exist). Drive: `/Volumes/Backup Plus/.jellyfin-{data,config,root}`.
+  Travel: `~/Library/Application Support/jellyfin/{data,config,root}.travel` (libraries: Travel = ~/Movies, TV (laptop)).
+- Why: libraries used to be ONE local folder shared by both modes; travel mode pointed at a missing drive and the drive
+  libraries got removed/re-added → full re-import of ~520 films (the slow "recreating"). Now neither mode's libraries change.
+- `~/jellyfin-start` (login launcher; source = repo `jellyfin-start`) runs `jellyfin-mode auto`, scans (incremental), syncs
+  the film list; its watchdog switches modes when the drive is plugged in / unplugged (notification + restart).
+- Travel instance setup wizard was never completed (no account) → completed with pjdruck/8544 (2026-10-15).
+- Timings measured: travel→drive ready ~30-40 s (541 films, no rebuild); drive scan with nothing new ~50 s; travel start ~5 s.
+- Old shared library list kept at `~/Library/Application Support/jellyfin/root.local-backup-20261015`; old launcher at
+  `~/jellyfin-start.backup-20261015`.
+
 ### Architecture
 - One Seagate drive = one Jellyfin setup
 - Plug into Mac or phone, start Jellyfin, stream to TV or any WiFi device

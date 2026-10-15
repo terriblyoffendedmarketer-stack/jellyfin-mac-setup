@@ -4,6 +4,8 @@
 # Usage: ./sync-library.sh [--push]
 #   --push: commit and push to GitHub after syncing
 # Silently exits if Jellyfin is not running (safe for cron/LaunchAgent)
+# Always keeps the hard-drive films in the list, even in travel mode (drive unplugged) or if Jellyfin
+# returns none of them; laptop+drive duplicates are merged into one entry with "locations".
 
 # Ensure tools are on PATH (LaunchAgents run with a bare environment)
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
@@ -70,34 +72,73 @@ log "Library fetched"
 # Build library.json
 log "Building library.json..."
 python3 << 'PYEOF' - "$RAW_ITEMS" "$LIBRARY_JSON"
-import json, sys
+import json, os, sys
 
+# The list must ALWAYS include the hard-drive films, whatever mode Jellyfin is in:
+# - travel mode (drive unplugged / travel config): Jellyfin only knows ~/Movies, so keep the last known drive films
+# - drive plugged in but Jellyfin returns no drive films (e.g. the Movies library went missing, Oct 2026): keep them too
+# Films found in more than one place (laptop + drive) are listed once with all locations.
+DRIVE = "/Volumes/Backup Plus"
 raw = json.loads(sys.argv[1])
 output_path = sys.argv[2]
 items = raw.get("Items", [])
 
+def loc(path):
+    return "drive" if path.startswith(DRIVE + "/") else "laptop"
+
+fresh = [{
+    "name": i.get("Name", ""), "year": i.get("ProductionYear"), "type": i.get("Type", ""),
+    "genres": i.get("Genres", []), "rating": i.get("CommunityRating"), "path": i.get("Path", ""),
+    "jellyfin_id": i.get("Id", ""), "location": loc(i.get("Path", "")),
+} for i in items]
+
+prev = []
+if os.path.exists(output_path):
+    try:
+        prev = json.load(open(output_path)).get("items", [])
+    except Exception:
+        prev = []
+
+drive_online = os.path.isdir(DRIVE + "/All Movies")
+fresh_drive = sum(1 for e in fresh if e["location"] == "drive")
+kept = []
+if not drive_online or fresh_drive == 0:
+    seen = {e["path"] for e in fresh}
+    for e in prev:
+        for path in e.get("paths", [e.get("path", "")]):
+            if path.startswith(DRIVE + "/") and path not in seen:
+                k = dict(e); k["path"] = path; k["location"] = "drive"; k.pop("paths", None); k.pop("locations", None)
+                kept.append(k); seen.add(path)
+    why = "drive not mounted" if not drive_online else "Jellyfin returned no drive films"
+    print(f"Kept {len(kept)} last-known drive items ({why})")
+
+merged = {}
+for e in fresh + kept:
+    key = (e["name"].strip().lower(), e["year"], e["type"])
+    if key not in merged:
+        m = dict(e); m["locations"] = [e["location"]]; m["paths"] = [e["path"]]
+        merged[key] = m
+    else:
+        m = merged[key]
+        if e["path"] not in m["paths"]:
+            m["paths"].append(e["path"])
+        if e["location"] not in m["locations"]:
+            m["locations"].append(e["location"])
+        if e["location"] == "drive":
+            m["path"] = e["path"]   # the drive copy is the canonical one
+out = sorted(merged.values(), key=lambda e: e["name"].lower())
+for m in out:
+    m.pop("location", None)
+
 library = {
     "synced_at": __import__("datetime").datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
-    "total_count": len(items),
-    "items": []
+    "drive_online": drive_online,
+    "total_count": len(out),
+    "items": out,
 }
-
-for item in items:
-    entry = {
-        "name": item.get("Name", ""),
-        "year": item.get("ProductionYear"),
-        "type": item.get("Type", ""),
-        "genres": item.get("Genres", []),
-        "rating": item.get("CommunityRating"),
-        "path": item.get("Path", ""),
-        "jellyfin_id": item.get("Id", ""),
-    }
-    library["items"].append(entry)
-
 with open(output_path, "w") as f:
     json.dump(library, f, indent=2, ensure_ascii=False)
-
-print(f"Wrote {len(items)} items to {output_path}")
+print(f"Wrote {len(out)} items to {output_path} ({len(fresh)} from Jellyfin, {len(kept)} kept from the drive)")
 PYEOF
 
 # Generate HTML

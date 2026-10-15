@@ -1,143 +1,90 @@
 #!/bin/bash
-# Launch Jellyfin and trigger a library scan once drive + server are ready.
-# Resilient to: drive not plugged in, slow mount, server crash.
+# jellyfin-start — Login launcher (run by "Jellyfin Launcher.app"). Picks DRIVE or TRAVEL mode automatically,
+# starts Jellyfin, scans for new films (incremental), syncs the film list, and keeps watching:
+#   - drive unplugged while in drive mode  -> switches to travel mode and restarts Jellyfin
+#   - drive plugged in while in travel mode -> switches to drive mode and restarts Jellyfin
 # Prevents Mac sleep and disk sleep while Jellyfin is running.
-# Watchdog auto-quits Jellyfin if drive disconnects or idle too long.
+#
+# Usage: ~/jellyfin-start   (installed copy at ~/jellyfin-start; source of truth: ~/jellyfin-mac-setup/jellyfin-start)
+# Requires: Jellyfin.app, ~/jellyfin-mac-setup/jellyfin-mode, sync-library.sh.
+#
+# Gotchas:
+#   - Mode switching = jellyfin-mode (data + config + library list swapped together). Never add/remove libraries
+#     to cope with a missing drive: that forced full re-imports of ~520 films (Oct 2026).
+#   - A scan in drive mode is incremental (~50 s with nothing new); only new/changed films are processed.
 
 DRIVE="/Volumes/Backup Plus"
+REPO_DIR="$HOME/jellyfin-mac-setup"
+MODE="$REPO_DIR/jellyfin-mode"
 LOG="$HOME/.jellyfin-launcher.log"
 
 log() { echo "$(date '+%H:%M:%S') $1" >> "$LOG"; }
 
-# Keep only last 200 lines of log
-tail -200 "$LOG" > "$LOG.tmp" 2>/dev/null && mv "$LOG.tmp" "$LOG" 2>/dev/null
+# Keep only last 300 lines of log
+tail -300 "$LOG" > "$LOG.tmp" 2>/dev/null && mv "$LOG.tmp" "$LOG" 2>/dev/null
 
 log "=== Launcher started ==="
-
-# Kill any leftover watchdog/caffeinate from a previous session
 pkill -f "jellyfin-watchdog" 2>/dev/null
 
-# Start Jellyfin if not already running
+# 1. pick the mode (drive if plugged in, else travel), then start Jellyfin
+bash "$MODE" auto >> "$LOG" 2>&1
 if ! pgrep -f "Jellyfin Server" > /dev/null 2>&1; then
-    open -a Jellyfin
-    log "Started Jellyfin app"
+    open /Applications/Jellyfin.app
+    log "Started Jellyfin ($(bash "$MODE" status | cut -d'|' -f1))"
 else
     log "Jellyfin already running"
 fi
 
-# Prevent Mac sleep and disk sleep while Jellyfin is running.
-# -s prevents sleep, -m prevents disk sleep, -i prevents idle sleep.
-# -w ties to Jellyfin process — exits automatically when Jellyfin quits.
+# 2. keep the Mac (and drive) awake while Jellyfin runs
 (
     sleep 10
     JF_PID=$(pgrep -f "Jellyfin Server" | head -1)
     if [ -n "$JF_PID" ]; then
         caffeinate -s -m -i -w "$JF_PID" &
-        CAFF_PID=$!
-        log "caffeinate started (PID $CAFF_PID) watching Jellyfin (PID $JF_PID)"
-    else
-        log "WARNING: Could not find Jellyfin PID for caffeinate"
+        log "caffeinate started watching Jellyfin (PID $JF_PID)"
     fi
 ) &
 
-# Watchdog: monitors drive connection and stream activity.
-# Auto-shuts down Jellyfin if drive disconnects or idle for IDLE_TIMEOUT.
+scan_and_sync() {
+    # wait for the server, scan (incremental), then sync the film list
+    local tries=0 token
+    until curl -s -o /dev/null http://localhost:8096/web/index.html 2>/dev/null; do
+        tries=$((tries + 1)); [ $tries -ge 60 ] && { log "ERROR: Jellyfin not responding after 2 minutes"; return 1; }
+        sleep 2
+    done
+    sleep 5
+    token=$(curl -s -X POST http://localhost:8096/Users/AuthenticateByName -H "Content-Type: application/json" \
+        -H 'X-Emby-Authorization: MediaBrowser Client="Launcher", Device="Mac", DeviceId="launcher", Version="1.0"' \
+        -d '{"Username": "pjdruck", "Pw": "8544"}' 2>/dev/null | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
+    [ -z "$token" ] && { log "ERROR: could not log in to Jellyfin"; return 1; }
+    curl -s -X POST "http://localhost:8096/Library/Refresh" -H "X-Emby-Token: $token"
+    log "Library scan triggered ($(bash "$MODE" status | cut -d'|' -f1))"
+    sleep 90   # incremental scan of ~520 films takes ~50 s
+    if [ -x "$REPO_DIR/sync-library.sh" ]; then
+        "$REPO_DIR/sync-library.sh" --push >> "$LOG" 2>&1 && log "Film list synced" || log "WARNING: film list sync failed"
+    fi
+}
+scan_and_sync &
+
+# 3. watchdog: follow the drive. Unplugged in drive mode -> travel; plugged in during travel mode -> drive.
 (
     exec -a "jellyfin-watchdog" bash -c '
-    DRIVE="'"$DRIVE"'"
-    LOG="'"$LOG"'"
+    DRIVE="'"$DRIVE"'"; MODE="'"$MODE"'"; LOG="'"$LOG"'"; LAUNCHER="'"$0"'"
     log() { echo "$(date "+%H:%M:%S") [watchdog] $1" >> "$LOG"; }
-
-    sleep 30  # let everything boot
-
+    sleep 30
     while true; do
         sleep 60
-
-        # Check if Jellyfin is still running
-        if ! pgrep -f "Jellyfin Server" > /dev/null 2>&1; then
-            log "Jellyfin stopped — watchdog exiting"
-            break
-        fi
-
-        # Check if drive is still connected
-        if [ ! -d "$DRIVE" ]; then
-            log "Drive disconnected — shutting down Jellyfin"
-            osascript -e "display notification \"Drive disconnected — shutting down to save battery\" with title \"Jellyfin\"" 2>/dev/null
-
-            # Graceful shutdown via API, then force-kill if needed
-            TOKEN=$(curl -s --max-time 5 -X POST http://localhost:8096/Users/AuthenticateByName \
-                -H "Content-Type: application/json" \
-                -H "X-Emby-Authorization: MediaBrowser Client=\"Watchdog\", Device=\"Mac\", DeviceId=\"wd1\", Version=\"1.0\"" \
-                -d "{\"Username\": \"pjdruck\", \"Pw\": \"8544\"}" 2>/dev/null | python3 -c "import sys,json; print(json.load(sys.stdin)[\"AccessToken\"])" 2>/dev/null)
-            if [ -n "$TOKEN" ]; then
-                curl -s --max-time 5 -X POST http://localhost:8096/System/Shutdown -H "X-Emby-Token: $TOKEN" 2>/dev/null
-            fi
-            sleep 5
-            pkill -f "Jellyfin Server" 2>/dev/null
-            osascript -e "tell application \"Jellyfin Server\" to quit" 2>/dev/null
-            osascript -e "tell application \"Jellyfin\" to quit" 2>/dev/null
-            log "Jellyfin shut down (drive disconnected)"
-            break
+        pgrep -f "Jellyfin Server" > /dev/null 2>&1 || { log "Jellyfin stopped — watchdog exiting"; break; }
+        mode=$(bash "$MODE" status | sed -n "s/^mode: \([a-z]*\).*/\1/p")
+        if [ "$mode" = drive ] && [ ! -d "$DRIVE/All Movies" ]; then
+            log "Drive disconnected — switching to travel mode"
+            osascript -e "display notification \"Drive unplugged — switched to travel mode (laptop films)\" with title \"Jellyfin\"" 2>/dev/null
+            bash "$MODE" travel --start >> "$LOG" 2>&1; exec "$LAUNCHER"
+        elif [ "$mode" = travel ] && [ -d "$DRIVE/All Movies" ]; then
+            log "Drive connected — switching to drive mode"
+            osascript -e "display notification \"Drive plugged in — switched to drive mode\" with title \"Jellyfin\"" 2>/dev/null
+            bash "$MODE" drive --start >> "$LOG" 2>&1; exec "$LAUNCHER"
         fi
     done
     '
-) &
-
-# Background: wait for drive + server, then scan
-(
-    # Wait up to 2 minutes for the server to respond
-    TRIES=0
-    until curl -s -o /dev/null http://localhost:8096/web/index.html 2>/dev/null; do
-        TRIES=$((TRIES + 1))
-        if [ $TRIES -ge 60 ]; then
-            log "ERROR: Jellyfin server not responding after 2 minutes"
-            exit 1
-        fi
-        sleep 2
-    done
-    log "Server is up"
-
-    # Give the drive a few seconds to mount (covers slow USB init), then move on
-    TRIES=0
-    while [ ! -d "$DRIVE/All Movies" ]; do
-        TRIES=$((TRIES + 1))
-        if [ $TRIES -ge 8 ]; then
-            log "Drive not found — skipping scan"
-            osascript -e 'display notification "Plug in the drive and run jfs in Terminal" with title "Jellyfin" subtitle "Hard drive not found"' 2>/dev/null
-            exit 0
-        fi
-        sleep 2
-    done
-    log "Drive mounted at $DRIVE"
-
-    # Check the drive path hasn't shifted (e.g. "Backup Plus 1")
-    if [ -d "/Volumes/Backup Plus 1" ]; then
-        log "WARNING: Drive mounted as 'Backup Plus 1' — possible duplicate mount"
-    fi
-
-    # Authenticate and scan
-    AUTH=$(curl -s -X POST http://localhost:8096/Users/AuthenticateByName \
-        -H "Content-Type: application/json" \
-        -H "X-Emby-Authorization: MediaBrowser Client=\"Setup\", Device=\"Mac\", DeviceId=\"setup1\", Version=\"1.0\"" \
-        -d '{"Username": "pjdruck", "Pw": "8544"}' 2>/dev/null)
-
-    TOKEN=$(echo "$AUTH" | python3 -c "import sys,json; print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
-
-    if [ -z "$TOKEN" ]; then
-        log "ERROR: Could not authenticate with Jellyfin"
-        exit 1
-    fi
-
-    curl -s -X POST "http://localhost:8096/Library/Refresh" -H "X-Emby-Token: $TOKEN"
-    log "Library scan triggered"
-
-    # Wait for scan to finish, then sync library to GitHub
-    sleep 60  # give scan time to complete
-    REPO_DIR="$HOME/jellyfin-mac-setup"
-    if [ -d "$REPO_DIR" ] && [ -x "$REPO_DIR/sync-library.sh" ]; then
-        log "Running library sync..."
-        "$REPO_DIR/sync-library.sh" --push >> "$LOG" 2>&1 && \
-            log "Library synced to GitHub" || \
-            log "WARNING: Library sync failed"
-    fi
 ) &

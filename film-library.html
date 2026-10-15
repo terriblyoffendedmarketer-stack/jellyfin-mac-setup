@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
-    <title>Film Library (537 Films)</title>
+    <title>Film Library (550 Films)</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -252,8 +252,8 @@
     <header>
         <div>
             <h1>Film Library</h1>
-            <div class="subtitle">537 films across 9 categories</div>
-            <div class="synced-at">Last synced: 2026-08-22T18:20:14Z</div>
+            <div class="subtitle">550 films across 10 categories</div>
+            <div class="synced-at">Last synced: 2026-10-15T14:35:33Z</div>
         </div>
         <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()">Light</button>
     </header>
@@ -265,13 +265,14 @@
         </div>
         <select class="category-filter" id="categoryFilter" onchange="filterByCategory()">
             <option value="all">All Categories</option>
-            <option value="Andrei Tarkovsky">Andrei Tarkovsky (1)</option>
-            <option value="Anime movies">Anime movies (38)</option>
-            <option value="Asian Movies">Asian Movies (211)</option>
+            <option value="Andrei Tarkovsky">Andrei Tarkovsky (5)</option>
+            <option value="Anime movies">Anime movies (40)</option>
+            <option value="Asian Movies">Asian Movies (217)</option>
             <option value="Hong Sang Soo Films">Hong Sang Soo Films (10)</option>
             <option value="Indian Films">Indian Films (30)</option>
             <option value="Movies in General">Movies in General (238)</option>
             <option value="Tarantino">Tarantino (4)</option>
+            <option value="The Apu Trilogy">The Apu Trilogy (1)</option>
             <option value="Unsorted Get srt files">Unsorted Get srt files (1)</option>
             <option value="Wes Anderson">Wes Anderson (4)</option>
         </select>
@@ -282,12 +283,16 @@
             <div class="category-header" onclick="toggleSection(this)">
                 <div class="category-title-wrap">
                     <span class="category-name">Andrei Tarkovsky</span>
-                    <span class="category-count">1</span>
+                    <span class="category-count">5</span>
                 </div>
                 <span class="toggle-icon">&#x25BC;</span>
             </div>
             <ul class="film-list">
                 <li class="film-item">Andrei Rublev (1966)</li>
+                <li class="film-item">Ivan&#x27;s Childhood (1962)</li>
+                <li class="film-item">Mirror (1975)</li>
+                <li class="film-item">Solaris (1972)</li>
+                <li class="film-item">Stalker (1979)</li>
             </ul>
         </div>
 
@@ -295,13 +300,12 @@
             <div class="category-header" onclick="toggleSection(this)">
                 <div class="category-title-wrap">
                     <span class="category-name">Anime movies</span>
-                    <span class="category-count">38</span>
+                    <span class="category-count">40</span>
                 </div>
                 <span class="toggle-icon">&#x25BC;</span>
             </div>
             <ul class="film-list">
                 <li class="film-item">5 Centimeters per Second (2007)</li>
-                <li class="film-item">A Silent Voice: The Movie (2016)</li>
                 <li class="film-item">A Silent Voice: The Movie (2016)</li>
                 <li class="film-item">Chihayafuru (2011)</li>
                 <li class="film-item">Cowboy Bebop (1998)</li>
@@ -316,6 +320,7 @@
                 <li class="film-item">LINK CLICK (2021)</li>
                 <li class="film-item">Memories (1995)</li>
                 <li class="film-item">Millennium Actress (2001)</li>
+                <li class="film-item">Monogatari (2009)</li>
                 <li class="film-item">Mulan (1998)</li>
                 <li class="film-item">Night Is Short, Walk on Girl (2017)</li>
                 <li class="film-item">ODDTAXI (2021)</li>
@@ -325,6 +330,7 @@
                 <li class="film-item">Ponyo (2008)</li>
                 <li class="film-item">Princess Mononoke (1997)</li>
                 <li class="film-item">Redline (2009)</li>
+                <li class="film-item">ReLIFE (2016)</li>
                 <li class="film-item">Samurai Champloo (2004)</li>
                 <li class="film-item">Scum&#x27;s Wish (2017)</li>
                 <li class="film-item">Serial Experiments Lain (1998)</li>
@@ -337,6 +343,7 @@
                 <li class="film-item">The Secret World of Arrietty (2010)</li>
                 <li class="film-item">Us (2019)</li>
                 <li class="film-item">Weathering with You (2019)</li>
+                <li class="film-item">Welcome to the N-H-K (2006)</li>
                 <li class="film-item">Wolf Children (2012)</li>
             </ul>
         </div>
@@ -345,11 +352,13 @@
             <div class="category-header" onclick="toggleSection(this)">
                 <div class="category-title-wrap">
                     <span class="category-name">Asian Movies</span>
-                    <span class="category-count">211</span>
+                    <span class="category-count">217</span>
                 </div>
                 <span class="toggle-icon">&#x25BC;</span>
             </div>
             <ul class="film-list">
+                <li class="film-item">2046 (2004)</li>
+                <li class="film-item">3-Iron (2004)</li>
                 <li class="film-item">A Bittersweet Life (2005)</li>
                 <li class="film-item">A Brand New Life (2009)</li>
                 <li class="film-item">A Dirty Carnival (2006)</li>
@@ -361,7 +370,11 @@
                 <li class="film-item">A Tale of Two Sisters (2003)</li>
                 <li class="film-item">A Taxi Driver (2017)</li>
                 <li class="film-item">A Werewolf Boy (2012)</li>
+                <li class="film-item">Air Doll (2009)</li>
                 <li class="film-item">All About My Wife (2012)</li>
+                <li class="film-item">Always (2011)</li>
+                <li class="film-item">Architecture 101 (2012)</li>
+                <li class="film-item">Ashes of Time (1994)</li>
                 <li class="film-item">Barking Dogs Never Bite (2000)</li>
                 <li class="film-item">Be with You (2018)</li>
                 <li class="film-item">Beasts Clinging to the Straw (2020)</li>
@@ -392,7 +405,6 @@
                 <li class="film-item">Dragon (2011)</li>
                 <li class="film-item">Drive My Car (2021)</li>
                 <li class="film-item">Emergency Declaration (2022)</li>
-                <li class="film-item">Epitaph (2007)</li>
                 <li class="film-item">Epitaph (2007)</li>
                 <li class="film-item">Escape from Mogadishu (2021)</li>
                 <li class="film-item">Everything Everywhere All at Once (2022)</li>
@@ -499,7 +511,6 @@
                 <li class="film-item">Silenced (2011)</li>
                 <li class="film-item">Solanin (2010)</li>
                 <li class="film-item">Spellbound (2011)</li>
-                <li class="film-item">Spellbound (2011)</li>
                 <li class="film-item">Spring Breakers (2012)</li>
                 <li class="film-item">Spring, Summer, Fall, Winter... and Spring (2003)</li>
                 <li class="film-item">Steins;Gate Live Stage Adptation  (2022)</li>
@@ -519,7 +530,9 @@
                 <li class="film-item">The God of Cookery (1996)</li>
                 <li class="film-item">The Grandmaster (2013)</li>
                 <li class="film-item">The Handmaiden (2016)</li>
+                <li class="film-item">The Hero (1966)</li>
                 <li class="film-item">The Host (2006)</li>
+                <li class="film-item">The Invention of Lying (2009)</li>
                 <li class="film-item">The King and the Clown (2005)</li>
                 <li class="film-item">The Man from Nowhere (2010)</li>
                 <li class="film-item">The Man Standing Next (2020)</li>
@@ -602,6 +615,7 @@
                 <li class="film-item">BlacKkKlansman (2018)</li>
                 <li class="film-item">Bob Biswas (2021)</li>
                 <li class="film-item">Chintu Ka Birthday (2020)</li>
+                <li class="film-item">CityLights (2014)</li>
                 <li class="film-item">Court (2014)</li>
                 <li class="film-item">Delhi Belly (2011)</li>
                 <li class="film-item">Ek Doctor Ki Maut (1990)</li>
@@ -614,7 +628,6 @@
                 <li class="film-item">Kaante (2002)</li>
                 <li class="film-item">Khosla Ka Ghosla! (2006)</li>
                 <li class="film-item">Life in a Metro (2007)</li>
-                <li class="film-item">Lootera (2013)</li>
                 <li class="film-item">Madaari (2016)</li>
                 <li class="film-item">Manmarziyaan (2018)</li>
                 <li class="film-item">Masaan (2015)</li>
@@ -638,8 +651,12 @@
             </div>
             <ul class="film-list">
                 <li class="film-item">(500) Days of Summer (2009)</li>
+                <li class="film-item">0.5 mm (2014)</li>
+                <li class="film-item">100 Yen Love (2014)</li>
                 <li class="film-item">12 Angry Men (1957)</li>
                 <li class="film-item">12 Years a Slave (2013)</li>
+                <li class="film-item">1987: When the Day Comes (2017)</li>
+                <li class="film-item">71: Into the Fire (2010)</li>
                 <li class="film-item">A Clockwork Orange (1971)</li>
                 <li class="film-item">A Quiet Place (2018)</li>
                 <li class="film-item">Action Drama Cut (Kannada) (20200804)</li>
@@ -648,6 +665,7 @@
                 <li class="film-item">Amagi Brillant Park</li>
                 <li class="film-item">American History X (1998)</li>
                 <li class="film-item">Antarctica: A Year on Ice (2013)</li>
+                <li class="film-item">Aparajito (1956)</li>
                 <li class="film-item">Apocalypse Now (1979)</li>
                 <li class="film-item">Apollo 18 (2011)</li>
                 <li class="film-item">Argo (2012)</li>
@@ -658,9 +676,11 @@
                 <li class="film-item">Before Sunset (2004)</li>
                 <li class="film-item">Begin Again (2014)</li>
                 <li class="film-item">Big Fish (2003)</li>
+                <li class="film-item">Big Trouble in Little China (1986)</li>
                 <li class="film-item">Billy Elliot (2000)</li>
                 <li class="film-item">Birdman or (The Unexpected Virtue of Ignorance) (2014)</li>
                 <li class="film-item">Blade Runner 2049 (2017)</li>
+                <li class="film-item">Blood and Bone (2009)</li>
                 <li class="film-item">Blue Is the Warmest Colour (2013)</li>
                 <li class="film-item">Bonnie and Clyde (1967)</li>
                 <li class="film-item">Boyhood (2014)</li>
@@ -669,16 +689,20 @@
                 <li class="film-item">Cheer Up, Mr. Lee (2019)</li>
                 <li class="film-item">Children of Men (2006)</li>
                 <li class="film-item">Citizen X (1995)</li>
-                <li class="film-item">City Lights (2014)</li>
                 <li class="film-item">City of God (2002)</li>
                 <li class="film-item">Close Encounters of the Third Kind (1977)</li>
                 <li class="film-item">Cloud Atlas (2012)</li>
                 <li class="film-item">Cloverfield (2008)</li>
                 <li class="film-item">Coherence (2014)</li>
+                <li class="film-item">Company Limited (1971)</li>
                 <li class="film-item">Coraline (2009)</li>
                 <li class="film-item">Creed (2015)</li>
+                <li class="film-item">Daisies (1966)</li>
+                <li class="film-item">Dark City (1998)</li>
                 <li class="film-item">Dead Poets Society (1989)</li>
                 <li class="film-item">Dear John (2010)</li>
+                <li class="film-item">Demolition (2016)</li>
+                <li class="film-item">Demons (1971)</li>
                 <li class="film-item">Detachment (2011)</li>
                 <li class="film-item">Dev.D (2009)</li>
                 <li class="film-item">Diaries, Notes, and Sketches (1968)</li>
@@ -709,6 +733,7 @@
                 <li class="film-item">Gandhi (1982)</li>
                 <li class="film-item">Garden State (2004)</li>
                 <li class="film-item">Get Out (2017)</li>
+                <li class="film-item">Girlfriends (1978)</li>
                 <li class="film-item">Glory (1989)</li>
                 <li class="film-item">Good Boys (2019)</li>
                 <li class="film-item">Gravity (2013)</li>
@@ -718,8 +743,7 @@
                 <li class="film-item">Han Gong-ju (2014)</li>
                 <li class="film-item">Happy Death Day (2017)</li>
                 <li class="film-item">Harry Potter and the Chamber of Secrets (2002)</li>
-                <li class="film-item">Harry Potter and the Deathly Hallows: Part 1 (2010)</li>
-                <li class="film-item">Harry Potter and the Deathly Hallows: Part 1 (2010)</li>
+                <li class="film-item">Harry Potter and the Deathly Hallows: Part 2 (2011)</li>
                 <li class="film-item">Harry Potter and the Goblet of Fire (2005)</li>
                 <li class="film-item">Harry Potter and the Half-Blood Prince (2009)</li>
                 <li class="film-item">Harry Potter and the Order of the Phoenix (2007)</li>
@@ -739,6 +763,7 @@
                 <li class="film-item">Inside Llewyn Davis (2013)</li>
                 <li class="film-item">Intimate Strangers (2018)</li>
                 <li class="film-item">Into the Wild (2007)</li>
+                <li class="film-item">Jhankaar Beats (2003)</li>
                 <li class="film-item">Ju-on: The Curse (2000)</li>
                 <li class="film-item">Ju-On: The Grudge (2002)</li>
                 <li class="film-item">Kang Deok-sun&#x27;s Love History (2017)</li>
@@ -761,11 +786,11 @@
                 <li class="film-item">Megalo Box (Season 1)</li>
                 <li class="film-item">Miracle in Cell No. 7 (2013)</li>
                 <li class="film-item">Monkey Man (2024)</li>
-                <li class="film-item">Monogatari Series: Off &amp; Monster Season (2024)</li>
                 <li class="film-item">Moon Young (2015)</li>
                 <li class="film-item">Moonlight (2016)</li>
                 <li class="film-item">My Girlfriend Is a Serial Killer (2019)</li>
                 <li class="film-item">Nameless Gangster: Rules of the Time (2012)</li>
+                <li class="film-item">Nayakan (1987)</li>
                 <li class="film-item">Nna Thaan Case Kodu (2022)</li>
                 <li class="film-item">No Country for Old Men (2007)</li>
                 <li class="film-item">Nobody&#x27;s Daughter Haewon (2013)</li>
@@ -774,8 +799,10 @@
                 <li class="film-item">Noriko&#x27;s Dinner Table (2005)</li>
                 <li class="film-item">Ode to the Goose (2018)</li>
                 <li class="film-item">Om Dar-B-Dar (1988)</li>
+                <li class="film-item">On the Silver Globe (1989)</li>
                 <li class="film-item">One Cut of the Dead (2017)</li>
                 <li class="film-item">One Night in Miami (2020)</li>
+                <li class="film-item">Pather Panchali (1955)</li>
                 <li class="film-item">Perfect Strangers (2016)</li>
                 <li class="film-item">Pretty in Pink (1986)</li>
                 <li class="film-item">Pretty Woman (1990)</li>
@@ -797,17 +824,8 @@
                 <li class="film-item">Schindler&#x27;s List (1993)</li>
                 <li class="film-item">Sense and Sensibility (1995)</li>
                 <li class="film-item">Severance (2022)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
-                <li class="film-item">Shogun&#x27;s Samurai (1978)</li>
                 <li class="film-item">Shōgun (2024)</li>
+                <li class="film-item">Sikkim (1981)</li>
                 <li class="film-item">Sinners (2025)</li>
                 <li class="film-item">Sleepless in Seattle (1993)</li>
                 <li class="film-item">Solar Opposites (2020)</li>
@@ -818,6 +836,7 @@
                 <li class="film-item">Takopi&#x27;s Original Sin (2025)</li>
                 <li class="film-item">The 40 Year Old Virgin (2005)</li>
                 <li class="film-item">The Adjustment Bureau (2011)</li>
+                <li class="film-item">The Adversary (1970)</li>
                 <li class="film-item">The Bear (2022)</li>
                 <li class="film-item">The Boondock Saints (1999)</li>
                 <li class="film-item">The Breakfast Club (1985)</li>
@@ -831,6 +850,7 @@
                 <li class="film-item">The Great Dictator (1940)</li>
                 <li class="film-item">The Green Mile (1999)</li>
                 <li class="film-item">The Invisible Man (2020)</li>
+                <li class="film-item">The Invite (2026)</li>
                 <li class="film-item">The Irishman (2019)</li>
                 <li class="film-item">The Iron Giant (1999)</li>
                 <li class="film-item">The Judge (2014)</li>
@@ -840,6 +860,7 @@
                 <li class="film-item">The Man Who Knew Infinity (2015)</li>
                 <li class="film-item">The Martian (2015)</li>
                 <li class="film-item">The Men Who Stare at Goats (2009)</li>
+                <li class="film-item">The Middleman (1976)</li>
                 <li class="film-item">The Mist (2007)</li>
                 <li class="film-item">The Northman (2022)</li>
                 <li class="film-item">The Pianist (2002)</li>
@@ -854,14 +875,6 @@
                 <li class="film-item">They Live (1988)</li>
                 <li class="film-item">Thunderbolts* (2025)</li>
                 <li class="film-item">Tokyo Vice (2022)</li>
-                <li class="film-item">Tokyo.Vice.S01E01.The.Test (2024)</li>
-                <li class="film-item">Tokyo.Vice.S01E02.Kishi.Kaisei (2024)</li>
-                <li class="film-item">Tokyo.Vice.S01E03.Read.the.Air (2024)</li>
-                <li class="film-item">Tokyo.Vice.S01E04.I.Want.It.That.Way (2024)</li>
-                <li class="film-item">Tokyo.Vice.S01E05.Everybody.Pays (2024)</li>
-                <li class="film-item">Tokyo.Vice.S01E06.The.Information.Business (2024)</li>
-                <li class="film-item">Tokyo.Vice.S01E07.Sometimes.They.Disappear (2024)</li>
-                <li class="film-item">Tokyo.Vice.S01E08.Yoshino (2024)</li>
                 <li class="film-item">Top Gun (1986)</li>
                 <li class="film-item">Trumbo (2015)</li>
                 <li class="film-item">Twelve Monkeys (1995)</li>
@@ -891,6 +904,19 @@
                 <li class="film-item">Pulp Fiction (1994)</li>
                 <li class="film-item">Reservoir Dogs (1992)</li>
                 <li class="film-item">The Hateful Eight (2015)</li>
+            </ul>
+        </div>
+
+        <div class="category-section" data-category="The Apu Trilogy">
+            <div class="category-header" onclick="toggleSection(this)">
+                <div class="category-title-wrap">
+                    <span class="category-name">The Apu Trilogy</span>
+                    <span class="category-count">1</span>
+                </div>
+                <span class="toggle-icon">&#x25BC;</span>
+            </div>
+            <ul class="film-list">
+                <li class="film-item">The World of Apu (1959)</li>
             </ul>
         </div>
 
