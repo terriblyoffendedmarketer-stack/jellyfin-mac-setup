@@ -1,0 +1,93 @@
+#!/bin/bash
+# jellyfin-mode — Switch Jellyfin between DRIVE mode and TRAVEL mode by swapping three matched sets at once:
+#   data   (database, watch history, metadata)   drive: /Volumes/Backup Plus/.jellyfin-data    travel: data.travel
+#   config (server settings)                     drive: /Volumes/Backup Plus/.jellyfin-config  travel: config.travel
+#   root   (WHICH libraries exist + their folders) drive: /Volumes/Backup Plus/.jellyfin-root  travel: root.travel
+# Each mode keeps its own libraries permanently, so switching never removes/re-adds a library and drive mode only scans
+# new or changed films (incremental, ~1 min) instead of rebuilding all ~520.
+#
+# Usage: jellyfin-mode [auto|drive|travel|status]   (auto = drive if plugged in, else travel; default: auto)
+#   Stops Jellyfin if the mode changes, swaps the symlinks, starts Jellyfin again (if it was running or --start).
+# Requires: Jellyfin.app; the drive mounted at /Volumes/Backup Plus for drive mode.
+#
+# Gotchas:
+#   - The library list ("root") used to be ONE local folder shared by both modes while the databases were separate.
+#     In travel mode the drive libraries pointed at a missing drive; removing/re-adding them made Jellyfin treat the
+#     library as new and re-import everything (the slow "recreating the library"). Keep root paired with data.
+#   - The library-folder paths inside the database are ".../jellyfin/root/default/<Name>" — unchanged through the
+#     symlink, so the drive DB keeps matching its libraries.
+#   - exFAT: "._*" AppleDouble files in .jellyfin-root show up as duplicate library locations; drive mode deletes them.
+#   - Never swap while Jellyfin is running (SQLite + caches). This script stops it first and WAITS until the process
+#     is gone: quitting only the tray app left the server finishing scheduled tasks for ~3 min, so the next start lagged.
+#   - Movies library = one location PER category folder (not "All Movies" itself): items are linked to their category
+#     folder (TopParentId). Changing that makes ~460 films vanish until re-linked (scripts/fix-movie-parents.py).
+set -u
+JF="$HOME/Library/Application Support/jellyfin"
+DRIVE="/Volumes/Backup Plus"
+LOG="$HOME/.jellyfin-launcher.log"
+log() { echo "$(date '+%H:%M:%S') [mode] $1" | tee -a "$LOG"; }
+
+target_of() { readlink "$JF/$1" 2>/dev/null; }
+current() {
+    case "$(target_of data)" in
+        "$DRIVE/.jellyfin-data") echo drive ;;
+        "$JF/data.travel") echo travel ;;
+        *) echo unknown ;;
+    esac
+}
+running() { pgrep -f "Jellyfin Server" >/dev/null 2>&1; }
+
+stop_jf() {
+    running || return 0
+    log "stopping Jellyfin"
+    # graceful API shutdown first; the tray-app quit alone left the server waiting on scheduled tasks for minutes
+    local tok
+    tok=$(curl -s -m 5 -X POST http://localhost:8096/Users/AuthenticateByName -H "Content-Type: application/json" \
+        -H 'X-Emby-Authorization: MediaBrowser Client="ModeSwitch", Device="Mac", DeviceId="mode-switch", Version="1.0"' \
+        -d '{"Username":"pjdruck","Pw":"8544"}' 2>/dev/null | python3 -c "import sys,json;print(json.load(sys.stdin)['AccessToken'])" 2>/dev/null)
+    [ -n "$tok" ] && curl -s -m 5 -X POST http://localhost:8096/System/Shutdown -H "X-Emby-Token: $tok" >/dev/null 2>&1
+    osascript -e 'tell application "Jellyfin" to quit' 2>/dev/null
+    for _ in $(seq 1 30); do running || break; sleep 1; done
+    if running; then log "Jellyfin still busy after 30 s — forcing it closed"; pkill -f "Jellyfin Server"; sleep 3; fi
+    running && pkill -9 -f "Jellyfin Server"
+    for _ in $(seq 1 10); do running || break; sleep 1; done
+}
+
+link() {  # link <name> <target>
+    local p="$JF/$1"
+    if [ -e "$p" ] && [ ! -L "$p" ]; then
+        mv "$p" "$p.local-backup-$(date +%Y%m%d%H%M%S)"   # a real folder in the way: keep it, never delete
+    fi
+    ln -sfn "$2" "$p"
+}
+
+want="${1:-auto}"; start=false
+[ "${2:-}" = "--start" ] && start=true
+case "$want" in
+    status) echo "mode: $(current) | data -> $(target_of data) | root -> $(target_of root) | running: $(running && echo yes || echo no)"; exit 0 ;;
+    auto) [ -d "$DRIVE/All Movies" ] && want=drive || want=travel ;;
+    drive|travel) ;;
+    *) echo "usage: jellyfin-mode [auto|drive|travel|status] [--start]"; exit 1 ;;
+esac
+if [ "$want" = drive ] && [ ! -d "$DRIVE/.jellyfin-data" ]; then
+    log "drive mode requested but drive not mounted — staying in travel"; want=travel
+fi
+
+was_running=false; running && was_running=true
+if [ "$(current)" = "$want" ] && [ -L "$JF/root" ]; then
+    log "already in $want mode"
+else
+    stop_jf
+    if [ "$want" = drive ]; then
+        # exFAT drive: macOS drops "._*" AppleDouble files next to anything copied with metadata; Jellyfin reads
+        # "._X.mblink" as an extra (bogus) library location. They're tiny metadata junk, safe to remove.
+        find "$DRIVE/.jellyfin-root" -name '._*' -type f -size -8k -delete 2>/dev/null
+        link data "$DRIVE/.jellyfin-data"; link config "$DRIVE/.jellyfin-config"; link root "$DRIVE/.jellyfin-root"
+    else
+        link data "$JF/data.travel"; link config "$JF/config.travel"; link root "$JF/root.travel"
+    fi
+    log "switched to $want mode"
+fi
+if $was_running || $start; then
+    running || { open /Applications/Jellyfin.app; log "started Jellyfin ($want mode)"; }
+fi
