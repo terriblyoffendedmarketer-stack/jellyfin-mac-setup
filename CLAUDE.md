@@ -159,6 +159,8 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
   libraries got removed/re-added → full re-import of ~520 films (the slow "recreating"). Now neither mode's libraries change.
 - `~/jellyfin-start` (login launcher; source = repo `jellyfin-start`) runs `jellyfin-mode auto`, scans (incremental), syncs
   the film list; its watchdog switches modes when the drive is plugged in / unplugged (notification + restart).
+- **Won't open with drive unplugged? (fixed 2026-10-19)** run `bash ~/jellyfin-mac-setup/jellyfin-mode auto --start`. Cause: cache was
+  never swapped (stayed -> drive) and opening Jellyfin.app directly skips the mode switch. cache is now part of the swap.
 - Travel instance setup wizard was never completed (no account) → completed with pjdruck/8544 (2026-10-15).
 - Timings measured: travel→drive ready ~30-40 s (541 films, no rebuild); drive scan with nothing new ~50 s; travel start ~5 s.
 - Old shared library list kept at `~/Library/Application Support/jellyfin/root.local-backup-20261015`; old launcher at
