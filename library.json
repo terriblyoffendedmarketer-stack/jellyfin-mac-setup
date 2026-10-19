@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-10-19T15:47:23Z",
+  "synced_at": "2026-10-19T15:52:33Z",
   "drive_online": true,
-  "total_count": 550,
+  "total_count": 558,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -622,6 +622,25 @@
       ]
     },
     {
+      "name": "Andaz Apna Apna",
+      "year": 1994,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Romance",
+        "Family"
+      ],
+      "rating": 6.823,
+      "path": "/Users/apple/Movies/Andaz Apna Apna (1994)/Andaz Apna Apna (1994).mp4",
+      "jellyfin_id": "ee7150f6dab50ea4e212cd10797ea06f",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Andaz Apna Apna (1994)/Andaz Apna Apna (1994).mp4"
+      ]
+    },
+    {
       "name": "Andrei Rublev",
       "year": 1966,
       "type": "Movie",
@@ -968,6 +987,24 @@
       ]
     },
     {
+      "name": "Bhavesh Joshi Superhero",
+      "year": 2018,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "rating": 7.5,
+      "path": "/Users/apple/Movies/Bhavesh Joshi Superhero (2018)/Bhavesh Joshi Superhero (2018).mp4",
+      "jellyfin_id": "c36ceb3de89d351f32d3fef4555e7ae7",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Bhavesh Joshi Superhero (2018)/Bhavesh Joshi Superhero (2018).mp4"
+      ]
+    },
+    {
       "name": "Bhoothakaalam",
       "year": 2022,
       "type": "Movie",
@@ -1212,6 +1249,24 @@
       ]
     },
     {
+      "name": "Bombay Talkies",
+      "year": 2013,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "rating": 6.333,
+      "path": "/Users/apple/Movies/Bombay Talkies (2013)/Bombay Talkies (2013).mp4",
+      "jellyfin_id": "54aaf89affcc3e37a7b2fd944a924edd",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Bombay Talkies (2013)/Bombay Talkies (2013).mp4"
+      ]
+    },
+    {
       "name": "Bonnie and Clyde",
       "year": 1967,
       "type": "Movie",
@@ -1298,6 +1353,25 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Burning (2018)/Burning.2018.720p.WEBRip.x264-[YTS.AM].mp4"
+      ]
+    },
+    {
+      "name": "Caché",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Mystery",
+        "Drama",
+        "Thriller"
+      ],
+      "rating": 7.007,
+      "path": "/Users/apple/Movies/Cache Hidden (2005)/Cache.Hidden.2005.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "856921c66d5f0ba942d62e507f82b47c",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Cache Hidden (2005)/Cache.Hidden.2005.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4"
       ]
     },
     {
@@ -2861,6 +2935,23 @@
       ]
     },
     {
+      "name": "Force Majeure",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.824,
+      "path": "/Users/apple/Movies/Force Majeure (2014)/Force.Majeure.2014.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "fb7df5266053a9783111132c0ac00194",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Force Majeure (2014)/Force.Majeure.2014.1080p.BluRay.x264-[YTS.AM].mp4"
+      ]
+    },
+    {
       "name": "Forget Me Not",
       "year": 2015,
       "type": "Movie",
@@ -2968,6 +3059,25 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Fukuoka (2020)/Fukuoka (2020).mp4"
+      ]
+    },
+    {
+      "name": "Funny Games",
+      "year": 1997,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Thriller"
+      ],
+      "rating": 7.314,
+      "path": "/Users/apple/Movies/Funny Games (1997)/Funny.Games.1997.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
+      "jellyfin_id": "cbaf4904cea7ffd37f17436d358c65a9",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Funny Games (1997)/Funny.Games.1997.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4"
       ]
     },
     {
@@ -4313,6 +4423,24 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Andrei Tarkovsky/Ivan's Childhood (1962)/Ivan's Childhood (1962).mp4"
+      ]
+    },
+    {
+      "name": "Jaane Bhi Do Yaaro",
+      "year": 1983,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime"
+      ],
+      "rating": 7.1,
+      "path": "/Users/apple/Movies/Jaane Bhi Do Yaaro (1983)/Jaane Bhi Do Yaaro (1983).mp4",
+      "jellyfin_id": "260df318adea379d0106e0ccffbfb2a0",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Jaane Bhi Do Yaaro (1983)/Jaane Bhi Do Yaaro (1983).mp4"
       ]
     },
     {
@@ -9028,6 +9156,23 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/The Spy Gone North (2018)/The.Spy.Gone.North.2018.720p.BluRay.x264.AAC-[YTS.MX].mp4"
+      ]
+    },
+    {
+      "name": "The Square",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.7,
+      "path": "/Users/apple/Movies/The Square (2017)/The.Square.2017.1080p.BluRay.x264-[YTS.AM].mp4",
+      "jellyfin_id": "6c64ff16f287be5501ac9a0c375d25be",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/The Square (2017)/The.Square.2017.1080p.BluRay.x264-[YTS.AM].mp4"
       ]
     },
     {
