@@ -3,6 +3,7 @@
 #   data   (database, watch history, metadata)   drive: /Volumes/Backup Plus/.jellyfin-data    travel: data.travel
 #   config (server settings)                     drive: /Volumes/Backup Plus/.jellyfin-config  travel: config.travel
 #   root   (WHICH libraries exist + their folders) drive: /Volumes/Backup Plus/.jellyfin-root  travel: root.travel
+#   cache  (image/transcode cache)               drive: /Volumes/Backup Plus/.jellyfin-cache   travel: cache.travel
 # Each mode keeps its own libraries permanently, so switching never removes/re-adds a library and drive mode only scans
 # new or changed films (incremental, ~1 min) instead of rebuilding all ~520.
 #
@@ -21,6 +22,10 @@
 #     is gone: quitting only the tray app left the server finishing scheduled tasks for ~3 min, so the next start lagged.
 #   - Movies library = one location PER category folder (not "All Movies" itself): items are linked to their category
 #     folder (TopParentId). Changing that makes ~460 films vanish until re-linked (scripts/fix-movie-parents.py).
+#   - cache MUST be swapped too: it used to always point at the drive, so travel mode with the drive really unplugged
+#     hung Jellyfin at startup (process alive, port 8096 never opened). Oct 15 tests had the drive plugged in.
+#   - Opening Jellyfin.app directly skips this script. If data/config are found as plain folders (the travel set,
+#     un-linked), they are moved back to *.travel instead of being treated as an unknown mode.
 set -u
 JF="$HOME/Library/Application Support/jellyfin"
 DRIVE="/Volumes/Backup Plus"
@@ -61,10 +66,19 @@ link() {  # link <name> <target>
     ln -sfn "$2" "$p"
 }
 
+# repair: travel set sitting as plain folders (no *.travel next to it) -> put it back where travel mode expects it
+[ "${1:-auto}" != status ] && for n in data config; do
+    if [ -d "$JF/$n" ] && [ ! -L "$JF/$n" ] && [ ! -e "$JF/$n.travel" ]; then
+        running && stop_jf
+        mv "$JF/$n" "$JF/$n.travel"; ln -s "$JF/$n.travel" "$JF/$n"; log "repaired: $n was a plain folder -> $n.travel"
+    fi
+done
+mkdir -p "$JF/cache.travel"
+
 want="${1:-auto}"; start=false
 [ "${2:-}" = "--start" ] && start=true
 case "$want" in
-    status) echo "mode: $(current) | data -> $(target_of data) | root -> $(target_of root) | running: $(running && echo yes || echo no)"; exit 0 ;;
+    status) echo "mode: $(current) | data -> $(target_of data) | root -> $(target_of root) | cache -> $(target_of cache) | running: $(running && echo yes || echo no)"; exit 0 ;;
     auto) [ -d "$DRIVE/All Movies" ] && want=drive || want=travel ;;
     drive|travel) ;;
     *) echo "usage: jellyfin-mode [auto|drive|travel|status] [--start]"; exit 1 ;;
@@ -74,7 +88,8 @@ if [ "$want" = drive ] && [ ! -d "$DRIVE/.jellyfin-data" ]; then
 fi
 
 was_running=false; running && was_running=true
-if [ "$(current)" = "$want" ] && [ -L "$JF/root" ]; then
+if [ "$(current)" = "$want" ] && [ "$(target_of root)" = "$( [ "$want" = drive ] && echo "$DRIVE/.jellyfin-root" || echo "$JF/root.travel")" ] \
+   && [ "$(target_of cache)" = "$( [ "$want" = drive ] && echo "$DRIVE/.jellyfin-cache" || echo "$JF/cache.travel")" ]; then
     log "already in $want mode"
 else
     stop_jf
@@ -83,8 +98,10 @@ else
         # "._X.mblink" as an extra (bogus) library location. They're tiny metadata junk, safe to remove.
         find "$DRIVE/.jellyfin-root" -name '._*' -type f -size -8k -delete 2>/dev/null
         link data "$DRIVE/.jellyfin-data"; link config "$DRIVE/.jellyfin-config"; link root "$DRIVE/.jellyfin-root"
+        link cache "$DRIVE/.jellyfin-cache"
     else
         link data "$JF/data.travel"; link config "$JF/config.travel"; link root "$JF/root.travel"
+        link cache "$JF/cache.travel"
     fi
     log "switched to $want mode"
 fi
