@@ -132,6 +132,12 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
 - **Auto-process on drive:** `scripts/auto-normalize-new.sh` (also on drive at `.jellyfin-scripts/`)
   - Run: `bash "/Volumes/Backup Plus/.jellyfin-scripts/auto-normalize-new.sh"`
   - Add `--with-loudnorm` to also create ldnrm sidecars
+- **New items on the drive — double-click `Normalize Hard Drive.command`** (repo root; copy in `~/Movies`, 2026-10-19)
+  - Asks Movies / TV / both + mode, runs `scripts/find-unprocessed.py` (filename check only — seconds for the whole drive),
+    shows new items by category / show, flags files in the wrong place, then processes ONLY those via `--files-from`.
+  - Why: `normalize-sidecar.py` on a folder ffprobes every file before checking for a sidecar (= opening ~1,400 files).
+  - State 2026-10-19: 21 films + 467 TV episodes had no sidecar (TV was never processed apart from ReLIFE).
+  - `Normalize Audio.command` (same idea for `~/Movies`) is also kept in the repo root.
 - **Scripts on drive:** All key scripts copied to `/Volumes/Backup Plus/.jellyfin-scripts/` for portability
 - **Gotchas:** Use `filter_complex` not `-af`; ExFAT creates `._*` forks (ignore them); loudnorm is 2-pass (slow on HDD)
 
