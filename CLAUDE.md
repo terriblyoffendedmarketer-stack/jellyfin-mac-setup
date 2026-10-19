@@ -136,7 +136,10 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
   - Asks Movies / TV / both + mode, runs `scripts/find-unprocessed.py` (filename check only — seconds for the whole drive),
     shows new items by category / show, flags files in the wrong place, then processes ONLY those via `--files-from`.
   - Why: `normalize-sidecar.py` on a folder ffprobes every file before checking for a sidecar (= opening ~1,400 files).
-  - State 2026-10-19: 21 films + 467 TV episodes had no sidecar (TV was never processed apart from ReLIFE).
+  - State 2026-10-19: 17 films + 467 TV episodes had no sidecar (TV was never processed apart from ReLIFE), and
+    17 sidecars were CUT SHORT (old bug: failed ffmpeg output kept if > 100 KB — fixed; 4 were from an interrupted test).
+  - Re-downloads: video newer than its sidecar = redo (`--force`). Option 4 = redo any folder by hand. Optional audit
+    (`--audit`) finds cut-short sidecars: size estimate, then exact AAC frame count. Extras folders are skipped.
   - `Normalize Audio.command` (same idea for `~/Movies`) is also kept in the repo root.
 - **Scripts on drive:** All key scripts copied to `/Volumes/Backup Plus/.jellyfin-scripts/` for portability
 - **Gotchas:** Use `filter_complex` not `-af`; ExFAT creates `._*` forks (ignore them); loudnorm is 2-pass (slow on HDD)

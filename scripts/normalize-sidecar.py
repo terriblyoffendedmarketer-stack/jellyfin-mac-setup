@@ -34,6 +34,10 @@
 #   (first match is a per-frame value near -70, not the summary).
 # - On the whole drive, every file gets ffprobed (opened over USB) BEFORE the sidecar check — that is what
 #   made full-drive runs crawl. Use --files-from with scripts/find-unprocessed.py's list (filename check only).
+# - A failed/interrupted ffmpeg used to be accepted if its output was > 100 KB -> sidecars covering only part of
+#   the film, logged as "done". Now a non-zero exit is kept only if -progress shows it reached >= 97% of the film.
+# - --force reaches the workers through an env var: on macOS multiprocessing spawns fresh processes, so a global
+#   set in main() is NOT seen by them.
 
 import subprocess
 import json
@@ -222,7 +226,7 @@ def process_one(args):
     lang_raw = track_lang or source['language']
     lang = lang_code(lang_raw) if lang_raw != 'und' else 'en'
 
-    if has_sidecar(filepath, lang):
+    if has_sidecar(filepath, lang) and not os.environ.get('SIDECAR_FORCE'):
         return (str(filepath), 'skip', f"Sidecar .{lang}.aac already exists")
 
     channels = source['channels']
@@ -250,7 +254,7 @@ def process_one(args):
     temp_path = filepath.parent / (filepath.stem + f".normalizing.{lang}.aac")
 
     cmd = [
-        'ffmpeg', '-y', '-hide_banner', '-loglevel', 'warning',
+        'ffmpeg', '-y', '-hide_banner', '-loglevel', 'warning', '-nostats', '-progress', 'pipe:1',
         '-i', str(filepath),
         '-filter_complex', f'[0:a:{track_index}]{audio_filter}[norm]',
         '-map', '[norm]',
@@ -271,11 +275,23 @@ def process_one(args):
             temp_path.unlink()
         return (str(filepath), 'error', "FFmpeg timeout (30 min)")
 
-    if result.returncode != 0 and not (temp_path.exists() and temp_path.stat().st_size > 100000):
+    try:
+        src_dur = float(probe_data.get('format', {}).get('duration') or 0)
+    except ValueError:
+        src_dur = 0.0
+
+    def covers_whole_film(res):
+        # ffmpeg exited with an error: keep the output ONLY if it reached the end of the film. The old rule
+        # ("> 100 KB") kept half-finished sidecars from interrupted runs and reported them as done.
+        times = re.findall(r'out_time_us=(\d+)', res.stdout or '')
+        out_s = int(times[-1]) / 1e6 if times else 0.0
+        return temp_path.exists() and src_dur > 0 and out_s >= 0.97 * src_dur
+
+    if result.returncode != 0 and not covers_whole_film(result):
         if is_surround and 'pan=' in audio_filter:
             fallback = build_filter(None, use_loudnorm)
             cmd_fb = [
-                'ffmpeg', '-y', '-hide_banner', '-loglevel', 'warning',
+                'ffmpeg', '-y', '-hide_banner', '-loglevel', 'warning', '-nostats', '-progress', 'pipe:1',
                 '-i', str(filepath),
                 '-filter_complex', f'[0:a:{track_index}]{fallback}[norm]',
                 '-map', '[norm]',
@@ -292,7 +308,7 @@ def process_one(args):
             except subprocess.TimeoutExpired:
                 pass
 
-        if not (temp_path.exists() and temp_path.stat().st_size > 100000):
+        if result.returncode != 0 and not covers_whole_film(result):
             if temp_path.exists():
                 temp_path.unlink()
             stderr = (result.stderr or "")[-200:]
@@ -380,6 +396,8 @@ def main():
                         help='Process all audio tracks (one sidecar per language, not just track 0)')
     parser.add_argument('--files-from', metavar='LIST',
                         help='Only process the video paths listed in this file (one per line); skips the folder scan')
+    parser.add_argument('--force', action='store_true',
+                        help='Redo even if a sidecar exists (stale sidecar after a re-download); replaces it')
     args = parser.parse_args()
 
     target = Path(args.path)
@@ -387,6 +405,8 @@ def main():
         print(f"Error: {target} does not exist")
         sys.exit(1)
 
+    if args.force:
+        os.environ['SIDECAR_FORCE'] = '1'   # env, not a global: macOS spawns workers fresh
     listed = None
     if args.files_from:
         listed = [Path(l.rstrip('\n')) for l in open(args.files_from, encoding='utf-8') if l.strip()]
