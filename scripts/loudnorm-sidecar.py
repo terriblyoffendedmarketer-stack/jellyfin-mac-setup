@@ -15,6 +15,8 @@
 #
 # Can also run directly on the USB drive (slower due to two-pass reads):
 #   python3 scripts/loudnorm-sidecar.py "/Volumes/Backup Plus/All Movies"
+# Only specific videos (paths of the VIDEO files, one per line — their compressor sidecars are used):
+#   python3 scripts/loudnorm-sidecar.py "/Volumes/Backup Plus" --files-from list.txt
 #
 # Requires: ffmpeg (brew install ffmpeg)
 #
@@ -189,6 +191,8 @@ def main():
                         help='Process at most N files (0 = unlimited)')
     parser.add_argument('--folder', action='append',
                         help='Process specific subfolder(s) only (can repeat)')
+    parser.add_argument('--files-from', metavar='LIST',
+                        help='Only these VIDEO paths (one per line): uses their .Normalized Stereo.*.aac sidecars')
     args = parser.parse_args()
 
     target = Path(args.path)
@@ -196,9 +200,21 @@ def main():
         print(f"Error: {target} does not exist")
         sys.exit(1)
 
-    cleanup_temp_files(target)
-
-    if args.folder:
+    if args.files_from:
+        files = []
+        for line in open(args.files_from, encoding='utf-8'):
+            v = Path(line.rstrip('\n'))
+            if not line.strip() or not v.parent.is_dir():
+                continue
+            for t in v.parent.glob('*.loudnorming*.aac'):
+                if not t.name.startswith('._'):
+                    t.unlink(missing_ok=True)
+            prefix = v.stem + '.Normalized Stereo.'
+            files.extend(sorted(f for f in v.parent.iterdir()
+                                if f.name.startswith(prefix) and COMPRESSOR_PATTERN.search(f.name)))
+        print(f"Using list: {args.files_from}")
+    elif args.folder:
+        cleanup_temp_files(target)
         files = []
         for folder_name in args.folder:
             folder_path = target / folder_name
@@ -208,6 +224,7 @@ def main():
             else:
                 print(f"Warning: {folder_path} does not exist, skipping")
     else:
+        cleanup_temp_files(target)
         print(f"Scanning: {target}")
         files = scan_sidecars(target)
 

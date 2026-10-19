@@ -18,6 +18,7 @@
 #   python3 scripts/normalize-sidecar.py "/path/to/folder" --lra-check
 #   python3 scripts/normalize-sidecar.py "/path/to/folder" --all-tracks
 #   python3 scripts/normalize-sidecar.py "/path/to/folder" --compressor-only --all-tracks
+#   python3 scripts/normalize-sidecar.py "/Volumes/Backup Plus" --files-from list.txt   # only these videos
 #
 # Requires: ffmpeg, ffprobe (brew install ffmpeg)
 #
@@ -31,6 +32,8 @@
 # - ExFAT ._* resource fork files must be skipped during scan.
 # - ebur128 LRA regex: use re.findall + last match, not re.search
 #   (first match is a per-frame value near -70, not the summary).
+# - On the whole drive, every file gets ffprobed (opened over USB) BEFORE the sidecar check — that is what
+#   made full-drive runs crawl. Use --files-from with scripts/find-unprocessed.py's list (filename check only).
 
 import subprocess
 import json
@@ -375,6 +378,8 @@ def main():
                         help='Skip loudnorm (4x faster, slight volume variation between movies)')
     parser.add_argument('--all-tracks', action='store_true',
                         help='Process all audio tracks (one sidecar per language, not just track 0)')
+    parser.add_argument('--files-from', metavar='LIST',
+                        help='Only process the video paths listed in this file (one per line); skips the folder scan')
     args = parser.parse_args()
 
     target = Path(args.path)
@@ -382,10 +387,22 @@ def main():
         print(f"Error: {target} does not exist")
         sys.exit(1)
 
-    cleanup_temp_files(target)
+    listed = None
+    if args.files_from:
+        listed = [Path(l.rstrip('\n')) for l in open(args.files_from, encoding='utf-8') if l.strip()]
+        listed = [f for f in listed if f.exists()]
+        for d in sorted({f.parent for f in listed}):
+            for t in d.glob('*.normalizing*.aac'):
+                if not t.name.startswith('._'):
+                    t.unlink(missing_ok=True)
+    else:
+        cleanup_temp_files(target)
 
     # Scan files
-    if args.folder:
+    if listed is not None:
+        files = listed
+        print(f"Using list: {args.files_from}")
+    elif args.folder:
         files = []
         for folder_name in args.folder:
             folder_path = target / folder_name
