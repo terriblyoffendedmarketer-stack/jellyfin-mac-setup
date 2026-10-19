@@ -11,6 +11,10 @@
 # - The old way (normalize-sidecar.py on "All Movies") ffprobes every file before checking for a sidecar — on the
 #   USB drive that meant opening ~550 films. scripts/find-unprocessed.py checks names only, then --files-from.
 # - .command files run in Terminal with cwd = home, so all paths are absolute.
+# - Re-downloaded film with the same name as a deleted one: its old sidecar is older than the new video, so the
+#   finder lists it as "re-downloaded" and --force replaces the sidecar. Option 4 forces any folder by hand.
+# - Cut-short sidecars (an interrupted run used to keep partial audio): answer y to the audit question; it reads each
+#   film's length from its header and confirms suspects by counting audio frames, then they're redone.
 # - The confirm prompt must default to NO: a test with piped/empty input once started a real 488-item run.
 # - Expected layout: All Movies/<Category>/<Film folder>/ and TV/<Show>/. Elsewhere = Jellyfin can't see it.
 
@@ -40,12 +44,16 @@ echo "What to look at?"
 echo "  1) Movies only (All Movies)"
 echo "  2) TV only"
 echo "  3) Both"
+echo "  4) Redo a specific film or folder (even if it already has a sidecar)"
 echo ""
 read -p "Choice [1]: " SCOPE_CHOICE || exit 0
 case "${SCOPE_CHOICE:-1}" in
     1) ONLY=(--only movies) ;;
     2) ONLY=(--only tv) ;;
     3) ONLY=() ;;
+    4) PICK=$(osascript -e "POSIX path of (choose folder with prompt \"Pick the film (or show/season) folder to redo\" default location POSIX file \"$DRIVE/All Movies\")" 2>/dev/null)
+       [ -z "$PICK" ] && { echo "Cancelled."; pause_exit 0; }
+       ONLY=(--force-path "${PICK%/}"); echo "Selected: ${PICK%/}" ;;
     *) echo "Invalid choice."; pause_exit 1 ;;
 esac
 
@@ -63,10 +71,17 @@ case "$MODE_CHOICE" in
     *)   echo "Invalid choice."; pause_exit 1 ;;
 esac
 
+AUDIT=()
+if [ "${SCOPE_CHOICE:-1}" != 4 ] && [ "$FIND_MODE" = compressor ]; then
+    echo ""
+    read -p "Also check existing sidecars for cut-short ones? Adds ~4 min. [y/N]: " AUD || AUD=n
+    case "$AUD" in [Yy]*) AUDIT=(--audit) ;; esac
+fi
+
 echo ""
 echo "Looking for items without sidecars (names only, no files opened)..."
 echo "----------------------------------------"
-python3 "$SCRIPTS/find-unprocessed.py" --drive "$DRIVE" --mode "$FIND_MODE" ${ONLY[@]+"${ONLY[@]}"} --out "$LIST" || pause_exit 1
+python3 "$SCRIPTS/find-unprocessed.py" --drive "$DRIVE" --mode "$FIND_MODE" ${ONLY[@]+"${ONLY[@]}"} ${AUDIT[@]+"${AUDIT[@]}"} --out "$LIST" || pause_exit 1
 COUNT=$(grep -c . "$LIST" 2>/dev/null || echo 0)
 
 if [ "$COUNT" -eq 0 ]; then
@@ -81,14 +96,15 @@ case "$GO" in [Yy]*) ;; *) echo "Cancelled — nothing changed."; rm -f "$LIST";
 echo ""
 echo "----------------------------------------"
 # keep the Mac awake while it works; --all-tracks = one sidecar per language (dual-audio films)
+# --force: the finder already decided these need (re)doing — incl. re-downloads whose old sidecar matches by name
 if [ "$MODE_CHOICE" = 1 ] || [ "$MODE_CHOICE" = 2 ]; then
     echo "=== Compressor ==="
-    caffeinate -i python3 "$SCRIPTS/normalize-sidecar.py" "$DRIVE" --files-from "$LIST" --compressor-only --all-tracks --workers 4
+    caffeinate -i python3 "$SCRIPTS/normalize-sidecar.py" "$DRIVE" --files-from "$LIST" --compressor-only --all-tracks --workers 4 --force
 fi
 if [ "$MODE_CHOICE" = 2 ] || [ "$MODE_CHOICE" = 3 ]; then
     echo ""
     echo "=== Loudnorm ==="
-    caffeinate -i python3 "$SCRIPTS/loudnorm-sidecar.py" "$DRIVE" --files-from "$LIST" --workers 4
+    caffeinate -i python3 "$SCRIPTS/loudnorm-sidecar.py" "$DRIVE" --files-from "$LIST" --workers 4 --force
 fi
 rm -f "$LIST"
 

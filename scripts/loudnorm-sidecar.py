@@ -28,6 +28,8 @@
 #   so each file is read twice by ffmpeg — SSD is much faster than HDD for this.
 # - Scans for ANY .Normalized Stereo.{lang}.aac pattern, not just .en —
 #   supports all language codes from the compressor script.
+# - A non-zero ffmpeg exit is always a failure (temp deleted). Keeping partial output "if > 100 KB" produced
+#   truncated sidecars when a run was interrupted.
 
 import subprocess
 import sys
@@ -83,7 +85,7 @@ def process_one(args):
         return (str(filepath), 'error', 'Source not found')
 
     out_path = ldnrm_path_for(filepath)
-    if out_path.exists() and out_path.stat().st_size > 1000:
+    if out_path.exists() and out_path.stat().st_size > 1000 and not os.environ.get('SIDECAR_FORCE'):
         with counter_lock:
             counter_skip.value += 1
         return (str(filepath), 'skip', 'ldnrm sidecar already exists')
@@ -122,7 +124,9 @@ def process_one(args):
             temp_path.unlink()
         return (str(filepath), 'error', 'FFmpeg timeout (30 min)')
 
-    if result.returncode != 0 and not (temp_path.exists() and temp_path.stat().st_size > 100000):
+    # any ffmpeg error = failure: the input is a clean AAC sidecar, and the old "> 100 KB" rule kept
+    # half-finished files from interrupted runs as if they were complete
+    if result.returncode != 0:
         if temp_path.exists():
             temp_path.unlink()
         stderr = (result.stderr or "")[-200:]
@@ -139,7 +143,7 @@ def process_one(args):
         return (str(filepath), 'error', f'Output too small ({temp_size} bytes)')
 
     try:
-        temp_path.rename(out_path)
+        temp_path.replace(out_path)
     except (OSError, PermissionError) as e:
         if temp_path.exists():
             temp_path.unlink()
@@ -193,6 +197,7 @@ def main():
                         help='Process specific subfolder(s) only (can repeat)')
     parser.add_argument('--files-from', metavar='LIST',
                         help='Only these VIDEO paths (one per line): uses their .Normalized Stereo.*.aac sidecars')
+    parser.add_argument('--force', action='store_true', help='Redo even if an ldnrm sidecar exists; replaces it')
     args = parser.parse_args()
 
     target = Path(args.path)
@@ -200,6 +205,8 @@ def main():
         print(f"Error: {target} does not exist")
         sys.exit(1)
 
+    if args.force:
+        os.environ['SIDECAR_FORCE'] = '1'   # env, not a global: macOS spawns workers fresh
     if args.files_from:
         files = []
         for line in open(args.files_from, encoding='utf-8'):
