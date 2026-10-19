@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-10-15T15:31:39Z",
-  "drive_online": true,
+  "synced_at": "2026-10-19T11:48:16Z",
+  "drive_online": false,
   "total_count": 550,
   "items": [
     {
@@ -1143,8 +1143,8 @@
       "genres": [
         "Action",
         "Crime",
-        "Thriller",
-        "Drama"
+        "Drama",
+        "Thriller"
       ],
       "rating": 7.377,
       "path": "/Users/apple/Movies/Blood and Bone (2009)/Blood And Bone (2009).mp4",
@@ -1691,14 +1691,14 @@
       ],
       "rating": 7,
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Seemabaddha (1971)/Seemabaddha (1971).mp4",
-      "jellyfin_id": "af47ee997ec021a7696aaa5f0a8f75d5",
+      "jellyfin_id": "c5a2bec2f9ff558a3dae87621a1ec2d5",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Seemabaddha (1971)/Seemabaddha (1971).mp4",
-        "/Users/apple/Movies/Seemabaddha (1971)/Seemabaddha (1971).mp4"
+        "/Users/apple/Movies/Seemabaddha (1971)/Seemabaddha (1971).mp4",
+        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Seemabaddha (1971)/Seemabaddha (1971).mp4"
       ]
     },
     {
@@ -3122,19 +3122,19 @@
       "year": 1978,
       "type": "Movie",
       "genres": [
-        "Drama",
-        "Comedy"
+        "Comedy",
+        "Drama"
       ],
-      "rating": 6.7,
+      "rating": 6.653,
       "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4",
-      "jellyfin_id": "441ada74c64faff83841df82b202341f",
+      "jellyfin_id": "c7bb0c018b919f349ce333bbc05a4357",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Parallel cinema/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4",
-        "/Users/apple/Movies/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4"
+        "/Users/apple/Movies/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4",
+        "/Volumes/Backup Plus/All Movies/Parallel cinema/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4"
       ]
     },
     {
@@ -4358,19 +4358,19 @@
       "type": "Movie",
       "genres": [
         "Comedy",
-        "Romance",
-        "Music"
+        "Music",
+        "Romance"
       ],
       "rating": 6.25,
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4",
-      "jellyfin_id": "2e359265f507fe2dea1d35854630d8ca",
+      "jellyfin_id": "b31bd98f253b5b60ea544e4b35e1175a",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Indian Films/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4",
-        "/Users/apple/Movies/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4"
+        "/Users/apple/Movies/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4",
+        "/Volumes/Backup Plus/All Movies/Indian Films/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4"
       ]
     },
     {
@@ -4999,14 +4999,14 @@
       ],
       "rating": 7.928,
       "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
-      "jellyfin_id": "0e381ea841ed73eb86d1f363bc2f0c0d",
+      "jellyfin_id": "b87b4ed219e130cc1aa58e3ed494da5e",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
-        "/Users/apple/Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4"
+        "/Users/apple/Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+        "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4"
       ]
     },
     {
@@ -5687,19 +5687,19 @@
       "year": 1987,
       "type": "Movie",
       "genres": [
-        "Drama",
-        "Crime"
+        "Crime",
+        "Drama"
       ],
       "rating": 7.9,
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Nayakan (1987)/Nayakan (1987).mp4",
-      "jellyfin_id": "253f69de5948565a5656e4142a198de5",
+      "jellyfin_id": "92052e72430ee480482e831229f285cf",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Indian Films/Nayakan (1987)/Nayakan (1987).mp4",
-        "/Users/apple/Movies/Nayakan (1987)/Nayakan (1987).mp4"
+        "/Users/apple/Movies/Nayakan (1987)/Nayakan (1987).mp4",
+        "/Volumes/Backup Plus/All Movies/Indian Films/Nayakan (1987)/Nayakan (1987).mp4"
       ]
     },
     {
@@ -6089,19 +6089,19 @@
       "year": 1989,
       "type": "Movie",
       "genres": [
-        "Science Fiction",
-        "Drama"
+        "Drama",
+        "Science Fiction"
       ],
-      "rating": 7.628,
+      "rating": 7.648,
       "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4",
-      "jellyfin_id": "65dce2598a31a0217db9a9a502dbe60d",
+      "jellyfin_id": "90dba1da86bc4551022d4e9bae71dd5e",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Parallel cinema/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4",
-        "/Users/apple/Movies/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4"
+        "/Users/apple/Movies/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4",
+        "/Volumes/Backup Plus/All Movies/Parallel cinema/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4"
       ]
     },
     {
@@ -7858,14 +7858,14 @@
       ],
       "rating": 7.2,
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Pratidwandi (1970)/Pratidwandi (1970).mp4",
-      "jellyfin_id": "479cc01243a250ddb18927a13a6d43a0",
+      "jellyfin_id": "a708c4a0dd741391ef108c23faa4d329",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Pratidwandi (1970)/Pratidwandi (1970).mp4",
-        "/Users/apple/Movies/Pratidwandi (1970)/Pratidwandi (1970).mp4"
+        "/Users/apple/Movies/Pratidwandi (1970)/Pratidwandi (1970).mp4",
+        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Pratidwandi (1970)/Pratidwandi (1970).mp4"
       ]
     },
     {
@@ -8383,14 +8383,14 @@
       ],
       "rating": 8.1,
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Nayak (1966)/Nayak (1966).mp4",
-      "jellyfin_id": "0eda13fe775a5ceceeb0f01c20329453",
+      "jellyfin_id": "e5105198c04e77a40e399b8e4f5fcffe",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Nayak (1966)/Nayak (1966).mp4",
-        "/Users/apple/Movies/Nayak (1966)/Nayak (1966).mp4"
+        "/Users/apple/Movies/Nayak (1966)/Nayak (1966).mp4",
+        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Nayak (1966)/Nayak (1966).mp4"
       ]
     },
     {
@@ -8461,14 +8461,14 @@
       ],
       "rating": 7.205,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4",
-      "jellyfin_id": "46d0d63cd3406421e33388d9013f0933",
+      "jellyfin_id": "98f976bafe2da154cce191bd01e0b0b7",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Movies in General/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4",
-        "/Users/apple/Movies/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4"
+        "/Users/apple/Movies/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4",
+        "/Volumes/Backup Plus/All Movies/Movies in General/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4"
       ]
     },
     {
@@ -8720,14 +8720,14 @@
       ],
       "rating": 7.2,
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Jana Aranya (1976)/Jana Aranya (1976).mp4",
-      "jellyfin_id": "e25daee01ae926fc8328fd777a8dd41a",
+      "jellyfin_id": "fbf2ca9fe28c0542437af62aa1e8712e",
       "locations": [
-        "drive",
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Jana Aranya (1976)/Jana Aranya (1976).mp4",
-        "/Users/apple/Movies/Jana Aranya (1976)/Jana Aranya (1976).mp4"
+        "/Users/apple/Movies/Jana Aranya (1976)/Jana Aranya (1976).mp4",
+        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Jana Aranya (1976)/Jana Aranya (1976).mp4"
       ]
     },
     {
