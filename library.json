@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-10-19T15:52:33Z",
+  "synced_at": "2026-10-19T15:57:56Z",
   "drive_online": true,
   "total_count": 558,
   "items": [
@@ -627,8 +627,8 @@
       "type": "Movie",
       "genres": [
         "Comedy",
-        "Romance",
-        "Family"
+        "Family",
+        "Romance"
       ],
       "rating": 6.823,
       "path": "/Users/apple/Movies/Andaz Apna Apna (1994)/Andaz Apna Apna (1994).mp4",
@@ -1360,8 +1360,8 @@
       "year": 2005,
       "type": "Movie",
       "genres": [
-        "Mystery",
         "Drama",
+        "Mystery",
         "Thriller"
       ],
       "rating": 7.007,
