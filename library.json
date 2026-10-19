@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-10-19T13:24:46Z",
+  "synced_at": "2026-10-19T13:29:50Z",
   "drive_online": true,
   "total_count": 550,
   "items": [
@@ -5001,11 +5001,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
       "jellyfin_id": "b87b4ed219e130cc1aa58e3ed494da5e",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
         "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4"
       ]
     },
