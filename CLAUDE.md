@@ -138,6 +138,8 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
   - Why: `normalize-sidecar.py` on a folder ffprobes every file before checking for a sidecar (= opening ~1,400 files).
   - State 2026-10-19: 17 films + 467 TV episodes had no sidecar (TV was never processed apart from ReLIFE), and
     17 sidecars were CUT SHORT (old bug: failed ffmpeg output kept if > 100 KB — fixed; 4 were from an interrupted test).
+  - No confirm step: lists, then starts at once; refuses to start if a normalizer run is already going.
+  - 12 Angry Men (1957) source audio is damaged from 39:57 — needs a new copy; always fails until replaced.
   - Re-downloads: video newer than its sidecar = redo (`--force`). Option 4 = redo any folder by hand. Optional audit
     (`--audit`) finds cut-short sidecars: size estimate, then exact AAC frame count. Extras folders are skipped.
   - `Normalize Audio.command` (same idea for `~/Movies`) is also kept in the repo root.

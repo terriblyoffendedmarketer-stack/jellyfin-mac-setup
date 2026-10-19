@@ -15,7 +15,11 @@
 #   finder lists it as "re-downloaded" and --force replaces the sidecar. Option 4 forces any folder by hand.
 # - Cut-short sidecars (an interrupted run used to keep partial audio): answer y to the audit question; it reads each
 #   film's length from its header and confirms suspects by counting audio frames, then they're redone.
-# - The confirm prompt must default to NO: a test with piped/empty input once started a real 488-item run.
+# - No confirm prompt after the list (user: it left the window waiting after a long find). So TEST THIS FILE ONLY ON A
+#   FAKE DRIVE COPY (DRIVE= replaced) — a piped test once started a real 488-item run.
+# - Edit ~/Movies/<this file> only by replacing it (cp to temp + mv): bash reads a running script as it goes, so
+#   editing it in place while a window runs it can make that run execute garbage.
+# - 12 Angry Men (1957) always fails: its audio is damaged from 39:57 on (decoder stops even with ignore_err).
 # - Expected layout: All Movies/<Category>/<Film folder>/ and TV/<Show>/. Elsewhere = Jellyfin can't see it.
 
 set -uo pipefail
@@ -28,6 +32,12 @@ pause_exit() { echo ""; read -p "Press Enter to close..."; exit "${1:-0}"; }
 
 if [ ! -f "$SCRIPTS/find-unprocessed.py" ]; then
     echo "ERROR: Scripts not found at $SCRIPTS"; pause_exit 1
+fi
+# one run at a time: two runs on the same films would fight over the same temp files
+if pgrep -f "normalize-sidecar.py|loudnorm-sidecar.py" >/dev/null; then
+    echo "A normalizer run is already going (another window, or a background run)."
+    echo "Let it finish first — check progress with:  tail -5 \"$DRIVE/normalize-sidecar.log\""
+    pause_exit 1
 fi
 if [ ! -d "$DRIVE/All Movies" ]; then
     echo "The hard drive isn't connected (looking for $DRIVE)."
@@ -89,9 +99,8 @@ if [ "$COUNT" -eq 0 ]; then
     rm -f "$LIST"; pause_exit 0
 fi
 
-# only an explicit y/yes starts work (no input / closed window = cancel, never a silent start)
-read -p "Process these $COUNT item(s) now? [y/N]: " GO || GO=n
-case "$GO" in [Yy]*) ;; *) echo "Cancelled — nothing changed."; rm -f "$LIST"; pause_exit 0 ;; esac
+# no "process now?" question: finding takes minutes, so a prompt here meant coming back to an idle window
+echo "Starting on these $COUNT item(s) now. (Close this window to stop; re-run later to pick up where it left off.)"
 
 echo ""
 echo "----------------------------------------"
