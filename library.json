@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-10-20T18:16:57Z",
+  "synced_at": "2026-10-20T18:22:00Z",
   "drive_online": false,
-  "total_count": 563,
+  "total_count": 560,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -987,24 +987,6 @@
       ]
     },
     {
-      "name": "Bhavesh Joshi Superhero",
-      "year": 2018,
-      "type": "Movie",
-      "genres": [
-        "Action",
-        "Drama"
-      ],
-      "rating": 7.5,
-      "path": "/Users/apple/Movies/Bhavesh Joshi Superhero (2018)/Bhavesh Joshi Superhero (2018).mp4",
-      "jellyfin_id": "c36ceb3de89d351f32d3fef4555e7ae7",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Bhavesh Joshi Superhero (2018)/Bhavesh Joshi Superhero (2018).mp4"
-      ]
-    },
-    {
       "name": "Bhoothakaalam",
       "year": 2022,
       "type": "Movie",
@@ -1368,25 +1350,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Burning (2018)/Burning.2018.720p.WEBRip.x264-[YTS.AM].mp4"
-      ]
-    },
-    {
-      "name": "Caché",
-      "year": 2005,
-      "type": "Movie",
-      "genres": [
-        "Drama",
-        "Mystery",
-        "Thriller"
-      ],
-      "rating": 7.007,
-      "path": "/Users/apple/Movies/Cache Hidden (2005)/Cache.Hidden.2005.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
-      "jellyfin_id": "856921c66d5f0ba942d62e507f82b47c",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Cache Hidden (2005)/Cache.Hidden.2005.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4"
       ]
     },
     {
@@ -4456,24 +4419,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Andrei Tarkovsky/Ivan's Childhood (1962)/Ivan's Childhood (1962).mp4"
-      ]
-    },
-    {
-      "name": "Jaane Bhi Do Yaaro",
-      "year": 1983,
-      "type": "Movie",
-      "genres": [
-        "Comedy",
-        "Crime"
-      ],
-      "rating": 7.1,
-      "path": "/Users/apple/Movies/Jaane Bhi Do Yaaro (1983)/Jaane Bhi Do Yaaro (1983).mp4",
-      "jellyfin_id": "260df318adea379d0106e0ccffbfb2a0",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Jaane Bhi Do Yaaro (1983)/Jaane Bhi Do Yaaro (1983).mp4"
       ]
     },
     {
