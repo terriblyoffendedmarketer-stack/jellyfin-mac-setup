@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-10-20T14:44:19Z",
+  "synced_at": "2026-10-20T14:49:24Z",
   "drive_online": false,
-  "total_count": 558,
+  "total_count": 563,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -1334,6 +1334,21 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Broker (2022)/Broker (2022).mp4"
+      ]
+    },
+    {
+      "name": "Bubbles & Stars",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Bubbles & Stars (2014).mp4",
+      "jellyfin_id": "ae0a4c46d981d9be874507ad667700df",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Bubbles & Stars (2014).mp4"
       ]
     },
     {
@@ -2857,6 +2872,24 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Movies in General/Fight Club (1999) [1080p]/Fight.Club.10th.Anniversary.Edition.1999.1080p.BrRip.x264.YIFY.mp4"
+      ]
+    },
+    {
+      "name": "Final Interval",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Short",
+        "Drama"
+      ],
+      "rating": 9,
+      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Final Interval (2014).mp4",
+      "jellyfin_id": "b417b565e9681223862dd83818867e6b",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Final Interval (2014).mp4"
       ]
     },
     {
@@ -7420,6 +7453,29 @@
       ]
     },
     {
+      "name": "Shuruaat Ka Interval",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime",
+        "Drama",
+        "Family",
+        "Thriller",
+        "Romance",
+        "Mystery"
+      ],
+      "rating": null,
+      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Interval 3D (2014).mp4",
+      "jellyfin_id": "8756a9cbd2621966c2c2688602de6d80",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Interval 3D (2014).mp4"
+      ]
+    },
+    {
       "name": "Shutter",
       "year": 2004,
       "type": "Movie",
@@ -8329,6 +8385,24 @@
       ]
     },
     {
+      "name": "The Gatekeeper",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Short",
+        "Drama"
+      ],
+      "rating": null,
+      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/The Gatekeeper (2014).mp4",
+      "jellyfin_id": "2089dbe5187c630326f2ab032ff12af7",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/The Gatekeeper (2014).mp4"
+      ]
+    },
+    {
       "name": "The Gentlemen",
       "year": 2019,
       "type": "Movie",
@@ -8670,6 +8744,23 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/The King And The Clown (2005)/The.King.And.The.Clown.2005.1080p.BluRay.x264-[YTS.AM].mp4"
+      ]
+    },
+    {
+      "name": "The Last Audition",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Short"
+      ],
+      "rating": null,
+      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/The Last Audition (2014).mp4",
+      "jellyfin_id": "0aa71d1524a78e51308cdc3a0f9c617b",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/The Last Audition (2014).mp4"
       ]
     },
     {
