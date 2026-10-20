@@ -207,10 +207,12 @@ If git push from the LaunchAgent fails, the Mac keychain may need to have the gi
 ### TV Connection Troubleshooting
 - **Home:** Sony Bravia (10+ years old), Jellyfin Android TV app from Play Store
 - **Bangalore:** Fire Stick (not currently in use)
-- When server ID changes (after restart/migration), TV app shows "Unable to connect":
+- **HTTPS Timeout Trap on Manual Entry:** Android TV probes HTTPS first if `http://` is omitted; Jellyfin has HTTPS disabled, causing a 20-30s timeout. Always type `http://` explicitly (`http://192.168.1.55:8096`) to bypass HTTPS probing, or wait 15-30s on the server screen for UDP Auto-Discovery.
+- **Server ID Mismatch (Drive vs Travel mode):** Drive has Server ID `52780cf3...`, Travel had `9c2fa4a0...`. Switching modes triggers "Unable to connect" / "Server Mismatch" because the TV caches the ID. Fix: keep `device.txt` identical in both modes.
+- **Recovery steps if stuck:**
   1. TV Settings → Apps → Jellyfin → **Clear Data**
   2. **Force-stop the app 4+ times** (Clear Data alone doesn't flush in-memory state on old Android TV)
-  3. Reopen app, enter `http://192.168.1.55:8096`
+  3. Reopen app, wait 15s for auto-discovery tile or enter `http://192.168.1.55:8096` directly.
 - Mac browser "Server Mismatch": hard refresh (`Cmd+Shift+R`)
 - NEVER suggest using the TV's web browser — too painful to type URLs on a remote
 
