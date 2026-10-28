@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-10-25T10:16:21Z",
-  "drive_online": true,
-  "total_count": 560,
+  "synced_at": "2026-10-28T08:34:57Z",
+  "drive_online": false,
+  "total_count": 561,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -534,6 +534,21 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Movies in General/Airplane/Airplane.avi"
+      ]
+    },
+    {
+      "name": "Albert Pinto Ko Gussa Kyun Aata Hai (1980)",
+      "year": 1980,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Users/apple/Movies/Albert Pinto Ko Gussa Kyun Aata Hai (1980)/Albert Pinto Ko Gussa Kyun Aata Hai (1980).mp4",
+      "jellyfin_id": "bc682e7211f90109369a954966bce5c3",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Albert Pinto Ko Gussa Kyun Aata Hai (1980)/Albert Pinto Ko Gussa Kyun Aata Hai (1980).mp4"
       ]
     },
     {
@@ -1099,6 +1114,24 @@
       ]
     },
     {
+      "name": "Black Friday",
+      "year": 2004,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.579,
+      "path": "/Users/apple/Movies/Black Friday (2004)/Black Friday (2004).mp4",
+      "jellyfin_id": "fc2ba209c56466caea523f25a827d28f",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Black Friday (2004)/Black Friday (2004).mp4"
+      ]
+    },
+    {
       "name": "BlacKkKlansman",
       "year": 2018,
       "type": "Movie",
@@ -1319,21 +1352,6 @@
       ]
     },
     {
-      "name": "Bubbles & Stars",
-      "year": 2014,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Bubbles & Stars (2014).mp4",
-      "jellyfin_id": "ae0a4c46d981d9be874507ad667700df",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Bubbles & Stars (2014).mp4"
-      ]
-    },
-    {
       "name": "Burning",
       "year": 2018,
       "type": "Movie",
@@ -1514,6 +1532,24 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Chungking Express (1994)/Chungking.Express.1994.720p.BluRay.x264-[YTS.AM].mp4"
+      ]
+    },
+    {
+      "name": "Citizen Kane",
+      "year": 1941,
+      "type": "Movie",
+      "genres": [
+        "Mystery",
+        "Drama"
+      ],
+      "rating": 7.964,
+      "path": "/Users/apple/Movies/Citizen Kane (1941)/Citizen.Kane.1941.1080p.BluRay.x265-RARBG.mp4",
+      "jellyfin_id": "325515b6f71315b09681b5337c0bd659",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Citizen Kane (1941)/Citizen.Kane.1941.1080p.BluRay.x265-RARBG.mp4"
       ]
     },
     {
@@ -1745,11 +1781,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Seemabaddha (1971)/Seemabaddha (1971).mp4",
       "jellyfin_id": "c5a2bec2f9ff558a3dae87621a1ec2d5",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Seemabaddha (1971)/Seemabaddha (1971).mp4",
         "/Volumes/Backup Plus/All Movies/Satyajit Ray/Seemabaddha (1971)/Seemabaddha (1971).mp4"
       ]
     },
@@ -2093,11 +2127,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Demolition (2015) [1080p] [YTS.AG]/Demolition.2015.1080p.BluRay.x264-[YTS.AG].mp4",
       "jellyfin_id": "cf0e3637b7009912de3da2ad7fdfeee2",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Demolition (2015) [1080p] [YTS.AG]/Demolition.2015.1080p.BluRay.x264-[YTS.AG].mp4",
         "/Volumes/Backup Plus/All Movies/Movies in General/Demolition (2015) [1080p] [YTS.AG]/Demolition.2015.1080p.BluRay.x264-[YTS.AG].mp4"
       ]
     },
@@ -2838,24 +2870,6 @@
       ]
     },
     {
-      "name": "Final Interval",
-      "year": 2014,
-      "type": "Movie",
-      "genres": [
-        "Short",
-        "Drama"
-      ],
-      "rating": 9,
-      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Final Interval (2014).mp4",
-      "jellyfin_id": "b417b565e9681223862dd83818867e6b",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Final Interval (2014).mp4"
-      ]
-    },
-    {
       "name": "Finding Mr. Destiny",
       "year": 2010,
       "type": "Movie",
@@ -2928,23 +2942,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/TV/Hogu's Love"
-      ]
-    },
-    {
-      "name": "Force Majeure",
-      "year": 2014,
-      "type": "Movie",
-      "genres": [
-        "Drama"
-      ],
-      "rating": 6.824,
-      "path": "/Users/apple/Movies/Force Majeure (2014)/Force.Majeure.2014.1080p.BluRay.x264-[YTS.AM].mp4",
-      "jellyfin_id": "fb7df5266053a9783111132c0ac00194",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Force Majeure (2014)/Force.Majeure.2014.1080p.BluRay.x264-[YTS.AM].mp4"
       ]
     },
     {
@@ -3055,25 +3052,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Fukuoka (2020)/Fukuoka (2020).mp4"
-      ]
-    },
-    {
-      "name": "Funny Games",
-      "year": 1997,
-      "type": "Movie",
-      "genres": [
-        "Drama",
-        "Horror",
-        "Thriller"
-      ],
-      "rating": 7.314,
-      "path": "/Users/apple/Movies/Funny Games (1997)/Funny.Games.1997.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4",
-      "jellyfin_id": "cbaf4904cea7ffd37f17436d358c65a9",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Funny Games (1997)/Funny.Games.1997.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4"
       ]
     },
     {
@@ -3235,11 +3213,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4",
       "jellyfin_id": "c7bb0c018b919f349ce333bbc05a4357",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4",
         "/Volumes/Backup Plus/All Movies/Parallel cinema/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4"
       ]
     },
@@ -3898,11 +3874,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Howl's Moving Castle/Howl's Moving Castle.mp4",
       "jellyfin_id": "16c56301e9d5103a751ddecf6fe22a74",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Howl's Moving Castle/Howl's Moving Castle.mp4",
         "/Volumes/Backup Plus/All Movies/Anime movies/Howl's Moving Castle/Howl's Moving Castle.mp4"
       ]
     },
@@ -4471,11 +4445,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4",
       "jellyfin_id": "b31bd98f253b5b60ea544e4b35e1175a",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4",
         "/Volumes/Backup Plus/All Movies/Indian Films/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4"
       ]
     },
@@ -5901,6 +5873,24 @@
       ]
     },
     {
+      "name": "No One Killed Jessica",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 6.835,
+      "path": "/Users/apple/Movies/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4",
+      "jellyfin_id": "228dcc41947c6325bbf0f9de2cf1b964",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4"
+      ]
+    },
+    {
       "name": "Nobody Knows",
       "year": 2004,
       "type": "Movie",
@@ -6200,11 +6190,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4",
       "jellyfin_id": "90dba1da86bc4551022d4e9bae71dd5e",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4",
         "/Volumes/Backup Plus/All Movies/Parallel cinema/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4"
       ]
     },
@@ -6329,11 +6317,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Paprika (2006)/Paprika.2006.720p.BluRay.x264.AAC-[YTS.MX].mp4",
       "jellyfin_id": "194c33e4baa7eda92889626b7b266283",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Paprika (2006)/Paprika.2006.720p.BluRay.x264.AAC-[YTS.MX].mp4",
         "/Volumes/Backup Plus/All Movies/Anime movies/Paprika (2006)/Paprika.2006.720p.BluRay.x264.AAC-[YTS.MX].mp4"
       ]
     },
@@ -6420,11 +6406,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Perfect Blue (1997)/Perfect.Blue.1997.720p.BluRay.x264-[YTS.AM].mp4",
       "jellyfin_id": "1fde19224f4f45d86a347a6c1b52088a",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Perfect Blue (1997)/Perfect.Blue.1997.720p.BluRay.x264-[YTS.AM].mp4",
         "/Volumes/Backup Plus/All Movies/Anime movies/Perfect Blue (1997)/Perfect.Blue.1997.720p.BluRay.x264-[YTS.AM].mp4"
       ]
     },
@@ -6702,6 +6686,25 @@
       ]
     },
     {
+      "name": "Qarib Qarib Singlle",
+      "year": 2017,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "rating": 7,
+      "path": "/Users/apple/Movies/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4",
+      "jellyfin_id": "26e871048dde511514d85bc58c255e53",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4"
+      ]
+    },
+    {
       "name": "Rain Man",
       "year": 1988,
       "type": "Movie",
@@ -6804,11 +6807,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Redline (2009)/Redline 2009.1080p.BluRay.x264 . NVEE.mp4",
       "jellyfin_id": "481fa51659260d9cca43d0fada0dd73f",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Redline (2009)/Redline 2009.1080p.BluRay.x264 . NVEE.mp4",
         "/Volumes/Backup Plus/All Movies/Anime movies/Redline (2009)/Redline 2009.1080p.BluRay.x264 . NVEE.mp4"
       ]
     },
@@ -7178,6 +7179,45 @@
       ]
     },
     {
+      "name": "Sarkar",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Action",
+        "Drama"
+      ],
+      "rating": 6.929,
+      "path": "/Users/apple/Movies/Sarkar (2005)/Sarkar (2005).mp4",
+      "jellyfin_id": "81ee6d256ba26fe9a22b86c732c1ade0",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Sarkar (2005)/Sarkar (2005).mp4"
+      ]
+    },
+    {
+      "name": "Sarkar Raj",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 6.471,
+      "path": "/Users/apple/Movies/Sarkar Raj (2008)/Sarkar Raj (2008).mp4",
+      "jellyfin_id": "5458b2a79bd523cba5e83d22a8ff019f",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Sarkar Raj (2008)/Sarkar Raj (2008).mp4"
+      ]
+    },
+    {
       "name": "Schindler's List",
       "year": 1993,
       "type": "Movie",
@@ -7398,29 +7438,6 @@
       ]
     },
     {
-      "name": "Shuruaat Ka Interval",
-      "year": 2014,
-      "type": "Movie",
-      "genres": [
-        "Comedy",
-        "Crime",
-        "Drama",
-        "Family",
-        "Thriller",
-        "Romance",
-        "Mystery"
-      ],
-      "rating": null,
-      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Interval 3D (2014).mp4",
-      "jellyfin_id": "8756a9cbd2621966c2c2688602de6d80",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/Interval 3D (2014).mp4"
-      ]
-    },
-    {
       "name": "Shutter",
       "year": 2004,
       "type": "Movie",
@@ -7468,11 +7485,9 @@
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Sikkim (1981) Satyajit Ray/Sikkim (1981) Satyajit Ray.mp4",
       "jellyfin_id": "4c52008bd75deabc2a0d53464e979b12",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Sikkim (1981) Satyajit Ray/Sikkim (1981) Satyajit Ray.mp4",
         "/Volumes/Backup Plus/All Movies/Satyajit Ray/Sikkim (1981) Satyajit Ray/Sikkim (1981) Satyajit Ray.mp4"
       ]
     },
@@ -8330,24 +8345,6 @@
       ]
     },
     {
-      "name": "The Gatekeeper",
-      "year": 2014,
-      "type": "Movie",
-      "genres": [
-        "Short",
-        "Drama"
-      ],
-      "rating": null,
-      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/The Gatekeeper (2014).mp4",
-      "jellyfin_id": "2089dbe5187c630326f2ab032ff12af7",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/The Gatekeeper (2014).mp4"
-      ]
-    },
-    {
       "name": "The Gentlemen",
       "year": 2019,
       "type": "Movie",
@@ -8689,23 +8686,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/The King And The Clown (2005)/The.King.And.The.Clown.2005.1080p.BluRay.x264-[YTS.AM].mp4"
-      ]
-    },
-    {
-      "name": "The Last Audition",
-      "year": 2014,
-      "type": "Movie",
-      "genres": [
-        "Short"
-      ],
-      "rating": null,
-      "path": "/Users/apple/Movies/Shuruaat Ka Interval (2014)/The Last Audition (2014).mp4",
-      "jellyfin_id": "0aa71d1524a78e51308cdc3a0f9c617b",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Shuruaat Ka Interval (2014)/The Last Audition (2014).mp4"
       ]
     },
     {
@@ -9192,23 +9172,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/The Spy Gone North (2018)/The.Spy.Gone.North.2018.720p.BluRay.x264.AAC-[YTS.MX].mp4"
-      ]
-    },
-    {
-      "name": "The Square",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [
-        "Drama"
-      ],
-      "rating": 6.7,
-      "path": "/Users/apple/Movies/The Square (2017)/The.Square.2017.1080p.BluRay.x264-[YTS.AM].mp4",
-      "jellyfin_id": "6c64ff16f287be5501ac9a0c375d25be",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/The Square (2017)/The.Square.2017.1080p.BluRay.x264-[YTS.AM].mp4"
       ]
     },
     {
@@ -9736,6 +9699,23 @@
       ]
     },
     {
+      "name": "Udaan",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 7.278,
+      "path": "/Users/apple/Movies/Udaan (2010)/Udaan (2010).mp4",
+      "jellyfin_id": "9d8b3fe90b277fd37f004bec695b025e",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Udaan (2010)/Udaan (2010).mp4"
+      ]
+    },
+    {
       "name": "Ugly",
       "year": 2013,
       "type": "Movie",
@@ -9825,6 +9805,25 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Movies in General/Us (2019)/Us.2019.720p.WEBRip.x264-[YTS.AM].mp4"
+      ]
+    },
+    {
+      "name": "Vaastav",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.108,
+      "path": "/Users/apple/Movies/Vaastav: The Reality (1999)/Vaastav: The Reality (1999).mp4",
+      "jellyfin_id": "fa377a2a231ca70a651e40609e6c8d60",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Vaastav: The Reality (1999)/Vaastav: The Reality (1999).mp4"
       ]
     },
     {
