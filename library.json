@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-11-01T05:32:24Z",
+  "synced_at": "2026-11-01T05:37:27Z",
   "drive_online": true,
-  "total_count": 561,
+  "total_count": 562,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -974,11 +974,13 @@
       ],
       "rating": 7.233,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Begin Again (2013)/Begin.Again.2013.HDRip.XviD.AC3-EVO.avi",
-      "jellyfin_id": "a0da43c8274f5679f0b7809cdf9897b2",
+      "jellyfin_id": "3de5f48c3752a64938589b8d762c45ec",
       "locations": [
+        "laptop",
         "drive"
       ],
       "paths": [
+        "/Users/apple/Movies/Begin Again (2013) [1080p]/Begin.Again.2013.1080p.BluRay.x264.YIFY.mp4",
         "/Volumes/Backup Plus/All Movies/Movies in General/Begin Again (2013)/Begin.Again.2013.HDRip.XviD.AC3-EVO.avi"
       ]
     },
@@ -4612,6 +4614,25 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Kang Deoksun's Love History/Kang Deoksun's Love History _ 강덕순 애정 변천사.mp4"
+      ]
+    },
+    {
+      "name": "Katanagatari",
+      "year": 2010,
+      "type": "Series",
+      "genres": [
+        "Animation",
+        "Action & Adventure",
+        "Drama"
+      ],
+      "rating": 7.3,
+      "path": "/Users/apple/TV/Katanagatari S01 1080p BDRip 10 bits DD x265-EMBER",
+      "jellyfin_id": "0bff0679762c5b1e59dd1d105ac9bc19",
+      "locations": [
+        "laptop"
+      ],
+      "paths": [
+        "/Users/apple/TV/Katanagatari S01 1080p BDRip 10 bits DD x265-EMBER"
       ]
     },
     {
