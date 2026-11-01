@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-10-28T17:45:47Z",
-  "drive_online": false,
-  "total_count": 561,
+  "synced_at": "2026-11-01T03:38:30Z",
+  "drive_online": true,
+  "total_count": 550,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -537,21 +537,6 @@
       ]
     },
     {
-      "name": "Albert Pinto Ko Gussa Kyun Aata Hai (1980)",
-      "year": 1980,
-      "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Users/apple/Movies/Albert Pinto Ko Gussa Kyun Aata Hai (1980)/Albert Pinto Ko Gussa Kyun Aata Hai (1980).mp4",
-      "jellyfin_id": "bc682e7211f90109369a954966bce5c3",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Albert Pinto Ko Gussa Kyun Aata Hai (1980)/Albert Pinto Ko Gussa Kyun Aata Hai (1980).mp4"
-      ]
-    },
-    {
       "name": "All About My Wife",
       "year": 2012,
       "type": "Movie",
@@ -634,25 +619,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Indian Films/Anand (1971)/Anand (1971).mp4"
-      ]
-    },
-    {
-      "name": "Andaz Apna Apna",
-      "year": 1994,
-      "type": "Movie",
-      "genres": [
-        "Comedy",
-        "Family",
-        "Romance"
-      ],
-      "rating": 6.823,
-      "path": "/Users/apple/Movies/Andaz Apna Apna (1994)/Andaz Apna Apna (1994).mp4",
-      "jellyfin_id": "ee7150f6dab50ea4e212cd10797ea06f",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Andaz Apna Apna (1994)/Andaz Apna Apna (1994).mp4"
       ]
     },
     {
@@ -1114,24 +1080,6 @@
       ]
     },
     {
-      "name": "Black Friday",
-      "year": 2004,
-      "type": "Movie",
-      "genres": [
-        "Crime",
-        "Drama"
-      ],
-      "rating": 7.579,
-      "path": "/Users/apple/Movies/Black Friday (2004)/Black Friday (2004).mp4",
-      "jellyfin_id": "fc2ba209c56466caea523f25a827d28f",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Black Friday (2004)/Black Friday (2004).mp4"
-      ]
-    },
-    {
       "name": "BlacKkKlansman",
       "year": 2018,
       "type": "Movie",
@@ -1195,8 +1143,8 @@
       "genres": [
         "Action",
         "Crime",
-        "Drama",
-        "Thriller"
+        "Thriller",
+        "Drama"
       ],
       "rating": 7.377,
       "path": "/Users/apple/Movies/Blood and Bone (2009)/Blood And Bone (2009).mp4",
@@ -1261,24 +1209,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Movies in General/Boiling.Point.2021.1080p/Boiling.Point.2021.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv"
-      ]
-    },
-    {
-      "name": "Bombay Talkies",
-      "year": 2013,
-      "type": "Movie",
-      "genres": [
-        "Drama",
-        "Romance"
-      ],
-      "rating": 6.333,
-      "path": "/Users/apple/Movies/Bombay Talkies (2013)/Bombay Talkies (2013).mp4",
-      "jellyfin_id": "54aaf89affcc3e37a7b2fd944a924edd",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Bombay Talkies (2013)/Bombay Talkies (2013).mp4"
       ]
     },
     {
@@ -1535,24 +1465,6 @@
       ]
     },
     {
-      "name": "Citizen Kane",
-      "year": 1941,
-      "type": "Movie",
-      "genres": [
-        "Mystery",
-        "Drama"
-      ],
-      "rating": 7.964,
-      "path": "/Users/apple/Movies/Citizen Kane (1941)/Citizen.Kane.1941.1080p.BluRay.x265-RARBG.mp4",
-      "jellyfin_id": "325515b6f71315b09681b5337c0bd659",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Citizen Kane (1941)/Citizen.Kane.1941.1080p.BluRay.x265-RARBG.mp4"
-      ]
-    },
-    {
       "name": "Citizen X",
       "year": 1995,
       "type": "Movie",
@@ -1779,12 +1691,14 @@
       ],
       "rating": 7,
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Seemabaddha (1971)/Seemabaddha (1971).mp4",
-      "jellyfin_id": "c5a2bec2f9ff558a3dae87621a1ec2d5",
+      "jellyfin_id": "af47ee997ec021a7696aaa5f0a8f75d5",
       "locations": [
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Seemabaddha (1971)/Seemabaddha (1971).mp4"
+        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Seemabaddha (1971)/Seemabaddha (1971).mp4",
+        "/Users/apple/Movies/Seemabaddha (1971)/Seemabaddha (1971).mp4"
       ]
     },
     {
@@ -2127,9 +2041,11 @@
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Demolition (2015) [1080p] [YTS.AG]/Demolition.2015.1080p.BluRay.x264-[YTS.AG].mp4",
       "jellyfin_id": "cf0e3637b7009912de3da2ad7fdfeee2",
       "locations": [
+        "laptop",
         "drive"
       ],
       "paths": [
+        "/Users/apple/Movies/Demolition (2015) [1080p] [YTS.AG]/Demolition.2015.1080p.BluRay.x264-[YTS.AG].mp4",
         "/Volumes/Backup Plus/All Movies/Movies in General/Demolition (2015) [1080p] [YTS.AG]/Demolition.2015.1080p.BluRay.x264-[YTS.AG].mp4"
       ]
     },
@@ -3206,17 +3122,19 @@
       "year": 1978,
       "type": "Movie",
       "genres": [
-        "Comedy",
-        "Drama"
+        "Drama",
+        "Comedy"
       ],
-      "rating": 6.653,
+      "rating": 6.7,
       "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4",
-      "jellyfin_id": "c7bb0c018b919f349ce333bbc05a4357",
+      "jellyfin_id": "441ada74c64faff83841df82b202341f",
       "locations": [
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Parallel cinema/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4"
+        "/Volumes/Backup Plus/All Movies/Parallel cinema/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4",
+        "/Users/apple/Movies/Girlfriends (1978) by Claudia Weill/Girlfriends (1978) by Claudia Weill.mp4"
       ]
     },
     {
@@ -3874,9 +3792,11 @@
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Howl's Moving Castle/Howl's Moving Castle.mp4",
       "jellyfin_id": "16c56301e9d5103a751ddecf6fe22a74",
       "locations": [
+        "laptop",
         "drive"
       ],
       "paths": [
+        "/Users/apple/Movies/Howl's Moving Castle/Howl's Moving Castle.mp4",
         "/Volumes/Backup Plus/All Movies/Anime movies/Howl's Moving Castle/Howl's Moving Castle.mp4"
       ]
     },
@@ -4438,17 +4358,19 @@
       "type": "Movie",
       "genres": [
         "Comedy",
-        "Music",
-        "Romance"
+        "Romance",
+        "Music"
       ],
       "rating": 6.25,
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4",
-      "jellyfin_id": "b31bd98f253b5b60ea544e4b35e1175a",
+      "jellyfin_id": "2e359265f507fe2dea1d35854630d8ca",
       "locations": [
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Indian Films/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4"
+        "/Volumes/Backup Plus/All Movies/Indian Films/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4",
+        "/Users/apple/Movies/Jhankaar Beats (2003)/Jhankaar Beats (2003).mp4"
       ]
     },
     {
@@ -5077,12 +4999,14 @@
       ],
       "rating": 7.928,
       "path": "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
-      "jellyfin_id": "b87b4ed219e130cc1aa58e3ed494da5e",
+      "jellyfin_id": "0e381ea841ed73eb86d1f363bc2f0c0d",
       "locations": [
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4"
+        "/Volumes/Backup Plus/All Movies/Asian Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4",
+        "/Users/apple/Movies/Love Exposure (2008)/Love.Exposure.2008.720p.BluRay.x264.AAC-[YTS.MX].mp4"
       ]
     },
     {
@@ -5763,19 +5687,19 @@
       "year": 1987,
       "type": "Movie",
       "genres": [
-        "Crime",
-        "Drama"
+        "Drama",
+        "Crime"
       ],
       "rating": 7.9,
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Nayakan (1987)/Nayakan (1987).mp4",
-      "jellyfin_id": "92052e72430ee480482e831229f285cf",
+      "jellyfin_id": "253f69de5948565a5656e4142a198de5",
       "locations": [
-        "laptop",
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Users/apple/Movies/Nayakan (1987)/Nayakan (1987).mp4",
-        "/Volumes/Backup Plus/All Movies/Indian Films/Nayakan (1987)/Nayakan (1987).mp4"
+        "/Volumes/Backup Plus/All Movies/Indian Films/Nayakan (1987)/Nayakan (1987).mp4",
+        "/Users/apple/Movies/Nayakan (1987)/Nayakan (1987).mp4"
       ]
     },
     {
@@ -5870,24 +5794,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Movies in General/No Country For Old Men (2007)/No Country For Old Men.mp4"
-      ]
-    },
-    {
-      "name": "No One Killed Jessica",
-      "year": 2011,
-      "type": "Movie",
-      "genres": [
-        "Crime",
-        "Drama"
-      ],
-      "rating": 6.835,
-      "path": "/Users/apple/Movies/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4",
-      "jellyfin_id": "228dcc41947c6325bbf0f9de2cf1b964",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4"
       ]
     },
     {
@@ -6183,17 +6089,19 @@
       "year": 1989,
       "type": "Movie",
       "genres": [
-        "Drama",
-        "Science Fiction"
+        "Science Fiction",
+        "Drama"
       ],
-      "rating": 7.648,
+      "rating": 7.628,
       "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4",
-      "jellyfin_id": "90dba1da86bc4551022d4e9bae71dd5e",
+      "jellyfin_id": "65dce2598a31a0217db9a9a502dbe60d",
       "locations": [
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Parallel cinema/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4"
+        "/Volumes/Backup Plus/All Movies/Parallel cinema/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4",
+        "/Users/apple/Movies/On the Silver Globe (1988)/On the Silver Globe - Andrzej Żuławski (1988) 720p.mp4"
       ]
     },
     {
@@ -6317,9 +6225,11 @@
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Paprika (2006)/Paprika.2006.720p.BluRay.x264.AAC-[YTS.MX].mp4",
       "jellyfin_id": "194c33e4baa7eda92889626b7b266283",
       "locations": [
+        "laptop",
         "drive"
       ],
       "paths": [
+        "/Users/apple/Movies/Paprika (2006)/Paprika.2006.720p.BluRay.x264.AAC-[YTS.MX].mp4",
         "/Volumes/Backup Plus/All Movies/Anime movies/Paprika (2006)/Paprika.2006.720p.BluRay.x264.AAC-[YTS.MX].mp4"
       ]
     },
@@ -6406,9 +6316,11 @@
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Perfect Blue (1997)/Perfect.Blue.1997.720p.BluRay.x264-[YTS.AM].mp4",
       "jellyfin_id": "1fde19224f4f45d86a347a6c1b52088a",
       "locations": [
+        "laptop",
         "drive"
       ],
       "paths": [
+        "/Users/apple/Movies/Perfect Blue (1997)/Perfect.Blue.1997.720p.BluRay.x264-[YTS.AM].mp4",
         "/Volumes/Backup Plus/All Movies/Anime movies/Perfect Blue (1997)/Perfect.Blue.1997.720p.BluRay.x264-[YTS.AM].mp4"
       ]
     },
@@ -6686,25 +6598,6 @@
       ]
     },
     {
-      "name": "Qarib Qarib Singlle",
-      "year": 2017,
-      "type": "Movie",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Romance"
-      ],
-      "rating": 7,
-      "path": "/Users/apple/Movies/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4",
-      "jellyfin_id": "26e871048dde511514d85bc58c255e53",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4"
-      ]
-    },
-    {
       "name": "Rain Man",
       "year": 1988,
       "type": "Movie",
@@ -6807,9 +6700,11 @@
       "path": "/Volumes/Backup Plus/All Movies/Anime movies/Redline (2009)/Redline 2009.1080p.BluRay.x264 . NVEE.mp4",
       "jellyfin_id": "481fa51659260d9cca43d0fada0dd73f",
       "locations": [
+        "laptop",
         "drive"
       ],
       "paths": [
+        "/Users/apple/Movies/Redline (2009)/Redline 2009.1080p.BluRay.x264 . NVEE.mp4",
         "/Volumes/Backup Plus/All Movies/Anime movies/Redline (2009)/Redline 2009.1080p.BluRay.x264 . NVEE.mp4"
       ]
     },
@@ -7179,45 +7074,6 @@
       ]
     },
     {
-      "name": "Sarkar",
-      "year": 2005,
-      "type": "Movie",
-      "genres": [
-        "Crime",
-        "Action",
-        "Drama"
-      ],
-      "rating": 6.929,
-      "path": "/Users/apple/Movies/Sarkar (2005)/Sarkar (2005).mp4",
-      "jellyfin_id": "81ee6d256ba26fe9a22b86c732c1ade0",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Sarkar (2005)/Sarkar (2005).mp4"
-      ]
-    },
-    {
-      "name": "Sarkar Raj",
-      "year": 2008,
-      "type": "Movie",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Crime",
-        "Drama"
-      ],
-      "rating": 6.471,
-      "path": "/Users/apple/Movies/Sarkar Raj (2008)/Sarkar Raj (2008).mp4",
-      "jellyfin_id": "5458b2a79bd523cba5e83d22a8ff019f",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Sarkar Raj (2008)/Sarkar Raj (2008).mp4"
-      ]
-    },
-    {
       "name": "Schindler's List",
       "year": 1993,
       "type": "Movie",
@@ -7485,9 +7341,11 @@
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Sikkim (1981) Satyajit Ray/Sikkim (1981) Satyajit Ray.mp4",
       "jellyfin_id": "4c52008bd75deabc2a0d53464e979b12",
       "locations": [
+        "laptop",
         "drive"
       ],
       "paths": [
+        "/Users/apple/Movies/Sikkim (1981) Satyajit Ray/Sikkim (1981) Satyajit Ray.mp4",
         "/Volumes/Backup Plus/All Movies/Satyajit Ray/Sikkim (1981) Satyajit Ray/Sikkim (1981) Satyajit Ray.mp4"
       ]
     },
@@ -8000,14 +7858,14 @@
       ],
       "rating": 7.2,
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Pratidwandi (1970)/Pratidwandi (1970).mp4",
-      "jellyfin_id": "a708c4a0dd741391ef108c23faa4d329",
+      "jellyfin_id": "479cc01243a250ddb18927a13a6d43a0",
       "locations": [
-        "laptop",
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Users/apple/Movies/Pratidwandi (1970)/Pratidwandi (1970).mp4",
-        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Pratidwandi (1970)/Pratidwandi (1970).mp4"
+        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Pratidwandi (1970)/Pratidwandi (1970).mp4",
+        "/Users/apple/Movies/Pratidwandi (1970)/Pratidwandi (1970).mp4"
       ]
     },
     {
@@ -8525,14 +8383,14 @@
       ],
       "rating": 8.1,
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Nayak (1966)/Nayak (1966).mp4",
-      "jellyfin_id": "e5105198c04e77a40e399b8e4f5fcffe",
+      "jellyfin_id": "0eda13fe775a5ceceeb0f01c20329453",
       "locations": [
-        "laptop",
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Users/apple/Movies/Nayak (1966)/Nayak (1966).mp4",
-        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Nayak (1966)/Nayak (1966).mp4"
+        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Nayak (1966)/Nayak (1966).mp4",
+        "/Users/apple/Movies/Nayak (1966)/Nayak (1966).mp4"
       ]
     },
     {
@@ -8603,14 +8461,14 @@
       ],
       "rating": 7.205,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4",
-      "jellyfin_id": "98f976bafe2da154cce191bd01e0b0b7",
+      "jellyfin_id": "46d0d63cd3406421e33388d9013f0933",
       "locations": [
-        "laptop",
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Users/apple/Movies/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4",
-        "/Volumes/Backup Plus/All Movies/Movies in General/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4"
+        "/Volumes/Backup Plus/All Movies/Movies in General/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4",
+        "/Users/apple/Movies/The Invite (2026)/The.Invite.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ].mp4"
       ]
     },
     {
@@ -8862,14 +8720,14 @@
       ],
       "rating": 7.2,
       "path": "/Volumes/Backup Plus/All Movies/Satyajit Ray/Jana Aranya (1976)/Jana Aranya (1976).mp4",
-      "jellyfin_id": "fbf2ca9fe28c0542437af62aa1e8712e",
+      "jellyfin_id": "e25daee01ae926fc8328fd777a8dd41a",
       "locations": [
-        "laptop",
-        "drive"
+        "drive",
+        "laptop"
       ],
       "paths": [
-        "/Users/apple/Movies/Jana Aranya (1976)/Jana Aranya (1976).mp4",
-        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Jana Aranya (1976)/Jana Aranya (1976).mp4"
+        "/Volumes/Backup Plus/All Movies/Satyajit Ray/Jana Aranya (1976)/Jana Aranya (1976).mp4",
+        "/Users/apple/Movies/Jana Aranya (1976)/Jana Aranya (1976).mp4"
       ]
     },
     {
@@ -9699,23 +9557,6 @@
       ]
     },
     {
-      "name": "Udaan",
-      "year": 2010,
-      "type": "Movie",
-      "genres": [
-        "Drama"
-      ],
-      "rating": 7.278,
-      "path": "/Users/apple/Movies/Udaan (2010)/Udaan (2010).mp4",
-      "jellyfin_id": "9d8b3fe90b277fd37f004bec695b025e",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Udaan (2010)/Udaan (2010).mp4"
-      ]
-    },
-    {
       "name": "Ugly",
       "year": 2013,
       "type": "Movie",
@@ -9805,25 +9646,6 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Movies in General/Us (2019)/Us.2019.720p.WEBRip.x264-[YTS.AM].mp4"
-      ]
-    },
-    {
-      "name": "Vaastav",
-      "year": 1999,
-      "type": "Movie",
-      "genres": [
-        "Action",
-        "Crime",
-        "Drama"
-      ],
-      "rating": 7.108,
-      "path": "/Users/apple/Movies/Vaastav: The Reality (1999)/Vaastav: The Reality (1999).mp4",
-      "jellyfin_id": "fa377a2a231ca70a651e40609e6c8d60",
-      "locations": [
-        "laptop"
-      ],
-      "paths": [
-        "/Users/apple/Movies/Vaastav: The Reality (1999)/Vaastav: The Reality (1999).mp4"
       ]
     },
     {
