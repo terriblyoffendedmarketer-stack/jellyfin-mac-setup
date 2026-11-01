@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-11-01T13:52:08Z",
+  "synced_at": "2026-11-01T13:57:31Z",
   "drive_online": true,
-  "total_count": 544,
+  "total_count": 556,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -1347,6 +1347,21 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Broker (2022)/Broker (2022).mp4"
+      ]
+    },
+    {
+      "name": "Bubbles & Stars",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/Bubbles & Stars (2014).mp4",
+      "jellyfin_id": "659d1e0f2288119806d69202b54a4e61",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/Bubbles & Stars (2014).mp4"
       ]
     },
     {
@@ -2830,6 +2845,24 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Movies in General/Fight Club (1999) [1080p]/Fight.Club.10th.Anniversary.Edition.1999.1080p.BrRip.x264.YIFY.mp4"
+      ]
+    },
+    {
+      "name": "Final Interval",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Short"
+      ],
+      "rating": 9,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/Final Interval (2014).mp4",
+      "jellyfin_id": "3180b32f6cdfb712c43f2295ca532951",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/Final Interval (2014).mp4"
       ]
     },
     {
@@ -5819,13 +5852,15 @@
         "Drama"
       ],
       "rating": 6.835,
-      "path": "/Users/apple/Movies/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4",
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4",
       "jellyfin_id": "228dcc41947c6325bbf0f9de2cf1b964",
       "locations": [
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4"
+        "/Users/apple/Movies/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4",
+        "/Volumes/Backup Plus/All Movies/Indian Films/No One Killed Jessica (2011)/No One Killed Jessica (2011).mp4"
       ]
     },
     {
@@ -6205,6 +6240,41 @@
       ]
     },
     {
+      "name": "Paan Singh Tomar",
+      "year": 2012,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 7.391,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Paan Singh Tomar (2012)/Paan Singh Tomar.mp4",
+      "jellyfin_id": "604eb5e85a4ec603b6016f576126d1fe",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Paan Singh Tomar (2012)/Paan Singh Tomar.mp4"
+      ]
+    },
+    {
+      "name": "Page 3",
+      "year": 2005,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 6.155,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Page 3 (2005)/Page 3 (2005).mp4",
+      "jellyfin_id": "51286fb780d419af526c88f7599fc936",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Page 3 (2005)/Page 3 (2005).mp4"
+      ]
+    },
+    {
       "name": "Paprika",
       "year": 2006,
       "type": "Movie",
@@ -6327,6 +6397,25 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Movies in General/Perfect Strangers (2017)/Perfect.Strangers.2017.720p.BluRay.x264-[YTS.AM].mp4"
+      ]
+    },
+    {
+      "name": "Phoonk",
+      "year": 2008,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Mystery"
+      ],
+      "rating": 3.5,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Phoonk (2008)/Phoonk (2008).mp4",
+      "jellyfin_id": "f95d753c1926a27f0e29cf099ef4efdb",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Phoonk (2008)/Phoonk (2008).mp4"
       ]
     },
     {
@@ -6595,28 +6684,33 @@
         "Romance"
       ],
       "rating": 7,
-      "path": "/Users/apple/Movies/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4",
-      "jellyfin_id": "26e871048dde511514d85bc58c255e53",
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4",
+      "jellyfin_id": "20b722bb718bed695e12af25fb1a91bf",
       "locations": [
+        "drive",
         "laptop"
       ],
       "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4",
         "/Users/apple/Movies/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4"
       ]
     },
     {
-      "name": "Qarib Qarib Singlle (2017)",
-      "year": 2017,
+      "name": "Rabindranath Tagore",
+      "year": 1961,
       "type": "Movie",
-      "genres": [],
-      "rating": null,
-      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4",
-      "jellyfin_id": "20b722bb718bed695e12af25fb1a91bf",
+      "genres": [
+        "Documentary",
+        "History"
+      ],
+      "rating": 7,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Rabindranath Tagore (1961)/Rabindranath Tagore (1961).mp4",
+      "jellyfin_id": "bcd2c02519c6344627df9d836636322f",
       "locations": [
         "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Indian Films/Qarib Qarib Singlle (2017)/Qarib Qarib Singlle (2017).mp4"
+        "/Volumes/Backup Plus/All Movies/Indian Films/Rabindranath Tagore (1961)/Rabindranath Tagore (1961).mp4"
       ]
     },
     {
@@ -6795,6 +6889,21 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Ring [Ringu].1998.DVDRip.XviD-VLiS/Ring [Ringu].1998.DVDRip.XviD-VLiS.avi"
+      ]
+    },
+    {
+      "name": "Road To Sangam (2010)",
+      "year": 2010,
+      "type": "Movie",
+      "genres": [],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Road To Sangam (2010)/Road To Sangam (2010).mp4",
+      "jellyfin_id": "9ab6a28b0536fd0d93f247ffa65616d3",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Road To Sangam (2010)/Road To Sangam (2010).mp4"
       ]
     },
     {
@@ -7039,6 +7148,24 @@
       ]
     },
     {
+      "name": "Sarfarosh",
+      "year": 1999,
+      "type": "Movie",
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "rating": 6.9,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Sarfarosh (1999)/Sarfarosh (1999).mp4",
+      "jellyfin_id": "c974ed168fe82a6612cbf843af141428",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Sarfarosh (1999)/Sarfarosh (1999).mp4"
+      ]
+    },
+    {
       "name": "Sarkar",
       "year": 2005,
       "type": "Movie",
@@ -7048,13 +7175,15 @@
         "Drama"
       ],
       "rating": 6.929,
-      "path": "/Users/apple/Movies/Sarkar (2005)/Sarkar (2005).mp4",
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Sarkar (2005)/Sarkar (2005).mp4",
       "jellyfin_id": "81ee6d256ba26fe9a22b86c732c1ade0",
       "locations": [
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Sarkar (2005)/Sarkar (2005).mp4"
+        "/Users/apple/Movies/Sarkar (2005)/Sarkar (2005).mp4",
+        "/Volumes/Backup Plus/All Movies/Indian Films/Sarkar (2005)/Sarkar (2005).mp4"
       ]
     },
     {
@@ -7068,13 +7197,15 @@
         "Drama"
       ],
       "rating": 6.471,
-      "path": "/Users/apple/Movies/Sarkar Raj (2008)/Sarkar Raj (2008).mp4",
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Sarkar Raj (2008)/Sarkar Raj (2008).mp4",
       "jellyfin_id": "5458b2a79bd523cba5e83d22a8ff019f",
       "locations": [
-        "laptop"
+        "laptop",
+        "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Sarkar Raj (2008)/Sarkar Raj (2008).mp4"
+        "/Users/apple/Movies/Sarkar Raj (2008)/Sarkar Raj (2008).mp4",
+        "/Volumes/Backup Plus/All Movies/Indian Films/Sarkar Raj (2008)/Sarkar Raj (2008).mp4"
       ]
     },
     {
@@ -7238,6 +7369,47 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Shoplifters (2018)/Shoplifters (2018) ‧ Drama Crime.mkv"
+      ]
+    },
+    {
+      "name": "Shor in the City",
+      "year": 2011,
+      "type": "Movie",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 6.3,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Shor In The City (2011)/Shor In The City (2011).mp4",
+      "jellyfin_id": "bb51a922b8c91839bfe58c9ed3831612",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Shor In The City (2011)/Shor In The City (2011).mp4"
+      ]
+    },
+    {
+      "name": "Shuruaat Ka Interval",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime",
+        "Drama",
+        "Family",
+        "Mystery",
+        "Romance",
+        "Thriller"
+      ],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/Interval 3D (2014).mp4",
+      "jellyfin_id": "56dcd5f11f5edaa4a3f50c5fe47b9782",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/Interval 3D (2014).mp4"
       ]
     },
     {
@@ -8074,6 +8246,24 @@
       ]
     },
     {
+      "name": "The Gatekeeper",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Short"
+      ],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/The Gatekeeper (2014).mp4",
+      "jellyfin_id": "0e6e9bce5c827b752c075458af29291a",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/The Gatekeeper (2014).mp4"
+      ]
+    },
+    {
       "name": "The Gentlemen",
       "year": 2019,
       "type": "Movie",
@@ -8415,6 +8605,23 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/The King And The Clown (2005)/The.King.And.The.Clown.2005.1080p.BluRay.x264-[YTS.AM].mp4"
+      ]
+    },
+    {
+      "name": "The Last Audition",
+      "year": 2014,
+      "type": "Movie",
+      "genres": [
+        "Short"
+      ],
+      "rating": null,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/The Last Audition (2014).mp4",
+      "jellyfin_id": "e49fb14bec4545a8917ded8eeedd5bbb",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/The Last Audition (2014).mp4"
       ]
     },
     {
@@ -9337,6 +9544,23 @@
       ]
     },
     {
+      "name": "Traffic Signal",
+      "year": 2007,
+      "type": "Movie",
+      "genres": [
+        "Drama"
+      ],
+      "rating": 5.333,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Traffic Signal (2007)/Traffic Signal (2007).mp4",
+      "jellyfin_id": "5ccc15a3328ad75ce36abba01f112671",
+      "locations": [
+        "drive"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Traffic Signal (2007)/Traffic Signal (2007).mp4"
+      ]
+    },
+    {
       "name": "Trainspotting",
       "year": 1996,
       "type": "Movie",
@@ -9432,13 +9656,15 @@
       "genres": [
         "Drama"
       ],
-      "rating": 7.278,
-      "path": "/Users/apple/Movies/Udaan (2010)/Udaan (2010).mp4",
-      "jellyfin_id": "9d8b3fe90b277fd37f004bec695b025e",
+      "rating": 7.3,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Udaan (2010)/Udaan (2010).mp4",
+      "jellyfin_id": "4fbf40fc7b71d91b9943a67b4c8a551b",
       "locations": [
+        "drive",
         "laptop"
       ],
       "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Udaan (2010)/Udaan (2010).mp4",
         "/Users/apple/Movies/Udaan (2010)/Udaan (2010).mp4"
       ]
     },
@@ -9543,13 +9769,15 @@
         "Crime",
         "Drama"
       ],
-      "rating": 7.108,
-      "path": "/Users/apple/Movies/Vaastav: The Reality (1999)/Vaastav: The Reality (1999).mp4",
-      "jellyfin_id": "fa377a2a231ca70a651e40609e6c8d60",
+      "rating": 7.1,
+      "path": "/Volumes/Backup Plus/All Movies/Indian Films/Vaastav: The Reality (1999)/Vaastav: The Reality (1999).mp4",
+      "jellyfin_id": "635288ee432c703ae1ec54bc7a9b8fa4",
       "locations": [
+        "drive",
         "laptop"
       ],
       "paths": [
+        "/Volumes/Backup Plus/All Movies/Indian Films/Vaastav: The Reality (1999)/Vaastav: The Reality (1999).mp4",
         "/Users/apple/Movies/Vaastav: The Reality (1999)/Vaastav: The Reality (1999).mp4"
       ]
     },
