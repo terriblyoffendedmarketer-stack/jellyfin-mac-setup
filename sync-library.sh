@@ -131,7 +131,7 @@ for m in out:
     m.pop("location", None)
 
 library = {
-    "synced_at": __import__("datetime").datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+    "synced_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     "drive_online": drive_online,
     "total_count": len(out),
     "items": out,
@@ -144,7 +144,7 @@ PYEOF
 # Generate HTML
 log "Generating HTML..."
 python3 << 'PYEOF' - "$LIBRARY_JSON" "$COMMENTS_JSON" "$HTML_FILE"
-import json, sys, html
+import json, sys, html, re
 from pathlib import Path
 
 library_path = sys.argv[1]
@@ -159,11 +159,19 @@ if Path(comments_path).exists():
     with open(comments_path) as f:
         comments = json.load(f)
 
+def normalize_title(t):
+    t = re.sub(r'\[.*?\]|\(.*?\)', '', t)
+    t = re.sub(r'[^a-zA-Z0-9\s]', '', t)
+    return ' '.join(t.lower().split())
+
+comment_title_map = {}
 comment_lookup = {}
 for category, films in comments.items():
     for title, comment in films.items():
-        clean = title.split("[")[0].split("(")[0].strip()
-        comment_lookup[clean.lower()] = comment
+        norm = normalize_title(title)
+        if norm:
+            comment_title_map[norm] = (category, title)
+            comment_lookup[norm] = comment
         comment_lookup[title.lower()] = comment
 
 category_map = {}
@@ -176,19 +184,26 @@ for item in library["items"]:
     genres = item.get("genres", [])
     path = item.get("path", "")
 
+    norm_name = normalize_title(name)
     matched_category = None
-    name_lower = name.lower()
-    display_lower = display.lower()
+    if norm_name in comment_title_map:
+        matched_category = comment_title_map[norm_name][0]
 
-    for cat, films in comments.items():
-        for title in films:
-            title_clean = title.split("[")[0].split("(")[0].strip().lower()
-            if title_clean == name_lower or name_lower in title.lower() or title_clean in display_lower:
-                matched_category = cat
-                break
-        if matched_category:
-            break
+    # Extract folder name from path (e.g. /All Movies/<Category>/...)
+    folder_category = None
+    parts = path.split('/')
+    if 'All Movies' in parts:
+        idx = parts.index('All Movies')
+        if idx + 1 < len(parts):
+            folder_category = parts[idx + 1]
 
+    # Folder takes priority over fallback or broad 'Movies in General' category
+    if matched_category in [None, "Movies in General"] and folder_category and folder_category != "Movies in General":
+        matched_category = folder_category
+    elif not matched_category and folder_category:
+        matched_category = folder_category
+
+    # Fallback to genres
     if not matched_category:
         if any(g in ["Animation", "Anime"] for g in genres):
             matched_category = "Anime movies"
@@ -200,9 +215,11 @@ for item in library["items"]:
     if matched_category not in category_map:
         category_map[matched_category] = []
 
-    comment = comment_lookup.get(name_lower, "")
+    comment = comment_lookup.get(norm_name, "")
     if not comment:
-        comment = comment_lookup.get(display_lower, "")
+        comment = comment_lookup.get(name.lower(), "")
+    if not comment:
+        comment = comment_lookup.get(display.lower(), "")
 
     category_map[matched_category].append({
         "display": display,
@@ -215,7 +232,7 @@ for cat in category_map:
 
 ordered_cats = []
 for cat in comments_categories:
-    if cat in category_map:
+    if cat in category_map and cat not in ordered_cats:
         ordered_cats.append(cat)
 for cat in sorted(category_map.keys()):
     if cat not in ordered_cats:
