@@ -317,9 +317,6 @@ gallery_cards = []
 for film in all_films:
     name = film["name"]
     year = film.get("year")
-    rating = film.get("rating")
-    rating_str = f"{rating:.1f}" if rating else ""
-    rating_badge = f'<span class="rating-badge">&#9733; {rating_str}</span>' if rating_str else ''
     display = film["display"]
     escaped_display = html.escape(display)
     escaped_name = html.escape(name)
@@ -336,7 +333,6 @@ for film in all_films:
                     <span class="fallback-icon">&#127916;</span>
                     <span class="fallback-title">{escaped_name}</span>
                 </div>
-                {rating_badge}
             </div>
             <div class="card-details">
                 <div class="card-title" title="{escaped_display}">{escaped_name}</div>
