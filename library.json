@@ -1,7 +1,7 @@
 {
-  "synced_at": "2026-11-07T04:38:59Z",
+  "synced_at": "2026-11-07T04:44:04Z",
   "drive_online": true,
-  "total_count": 556,
+  "total_count": 558,
   "items": [
     {
       "name": "(500) Days of Summer",
@@ -1472,6 +1472,25 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Asian Movies/Castaway On The Moon (2009)/Castaway.On.The.Moon.2009.720p.BluRay.x264-[YTS.AM].mp4"
+      ]
+    },
+    {
+      "name": "Chaar Phool Hain Aur Duniya Hai",
+      "year": 2024,
+      "type": "Movie",
+      "genres": [
+        "Documentary"
+      ],
+      "rating": 10,
+      "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/Chaar Phool Hain Aur Duniya Hai (2025)/Chaar Phool Hain Aur Duniya Hai (2025).mp4",
+      "jellyfin_id": "54ffabea488ae0fcbb16b36749b5a552",
+      "locations": [
+        "laptop",
+        "drive"
+      ],
+      "paths": [
+        "/Users/apple/Movies/Chaar Phool Hain Aur Duniya Hai (2025)/Chaar Phool Hain Aur Duniya Hai (2025).mp4",
+        "/Volumes/Backup Plus/All Movies/Parallel cinema/Chaar Phool Hain Aur Duniya Hai (2025)/Chaar Phool Hain Aur Duniya Hai (2025).mp4"
       ]
     },
     {
@@ -8622,6 +8641,26 @@
       ],
       "paths": [
         "/Volumes/Backup Plus/All Movies/Indian Films/Shuruaat Ka Interval (2014)/The Last Audition (2014).mp4"
+      ]
+    },
+    {
+      "name": "The Life of Chuck",
+      "year": 2025,
+      "type": "Movie",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
+      "rating": 7.3,
+      "path": "/Volumes/Backup Plus/All Movies/Movies in General/The Life of Chuck (2024)/The Life of Chuck 2024 1080p WEB-DL HEVC x265 5.1 BONE.mkv",
+      "jellyfin_id": "a464c1022410f98e47f966fe8e8ca7bd",
+      "locations": [
+        "drive",
+        "laptop"
+      ],
+      "paths": [
+        "/Volumes/Backup Plus/All Movies/Movies in General/The Life of Chuck (2024)/The Life of Chuck 2024 1080p WEB-DL HEVC x265 5.1 BONE.mkv",
+        "/Users/apple/Movies/The Life of Chuck (2024)/The Life of Chuck 2024 1080p WEB-DL HEVC x265 5.1 BONE.mkv"
       ]
     },
     {
