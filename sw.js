@@ -1,4 +1,4 @@
-var CACHE = 'film-library-v1';
+var CACHE = 'film-library-v2';
 
 self.addEventListener('install', function(e) {
   e.waitUntil(
