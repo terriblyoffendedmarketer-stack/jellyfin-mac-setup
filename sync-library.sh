@@ -141,6 +141,43 @@ with open(output_path, "w") as f:
 print(f"Wrote {len(out)} items to {output_path} ({len(fresh)} from Jellyfin, {len(kept)} kept from the drive)")
 PYEOF
 
+# Sync poster artwork
+log "Syncing poster artwork..."
+POSTERS_DIR="$SCRIPT_DIR/posters"
+mkdir -p "$POSTERS_DIR"
+python3 << 'PYEOF' - "$LIBRARY_JSON" "$POSTERS_DIR" "$JELLYFIN_URL" "$ACCESS_TOKEN"
+import json, os, sys, urllib.request
+
+library_path = sys.argv[1]
+posters_dir = sys.argv[2]
+jellyfin_url = sys.argv[3]
+token = sys.argv[4]
+
+with open(library_path) as f:
+    items = json.load(f).get("items", [])
+
+downloaded = 0
+for item in items:
+    jid = item.get("jellyfin_id")
+    if not jid:
+        continue
+    dest = os.path.join(posters_dir, f"{jid}.jpg")
+    if os.path.exists(dest):
+        continue
+    url = f"{jellyfin_url}/Items/{jid}/Images/Primary?maxWidth=280&quality=75"
+    req = urllib.request.Request(url, headers={"X-Emby-Token": token})
+    try:
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            with open(dest, "wb") as out_f:
+                out_f.write(resp.read())
+        downloaded += 1
+    except Exception:
+        pass
+
+if downloaded > 0:
+    print(f"Downloaded {downloaded} new poster(s)")
+PYEOF
+
 # Generate HTML
 log "Generating HTML..."
 python3 << 'PYEOF' - "$LIBRARY_JSON" "$COMMENTS_JSON" "$HTML_FILE"
@@ -189,7 +226,6 @@ for item in library["items"]:
     if norm_name in comment_title_map:
         matched_category = comment_title_map[norm_name][0]
 
-    # Extract folder name from path (e.g. /All Movies/<Category>/...)
     folder_category = None
     parts = path.split('/')
     if 'All Movies' in parts:
@@ -197,13 +233,11 @@ for item in library["items"]:
         if idx + 1 < len(parts):
             folder_category = parts[idx + 1]
 
-    # Folder takes priority over fallback or broad 'Movies in General' category
     if matched_category in [None, "Movies in General"] and folder_category and folder_category != "Movies in General":
         matched_category = folder_category
     elif not matched_category and folder_category:
         matched_category = folder_category
 
-    # Fallback to genres
     if not matched_category:
         if any(g in ["Animation", "Anime"] for g in genres):
             matched_category = "Anime movies"
@@ -223,7 +257,12 @@ for item in library["items"]:
 
     category_map[matched_category].append({
         "display": display,
+        "name": name,
+        "year": year,
+        "rating": item.get("rating"),
+        "jellyfin_id": item.get("jellyfin_id", ""),
         "comment": comment,
+        "category": matched_category,
         "type": item.get("type", "Movie"),
     })
 
@@ -241,6 +280,7 @@ for cat in sorted(category_map.keys()):
 synced_at = library.get("synced_at", "unknown")
 total = library.get("total_count", sum(len(v) for v in category_map.values()))
 
+# Build Category Sections
 sections = []
 for i, cat in enumerate(ordered_cats):
     films = category_map[cat]
@@ -266,6 +306,48 @@ for i, cat in enumerate(ordered_cats):
         </div>''')
 
 sections_html = "\n\n".join(sections)
+
+# Build Gallery Cards (All films alphabetically)
+all_films = sorted(
+    [film for cat_films in category_map.values() for film in cat_films],
+    key=lambda x: x["name"].lower()
+)
+
+gallery_cards = []
+for film in all_films:
+    name = film["name"]
+    year = film.get("year")
+    rating = film.get("rating")
+    rating_str = f"{rating:.1f}" if rating else ""
+    rating_badge = f'<span class="rating-badge">&#9733; {rating_str}</span>' if rating_str else ''
+    display = film["display"]
+    escaped_display = html.escape(display)
+    escaped_name = html.escape(name)
+    escaped_year = html.escape(str(year)) if year else ""
+    jid = film.get("jellyfin_id", "")
+    cat = film["category"]
+    escaped_cat = html.escape(cat)
+    norm_name = html.escape(name.lower())
+
+    gallery_cards.append(f'''        <div class="film-card" data-title="{norm_name}" data-year="{escaped_year}" data-category="{escaped_cat}">
+            <div class="poster-container">
+                <img class="poster-img" src="posters/{jid}.jpg" alt="{escaped_display}" loading="lazy" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">
+                <div class="poster-fallback" style="display:none;">
+                    <span class="fallback-icon">&#127916;</span>
+                    <span class="fallback-title">{escaped_name}</span>
+                </div>
+                {rating_badge}
+            </div>
+            <div class="card-details">
+                <div class="card-title" title="{escaped_display}">{escaped_name}</div>
+                <div class="card-meta">
+                    <span class="card-year">{escaped_year}</span>
+                    <span class="card-category" title="{escaped_cat}">{escaped_cat}</span>
+                </div>
+            </div>
+        </div>''')
+
+gallery_html = "\n".join(gallery_cards)
 
 options = ['            <option value="all">All Categories</option>']
 for cat in ordered_cats:
@@ -326,7 +408,7 @@ page = f'''<!DOCTYPE html>
         }}
 
         .container {{
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             padding-bottom: 3rem;
         }}
@@ -381,7 +463,7 @@ page = f'''<!DOCTYPE html>
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }}
 
         @media (min-width: 600px) {{
@@ -430,6 +512,211 @@ page = f'''<!DOCTYPE html>
             cursor: pointer;
         }}
 
+        /* View Switcher Controls */
+        .controls-bar {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }}
+
+        .view-switcher {{
+            display: inline-flex;
+            background: var(--card-bg);
+            padding: 0.3rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            gap: 0.25rem;
+        }}
+
+        .view-btn {{
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }}
+
+        .view-btn:hover {{
+            color: var(--text-primary);
+        }}
+
+        .view-btn.active {{
+            background: var(--hover-bg);
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+        }}
+
+        .films-counter {{
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }}
+
+        /* Gallery Grid */
+        .gallery-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+            gap: 1.25rem 0.9rem;
+            margin-bottom: 2rem;
+        }}
+
+        @media (min-width: 500px) {{
+            .gallery-grid {{
+                grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+                gap: 1.5rem 1rem;
+            }}
+        }}
+
+        @media (min-width: 768px) {{
+            .gallery-grid {{
+                grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+                gap: 1.75rem 1.25rem;
+            }}
+        }}
+
+        @media (min-width: 1024px) {{
+            .gallery-grid {{
+                grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+                gap: 2rem 1.4rem;
+            }}
+        }}
+
+        .film-card {{
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }}
+
+        .film-card:hover {{
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+            border-color: var(--accent);
+        }}
+
+        .poster-container {{
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            background: #0b0f19;
+            overflow: hidden;
+        }}
+
+        .poster-img {{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }}
+
+        .film-card:hover .poster-img {{
+            transform: scale(1.03);
+        }}
+
+        .poster-fallback {{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 1rem;
+            text-align: center;
+            gap: 0.5rem;
+        }}
+
+        .fallback-icon {{
+            font-size: 2rem;
+            opacity: 0.6;
+        }}
+
+        .fallback-title {{
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+        }}
+
+        .rating-badge {{
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(4px);
+            color: #fbbf24;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.45rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }}
+
+        .card-details {{
+            padding: 0.75rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            flex: 1;
+            justify-content: space-between;
+        }}
+
+        .card-title {{
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+        }}
+
+        .card-meta {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            gap: 0.5rem;
+        }}
+
+        .card-year {{
+            font-weight: 600;
+            color: var(--accent);
+        }}
+
+        .card-category {{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: var(--badge-bg);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            max-width: 65%;
+        }}
+
+        /* Category Accordions View */
         .category-section {{
             background-color: var(--card-bg);
             border-radius: 12px;
@@ -537,14 +824,32 @@ page = f'''<!DOCTYPE html>
     <div class="search-filter-container">
         <div class="search-box">
             <span class="search-icon">&#x1F50D;</span>
-            <input type="text" id="searchInput" placeholder="Search films..." oninput="filterFilms()">
+            <input type="text" id="searchInput" placeholder="Search films by title or year..." oninput="filterFilms()">
         </div>
         <select class="category-filter" id="categoryFilter" onchange="filterByCategory()">
 {options_html}
         </select>
     </div>
 
-    <div id="filmContainer">
+    <div class="controls-bar">
+        <div class="view-switcher" role="tablist">
+            <button class="view-btn active" id="btnGalleryView" onclick="switchView('gallery')" role="tab" aria-selected="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z"/></svg>
+                Poster Gallery
+            </button>
+            <button class="view-btn" id="btnCategoryView" onclick="switchView('categories')" role="tab" aria-selected="false">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+                Categories
+            </button>
+        </div>
+        <div class="films-counter" id="filmsCounter">{total} films</div>
+    </div>
+
+    <div id="galleryContainer" class="gallery-grid">
+{gallery_html}
+    </div>
+
+    <div id="filmContainer" style="display: none;">
 {sections_html}
     </div>
 
@@ -569,57 +874,115 @@ page = f'''<!DOCTYPE html>
         }}
     }}
 
+    function switchView(view) {{
+        const galleryEl = document.getElementById('galleryContainer');
+        const catEl = document.getElementById('filmContainer');
+        const btnGallery = document.getElementById('btnGalleryView');
+        const btnCat = document.getElementById('btnCategoryView');
+
+        if (view === 'categories') {{
+            galleryEl.style.display = 'none';
+            catEl.style.display = 'block';
+            btnGallery.classList.remove('active');
+            btnGallery.setAttribute('aria-selected', 'false');
+            btnCat.classList.add('active');
+            btnCat.setAttribute('aria-selected', 'true');
+        }} else {{
+            galleryEl.style.display = 'grid';
+            catEl.style.display = 'none';
+            btnGallery.classList.add('active');
+            btnGallery.setAttribute('aria-selected', 'true');
+            btnCat.classList.remove('active');
+            btnCat.setAttribute('aria-selected', 'false');
+        }}
+
+        try {{
+            localStorage.setItem('preferredView', view);
+        }} catch (e) {{}}
+
+        filterFilms();
+    }}
+
     function filterFilms() {{
         const query = document.getElementById('searchInput').value.toLowerCase().trim();
         const selectedCategory = document.getElementById('categoryFilter').value;
-        const sections = document.querySelectorAll('.category-section');
-        let totalVisibleFilms = 0;
+        const isGallery = document.getElementById('btnGalleryView').classList.contains('active');
+        let totalVisible = 0;
 
-        sections.forEach(section => {{
-            const categoryName = section.getAttribute('data-category');
-            const matchCategory = (selectedCategory === 'all' || categoryName === selectedCategory);
+        if (isGallery) {{
+            const cards = document.querySelectorAll('.film-card');
+            cards.forEach(card => {{
+                const title = card.getAttribute('data-title') || '';
+                const year = card.getAttribute('data-year') || '';
+                const cat = card.getAttribute('data-category') || '';
 
-            if (!matchCategory) {{
-                section.style.display = 'none';
-                return;
-            }}
+                const matchCat = (selectedCategory === 'all' || cat === selectedCategory);
+                const matchQuery = !query || title.includes(query) || year.includes(query) || cat.toLowerCase().includes(query);
 
-            section.style.display = 'block';
-            const items = section.querySelectorAll('.film-item');
-            let sectionHasMatch = false;
-
-            items.forEach(item => {{
-                const text = item.textContent.toLowerCase();
-                if (text.includes(query)) {{
-                    item.style.display = 'flex';
-                    sectionHasMatch = true;
-                    totalVisibleFilms++;
+                if (matchCat && matchQuery) {{
+                    card.style.display = 'flex';
+                    totalVisible++;
                 }} else {{
-                    item.style.display = 'none';
+                    card.style.display = 'none';
                 }}
             }});
+        }} else {{
+            const sections = document.querySelectorAll('.category-section');
+            sections.forEach(section => {{
+                const categoryName = section.getAttribute('data-category');
+                const matchCat = (selectedCategory === 'all' || categoryName === selectedCategory);
 
-            if (sectionHasMatch) {{
-                section.style.display = 'block';
-                if (query.length > 0) {{
-                    section.classList.add('open');
+                if (!matchCat) {{
+                    section.style.display = 'none';
+                    return;
                 }}
-            }} else {{
-                section.style.display = 'none';
-            }}
-        }});
+
+                const items = section.querySelectorAll('.film-item');
+                let sectionHasMatch = false;
+
+                items.forEach(item => {{
+                    const text = item.textContent.toLowerCase();
+                    if (!query || text.includes(query)) {{
+                        item.style.display = 'flex';
+                        sectionHasMatch = true;
+                        totalVisible++;
+                    }} else {{
+                        item.style.display = 'none';
+                    }}
+                }});
+
+                if (!query) {{
+                    section.style.display = matchCat ? 'block' : 'none';
+                }} else {{
+                    section.style.display = sectionHasMatch ? 'block' : 'none';
+                    if (sectionHasMatch) {{
+                        section.classList.add('open');
+                    }}
+                }}
+            }});
+        }}
 
         const noResults = document.getElementById('noResults');
-        if (totalVisibleFilms === 0) {{
-            noResults.style.display = 'block';
-        }} else {{
-            noResults.style.display = 'none';
+        if (noResults) {{
+            noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+        }}
+
+        const counter = document.getElementById('filmsCounter');
+        if (counter) {{
+            counter.textContent = `${{totalVisible}} film${{totalVisible === 1 ? '' : 's'}}`;
         }}
     }}
 
     function filterByCategory() {{
         filterFilms();
     }}
+
+    // Default to gallery view or restore saved preference
+    const savedView = (function() {{
+        try {{ return localStorage.getItem('preferredView') || 'gallery'; }}
+        catch (e) {{ return 'gallery'; }}
+    }})();
+    switchView(savedView);
 
     if ('serviceWorker' in navigator) {{
         navigator.serviceWorker.register('sw.js');
@@ -632,7 +995,7 @@ page = f'''<!DOCTYPE html>
 with open(html_path, "w") as f:
     f.write(page)
 
-print(f"Generated {html_path} with {total} films in {len(ordered_cats)} categories")
+print(f"Generated {html_path} with {total} films in {len(ordered_cats)} categories and {len(all_films)} gallery cards")
 PYEOF
 
 # Detect new films and trigger calendar swap
@@ -689,7 +1052,7 @@ if $PUSH; then
     log "Pushing to GitHub..."
     cd "$SCRIPT_DIR"
     git pull --rebase origin master 2>/dev/null || true
-    git add library.json film-library.html
+    git add library.json film-library.html sw.js posters/
     if git diff --cached --quiet; then
         log "No changes to push"
     else
