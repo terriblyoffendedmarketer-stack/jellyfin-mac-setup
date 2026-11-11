@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-11-11T13:37:08Z",
+  "synced_at": "2026-11-11T13:42:12Z",
   "drive_online": true,
   "total_count": 558,
   "items": [
@@ -545,12 +545,10 @@
       "path": "/Volumes/Backup Plus/All Movies/Indian Films/Albert Pinto Ko Gussa Kyun Aata Hai (1980)/Albert Pinto Ko Gussa Kyun Aata Hai (1980).mp4",
       "jellyfin_id": "55aa73e7bcf00afddda523c88aed844a",
       "locations": [
-        "drive",
-        "laptop"
+        "drive"
       ],
       "paths": [
-        "/Volumes/Backup Plus/All Movies/Indian Films/Albert Pinto Ko Gussa Kyun Aata Hai (1980)/Albert Pinto Ko Gussa Kyun Aata Hai (1980).mp4",
-        "/Users/apple/Movies/Albert Pinto Ko Gussa Kyun Aata Hai (1980)/Albert Pinto Ko Gussa Kyun Aata Hai (1980).mp4"
+        "/Volumes/Backup Plus/All Movies/Indian Films/Albert Pinto Ko Gussa Kyun Aata Hai (1980)/Albert Pinto Ko Gussa Kyun Aata Hai (1980).mp4"
       ]
     },
     {
@@ -948,13 +946,11 @@
       ],
       "rating": 7.233,
       "path": "/Volumes/Backup Plus/All Movies/Movies in General/Begin Again (2013) [1080p]/Begin.Again.2013.1080p.BluRay.x264.YIFY.mp4",
-      "jellyfin_id": "3de5f48c3752a64938589b8d762c45ec",
+      "jellyfin_id": "8a4541720f14b56c064867922ab47d96",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Begin Again (2013) [1080p]/Begin.Again.2013.1080p.BluRay.x264.YIFY.mp4",
         "/Volumes/Backup Plus/All Movies/Movies in General/Begin Again (2013) [1080p]/Begin.Again.2013.1080p.BluRay.x264.YIFY.mp4"
       ]
     },
@@ -1483,13 +1479,11 @@
       ],
       "rating": 10,
       "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/Chaar Phool Hain Aur Duniya Hai (2025)/Chaar Phool Hain Aur Duniya Hai (2025).mp4",
-      "jellyfin_id": "54ffabea488ae0fcbb16b36749b5a552",
+      "jellyfin_id": "bd1d50fcaacb7b7768ff1d9c53a63352",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Chaar Phool Hain Aur Duniya Hai (2025)/Chaar Phool Hain Aur Duniya Hai (2025).mp4",
         "/Volumes/Backup Plus/All Movies/Parallel cinema/Chaar Phool Hain Aur Duniya Hai (2025)/Chaar Phool Hain Aur Duniya Hai (2025).mp4"
       ]
     },
@@ -1962,13 +1956,11 @@
       ],
       "rating": 7.3,
       "path": "/Volumes/Backup Plus/All Movies/Parallel cinema/Daisies (1966)/Daisies (1966) Věra Chytilová.mp4",
-      "jellyfin_id": "9a27ef31d31e807c3651335121532021",
+      "jellyfin_id": "f9a037afbaeb66dd01960743435b4328",
       "locations": [
-        "laptop",
         "drive"
       ],
       "paths": [
-        "/Users/apple/Movies/Daisies (1966)/Daisies (1966) Věra Chytilová.mp4",
         "/Volumes/Backup Plus/All Movies/Parallel cinema/Daisies (1966)/Daisies (1966) Věra Chytilová.mp4"
       ]
     },
